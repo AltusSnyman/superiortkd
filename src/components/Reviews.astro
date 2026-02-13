@@ -1,0 +1,125 @@
+---
+const reviews = [
+    {
+        name: "Altus Snyman",
+        role: "Local Guide · 15 reviews · 2 photos",
+        text: "The boys loved this class and training Taekwondo. Andrea is amazing and a great teach and coach. Highly recommended.",
+        stars: 5,
+    },
+    {
+        name: "Swati Loomba",
+        role: "Local Guide · 12 reviews · 10 photos",
+        text: "My 4 year old girl has started with Superior earlier this year and absolutely loves each class. Andrea is lovely and so good with training our 3-6 years helping them build strength and discipline as they mark their journeys into life!",
+        stars: 5,
+    },
+    {
+        name: "Elizabeth Baroutsos",
+        role: "Local Guide · 10 reviews · 6 photos",
+        text: "Absolutely could not recommend more. Andrea is such an inspiration and her passion for the sport really shines through at each training. She pushes her students to reach their full potential and is deeply invested in their development. Andrea you are a true Olympian and sportswomen, demonstrating elite characteristics both as an athlete and as a genuine human being.",
+        stars: 5,
+    },
+    {
+        name: "Natasha Crawford",
+        role: "4 reviews",
+        text: "Highly recommend. Andrea is fireball of energy, focus, commitment and dedication. She will get you results and puts 100% into your training sessions.",
+        stars: 5,
+    },
+    {
+        name: "Isla Berry",
+        role: "10 reviews",
+        text: "Andrea is such an awesome teacher! Would highly recommend her!!",
+        stars: 5,
+    },
+    {
+        name: "Connor Snyman",
+        role: "2 reviews",
+        text: "Good fitness.",
+        stars: 5,
+    },
+];
+
+const doubledReviews = [...reviews, ...reviews];
+---
+
+<section class="py-24 bg-deep-space-black overflow-hidden relative">
+    <div class="container mx-auto px-4 mb-16 text-center">
+        <h2
+            class="text-4xl md:text-6xl font-black font-oswald uppercase tracking-tighter text-white drop-shadow-lg"
+        >
+            Happy <span class="text-blue-gradient">Students</span>
+        </h2>
+    </div>
+
+    <div class="relative w-full">
+        <div
+            class="flex gap-6 animate-scroll w-max hover:[animation-play-state:paused]"
+        >
+            {
+                doubledReviews.map((review, index) => (
+                    <div class="w-[350px] md:w-[450px] flex-shrink-0 bg-blue-belt-start/10 border border-blue-belt-end/20 p-8 rounded-xl backdrop-blur-sm hover:border-blue-belt-end/50 transition-colors duration-300">
+                        <div class="flex items-center gap-1 mb-4">
+                            {Array.from({ length: review.stars }).map(
+                                (_, i) => (
+                                    <svg
+                                        class="w-5 h-5 text-blue-belt-end drop-shadow-[0_0_5px_rgba(0,229,255,0.6)]"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                )
+                            )}
+                        </div>
+                        <p class="text-gray-300 font-body leading-relaxed mb-6 h-[120px] overflow-y-auto custom-scrollbar italic">
+                            "{review.text}"
+                        </p>
+                        <div>
+                            <h3 class="font-oswald font-bold text-xl text-white uppercase tracking-wide">
+                                {review.name}
+                            </h3>
+                            <p class="text-sm text-blue-belt-end/70 font-body">
+                                {review.role}
+                            </p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+
+    <!-- Left/Right Fade Masks -->
+    <div
+        class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-deep-space-black to-transparent pointer-events-none z-10"
+    >
+    </div>
+    <div
+        class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-deep-space-black to-transparent pointer-events-none z-10"
+    >
+    </div>
+</section>
+
+<style>
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+    .animate-scroll {
+        animation: scroll 40s linear infinite;
+    }
+
+    /* Custom Scrollbar for review text if it gets too long */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(0, 31, 63, 0.3);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(0, 229, 255, 0.5);
+        border-radius: 4px;
+    }
+</style>
