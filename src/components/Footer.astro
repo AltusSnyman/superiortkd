@@ -1,0 +1,36 @@
+---
+import Button from "./Button.astro";
+---
+
+<footer
+    class="py-16 bg-black text-white text-center border-t border-white/10"
+    id="contact"
+>
+    <div class="container mx-auto px-4 flex flex-col items-center gap-8">
+        <div class="space-y-2 text-gray-400 font-body text-lg">
+            <p>Superior Taekwondo - North West Auckland, New Zealand.</p>
+            <p>
+                Phone: <a
+                    href="tel:0275201613"
+                    class="text-white hover:text-blue-belt-end transition-colors hover-glow"
+                    >027 520 1613</a>
+            </p>
+            <p>
+                Email: <a
+                    href="mailto:superiorfitnessnz@gmail.com"
+                    class="text-white hover:text-blue-belt-end transition-colors hover-glow"
+                    >superiorfitnessnz@gmail.com</a>
+            </p>
+        </div>
+
+        <div class="mt-8">
+            <Button href="mailto:superiorfitnessnz@gmail.com" variant="primary"
+                >Contact Us</Button
+            >
+        </div>
+
+        <div class="mt-16 text-sm text-gray-600">
+            &copy; {new Date().getFullYear()} Superior Taekwondo. All Rights Reserved.
+        </div>
+    </div>
+</footer>
