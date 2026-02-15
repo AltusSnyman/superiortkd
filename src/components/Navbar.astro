@@ -1,0 +1,217 @@
+---
+import Button from "./Button.astro";
+
+const links = [
+    { text: "Home", href: "/" },
+    { text: "Photos", href: "/gallery" },
+    { text: "Schedule", href: "/schedule" },
+    { text: "Pricing", href: "/pricing" },
+];
+
+const dropdownLinks = [
+    { text: "Club Guidelines", href: "/guidelines" },
+    { text: "Grading Info", href: "/grading" },
+    { text: "Competition Team", href: "/competition" },
+    { text: "Tournaments", href: "/tournaments" },
+    { text: "Poomsae Class", href: "/poomsae" },
+];
+---
+
+<nav
+    class="fixed top-0 w-full z-50 bg-deep-space-black/80 backdrop-blur-md border-b border-white/10 transition-all duration-300"
+    id="navbar"
+>
+    <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <a
+            href="/"
+            class="text-2xl font-black font-oswald uppercase tracking-tighter text-white group"
+        >
+            Superior <span
+                class="text-blue-gradient group-hover:text-blue-belt-end transition-colors duration-300"
+                >Taekwondo</span
+            >
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+            {
+                links.map((link) => (
+                    <a
+                        href={link.href}
+                        class="text-sm font-bold font-oswald uppercase tracking-wider text-gray-300 hover:text-blue-belt-end transition-colors hover-glow hover:-translate-y-0.5 transform duration-200"
+                    >
+                        {link.text}
+                    </a>
+                ))
+            }
+
+            {/* Dropdown Menu */}
+            <div class="relative group">
+                <button
+                    class="text-sm font-bold font-oswald uppercase tracking-wider text-gray-300 hover:text-blue-belt-end transition-colors flex items-center gap-1 py-4"
+                >
+                    Student Info
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4 transition-transform group-hover:rotate-180"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2"
+                >
+                    <div
+                        class="bg-deep-space-black border border-white/10 rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden w-56"
+                    >
+                        {
+                            dropdownLinks.map((link) => (
+                                <a
+                                    href={link.href}
+                                    class="block px-6 py-3 text-sm font-oswald text-gray-300 hover:bg-white/5 hover:text-blue-belt-end transition-colors uppercase tracking-wide"
+                                >
+                                    {link.text}
+                                </a>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <a
+                href="/contact"
+                class="text-sm font-bold font-oswald uppercase tracking-wider text-gray-300 hover:text-blue-belt-end transition-colors hover-glow hover:-translate-y-0.5 transform duration-200"
+            >
+                Contact
+            </a>
+
+            <a
+                href="/members"
+                class="text-sm font-bold font-oswald uppercase tracking-wider text-gray-300 hover:text-blue-belt-end transition-colors hover-glow hover:-translate-y-0.5 transform duration-200"
+            >
+                Members Logon
+            </a>
+
+            <Button href="/#intro" variant="primary" class="scale-90"
+                >Join Now</Button
+            >
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+            id="mobile-menu-btn"
+            class="md:hidden text-white hover:text-blue-belt-end transition-colors focus:outline-none"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+        id="mobile-menu"
+        class="absolute top-20 left-0 w-full bg-deep-space-black border-b border-white/10 shadow-2xl overflow-hidden h-0 transition-all duration-300"
+    >
+        <div class="flex flex-col p-6 gap-6 items-center">
+            {
+                links.map((link) => (
+                    <a
+                        href={link.href}
+                        class="text-xl font-bold font-oswald uppercase tracking-wider text-white hover:text-blue-belt-end transition-colors"
+                    >
+                        {link.text}
+                    </a>
+                ))
+            }
+
+            {/* Mobile Dropdown Items */}
+            <div class="w-full border-t border-white/10 pt-4 mt-2">
+                <p
+                    class="text-blue-belt-end font-oswald uppercase tracking-widest text-xs mb-4 text-center"
+                >
+                    Student Information
+                </p>
+                <div class="flex flex-col gap-4 items-center">
+                    {
+                        dropdownLinks.map((link) => (
+                            <a
+                                href={link.href}
+                                class="text-lg font-bold font-oswald uppercase tracking-wider text-gray-300 hover:text-white transition-colors"
+                            >
+                                {link.text}
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+            <a
+                href="/contact"
+                class="text-xl font-bold font-oswald uppercase tracking-wider text-white hover:text-blue-belt-end transition-colors mt-2"
+            >
+                Contact
+            </a>
+
+            <a
+                href="/members"
+                class="text-xl font-bold font-oswald uppercase tracking-wider text-white hover:text-blue-belt-end transition-colors mt-2"
+            >
+                Members Logon
+            </a>
+
+            <Button
+                href="/#intro"
+                variant="primary"
+                class="w-full justify-center">Join Now</Button
+            >
+        </div>
+    </div>
+</nav>
+
+<script>
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+
+    if (btn && menu) {
+        btn.addEventListener("click", () => {
+            // Toggle height
+            if (menu.classList.contains("h-0")) {
+                menu.classList.remove("h-0");
+                menu.classList.add("h-auto");
+                menu.style.maxHeight = "100vh";
+                menu.style.overflowY = "auto";
+            } else {
+                menu.classList.add("h-0");
+                menu.classList.remove("h-auto");
+                menu.style.maxHeight = "0";
+                menu.style.overflowY = "hidden";
+            }
+        });
+
+        // Close menu when clicking a link
+        menu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                menu.classList.add("h-0");
+                menu.classList.remove("h-auto");
+                menu.style.maxHeight = "0";
+                menu.style.overflowY = "hidden";
+            });
+        });
+    }
+</script>

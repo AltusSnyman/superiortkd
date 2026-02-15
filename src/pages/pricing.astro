@@ -1,0 +1,144 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import PricingSection from "../components/PricingSection.tsx";
+
+const plans = [
+    {
+        category: "Weekly Memberships",
+        options: [
+            {
+                title: "1 Session Per Week",
+                frequency: "Ongoing",
+                description: "1 Session / week",
+                sport: "Taekwondo",
+                price: "$27.00",
+                period: "/ Week",
+                signup: "+ $25.00 Sign-up",
+            },
+            {
+                title: "Unlimited Sessions",
+                frequency: "Ongoing",
+                description: "Unlimited",
+                sport: "Taekwondo",
+                price: "$39.00",
+                period: "/ Week",
+                signup: "+ $25.00 Sign-up",
+                recommended: true,
+            },
+            {
+                title: "Sibling Deal - 1 Session Each",
+                frequency: "Ongoing",
+                description: "2 Sessions / week",
+                sport: "Taekwondo",
+                price: "$54.00",
+                period: "/ Week",
+                signup: "+ $25.00 Sign-up",
+            },
+            {
+                title: "Sibling Deal of 2 - Unlimited",
+                frequency: "Ongoing",
+                description: "Unlimited",
+                sport: "Taekwondo",
+                price: "$66.00",
+                period: "/ Week",
+                signup: "+ $25.00 Sign-up",
+            },
+            {
+                title: "Sibling Deal of 3 - Unlimited",
+                frequency: "Ongoing",
+                description: "Unlimited",
+                sport: "Taekwondo",
+                price: "$77.00",
+                period: "/ Week",
+                signup: "+ $25.00 Sign-up",
+            },
+            {
+                title: "Sibling of 4 - Unlimited",
+                frequency: "Ongoing",
+                description: "Unlimited",
+                sport: "Taekwondo",
+                price: "$88.00",
+                period: "/ Week",
+                signup: "+ $25.00 Sign-up",
+            },
+        ],
+    },
+    {
+        category: "Term & Concession",
+        options: [
+            {
+                title: "Concession Card",
+                frequency: "5 months",
+                description: "10 Sessions",
+                sport: "Taekwondo",
+                price: "$265.00",
+                period: "Total",
+                signup: "",
+            },
+            {
+                title: "1 Session a Week Per Term",
+                frequency: "Ongoing",
+                description: "1 Session / week",
+                sport: "Taekwondo",
+                price: "$250.00",
+                period: "/ 10 Weeks",
+                signup: "+ $25.00 Sign-up",
+            },
+            {
+                title: "Unlimited Sessions Per Term",
+                frequency: "Ongoing",
+                description: "Unlimited",
+                sport: "Taekwondo",
+                price: "$350.00",
+                period: "/ 10 Weeks",
+                signup: "+ $25.00 Sign-up",
+            },
+        ],
+    },
+];
+---
+
+<Layout title="Pricing | Superior Taekwondo">
+    <main class="bg-deep-space-black min-h-screen pt-24 pb-12">
+        <!-- React Pricing Component (Handles header and content internally now) -->
+        <PricingSection client:load plans={plans} />
+
+        <!-- Terms & Conditions (Outside React component to keep it simple or moved in?) 
+         Actually, the previous PricingGrid had it inside the main container. 
+         PricingSection now has a container inside. I will place Terms below it.
+    -->
+        <div class="container mx-auto px-4 pb-24">
+            <div
+                class="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-xl p-8 text-gray-400 font-body text-sm leading-relaxed relative z-10"
+            >
+                <h3
+                    class="text-white font-oswald font-bold uppercase tracking-wide text-lg mb-4"
+                >
+                    Important Information
+                </h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>
+                        Memberships are collected weekly by the way of direct
+                        debit.
+                    </li>
+                    <li>
+                        If you attended once a week and the particular day falls
+                        on a public holiday or facilities are closed you are
+                        encouraged to come to any other class as a make up
+                        session.
+                    </li>
+                    <li>
+                        2 week notice by email for cancelling membership or
+                        putting on hold.
+                    </li>
+                    <li>
+                        All locations included: Kaukapakapa, Helensville, and
+                        Waimauku.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <Footer />
+</Layout>

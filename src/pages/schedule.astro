@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ScheduleGrid from "../components/ScheduleGrid.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Training Schedule | Superior Taekwondo">
+    <main class="bg-deep-space-black min-h-screen pt-24 pb-12">
+        <div class="container mx-auto px-4">
+            <!-- Page Header -->
+            <div class="text-center mb-16 space-y-4 animate-fade-in">
+                <h1
+                    class="text-5xl md:text-7xl font-black font-oswald uppercase tracking-tighter text-white drop-shadow-2xl"
+                >
+                    Training <span class="text-blue-gradient">Schedule</span>
+                </h1>
+                <p class="text-xl text-gray-300 font-body max-w-2xl mx-auto">
+                    Find your class. Consistency is the key to mastery.
+                </p>
+                <div
+                    class="h-1 w-32 bg-blue-gradient mx-auto mt-6 shadow-[0_0_15px_rgba(0,229,255,0.5)]"
+                >
+                </div>
+            </div>
+
+            <!-- Schedule Grid -->
+            <div
+                class="bg-black/20 backdrop-blur-sm border border-white/5 rounded-2xl p-2 md:p-6 shadow-[0_0_50px_rgba(0,31,63,0.3)] animate-slide-up"
+            >
+                <ScheduleGrid />
+            </div>
+
+            <!-- Additional Info -->
+            <div class="grid md:grid-cols-2 gap-8 mt-16 max-w-4xl mx-auto">
+                <div
+                    class="bg-blue-belt-start/10 border border-blue-belt-end/20 p-8 rounded-xl hover:border-blue-belt-end/50 transition-colors group"
+                >
+                    <h3
+                        class="text-2xl font-bold font-oswald text-white mb-4 uppercase group-hover:text-blue-belt-end transition-colors"
+                    >
+                        Private Training
+                    </h3>
+                    <p class="text-gray-400 font-body">
+                        One-on-one sessions are available for students preparing
+                        for grading or competition. Contact Andrea to book.
+                    </p>
+                </div>
+                <div
+                    class="bg-blue-belt-start/10 border border-blue-belt-end/20 p-8 rounded-xl hover:border-blue-belt-end/50 transition-colors group"
+                >
+                    <h3
+                        class="text-2xl font-bold font-oswald text-white mb-4 uppercase group-hover:text-blue-belt-end transition-colors"
+                    >
+                        Location
+                    </h3>
+                    <p class="text-gray-400 font-body">
+                        All classes are held at our North West Auckland dojo.
+                        <a
+                            href="/#contact"
+                            class="text-blue-belt-end hover:text-white underline decoration-blue-belt-end offset-4 transition-colors"
+                            >Get Directions</a
+                        >
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <Footer />
+</Layout>
