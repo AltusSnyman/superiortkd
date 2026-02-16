@@ -1,37 +1,261 @@
 ---
 import Button from "./Button.astro";
+
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+    {
+        name: "Facebook",
+        href: "https://facebook.com/superiortkd",
+        icon: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
+    },
+    {
+        name: "Instagram",
+        href: "https://instagram.com/superiortkd",
+        icon: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z M17.5 6.5h.01 M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 3.8 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6z",
+    },
+];
+
+const quickLinks = [
+    { name: "Home", href: "/" },
+    { name: "Classes & Pricing", href: "/pricing" },
+    { name: "Schedule", href: "/schedule" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Contact", href: "/contact" },
+];
+
+const resourceLinks = [
+    { name: "Members Logon", href: "/members", highlight: true },
+    { name: "What Is Taekwondo?", href: "/what-is-taekwondo" },
+    { name: "History of Taekwondo", href: "/history-of-taekwondo" },
+    { name: "Taekwondo in New Zealand", href: "/taekwondo-in-new-zealand" },
+    { name: "Olympic Taekwondo", href: "/olympic-taekwondo" },
+    { name: "World Taekwondo", href: "/world-taekwondo" },
+    { name: "Grading & Belt System", href: "/taekwondo-grading-system" },
+    { name: "2026 Competition Rules", href: "/competition-rules" },
+    { name: "WT vs ITF Guide", href: "/wt-vs-itf-taekwondo" },
+    { name: "Club Guidelines", href: "/guidelines" },
+    { name: "Grading Info", href: "/grading" },
+];
 ---
 
 <footer
-    class="py-16 bg-black text-white text-center border-t border-white/10"
+    class="bg-deep-space-black text-white border-t border-white/10 relative overflow-hidden"
     id="contact"
 >
-    <div class="container mx-auto px-4 flex flex-col items-center gap-8">
-        <div class="space-y-2 text-gray-400 font-body text-lg">
-            <p>Superior Taekwondo - North West Auckland, New Zealand.</p>
-            <p>94 Mill Road, Helensville 0800</p>
-            <p>
-                Phone: <a
-                    href="tel:0275201613"
-                    class="text-white hover:text-blue-belt-end transition-colors hover-glow"
-                    >027 520 1613</a
+    <!-- Glassmorphism Background Glow -->
+    <div
+        class="absolute top-0 left-1/4 w-96 h-96 bg-blue-belt-start/10 rounded-full blur-3xl -translate-y-1/2 pointer-events-none"
+    >
+    </div>
+    <div
+        class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-belt-end/10 rounded-full blur-3xl translate-y-1/2 pointer-events-none"
+    >
+    </div>
+
+    <div class="container mx-auto px-4 py-16 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- Column 1: Brand -->
+            <div class="space-y-6">
+                <a href="/" class="block group">
+                    <span
+                        class="text-2xl font-black font-oswald uppercase tracking-tighter text-white"
+                    >
+                        Superior <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-belt-start to-blue-belt-end group-hover:text-white transition-colors duration-300"
+                            >Taekwondo</span
+                        >
+                    </span>
+                </a>
+                <p class="text-gray-400 font-body text-sm leading-relaxed">
+                    Constructing Champions in North West Auckland. Professional
+                    martial arts training focusing on discipline, strength, and
+                    confidence.
+                </p>
+                <div class="flex gap-4">
+                    {
+                        socialLinks.map((social) => (
+                            <a
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-belt-end hover:border-blue-belt-end transition-all duration-300 hover:scale-110"
+                                aria-label={social.name}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    stroke="none"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path d={social.icon} />
+                                </svg>
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <!-- Column 2: Contact -->
+            <div class="space-y-6">
+                <h3
+                    class="text-lg font-bold font-oswald uppercase tracking-wide"
                 >
-            </p>
-            <p>
-                Email: <a
-                    href="mailto:superiorfitnessnz@gmail.com"
-                    class="text-white hover:text-blue-belt-end transition-colors hover-glow"
-                    >superiorfitnessnz@gmail.com</a
+                    Contact Us
+                </h3>
+                <ul class="space-y-4 font-body text-gray-400 text-sm">
+                    <li class="flex items-start gap-3 group">
+                        <div
+                            class="w-8 h-8 rounded-full bg-blue-belt-end/10 flex items-center justify-center text-blue-belt-end shrink-0 group-hover:bg-blue-belt-end group-hover:text-white transition-colors duration-300"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><path
+                                    d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"
+                                ></path><circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <span>94 Mill Road,<br />Helensville 0800</span>
+                    </li>
+                    <li class="flex items-center gap-3 group">
+                        <div
+                            class="w-8 h-8 rounded-full bg-blue-belt-end/10 flex items-center justify-center text-blue-belt-end shrink-0 group-hover:bg-blue-belt-end group-hover:text-white transition-colors duration-300"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <a
+                            href="tel:0275201613"
+                            class="hover:text-white transition-colors hover-glow"
+                            >027 520 1613</a
+                        >
+                    </li>
+                    <li class="flex items-center gap-3 group">
+                        <div
+                            class="w-8 h-8 rounded-full bg-blue-belt-end/10 flex items-center justify-center text-blue-belt-end shrink-0 group-hover:bg-blue-belt-end group-hover:text-white transition-colors duration-300"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><rect width="20" height="16" x="2" y="4" rx="2"
+                                ></rect><path
+                                    d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
+                                ></path>
+                            </svg>
+                        </div>
+                        <a
+                            href="mailto:superiorfitnessnz@gmail.com"
+                            class="hover:text-white transition-colors hover-glow break-all"
+                            >superiorfitnessnz@gmail.com</a
+                        >
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Quick Links -->
+            <div class="space-y-6">
+                <h3
+                    class="text-lg font-bold font-oswald uppercase tracking-wide"
                 >
-            </p>
+                    Explore
+                </h3>
+                <ul class="space-y-3 font-body text-gray-400 text-sm">
+                    {
+                        quickLinks.map((link) => (
+                            <li>
+                                <a
+                                    href={link.href}
+                                    class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
+                                >
+                                    {link.name}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <!-- Column 4: Resources -->
+            <div class="space-y-6">
+                <h3
+                    class="text-lg font-bold font-oswald uppercase tracking-wide"
+                >
+                    Members & Resources
+                </h3>
+                <ul class="space-y-3 font-body text-gray-400 text-sm">
+                    {
+                        resourceLinks.map((link) => (
+                            <li>
+                                <a
+                                    href={link.href}
+                                    class={`hover:translate-x-1 transition-all duration-300 inline-block ${
+                                        link.highlight
+                                            ? "text-blue-belt-end font-bold hover:text-white"
+                                            : "hover:text-white"
+                                    }`}
+                                >
+                                    {link.name}
+                                    {link.highlight && (
+                                        <span class="ml-2 text-xs">→</span>
+                                    )}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <div class="pt-4">
+                    <Button href="/#intro" variant="primary">Join Now</Button>
+                </div>
+            </div>
         </div>
 
-        <div class="mt-8">
-            <Button href="/contact" variant="primary">Contact Us</Button>
-        </div>
-
-        <div class="mt-16 text-sm text-gray-600">
-            &copy; {new Date().getFullYear()} Superior Taekwondo. All Rights Reserved.
+        <!-- Copyright -->
+        <div
+            class="mt-16 pt-8 border-t border-white/10 text-center font-body text-sm text-gray-600 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+            <div>
+                &copy; {currentYear} Superior Taekwondo. All Rights Reserved.
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white transition-colors"
+                    >Privacy Policy</a
+                >
+                <a href="#" class="hover:text-white transition-colors"
+                    >Terms of Service</a
+                >
+            </div>
         </div>
     </div>
 </footer>

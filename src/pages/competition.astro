@@ -4,7 +4,37 @@ import Footer from "../components/Footer.astro";
 import CompetitionSection from "../components/CompetitionSection.tsx";
 ---
 
-<Layout title="Competition Team | Superior Taekwondo">
+<Layout
+    title="Competition Team | Superior Taekwondo"
+    description="Join our elite competition team. Training for local and national Taekwondo tournaments with specialized coaching."
+>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Competition Team Training",
+            "provider": {
+                "@type": "MartialArtsSchool",
+                "name": "Superior Taekwondo"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Helensville"
+            },
+            "description": "High-performance combat and technical training for tournament success. Focused on sparring strategy, conditioning, and mental toughness.",
+            "offers": {
+                "@type": "Offer",
+                "price": "27.00",
+                "priceCurrency": "NZD",
+                "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": "27.00",
+                    "priceCurrency": "NZD",
+                    "unitCode": "WK"
+                }
+            }
+        }
+    </script>
     <CompetitionSection client:load />
     <Footer />
 </Layout>

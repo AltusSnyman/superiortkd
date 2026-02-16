@@ -1,0 +1,357 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/Button.astro";
+
+const title =
+    "World Taekwondo (WT): The Global Federation | Superior Taekwondo";
+const description =
+    "Learn about World Taekwondo (WT), the international governing body for the sport. Discover its history, rules, and why Superior Taekwondo is proud to be a WT club.";
+
+// FAQ Data for Schema
+const faqs = [
+    {
+        question: "What is World Taekwondo (WT)?",
+        answer: "World Taekwondo (WT) is the International Federation (IF) governing the sport of Taekwondo and is a member of the Association of Summer Olympic International Federations (ASOIF) and International Paralympic Committee (IPC).",
+    },
+    {
+        question: "Is WT the same as WTF?",
+        answer: "Yes. The organization was formerly known as the World Taekwondo Federation (WTF) but rebranded to World Taekwondo (WT) in 2017 to avoid confusion with the common internet acronym.",
+    },
+    {
+        question: "Where is the headquarters of World Taekwondo?",
+        answer: "The headquarters of World Taekwondo is located in Seoul, South Korea.",
+    },
+    {
+        question: "What is the difference between WT and ITF?",
+        answer: "WT focus on the sport aspect of Taekwondo and is the official Olympic style. ITF (International Taekwon-Do Federation) focuses more on traditional forms and light-contact sparring.",
+    },
+    {
+        question: "Is Superior Taekwondo a WT club?",
+        answer: "Yes, Superior Taekwondo follows the World Taekwondo curriculum and rules, ensuring our students receive internationally recognized instruction and certification.",
+    },
+];
+---
+
+<Layout title={title} description={description}>
+    <!-- FAQ Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer,
+                },
+            })),
+        })}
+    ></script>
+
+    <main class="bg-black min-h-screen pt-24 pb-12 text-gray-300 font-body">
+        <article class="container mx-auto px-4 max-w-4xl">
+            <!-- Header -->
+            <header class="mb-16 text-center">
+                <p
+                    class="text-blue-belt-end font-bold tracking-widest uppercase text-sm mb-4"
+                >
+                    The Global Authority
+                </p>
+                <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-black font-oswald text-white uppercase tracking-tighter mb-6 leading-none"
+                >
+                    World <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-belt-start to-blue-belt-end"
+                        >Taekwondo</span
+                    >
+                </h1>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Uniting 210+ member nations under one banner. We explore the
+                    federation that took Taekwondo from a Korean martial art to
+                    a global phenomenon.
+                </p>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-16 prose prose-lg prose-invert max-w-none">
+                <p
+                    class="lead text-2xl text-white font-oswald font-medium mb-6"
+                >
+                    When you step onto the mats at <a
+                        href="/"
+                        class="text-blue-belt-end hover:underline"
+                        >Superior Taekwondo</a
+                    >, you are not just joining a local club in <strong
+                        >North West Auckland</strong
+                    >; you are joining a global family of over 80 million
+                    practitioners.
+                </p>
+                <p>
+                    This global community is led by <strong
+                        >World Taekwondo (WT)</strong
+                    >, the organization responsible for developing the sport,
+                    setting the rules, and organizing major events like the
+                    World Championships and the Olympic Games.
+                </p>
+            </section>
+
+            <!-- History & Mission -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 border-l-4 border-blue-belt-end pl-4"
+                >
+                    History & Mission
+                </h2>
+                <div class="space-y-6 text-gray-300">
+                    <p>
+                        Established on May 28, 1973, as the World Taekwondo
+                        Federation (WTF), the organization has worked tirelessly
+                        to promote Taekwondo as a sport for all. In June 2017,
+                        it officially rebranded to <strong
+                            >World Taekwondo (WT)</strong
+                        > to reflect a modern, inclusive identity.
+                    </p>
+                    <div
+                        class="bg-white/5 p-8 rounded-2xl border border-white/10 mt-8"
+                    >
+                        <h3
+                            class="text-2xl font-bold text-white font-oswald mb-4 text-center"
+                        >
+                            Vision: "Taekwondo for All"
+                        </h3>
+                        <p class="text-center italic text-gray-400">
+                            "To develop and grow Taekwondo throughout the world,
+                            from a grassroots level to an elite high-performance
+                            sport, to provide all with the opportunity to play,
+                            watch and enjoy the sport regardless of age, gender,
+                            religion, ethnicity or ability."
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kukkiwon Connection -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 border-l-4 border-blue-belt-end pl-4"
+                >
+                    The Kukkiwon Connection
+                </h2>
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-1/2">
+                        <img
+                            src="/images/kukkiwon.jpg"
+                            alt="Kukkiwon Headquarters"
+                            class="rounded-xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 w-full object-cover h-64 bg-gray-800"
+                        />
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-xl font-bold text-white mb-2">
+                            World Taekwondo Headquarters
+                        </h3>
+                        <p class="mb-4 text-gray-300">
+                            Often referred to as the "Mecca of World Taekwondo,"
+                            the <strong>Kukkiwon</strong> in Seoul, South Korea,
+                            is the center for Dan (Black Belt) certification and
+                            Poomsae standardization.
+                        </p>
+                        <p class="text-gray-300">
+                            While World Taekwondo (WT) manages the <em>sport</em
+                            > (tournaments, Olympics), Kukkiwon manages the <em
+                                >martial art</em
+                            > (grading, curriculum). At Superior Taekwondo, our Black
+                            Belts are Kukkiwon certified, meaning they are recognized
+                            globally.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Global Impact -->
+            <section
+                class="mb-16 bg-gradient-to-br from-blue-900/20 to-black border border-white/10 rounded-2xl p-8"
+            >
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 text-center"
+                >
+                    A Force for Good
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="p-4">
+                        <span class="text-4xl mb-4 block">🌍</span>
+                        <h3 class="text-lg font-bold text-white mb-2">
+                            Humanitarian Foundation
+                        </h3>
+                        <p class="text-sm text-gray-400">
+                            The Taekwondo Humanitarian Foundation (THF) empowers
+                            refugees and displaced persons worldwide by training
+                            them in Taekwondo.
+                        </p>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-4xl mb-4 block">♿</span>
+                        <h3 class="text-lg font-bold text-white mb-2">
+                            Para Taekwondo
+                        </h3>
+                        <p class="text-sm text-gray-400">
+                            WT has championed Para Taekwondo, which debuted at
+                            the Tokyo 2020 Paralympics, making the sport
+                            accessible to athletes with impairments.
+                        </p>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-4xl mb-4 block">⚖️</span>
+                        <h3 class="text-lg font-bold text-white mb-2">
+                            Clean Sport
+                        </h3>
+                        <p class="text-sm text-gray-400">
+                            WT is committed to the WADA (World Anti-Doping
+                            Agency) code, ensuring fair play and integrity in
+                            competition.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Superior Taekwondo Alignment -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 border-l-4 border-blue-belt-end pl-4"
+                >
+                    Train with Authenticity
+                </h2>
+                <p class="mb-6 text-lg text-gray-300">
+                    Why does training at a WT-affiliated club matter?
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex gap-4 items-start">
+                        <span class="text-blue-belt-end text-xl">✓</span>
+                        <div>
+                            <strong class="text-white block"
+                                >Global Recognition</strong
+                            >
+                            <p class="text-sm text-gray-400">
+                                Your belt rank is respected at thousands of
+                                clubs worldwide.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-blue-belt-end text-xl">✓</span>
+                        <div>
+                            <strong class="text-white block"
+                                >Olympic Pathway</strong
+                            >
+                            <p class="text-sm text-gray-400">
+                                Access to official tournaments that lead to
+                                national team selection.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-blue-belt-end text-xl">✓</span>
+                        <div>
+                            <strong class="text-white block"
+                                >Standardized Safety</strong
+                            >
+                            <p class="text-sm text-gray-400">
+                                We adhere to the highest safety protocols for
+                                sparring and training.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-blue-belt-end text-xl">✓</span>
+                        <div>
+                            <strong class="text-white block"
+                                >Modern Curriculum</strong
+                            >
+                            <p class="text-sm text-gray-400">
+                                Training methods are constantly updated based on
+                                sports science.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-center">
+                    <Button href="/contact" variant="primary"
+                        >Join a WT Club Today</Button
+                    >
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 text-center"
+                >
+                    World Taekwondo FAQ
+                </h2>
+                <div class="space-y-6">
+                    {
+                        faqs.map((faq) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/50 transition-colors">
+                                <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-gray-400">{faq.answer}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Related Pages -->
+            <section
+                class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-white/10"
+            >
+                <a
+                    href="/olympic-taekwondo"
+                    class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+                >
+                    <span
+                        class="text-blue-belt-end text-sm font-bold uppercase mb-2 block"
+                        >Read Next</span
+                    >
+                    <h3
+                        class="text-xl font-oswald text-white group-hover:text-blue-belt-end transition-colors"
+                    >
+                        Olympic Taekwondo &rarr;
+                    </h3>
+                </a>
+                <a
+                    href="/history-of-taekwondo"
+                    class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+                >
+                    <span
+                        class="text-blue-belt-end text-sm font-bold uppercase mb-2 block"
+                        >Read Next</span
+                    >
+                    <h3
+                        class="text-xl font-oswald text-white group-hover:text-blue-belt-end transition-colors"
+                    >
+                        History of Taekwondo &rarr;
+                    </h3>
+                </a>
+                <a
+                    href="/wt-vs-itf-taekwondo"
+                    class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+                >
+                    <span
+                        class="text-blue-belt-end text-sm font-bold uppercase mb-2 block"
+                        >Read Next</span
+                    >
+                    <h3
+                        class="text-xl font-oswald text-white group-hover:text-blue-belt-end transition-colors"
+                    >
+                        WT vs ITF &rarr;
+                    </h3>
+                </a>
+            </section>
+        </article>
+    </main>
+    <Footer />
+</Layout>

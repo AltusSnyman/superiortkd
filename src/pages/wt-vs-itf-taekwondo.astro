@@ -1,0 +1,391 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import { VerticalCutReveal } from "../components/ui/vertical-cut-reveal";
+import { TimelineContent } from "../components/ui/timeline-animation"; // Reusing for animations if needed, or just standard HTML structure
+import Button from "../components/Button.astro";
+
+const title =
+    "WT Taekwondo vs ITF: Understanding the Differences | Superior Taekwondo";
+const description =
+    "Comprehensive guide on World Taekwondo (WT) vs International Taekwondo Federation (ITF). Why we choose WT for Olympic sport and self-defense in Auckland.";
+
+// FAQ Data for Schema
+const faqs = [
+    {
+        question: "What is the main difference between WT and ITF Taekwondo?",
+        answer: "The main difference lies in their focus and governance. World Taekwondo (WT) is the international federation governing the sport of Taekwondo and is a member of the Association of Summer Olympic International Federations (ASOIF) and International Paralympic Committee (IPC). ITF (International Taekwon-Do Federation) is a more traditional style focused on self-defense and patterns (Tul), often characterized by the 'sine wave' motion. WT focuses on speed, agility, and Olympic-style sparring.",
+    },
+    {
+        question: "Is Superior Taekwondo a WT or ITF club?",
+        answer: "Superior Taekwondo is a World Taekwondo (WT) club (formerly WTF). We align with the global standard for Olympic Taekwondo, offering our students pathways to national and international competition.",
+    },
+    {
+        question: "Which style of Taekwondo is better for self-defense?",
+        answer: "Both styles offer effective self-defense. ITF often emphasizes hand strikes and traditional self-defense scenarios earlier in the curriculum. WT, while sport-focused, integrates Hapkido-based self-defense techniques and develops superior agility, timing, and kicking power which are crucial for real-world defense.",
+    },
+    {
+        question: "Can I switch from ITF to WT Taekwondo?",
+        answer: "Yes, many students switch between styles. While forms (Poomsae vs Tul) and sparring rules differ, the fundamental kicks and strikes are similar. We welcome students from ITF backgrounds and help them adapt to the WT style.",
+    },
+    {
+        question: "Where can I find WT Taekwondo classes near me?",
+        answer: "Superior Taekwondo offers WT classes in Kaukapakapa, Helensville, and Waimauku in North West Auckland. We serve the local community with professional martial arts training.",
+    },
+];
+---
+
+<Layout title={title} description={description}>
+    <!-- FAQ Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer,
+                },
+            })),
+        })}
+    ></script>
+
+    <main class="bg-black min-h-screen pt-24 pb-12 text-gray-300 font-body">
+        <article class="container mx-auto px-4 max-w-4xl">
+            <!-- Header -->
+            <header class="mb-16 text-center">
+                <p
+                    class="text-blue-belt-end font-bold tracking-widest uppercase text-sm mb-4"
+                >
+                    Taekwondo Styles Explained
+                </p>
+                <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-black font-oswald text-white uppercase tracking-tighter mb-6 leading-none"
+                >
+                    World Taekwondo (WT) vs ITF: <br class="hidden md:block" />
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-belt-start to-blue-belt-end"
+                    >
+                        Which Style is Right for You?
+                    </span>
+                </h1>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    A comprehensive guide to understanding the history,
+                    techniques, and philosophy behind the two major styles of
+                    Taekwondo, and why Superior Taekwondo chooses the Olympic
+                    path.
+                </p>
+            </header>
+
+            <!-- Introduction -->
+            <section class="mb-16">
+                <div class="prose prose-lg prose-invert max-w-none">
+                    <p
+                        class="lead text-2xl text-white font-oswald font-medium mb-6"
+                    >
+                        When looking for martial arts classes in Auckland, you
+                        might encounter two main acronyms: WT (World Taekwondo)
+                        and ITF (International Taekwon-Do Federation). While
+                        they share the same roots, they have evolved into
+                        distinct styles with different rules, forms, and
+                        philosophies.
+                    </p>
+                    <p>
+                        At <a
+                            href="/"
+                            class="text-blue-belt-end hover:underline"
+                            >Superior Taekwondo</a
+                        >, we categorize ourselves as a World Taekwondo (WT)
+                        club. This alignment connects us to the global Olympic
+                        movement and ensures our students are training in the
+                        most widely practiced martial art in the world. However,
+                        answering the question "WT vs ITF" requires a deeper
+                        dive into history, technique, and personal goals.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Quick Comparison Table -->
+            <section
+                class="mb-16 bg-white/5 border border-white/10 rounded-2xl p-8 overflow-hidden"
+            >
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    At a Glance: The Key Differences
+                </h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-white/10">
+                                <th
+                                    class="p-4 font-bold text-white uppercase tracking-wider w-1/3"
+                                    >Feature</th
+                                >
+                                <th
+                                    class="p-4 font-bold text-blue-belt-end uppercase tracking-wider w-1/3"
+                                    >World Taekwondo (WT)</th
+                                >
+                                <th
+                                    class="p-4 font-bold text-gray-400 uppercase tracking-wider w-1/3"
+                                    >ITF Taekwondo</th
+                                >
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-white/5">
+                                <td class="p-4 font-bold text-white"
+                                    >Primary Focus</td
+                                >
+                                <td class="p-4 text-gray-300"
+                                    >Sport / Olympic Competition</td
+                                >
+                                <td class="p-4 text-gray-300"
+                                    >Traditional / Self-Defense</td
+                                >
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="p-4 font-bold text-white"
+                                    >Governance</td
+                                >
+                                <td class="p-4 text-gray-300"
+                                    >World Taekwondo (Seoul, Korea)</td
+                                >
+                                <td class="p-4 text-gray-300"
+                                    >International Taekwon-Do Federation</td
+                                >
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="p-4 font-bold text-white"
+                                    >Forms / Patterns</td
+                                >
+                                <td class="p-4 text-gray-300"
+                                    >Poomsae (Fluid, steady tempo)</td
+                                >
+                                <td class="p-4 text-gray-300"
+                                    >Tul (Step-by-step, Sine Wave)</td
+                                >
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="p-4 font-bold text-white"
+                                    >Sparring Rules</td
+                                >
+                                <td class="p-4 text-gray-300"
+                                    >Full Contact, Chest/Head Guards, No hands
+                                    to face</td
+                                >
+                                <td class="p-4 text-gray-300"
+                                    >Light/Semi Contact, Hands to face allowed</td
+                                >
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="p-4 font-bold text-white">Stance</td>
+                                <td class="p-4 text-gray-300"
+                                    >Narrower, mobile, linear</td
+                                >
+                                <td class="p-4 text-gray-300"
+                                    >Wider, grounded</td
+                                >
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Detailed Sections -->
+            <section class="mb-16 space-y-8">
+                <div>
+                    <h2
+                        class="text-3xl font-bold font-oswald text-white uppercase mb-4"
+                    >
+                        1. A Tale of Two Histories
+                    </h2>
+                    <p class="mb-4">
+                        Taekwondo's history is deeply intertwined with modern
+                        Korean history. In the mid-20th century, various kwans
+                        (schools) of martial arts united. General Choi Hong Hi
+                        is widely credited with founding ITF in 1966,
+                        emphasizing a specific style and theory of power.
+                    </p>
+                    <p class="mb-4">
+                        Later, political differences led to a split. The World
+                        Taekwondo Federation (now World Taekwondo or WT) was
+                        established in 1973 in South Korea and became the
+                        governing body recognized by the International Olympic
+                        Committee (IOC). This split created the two distinct
+                        paths we see today: ITF preserving General Choi's
+                        original teachings, and WT evolving into a dynamic,
+                        global sport.
+                    </p>
+                </div>
+
+                <div>
+                    <h2
+                        class="text-3xl font-bold font-oswald text-white uppercase mb-4"
+                    >
+                        2. The "Sine Wave" vs. Kinetic Flow
+                    </h2>
+                    <p class="mb-4">
+                        One of the most visible differences is in movement. ITF
+                        practitioners utilize the "Sine Wave"—a distinct
+                        up-and-down motion during movement to generate power
+                        through gravity.
+                    </p>
+                    <p class="mb-4">
+                        In contrast, **WT Taekwondo** emphasizes speed,
+                        fluidity, and kinetic energy. Power is generated through
+                        hip rotation and snap (fast extension). This makes WT
+                        style particularly effective for rapid, multiple kicking
+                        combinations, which is a hallmark of our training at
+                        Superior Taekwondo.
+                    </p>
+                </div>
+
+                <div>
+                    <h2
+                        class="text-3xl font-bold font-oswald text-white uppercase mb-4"
+                    >
+                        3. Olympic Dreams: The WT Advantage
+                    </h2>
+                    <p class="mb-4">
+                        For any aspiring athlete, the Olympic dream is the
+                        pinnacle of sport. <strong class="text-white"
+                            >Only World Taekwondo (WT) offers a pathway to the
+                            Olympic Games.</strong
+                        > This is a key reason why Superior Taekwondo teaches the
+                        WT curriculum.
+                    </p>
+                    <p class="mb-4">
+                        Training in WT means our students are learning the
+                        rules, techniques, and strategies used on the world
+                        stage. Whether or not a student aims for the Olympics,
+                        training to that standard ensures a high level of
+                        athleticism, discipline, and technical proficiency.
+                    </p>
+                    <div class="my-8">
+                        <Button
+                            href="/competition"
+                            variant="outline"
+                            class="w-full sm:w-auto"
+                            >Explore Our Competition Team</Button
+                        >
+                    </div>
+                </div>
+
+                <div>
+                    <h2
+                        class="text-3xl font-bold font-oswald text-white uppercase mb-4"
+                    >
+                        4. Self-Defense in a Modern World
+                    </h2>
+                    <p class="mb-4">
+                        A common misconception is that "Sport Taekwondo (WT)
+                        doesn't work in a fight." This ignores the incredible
+                        athleticism developed in WT training. A WT practitioner
+                        develops:
+                    </p>
+                    <ul
+                        class="list-disc pl-6 space-y-2 mb-4 marker:text-blue-belt-end"
+                    >
+                        <li>
+                            Explosive leg power capable of neutralizing threats
+                            from a distance.
+                        </li>
+                        <li>Superior footwork and timing to evade attacks.</li>
+                        <li>
+                            Flexibility and conditioning that most untrained
+                            opponents cannot match.
+                        </li>
+                    </ul>
+                    <p class="mb-4">
+                        At Superior Taekwondo, we acknowledge the sport focus
+                        but integrate traditional self-defense techniques (often
+                        borrowed from Hapkido) into our belt syllabus. We teach
+                        students strictly not to use their skills for aggression
+                        but ensuring they have the tools to protect themselves
+                        if necessary.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Local Context -->
+            <section
+                class="mb-16 bg-blue-900/20 border border-blue-500/20 rounded-2xl p-8"
+            >
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6"
+                >
+                    Why We Choose WT for Our Local Community
+                </h2>
+                <p class="mb-6">
+                    Serving the communities of <strong class="text-white"
+                        >Kaukapakapa, Helensville, and Waimauku</strong
+                    >, we believe WT Taekwondo offers the best holistic
+                    development for our youth and adults.
+                </p>
+                <p class="mb-6">
+                    The focus on continuous movement and agility in WT builds
+                    exceptional cardiovascular fitness and
+                    coordination—essential traits for growing kids. Furthermore,
+                    the Kukkiwon certification (black belt certification)
+                    provided through WT is recognized globally. If a student
+                    moves from Helensville to London or New York, their rank is
+                    recognized at any WT dojang.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button href="/schedule" variant="primary"
+                        >View Class Schedule</Button
+                    >
+                    <Button href="/contact" variant="outline">Contact Us</Button
+                    >
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 text-center"
+                >
+                    Frequently Asked Questions
+                </h2>
+                <div class="space-y-6">
+                    {
+                        faqs.map((faq, index) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/50 transition-colors">
+                                <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-gray-400">{faq.answer}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section class="text-center">
+                <h2
+                    class="text-2xl font-bold font-oswald text-white uppercase mb-4"
+                >
+                    Ideally, Experience It Yourself
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+                    Reading about styles is one thing; feeling the energy of a
+                    class is another. Whether you're interested in the sport
+                    aspect of WT or the discipline of martial arts, our doors in
+                    North West Auckland are open.
+                </p>
+                <Button
+                    href="/pricing"
+                    variant="primary"
+                    class="w-full sm:w-auto text-lg px-8 py-4"
+                    >Start Your Journey Today</Button
+                >
+            </section>
+        </article>
+    </main>
+    <Footer />
+</Layout>

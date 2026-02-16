@@ -99,7 +99,57 @@ const plans = [
 ];
 ---
 
-<Layout title="Pricing | Superior Taekwondo">
+<Layout
+    title="Pricing & Memberships | Superior Taekwondo"
+    description="Affordable Taekwondo class pricing and membership options. Weekly plans, term concessions, and family discounts available."
+>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Service",
+                    "serviceType": "Adult Taekwondo Classes",
+                    "provider": {
+                        "@type": "MartialArtsSchool",
+                        "name": "Superior Taekwondo"
+                    },
+                    "description": "Taekwondo training for adults focusing on self-defense, fitness, STN (Strength to Nurture), and belt progression.",
+                    "areaServed": "Helensville"
+                },
+                {
+                    "@type": "Service",
+                    "serviceType": "Junior Taekwondo Classes",
+                    "provider": {
+                        "@type": "MartialArtsSchool",
+                        "name": "Superior Taekwondo"
+                    },
+                    "description": "Martial arts classes for juniors developing discipline, respect, and physical coordination.",
+                    "areaServed": "Helensville"
+                },
+                {
+                    "@type": "Service",
+                    "serviceType": "Tiny Tigers Classes",
+                    "provider": {
+                        "@type": "MartialArtsSchool",
+                        "name": "Superior Taekwondo"
+                    },
+                    "description": "Fun and engaging martial arts introduction for young children (ages 4-6).",
+                    "areaServed": "Helensville"
+                },
+                {
+                    "@type": "Service",
+                    "serviceType": "Fitness Classes",
+                    "provider": {
+                        "@type": "MartialArtsSchool",
+                        "name": "Superior Taekwondo"
+                    },
+                    "description": "High-intensity fitness classes incorporating martial arts movements for cardio and strength.",
+                    "areaServed": "Helensville"
+                }
+            ]
+        }
+    </script>
     <main class="bg-deep-space-black min-h-screen pt-24 pb-12">
         <!-- React Pricing Component (Handles header and content internally now) -->
         <PricingSection client:load plans={plans} />

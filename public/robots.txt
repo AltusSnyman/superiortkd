@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://superiortkd.co.nz/sitemap-index.xml

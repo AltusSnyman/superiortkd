@@ -4,7 +4,34 @@ import Footer from "../components/Footer.astro";
 import PoomsaeSection from "../components/PoomsaeSection.tsx";
 ---
 
-<Layout title="Poomsae (Patterns) | Superior Taekwondo">
+<Layout title="Poomsae Classes | Superior Taekwondo" description="Specialized Poomsae training. Master the art of forms and patterns with focused instruction.">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Poomsae Classes",
+            "provider": {
+                "@type": "MartialArtsSchool",
+                "name": "Superior Taekwondo"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Helensville"
+            },
+            "description": "Specialized Poomsae (patterns) training focusing on technique, precision, and presentation for grading and competition.",
+            "offers": {
+                "@type": "Offer",
+                "price": "27.00",
+                "priceCurrency": "NZD",
+                "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": "27.00",
+                    "priceCurrency": "NZD",
+                    "unitCode": "WK"
+                }
+            }
+        }
+    </script>
     <PoomsaeSection client:load />
     <Footer />
 </Layout>

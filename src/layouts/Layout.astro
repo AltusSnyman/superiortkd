@@ -1,5 +1,19 @@
 ---
 import Navbar from "../components/Navbar.astro";
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+}
+
+const {
+	title = "Superior Taekwondo | Constructing Champions",
+	description = "Join Superior Taekwondo in North West Auckland. Professional martial arts training for all ages. Build confidence, discipline, and strength.",
+	image = "/images/og-image.jpg",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
@@ -9,7 +23,106 @@ import Navbar from "../components/Navbar.astro";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Superior Taekwondo | Constructing Champions</title>
+
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+		<!-- JSON-LD (GEO) -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "MartialArtsSchool",
+				"name": "Superior Taekwondo",
+				"alternateName": "Superior Taekwondo Club",
+				"description": "Premier Olympic and Traditional Taekwondo club in New Zealand. Developing champions in sport and life through World Taekwondo (WT) curriculum.",
+				"slogan": "Constructing Champions",
+				"url": "https://superiortkd.co.nz",
+				"telephone": "0275201613",
+				"email": "superiorfitnessnz@gmail.com",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "94 Mill Road",
+					"addressLocality": "Helensville",
+					"postalCode": "0800",
+					"addressCountry": "NZ"
+				},
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": -36.678,
+					"longitude": 174.449
+				},
+				"sameAs": [
+					"https://facebook.com/superiortkd",
+					"https://instagram.com/superiortkd"
+				],
+				"hasOfferCatalog": {
+					"@type": "OfferCatalog",
+					"name": "Taekwondo Services",
+					"itemListElement": [
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "Olympic Taekwondo (WT)",
+								"description": "High-performance training for Olympic-style sparring and competition."
+							}
+						},
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "Traditional Taekwondo",
+								"description": "Focus on discipline, patterns (Poomsae), and self-defense techniques."
+							}
+						},
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "Kids Martial Arts Classes",
+								"description": "Building confidence, focus, and discipline for children."
+							}
+						},
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "Competition Team Training",
+								"description": "Elite coaching for national and international tournaments."
+							}
+						},
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "Self Defense",
+								"description": "Practical self-defense skills for real-world situations."
+							}
+						}
+					]
+				},
+				"knowsAbout": ["Taekwondo", "Martial Arts", "Olympic Sport", "Self Defense", "Fitness", "Discipline"]
+			}
+		</script>
 
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
