@@ -2,6 +2,46 @@
 import { Image } from "astro:assets";
 ---
 
+<!-- Person Schema: Andrea Kilday -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Andrea Kilday",
+    "jobTitle": "Head Instructor",
+    "description": "2016 Rio Olympian, Oceania Gold Medallist, and 2nd Dan Black Belt WT Certified. Head Instructor at Superior Taekwondo, North West Auckland.",
+    "url": "https://superiortkd.co.nz",
+    "image": "https://superiortkd.co.nz/images/andrea1.webp",
+    "nationality": "New Zealand",
+    "knowsAbout": [
+        "World Taekwondo (WT)",
+        "Olympic Taekwondo",
+        "Poomsae",
+        "Competition Sparring",
+        "Martial Arts Coaching"
+    ],
+    "hasCredential": [
+        {
+            "@type": "EducationalOccupationalCredential",
+            "name": "2nd Dan Black Belt",
+            "credentialCategory": "Rank",
+            "recognizedBy": { "@type": "Organization", "name": "World Taekwondo" }
+        }
+    ],
+    "award": [
+        "2016 Rio Olympics Participant (-49kg)",
+        "Oceania Olympic Qualifier Gold Medallist (2016)",
+        "Pacific Games Gold Medallist (2015)",
+        "Oceania Championships Gold Medallist (2007)"
+    ],
+    "worksFor": {
+        "@type": "MartialArtsSchool",
+        "name": "Superior Taekwondo",
+        "url": "https://superiortkd.co.nz"
+    }
+}
+</script>
+
 <section
     class="py-24 bg-deep-space-gradient text-white relative overflow-hidden"
 >

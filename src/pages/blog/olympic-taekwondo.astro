@@ -9,6 +9,31 @@ const title =
 const description =
     "Everything you need to know about Olympic Taekwondo. Rules, scoring, weight classes, and how to start your journey to the games in New Zealand.";
 
+const blogSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    image: "https://superiortkd.co.nz/images/blog/blog_olympic_hero.webp",
+    datePublished: "2025-02-10",
+    dateModified: "2026-02-21",
+    author: {
+        "@type": "Person",
+        name: "Andrea Kilday",
+        url: "https://superiortkd.co.nz",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "Superior Taekwondo",
+        url: "https://superiortkd.co.nz",
+    },
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://superiortkd.co.nz/blog/olympic-taekwondo",
+    },
+});
+const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
+
 // FAQ Data for Schema
 const faqs = [
     {
@@ -38,6 +63,7 @@ const faqs = [
     title={title}
     description={description}
     image="/images/blog/blog_olympic_hero.webp"
+    headContent={headContent}
 >
     <!-- FAQ Schema -->
     <script

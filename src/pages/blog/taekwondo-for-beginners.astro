@@ -10,6 +10,36 @@ const title =
 const description =
     "Starting Taekwondo? Read our comprehensive guide for beginners. Learn about belts, etiquette, benefits, and what to expect on your journey.";
 
+const blogSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    image: "https://superiortkd.co.nz/images/blog/blog_beginners_hero.webp",
+    datePublished: "2025-01-15",
+    dateModified: "2026-02-21",
+    author: {
+        "@type": "Person",
+        name: "Andrea Kilday",
+        jobTitle: "Head Instructor",
+        url: "https://superiortkd.co.nz",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "Superior Taekwondo",
+        url: "https://superiortkd.co.nz",
+        logo: {
+            "@type": "ImageObject",
+            url: "https://superiortkd.co.nz/favicon.svg",
+        },
+    },
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://superiortkd.co.nz/blog/taekwondo-for-beginners",
+    },
+});
+const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
+
 // FAQ Data
 const faqs = [
     {
@@ -31,7 +61,7 @@ const faqs = [
 ];
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} headContent={headContent}>
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"

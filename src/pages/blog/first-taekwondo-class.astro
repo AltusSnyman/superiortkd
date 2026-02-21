@@ -9,6 +9,31 @@ const title = "Your First Taekwondo Class: What to Expect | Superior Taekwondo";
 const description =
     "Nervous about your first Taekwondo class? Don't be! Here is a breakdown of what happens, what to wear, and how to prepare for day one.";
 
+const blogSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    image: "https://superiortkd.co.nz/images/blog/blog_beginners_hero.webp",
+    datePublished: "2025-03-01",
+    dateModified: "2026-02-21",
+    author: {
+        "@type": "Person",
+        name: "Andrea Kilday",
+        url: "https://superiortkd.co.nz",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "Superior Taekwondo",
+        url: "https://superiortkd.co.nz",
+    },
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://superiortkd.co.nz/blog/first-taekwondo-class",
+    },
+});
+const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
+
 // FAQ Data
 const faqs = [
     {
@@ -26,7 +51,7 @@ const faqs = [
 ];
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} headContent={headContent}>
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"

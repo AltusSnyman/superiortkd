@@ -8,6 +8,31 @@ const title = "What is Taekwondo? The Complete Guide | Superior Taekwondo";
 const description =
     "Discover the history, philosophy, and techniques of Taekwondo. Learn why this Korean martial art is the perfect journey for fitness and self-defense.";
 
+const blogSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    image: "https://superiortkd.co.nz/images/blog/blog_beginners_hero.webp",
+    datePublished: "2025-01-20",
+    dateModified: "2026-02-21",
+    author: {
+        "@type": "Person",
+        name: "Andrea Kilday",
+        url: "https://superiortkd.co.nz",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "Superior Taekwondo",
+        url: "https://superiortkd.co.nz",
+    },
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://superiortkd.co.nz/blog/what-is-taekwondo",
+    },
+});
+const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
+
 // FAQ Data for Schema
 const faqs = [
     {
@@ -37,6 +62,7 @@ const faqs = [
     title={title}
     description={description}
     image="/images/blog/blog_beginners_hero.webp"
+    headContent={headContent}
 >
     <!-- FAQ Schema -->
     <script

@@ -1,0 +1,471 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+import RelatedContent from "../../components/RelatedContent.astro";
+
+const title =
+    "How to Choose a Taekwondo Club in Auckland: Your Complete Guide | Superior Taekwondo";
+const description =
+    "Choosing the right Taekwondo club in Auckland is one of the most important decisions for your martial arts journey. Here is exactly what to look for — and what to avoid.";
+
+const blogSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    image: "https://superiortkd.co.nz/images/blog/blog_beginners_hero.webp",
+    datePublished: "2026-02-21",
+    dateModified: "2026-02-21",
+    author: {
+        "@type": "Person",
+        name: "Andrea Kilday",
+        jobTitle: "Head Instructor, 2016 Rio Olympian",
+        url: "https://superiortkd.co.nz",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "Superior Taekwondo",
+        url: "https://superiortkd.co.nz",
+        logo: {
+            "@type": "ImageObject",
+            url: "https://superiortkd.co.nz/favicon.svg",
+        },
+    },
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://superiortkd.co.nz/blog/how-to-choose-a-taekwondo-club",
+    },
+});
+const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
+
+// FAQ Data
+const faqs = [
+    {
+        question: "What should I look for when choosing a Taekwondo club?",
+        answer: "Look for qualified, credentialed instructors (ideally WT-certified), a clean and safe training environment, transparent pricing, age-appropriate classes, and a positive atmosphere. Visit and try a free class before committing.",
+    },
+    {
+        question: "Does it matter if a Taekwondo club is WT or ITF?",
+        answer: "Yes. World Taekwondo (WT) is the Olympic style and offers the clearest pathway to national competition and international recognition. If your goal is sport Taekwondo or to represent New Zealand, choose a WT-affiliated club.",
+    },
+    {
+        question: "How do I know if a Taekwondo instructor is qualified?",
+        answer: "A qualified WT instructor should hold a Dan grade certified by World Taekwondo and ideally have competition or coaching credentials. Ask directly for certifications. Any reputable club will be happy to share this information.",
+    },
+    {
+        question: "Is it important to visit a Taekwondo club before joining?",
+        answer: "Absolutely. Visit at least one class before signing up. Observe how the instructor treats students, whether all ages are included with care, and whether the environment feels safe and professional.",
+    },
+    {
+        question: "Are family discounts common at Taekwondo clubs?",
+        answer: "Many reputable clubs offer family discounts for multiple members. At Superior Taekwondo we offer concession rates for families training together. Always ask upfront about pricing for multiple family members.",
+    },
+];
+---
+
+<Layout title={title} description={description} headContent={headContent}>
+    <!-- FAQ Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer,
+                },
+            })),
+        })}
+    ></script>
+
+    <BlogHero
+        title="How to Choose a Taekwondo Club in Auckland"
+        subtitle="One decision can define your entire martial arts journey. Here's your no-BS checklist."
+        image="/images/blog/blog_beginners_hero.webp"
+        category="Advice"
+        readTime="8 min read"
+    />
+
+    <main class="bg-deep-space-black text-white pb-12 text-gray-300 font-body">
+        <div class="container mx-auto px-4 max-w-4xl py-12 space-y-10">
+            <p class="text-xl leading-relaxed text-gray-200">
+                Searching for a Taekwondo club in Auckland is harder than it
+                looks. A quick Google search returns dozens of results — but not
+                all clubs are equal. Some are run by genuinely qualified,
+                competition-experienced instructors. Others are recreational
+                programs dressed up with marketing language.
+            </p>
+            <p class="leading-relaxed">
+                This guide is written by Andrea Kilday — 2016 Rio Olympian,
+                Oceania Gold Medallist, and Head Instructor at Superior
+                Taekwondo. These are the 7 questions you must ask before joining
+                any club, and why each one matters.
+            </p>
+
+            <!-- Section 1 -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    1. Is the Instructor Genuinely Qualified?
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    This is the single most important factor. In New Zealand,
+                    anyone can call themselves a Taekwondo instructor. There are
+                    no legal requirements for teaching martial arts. That means
+                    you need to ask directly:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-200 ml-4">
+                    <li>What is your Dan grade, and who certified it?</li>
+                    <li>
+                        Are you registered with <a
+                            href="https://www.tkdnz.com"
+                            target="_blank"
+                            rel="noopener"
+                            class="text-blue-belt-end hover:underline"
+                            >Taekwondo New Zealand (TNZ)</a
+                        >?
+                    </li>
+                    <li>
+                        Do you have a valid SafeGuarding or coaching
+                        certificate?
+                    </li>
+                    <li>Have you competed? At what level?</li>
+                </ul>
+                <p class="leading-relaxed mt-4">
+                    A 1st Dan with a box-standard coaching certificate and no
+                    competition history will give you a very different
+                    experience to a 2nd Dan who has qualified for the Olympics.
+                    The difference in depth of knowledge is enormous. At
+                    Superior Taekwondo, our head instructor competed at the <strong
+                        >2016 Rio Olympics</strong
+                    > — that experience translates directly into every session she
+                    teaches.
+                </p>
+            </section>
+
+            <!-- Section 2 -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    2. Is It a World Taekwondo (WT) or ITF Club?
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    There are two main governing bodies: <strong
+                        >World Taekwondo (WT)</strong
+                    > — the Olympic federation — and the International Taekwon-Do
+                    Federation (ITF), which is a more traditional, non-Olympic style.
+                    The differences matter:
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 my-6">
+                    <div
+                        class="bg-white/5 border border-blue-belt-end/20 rounded-xl p-6"
+                    >
+                        <h3
+                            class="font-oswald font-bold text-lg uppercase text-blue-belt-end mb-2"
+                        >
+                            World Taekwondo (WT)
+                        </h3>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>✅ Olympic sport (since 2000)</li>
+                            <li>✅ Pathway to national ranking & NZ team</li>
+                            <li>✅ Electronic scoring & standardised rules</li>
+                            <li>
+                                ✅ Internationally recognised Dan certificates
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="bg-white/5 border border-white/10 rounded-xl p-6"
+                    >
+                        <h3
+                            class="font-oswald font-bold text-lg uppercase text-gray-400 mb-2"
+                        >
+                            ITF
+                        </h3>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>ℹ️ Traditional forms (Tul) emphasis</li>
+                            <li>ℹ️ Non-Olympic style</li>
+                            <li>ℹ️ Different sparring rules</li>
+                            <li>ℹ️ Qualifications not WT-recognised</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="leading-relaxed">
+                    If you or your child want to compete at a national or
+                    international level, or if you want the credential that's
+                    recognised globally, you must choose a WT club. Superior
+                    Taekwondo is proudly WT-affiliated and our students receive
+                    internationally recognised grading certificates.
+                </p>
+            </section>
+
+            <!-- Section 3 -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    3. Do They Have Age-Appropriate Classes?
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    A 5-year-old should not be training in the same class as a
+                    35-year-old adult. The physical, emotional, and
+                    developmental needs are completely different. A quality club
+                    will have structured classes for:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-200 ml-4">
+                    <li>
+                        <strong>Tiny Tigers (4–7 years)</strong> — focus on coordination,
+                        balance, fun, and listening skills
+                    </li>
+                    <li>
+                        <strong>Juniors / Kids (8–14 years)</strong> — structured
+                        technique, discipline, and teamwork
+                    </li>
+                    <li>
+                        <strong>Teens & Adults (15+)</strong> — fitness, sparring,
+                        and personal development
+                    </li>
+                    <li>
+                        <strong>Competition stream</strong> — for those pursuing
+                        tournaments
+                    </li>
+                </ul>
+                <p class="leading-relaxed mt-4">
+                    At Superior Taekwondo we offer <a
+                        href="/classes/tiny-tigers"
+                        class="text-blue-belt-end hover:underline"
+                        >Tiny Tigers</a
+                    >, <a
+                        href="/classes/general"
+                        class="text-blue-belt-end hover:underline"
+                        >General Taekwondo</a
+                    >, <a
+                        href="/classes/poomsae"
+                        class="text-blue-belt-end hover:underline">Poomsae</a
+                    >, <a
+                        href="/classes/fitness"
+                        class="text-blue-belt-end hover:underline">Fitness</a
+                    >, and a dedicated <a
+                        href="/classes/competition"
+                        class="text-blue-belt-end hover:underline"
+                        >Competition Team</a
+                    > — each with tailored instruction.
+                </p>
+            </section>
+
+            <!-- Section 4 -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    4. Is the Pricing Transparent?
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    Some clubs are vague about costs until after you've signed
+                    up. Red flags include:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-200 ml-4">
+                    <li>No pricing on their website</li>
+                    <li>Long-term contracts with hefty cancellation fees</li>
+                    <li>
+                        Hidden extras: grading fees, compulsory equipment
+                        purchases, mandatory event attendance
+                    </li>
+                </ul>
+                <p class="leading-relaxed mt-4">
+                    At Superior Taekwondo our <a
+                        href="/pricing"
+                        class="text-blue-belt-end hover:underline"
+                        >pricing is fully transparent</a
+                    >. We offer weekly rates, family discounts, and term payment
+                    options. Ask any club for a full breakdown before you
+                    commit.
+                </p>
+            </section>
+
+            <!-- Section 5 -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    5. Can You Visit and Try a Class First?
+                </h2>
+                <p class="leading-relaxed">
+                    Every reputable club will offer a free trial class. If a
+                    club refuses this, that is a significant red flag. A trial
+                    class lets you observe the instructor's communication style,
+                    the training atmosphere, how students treat each other, and
+                    whether the facility is clean and safe. We offer free trial
+                    classes at all three of our locations — <a
+                        href="/locations/helensville"
+                        class="text-blue-belt-end hover:underline"
+                        >Helensville</a
+                    >, <a
+                        href="/locations/kaukapakapa"
+                        class="text-blue-belt-end hover:underline"
+                        >Kaukapakapa</a
+                    >, and <a
+                        href="/locations/waimauku"
+                        class="text-blue-belt-end hover:underline">Waimauku</a
+                    >. No pressure, no obligation.
+                </p>
+            </section>
+
+            <!-- Section 6 -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    6. What Is Their Competition Track Record?
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    For parents whose children are interested in competition, a
+                    club's track record speaks volumes. Ask:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-200 ml-4">
+                    <li>
+                        Do your students regularly compete at national level?
+                    </li>
+                    <li>Have any students represented New Zealand?</li>
+                    <li>
+                        Does the club attend the <a
+                            href="/tournaments"
+                            class="text-blue-belt-end hover:underline"
+                            >TNZ National Championships</a
+                        >?
+                    </li>
+                </ul>
+                <p class="leading-relaxed mt-4">
+                    Superior Taekwondo is recognised as Auckland's top
+                    competition club. Our head instructor competed at the
+                    Olympic Games. That lineage of excellence flows directly
+                    into how we coach our competition students.
+                </p>
+            </section>
+
+            <!-- Section 7 -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    7. Is the Location Convenient?
+                </h2>
+                <p class="leading-relaxed">
+                    Consistency is everything in martial arts. A dojo 45 minutes
+                    away might seem fine at first, but after six months you will
+                    likely find attendance drops. Choose a club that fits
+                    naturally into your routine. Superior Taekwondo trains
+                    across three North West Auckland locations specifically so
+                    that students from Helensville, Kaukapakapa, Waimauku,
+                    Kumeu, Huapai, Riverhead, and Westgate all have a convenient
+                    option. Check our <a
+                        href="/schedule"
+                        class="text-blue-belt-end hover:underline"
+                        >class timetable</a
+                    > to find the session nearest you.
+                </p>
+            </section>
+
+            <!-- Summary checklist -->
+            <section
+                class="bg-white/5 border border-blue-belt-end/20 rounded-2xl p-8"
+            >
+                <h2
+                    class="text-2xl font-black font-oswald uppercase tracking-tight text-white mb-6"
+                >
+                    ✅ Your Checklist: 7 Questions to Ask Any Club
+                </h2>
+                <ol class="space-y-3 text-gray-200">
+                    <li class="flex gap-3">
+                        <span class="text-blue-belt-end font-bold">1.</span> Is the
+                        instructor WT-certified, with a verifiable Dan grade?
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-blue-belt-end font-bold">2.</span> Is the
+                        club affiliated with World Taekwondo (WT) and Taekwondo NZ?
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-blue-belt-end font-bold">3.</span> Do they
+                        have age-appropriate classes for your stage?
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-blue-belt-end font-bold">4.</span> Is pricing
+                        fully transparent with no hidden costs?
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-blue-belt-end font-bold">5.</span> Do they
+                        offer a free trial class?
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-blue-belt-end font-bold">6.</span> Do they
+                        have a track record of competition success?
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-blue-belt-end font-bold">7.</span> Is the
+                        location convenient enough for consistent attendance?
+                    </li>
+                </ol>
+            </section>
+
+            <!-- CTA -->
+            <section class="text-center pt-4">
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    Ready to Train with an Olympian?
+                </h2>
+                <p class="text-gray-300 mb-8 max-w-xl mx-auto">
+                    Superior Taekwondo ticks every box. Book your free trial
+                    class today and experience the difference that Olympic-level
+                    coaching makes.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button href="/contact" variant="primary"
+                        >Book Your Free Trial</Button
+                    >
+                    <Button href="/schedule" variant="secondary"
+                        >View Class Schedule</Button
+                    >
+                </div>
+            </section>
+        </div>
+
+        <!-- Related Content -->
+        <RelatedContent
+            title="More Guides for Your Journey"
+            items={[
+                {
+                    title: "Taekwondo for Beginners",
+                    description:
+                        "Everything you need to know before your first class.",
+                    href: "/blog/taekwondo-for-beginners",
+                    image: "/images/blog/blog_beginners_hero.webp",
+                    category: "Beginner Guide",
+                },
+                {
+                    title: "What to Expect in Your First Class",
+                    description: "Remove the mystery from day one.",
+                    href: "/blog/first-taekwondo-class",
+                    image: "/images/blog/blog_beginners_hero.webp",
+                    category: "Beginner Guide",
+                },
+                {
+                    title: "Our Class Types",
+                    description:
+                        "From Tiny Tigers to Competition Team — find the right fit.",
+                    href: "/classes/general",
+                    image: "/images/blog/blog_beginners_hero.webp",
+                    category: "Classes",
+                },
+            ]}
+        />
+    </main>
+    <Footer />
+</Layout>

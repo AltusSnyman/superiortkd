@@ -10,6 +10,31 @@ const title =
 const description =
     "Nervous about your upcoming grading? Use our checklist to prepare your patterns, sparring, and mindset for success on test day.";
 
+const blogSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    image: "https://superiortkd.co.nz/images/blog/blog_grading_system_hero.webp",
+    datePublished: "2025-03-15",
+    dateModified: "2026-02-21",
+    author: {
+        "@type": "Person",
+        name: "Andrea Kilday",
+        url: "https://superiortkd.co.nz",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "Superior Taekwondo",
+        url: "https://superiortkd.co.nz",
+    },
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://superiortkd.co.nz/blog/preparing-for-belt-test",
+    },
+});
+const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
+
 // FAQ Data
 const faqs = [
     {
@@ -27,7 +52,7 @@ const faqs = [
 ];
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} headContent={headContent}>
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"
