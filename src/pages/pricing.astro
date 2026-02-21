@@ -3,6 +3,53 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import PricingSection from "../components/PricingSection.tsx";
 
+const pricingFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+        {
+            "@type": "Question",
+            name: "How much do Taekwondo classes cost at Superior Taekwondo?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Weekly memberships start from $27 per week for one session, up to $39 per week for unlimited sessions. Family sibling discounts are available. Term-based concession options are also offered. A one-time sign-up fee of $25 applies to weekly memberships.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Is there a family discount for multiple children?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Superior Taekwondo offers sibling deals for families with 2, 3, or 4 children. The sibling deals cover unlimited sessions at reduced combined rates compared to individual memberships.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Can I pay per-term instead of weekly?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. We offer per-term options including 1 session per week for $250 per 10 weeks, or unlimited sessions per term for $350 per 10 weeks. A concession card (10 sessions) is also available for $265.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "How is the weekly membership collected?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Weekly memberships are collected via direct debit. Two weeks' written notice by email is required to cancel or place a membership on hold.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Can I attend any location with my membership?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. All Superior Taekwondo membership options cover access to all three locations: Kaukapakapa, Helensville, and Waimauku.",
+            },
+        },
+    ],
+};
+
 const plans = [
     {
         category: "Weekly Memberships",
@@ -150,6 +197,10 @@ const plans = [
             ]
         }
     </script>
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(pricingFaqSchema)}
+    ></script>
     <main class="bg-deep-space-black min-h-screen pt-24 pb-12">
         <!-- React Pricing Component (Handles header and content internally now) -->
         <PricingSection client:load plans={plans} />

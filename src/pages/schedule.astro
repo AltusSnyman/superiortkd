@@ -2,12 +2,63 @@
 import Layout from "../layouts/Layout.astro";
 import ScheduleGrid from "../components/ScheduleGrid.astro";
 import Footer from "../components/Footer.astro";
+
+const scheduleFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+        {
+            "@type": "Question",
+            name: "What days and times do Taekwondo classes run at Superior Taekwondo?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Superior Taekwondo runs classes across three North West Auckland locations — Helensville, Kaukapakapa, and Waimauku — on various weekday evenings and weekend mornings. Check the full schedule on this page or contact us for the current timetable.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Can I attend classes at any of the three locations?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. All memberships cover access to all three Superior Taekwondo locations: Helensville, Kaukapakapa, and Waimauku. Students can train at whichever location suits their schedule on any given day.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "What happens if a class falls on a public holiday?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "If a class falls on a public holiday or the facility is closed, students are encouraged to attend any other available class that week as a makeup session. No sessions are forfeited.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Are private training sessions available?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. One-on-one private training sessions are available for students preparing for grading or competition. Contact Andrea directly to book a private session.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "How do I know which class is right for my age group?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Classes are structured by age and level. Tiny Tigers is for children aged 5 and up. General class covers teenagers and adults. Competition and fitness classes are available for athletes seeking specialised training. Contact us and we will help you find the right class.",
+            },
+        },
+    ],
+};
 ---
 
 <Layout
     title="Class Schedule | Superior Taekwondo"
     description="Weekly class timetable for Kaukapakapa, Helensville, and Waimauku locations. Find a class that fits your schedule."
 >
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(scheduleFaqSchema)}
+    ></script>
     <main class="bg-deep-space-black min-h-screen pt-24 pb-12">
         <div class="container mx-auto px-4">
             <!-- Page Header -->

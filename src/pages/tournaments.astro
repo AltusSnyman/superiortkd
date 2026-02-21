@@ -2,12 +2,61 @@
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import TournamentsSection from "../components/TournamentsSection.tsx";
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+        {
+            "@type": "Question",
+            name: "What Taekwondo tournaments are available in New Zealand?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Taekwondo New Zealand (TNZ) runs a national tournament series throughout the year including regional championships, the NZ Open, and the National Championships. Superior Taekwondo athletes compete at TNZ-registered events and are supported by club coaches at each tournament.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "How do I enter a Taekwondo tournament?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "To enter a TNZ-registered Taekwondo tournament, athletes must be registered members of an affiliated club. Your instructor nominates and registers you for events. Superior Taekwondo manages all tournament registrations for our competition team members.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "What age can children start competing in Taekwondo tournaments?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Most WT Taekwondo tournaments have cadet divisions starting from around 12–14 years of age, though some events include younger junior divisions. Contact Superior Taekwondo for current age category details for upcoming events.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "What equipment do I need for a Taekwondo tournament?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "WT competition requires an approved hogu (chest protector), head guard, forearm guards, shin guards, groin guard (for males), and mouthguard. Electronic scoring equipment may be provided at larger events. Your instructor will advise on approved brands.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Does Superior Taekwondo provide tournament coaching support?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Superior Taekwondo coaches attend tournaments with the team, providing cornering, real-time tactical guidance, and athlete support throughout the competition day.",
+            },
+        },
+    ],
+};
 ---
 
 <Layout
     title="Tournaments & Events | Superior Taekwondo"
     description="Upcoming WT Taekwondo tournaments in New Zealand and Auckland for 2025–2026. Competition calendar, registration info, and preparation tips for Superior Taekwondo athletes."
 >
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}
+    ></script>
     <TournamentsSection client:load />
     <Footer />
 </Layout>

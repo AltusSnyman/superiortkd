@@ -2,12 +2,61 @@
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import GuidelinesSection from "../components/GuidelinesSection.tsx";
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+        {
+            "@type": "Question",
+            name: "What should I wear to Taekwondo class?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Students should wear a white Taekwondo dobok (uniform) with their current belt. New students who have not yet purchased a dobok may train in comfortable athletic clothing for their first few sessions. Bare feet are required on the training floor.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "What does bowing mean in Taekwondo?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Bowing (in Korean: 'Kyungye') is a gesture of respect, not a religious act. Students bow when entering and leaving the dojang, when beginning and ending class, and when greeting instructors and training partners. It represents mutual respect between practitioners.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "How early should I arrive to class?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Arrive at least 10 minutes before class starts. This gives you time to change, warm up, and be ready when class begins. Arriving late disrupts the flow of training and is considered disrespectful to the instructor and other students.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "What is the code of conduct for parents at Superior Taekwondo?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Parents are welcome to observe from the designated viewing area. We ask that parents refrain from coaching their children during class, avoid distracting students during training, and model the respectful behaviour we teach in class. Positive encouragement is always welcome.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Are mobile phones allowed in the dojang?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Mobile phones should be silenced and put away while on the training floor. Students should be fully present and focused during class. In emergencies, parents can contact the instructor directly.",
+            },
+        },
+    ],
+};
 ---
 
 <Layout
     title="Club Guidelines | Superior Taekwondo"
     description="Club rules, dojang etiquette, and code of conduct for Superior Taekwondo members. Everything students and parents need to know about expectations and behaviour at our North West Auckland dojangs."
 >
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}
+    ></script>
     <GuidelinesSection client:load />
     <Footer />
 </Layout>

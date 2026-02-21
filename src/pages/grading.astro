@@ -2,12 +2,61 @@
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import GradingSection from "../components/GradingSection.tsx";
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+        {
+            "@type": "Question",
+            name: "How often are Taekwondo grading exams held at Superior Taekwondo?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Grading exams are held approximately every 3–4 months, aligned with the school term calendar. Students must attend a minimum number of classes and demonstrate their syllabus to be put forward for grading.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "What are the belt levels in WT Taekwondo?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "World Taekwondo (WT) colour belt order is: White, Yellow, Green, Blue, Red, and then Black Belt (1st Dan and above). Junior students may progress through half-belt stages (e.g., White-Yellow) for more frequent recognition milestones.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "What do I need to know for my first grading?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "For your first grading (white to yellow belt), you will need to demonstrate basic stances, front kick, the Taegeuk Il Jang pattern, and basic blocking and striking techniques. Your instructor will ensure you are prepared before nominating you.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Is there a grading fee?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes, a grading fee applies. Please contact Superior Taekwondo directly or check with your instructor for the current fee schedule.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "How long does it take to get a Black Belt at Superior Taekwondo?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "The average journey to 1st Dan Black Belt takes 3–5 years of consistent training. The timeline depends on attendance frequency, individual progress, and readiness at each grading stage.",
+            },
+        },
+    ],
+};
 ---
 
 <Layout
     title="Grading Information | Superior Taekwondo"
     description="Taekwondo belt grading requirements for Superior Taekwondo students in North West Auckland. White Belt to Black Belt syllabus, Poomsae patterns, and grading schedule for Helensville, Kaukapakapa & Waimauku."
 >
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}
+    ></script>
     <GradingSection client:load />
     <Footer />
 </Layout>

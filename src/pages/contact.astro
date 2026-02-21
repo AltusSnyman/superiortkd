@@ -2,12 +2,61 @@
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import ContactSection from "../components/ContactSection.tsx";
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+        {
+            "@type": "Question",
+            name: "Where is Superior Taekwondo located?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Our main dojo is at 94 Mill Road, Helensville 0800, North West Auckland. We also run classes in Kaukapakapa and Waimauku. Contact us for exact location details for each training venue.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Can I try a class before joining?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. We welcome trial classes so you can experience training before committing to a membership. Contact us via phone or email to arrange your first visit.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "How do I get in touch with Superior Taekwondo?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "You can reach us by phone on 027 520 1613 (Monday–Friday, 9am–5pm) or by email at superiorfitnessnz@gmail.com. For the fastest response, calling directly is recommended.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "What information do I need when contacting you about enrolling?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "When enquiring about enrolment, it helps to let us know the name and age of the student, any prior martial arts experience, and which location is most convenient for you. We will then recommend the most suitable class and provide all next steps.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Is Superior Taekwondo affiliated with Taekwondo New Zealand?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Superior Taekwondo is affiliated with Taekwondo New Zealand (TNZ) and World Taekwondo (WT). All belts earned are officially recognised nationally and internationally.",
+            },
+        },
+    ],
+};
 ---
 
 <Layout
     title="Contact Us | Superior Taekwondo"
     description="Get in touch with Superior Taekwondo. Visit us at 94 Mill Road, Helensville, or contact us via phone or email."
 >
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}
+    ></script>
     <main class="bg-deep-space-black min-h-screen pt-24 pb-12">
         <ContactSection client:load />
     </main>
