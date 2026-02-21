@@ -1,0 +1,375 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+import RelatedContent from "../../components/RelatedContent.astro";
+
+const title =
+    "Adult Taekwondo Classes Auckland: Fitness, Confidence & Self-Defence | Superior Taekwondo";
+const description =
+    "Discover why hundreds of Auckland adults are choosing Taekwondo for fitness. Burn calories, build strength, reduce stress, and develop real self-defence skills — no experience needed.";
+
+const blogSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    image: "https://superiortkd.co.nz/images/blog/blog_olympic_hero.webp",
+    datePublished: "2026-02-21",
+    dateModified: "2026-02-21",
+    author: {
+        "@type": "Person",
+        name: "Andrea Kilday",
+        jobTitle: "Head Instructor, 2016 Rio Olympian",
+        url: "https://superiortkd.co.nz",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "Superior Taekwondo",
+        url: "https://superiortkd.co.nz",
+    },
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://superiortkd.co.nz/blog/adult-taekwondo-fitness",
+    },
+});
+const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
+
+const faqs = [
+    {
+        question: "Is Taekwondo good for adult fitness?",
+        answer: "Absolutely. A single Taekwondo session can burn 400–700 calories depending on intensity. You build cardiovascular fitness, core strength, flexibility, balance, and coordination simultaneously — unlike most gym workouts that isolate muscle groups.",
+    },
+    {
+        question: "Can adults start Taekwondo with no experience?",
+        answer: "Yes. All our adult classes welcome complete beginners. You start at White Belt and progress at your own pace. Many of our most dedicated adult students started with zero martial arts experience.",
+    },
+    {
+        question: "Is adult Taekwondo suitable for weight loss?",
+        answer: "Taekwondo is one of the most effective martial arts for weight management. The combination of high-intensity interval training, constant movement, and technique drills keeps your heart rate elevated throughout. Consistent training delivers visible results within weeks.",
+    },
+    {
+        question: "Will I have to spar or fight in adult Taekwondo?",
+        answer: "Sparring is introduced progressively and is always optional until you feel ready. Beginners focus on technique, patterns (Poomsae), and pad work. You will never be forced into contact training before you are comfortable.",
+    },
+    {
+        question: "What time are adult Taekwondo classes?",
+        answer: "Evening classes run Monday, Wednesday and Friday from 5:30pm–8:00pm, and Saturday mornings from 9:00am–12:00pm across our Helensville, Kaukapakapa, and Waimauku locations. Check our schedule page for the full timetable.",
+    },
+];
+---
+
+<Layout title={title} description={description} headContent={headContent}>
+    <!-- FAQ Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+        })}
+    ></script>
+
+    <BlogHero
+        title="Adult Taekwondo: The Complete Fitness Guide"
+        subtitle="No gym. No monotony. Real results — from a 2016 Olympian-coached programme in North West Auckland."
+        image="/images/blog/blog_olympic_hero.webp"
+        category="Fitness"
+        readTime="7 min read"
+    />
+
+    <main class="bg-deep-space-black text-white pb-12 text-gray-300 font-body">
+        <div class="container mx-auto px-4 max-w-4xl py-12 space-y-10">
+            <p class="text-xl leading-relaxed text-gray-200">
+                Most adults who walk into a Taekwondo class for the first time
+                say the same thing afterwards: "I had no idea it was such a
+                workout." They expected a calm, ceremonial martial art. What
+                they got was 60 minutes of high-intensity movement, laughter,
+                sweat, and the satisfaction of learning something genuinely
+                useful.
+            </p>
+            <p class="leading-relaxed">
+                If you are looking for a fitness routine in Auckland that you
+                will actually stick with — this is it. Here is everything you
+                need to know about adult Taekwondo for fitness, including what
+                to expect, what you will gain, and why it works when the gym
+                does not.
+            </p>
+
+            <!-- Calorie burn -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    How Many Calories Does Taekwondo Burn?
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    A 60-minute Taekwondo class burns between <strong
+                        class="text-white">400 and 700 calories</strong
+                    >, depending on your weight and the intensity of the
+                    session. Here is how it compares:
+                </p>
+                <div class="grid md:grid-cols-4 gap-4 my-6">
+                    {
+                        [
+                            {
+                                act: "Taekwondo",
+                                cals: "400–700",
+                                highlight: true,
+                            },
+                            {
+                                act: "Running (moderate)",
+                                cals: "300–500",
+                                highlight: false,
+                            },
+                            {
+                                act: "Gym weights",
+                                cals: "200–350",
+                                highlight: false,
+                            },
+                            { act: "Yoga", cals: "140–250", highlight: false },
+                        ].map((row) => (
+                            <div
+                                class={`rounded-xl p-5 text-center border ${
+                                    row.highlight
+                                        ? "bg-blue-belt-end/10 border-blue-belt-end/40"
+                                        : "bg-white/5 border-white/10"
+                                }`}
+                            >
+                                <div
+                                    class={`text-2xl font-black font-oswald ${
+                                        row.highlight
+                                            ? "text-blue-belt-end"
+                                            : "text-white"
+                                    }`}
+                                >
+                                    {row.cals}
+                                </div>
+                                <div class="text-xs text-gray-400 mt-1 uppercase tracking-wide">
+                                    {row.act}
+                                </div>
+                                <div class="text-xs text-gray-500">
+                                    cal / hr
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+                <p class="leading-relaxed">
+                    Unlike treadmill running or isolated weight training,
+                    Taekwondo achieves this calorie burn while simultaneously
+                    improving technique, coordination, and mental sharpness. The
+                    variety also means you are far less likely to drop out.
+                </p>
+            </section>
+
+            <!-- What you train -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    What Physical Qualities Does Adult Taekwondo Develop?
+                </h2>
+                <p class="leading-relaxed mb-6">
+                    A well-structured Taekwondo programme does not specialise.
+                    It develops everything at once:
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    {
+                        [
+                            {
+                                title: "Cardiovascular Fitness",
+                                desc: "Continuous movement, pad rounds, and sparring drills keep your heart rate in the zone of maximum aerobic benefit. You will notice your resting heart rate drop within weeks.",
+                            },
+                            {
+                                title: "Core Strength",
+                                desc: "Every kick, turn, and block is powered by your core. Taekwondo builds functional, athletic core strength — not just aesthetically but for posture and injury prevention.",
+                            },
+                            {
+                                title: "Flexibility & Mobility",
+                                desc: "Our warm-ups and cool-downs are built around mobility work. High kicks demand hip flexor flexibility. You will gain range of motion that carries over into everyday life.",
+                            },
+                            {
+                                title: "Balance & Coordination",
+                                desc: "Single-leg techniques train proprioception and balance in ways that gym machines simply cannot replicate. This becomes increasingly valuable as we age.",
+                            },
+                            {
+                                title: "Stress Relief",
+                                desc: "There is a unique mental effect to training with purpose. The focus required for technique work forces your mind off work, relationships, and daily pressure. Students consistently report lower stress levels.",
+                            },
+                            {
+                                title: "Self-Defence Capability",
+                                desc: "You will learn real, tested striking and distance management skills. The goal is not to start fights — it is to never be caught unprepared in the rare situation where self-defence is needed.",
+                            },
+                        ].map((item) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 class="font-oswald font-bold text-white uppercase text-lg mb-2">
+                                    {item.title}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {item.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- No experience section -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    Complete Beginners Are Welcome (And Common)
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    Many of our adult students joined Superior Taekwondo with
+                    zero martial arts experience. Some had not done structured
+                    exercise in years. That is not a problem — it is exactly who
+                    we are built for.
+                </p>
+                <p class="leading-relaxed mb-4">
+                    We start every beginner at <strong class="text-white"
+                        >White Belt</strong
+                    >. Your first months focus on fundamental techniques, basic
+                    patterns (Poomsae), and building fitness at a pace that
+                    suits your body. We do not throw you into sparring on day
+                    one. We build you up properly.
+                </p>
+                <p class="leading-relaxed">
+                    By the time you reach your first grading, you will not just
+                    have a new belt colour — you will notice that you move
+                    differently, hold yourself differently, and think
+                    differently. That transformation is why people stay.
+                </p>
+            </section>
+
+            <!-- Why Superior Taekwondo -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    Why Train With an Olympian?
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    There are other Taekwondo clubs in Auckland. Very few are
+                    led by someone who has competed at the Olympic Games. At
+                    Superior Taekwondo, your instructor — <strong
+                        class="text-white">Andrea Kilday</strong
+                    > — is a 2016 Rio Olympian, Oceania Gold Medallist, and 2nd Dan
+                    Black Belt certified by World Taekwondo.
+                </p>
+                <p class="leading-relaxed mb-4">
+                    That matters because Olympic-level athletes understand the
+                    body in ways that recreational coaches simply do not. They
+                    know how to correct technique without injury, how to build
+                    training intensity sustainably, and how to push students
+                    beyond what they think they are capable of.
+                </p>
+                <p class="leading-relaxed">
+                    You do not need to be pursuing the Olympics. You just
+                    benefit from being coached by someone who was.
+                </p>
+                <div
+                    class="mt-6 p-6 bg-white/5 border border-blue-belt-end/20 rounded-xl"
+                >
+                    <p class="text-sm text-gray-300 italic">
+                        "I joined to lose weight. I stayed because of the
+                        community and because for the first time in years, I
+                        actually look forward to working out." — Superior
+                        Taekwondo adult student
+                    </p>
+                </div>
+            </section>
+
+            <!-- Practical section -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    Practical Details for Adult Students
+                </h2>
+                <div class="space-y-4">
+                    {
+                        [
+                            {
+                                q: "When do classes run?",
+                                a: "Monday, Wednesday, and Friday evenings (5:30pm–8:00pm) plus Saturday mornings (9:00am–12:00pm) across Helensville, Kaukapakapa, and Waimauku.",
+                            },
+                            {
+                                q: "What do I wear?",
+                                a: "Comfortable workout clothes for your first class. After joining, you will get a Dobok (Taekwondo uniform). We train barefoot — no special shoes needed.",
+                            },
+                            {
+                                q: "What does it cost?",
+                                a: "We offer weekly and term-based pricing with family discounts. See our full pricing page for details.",
+                            },
+                            {
+                                q: "Do I need any equipment?",
+                                a: "Not to start. We provide the loaner gear you need for your trial. Once you join, you will acquire protective equipment progressively as you advance.",
+                            },
+                        ].map((item) => (
+                            <div class="border-b border-white/10 pb-4">
+                                <h3 class="font-oswald font-bold text-white uppercase text-base mb-1">
+                                    {item.q}
+                                </h3>
+                                <p class="text-gray-400 text-sm">{item.a}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section
+                class="text-center bg-white/5 border border-blue-belt-end/20 rounded-2xl p-10"
+            >
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    Your First Class Is Free
+                </h2>
+                <p class="text-gray-300 mb-8 max-w-xl mx-auto">
+                    No commitment. No pressure. Come and experience one class at
+                    any of our three North West Auckland locations. We will do
+                    the rest.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button href="/contact" variant="primary"
+                        >Book Your Free Trial</Button
+                    >
+                    <Button href="/schedule" variant="secondary"
+                        >View Class Schedule</Button
+                    >
+                </div>
+            </section>
+        </div>
+
+        <RelatedContent
+            posts={[
+                {
+                    title: "How to Choose a Taekwondo Club",
+                    slug: "how-to-choose-a-taekwondo-club",
+                },
+                {
+                    title: "Taekwondo for Beginners",
+                    slug: "taekwondo-for-beginners",
+                },
+                {
+                    title: "Self-Defence Classes Auckland",
+                    slug: "self-defence-auckland",
+                },
+            ]}
+            actions={[
+                { label: "Book Your Free Trial", href: "/contact" },
+                { label: "View Class Schedule", href: "/schedule" },
+            ]}
+        />
+    </main>
+    <Footer />
+</Layout>

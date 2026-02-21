@@ -1,0 +1,316 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+import RelatedContent from "../../components/RelatedContent.astro";
+
+const title =
+    "Self-Defence Classes Auckland: What Actually Works in 2026 | Superior Taekwondo";
+const description =
+    "Looking for self-defence classes in Auckland? Discover why trained Taekwondo is the most practical and sustainable self-defence system available — and how to start today in North West Auckland.";
+
+const blogSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    image: "https://superiortkd.co.nz/images/blog/blog_tournament_hero.webp",
+    datePublished: "2026-02-21",
+    dateModified: "2026-02-21",
+    author: {
+        "@type": "Person",
+        name: "Andrea Kilday",
+        jobTitle: "Head Instructor, 2016 Rio Olympian",
+        url: "https://superiortkd.co.nz",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "Superior Taekwondo",
+        url: "https://superiortkd.co.nz",
+    },
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://superiortkd.co.nz/blog/self-defence-auckland",
+    },
+});
+const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
+
+const faqs = [
+    {
+        question: "Is Taekwondo effective for real self-defence?",
+        answer: "Yes. Taekwondo develops powerful leg strikes, fast reflexes, and crucially — the ability to create distance from an attacker. Distance management is the single most important self-defence skill. Olympic-level Taekwondo training builds this instinctively through thousands of hours of sparring.",
+    },
+    {
+        question: "Are there self-defence classes near me in Auckland?",
+        answer: "Superior Taekwondo offers self-defence focused training across three North West Auckland locations: Helensville, Kaukapakapa, and Waimauku. We serve students from Kumeu, Huapai, Riverhead, Westgate, and surrounding areas.",
+    },
+    {
+        question:
+            "What is the best martial art for self-defence in New Zealand?",
+        answer: "There is no single 'best' martial art. However, World Taekwondo (WT) is a strong choice because it is tested under live sparring conditions, develops explosive speed and power, and teaches distance management — the most critical real-world self-defence skill.",
+    },
+    {
+        question:
+            "How long does it take to be able to defend yourself with Taekwondo?",
+        answer: "After 3–6 months of consistent training, most students develop meaningful self-defence awareness, improved reflexes, and a basic toolkit of effective techniques. True confidence in a real situation comes with continued training and sparring experience.",
+    },
+    {
+        question: "Are self-defence classes suitable for women?",
+        answer: "Absolutely. Many of our adult class participants are women training specifically for confidence and personal safety. Our head instructor Andrea Kilday — a 2016 Olympian — is a woman who has made this journey herself. You will train in a safe, respectful environment.",
+    },
+];
+---
+
+<Layout title={title} description={description} headContent={headContent}>
+    <!-- FAQ Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+        })}
+    ></script>
+
+    <BlogHero
+        title="Self-Defence in Auckland: What Actually Works"
+        subtitle="Skip the one-day seminars. Here is why consistent Taekwondo training is the most realistic path to genuine self-defence capability."
+        image="/images/blog/blog_tournament_hero.webp"
+        category="Self-Defence"
+        readTime="7 min read"
+    />
+
+    <main class="bg-deep-space-black text-white pb-12 text-gray-300 font-body">
+        <div class="container mx-auto px-4 max-w-4xl py-12 space-y-10">
+            <p class="text-xl leading-relaxed text-gray-200">
+                There is no shortage of "self-defence classes" being advertised
+                in Auckland. Weekend seminars, YouTube videos, crash courses.
+                The problem? Technique learnt under no pressure, against a
+                cooperating partner, in a controlled classroom, does not hold up
+                when you actually need it.
+            </p>
+            <p class="leading-relaxed">
+                Real self-defence capability is built through tens of thousands
+                of repetitions, against resistance, under physical and mental
+                pressure. It is built in a dojo — not a seminar room. Here is
+                why Taekwondo, done consistently, is one of the most practical
+                paths to genuine personal safety.
+            </p>
+
+            <!-- Why live training matters -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    Why Most Self-Defence Classes Don't Actually Work
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    The fitness and martial arts industry sells a lot of
+                    self-defence products: short courses, seminars, apps. The
+                    honest truth is that almost none of them build genuine
+                    capability. Here is why:
+                </p>
+                <ul class="list-disc list-inside space-y-3 text-gray-200 ml-4">
+                    <li>
+                        <strong class="text-white">No pressure testing.</strong>
+                        Techniques practiced with a willing partner do not transfer
+                        to a real situation where someone is resisting, moving, and
+                        unpredictable.
+                    </li>
+                    <li>
+                        <strong class="text-white">No motor patterning.</strong>
+                        A technique needs to be repeated thousands of times before
+                        it becomes automatic. One weekend seminar gives you awareness
+                        — not capability.
+                    </li>
+                    <li>
+                        <strong class="text-white"
+                            >No stress inoculation.</strong
+                        > The adrenaline, tunnel vision, and fine-motor impairment
+                        of a real threat situation can only be trained through repeated
+                        exposure to controlled sparring.
+                    </li>
+                    <li>
+                        <strong class="text-white"
+                            >No fitness foundation.</strong
+                        > Self-defence requires physical capability. If you are out
+                        of breath after 10 seconds, technique is irrelevant.
+                    </li>
+                </ul>
+                <p class="leading-relaxed mt-4">
+                    A consistent Taekwondo training programme solves every
+                    single one of these problems.
+                </p>
+            </section>
+
+            <!-- What Taekwondo builds -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    What Taekwondo Actually Develops
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    {
+                        [
+                            {
+                                title: "Distance Management",
+                                desc: "The most critical self-defence skill. Taekwondo sparring trains you instinctively to control and exploit the distance between you and a threat. This alone is worth years of training.",
+                            },
+                            {
+                                title: "Explosive Speed & Power",
+                                desc: "Taekwondo produces some of the fastest and most powerful leg strikes in martial arts. An attacker who has absorbed a side kick to the midsection has a very different problem than they expected.",
+                            },
+                            {
+                                title: "Live Sparring Experience",
+                                desc: "Sparring gives you direct experience of managing a resisting, moving opponent under physical stress. This is irreplaceable pressure-testing.",
+                            },
+                            {
+                                title: "Situational Awareness",
+                                desc: "Experienced Taekwondo practitioners develop heightened spatial awareness and threat recognition — sensing a situation before it escalates.",
+                            },
+                            {
+                                title: "Physical Fitness",
+                                desc: "The foundation of self-defence. Being fitter, faster, and stronger than your attacker is the most reliable advantage. Taekwondo builds all three.",
+                            },
+                            {
+                                title: "Psychological Confidence",
+                                desc: "Knowing you can defend yourself changes how you carry yourself. Confident body language is itself a deterrent to opportunistic threats.",
+                            },
+                        ].map((item) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 class="font-oswald font-bold text-white uppercase text-lg mb-2">
+                                    {item.title}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {item.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Women's section -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    Self-Defence for Women in Auckland
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    Many of those searching for self-defence classes in Auckland
+                    are women who want to feel safer and more capable. This is
+                    exactly why Superior Taekwondo matters.
+                </p>
+                <p class="leading-relaxed mb-4">
+                    Our head instructor — <strong class="text-white"
+                        >Andrea Kilday</strong
+                    > — is a woman who reached the pinnacle of Olympic Taekwondo
+                    competition. She understands what it means to be smaller, shorter,
+                    or considered "less intimidating" — and she knows how to train
+                    around it. Taekwondo's emphasis on kicks (powerful long-range
+                    weapons that equalise size differences) makes it a particularly
+                    practical art for women.
+                </p>
+                <p class="leading-relaxed">
+                    At Superior Taekwondo, our dojangs are safe, respectful
+                    training environments. There is no macho culture. Every
+                    student — male or female, 5 years old or 55 — is held to the
+                    same standards of respect and courtesy.
+                </p>
+            </section>
+
+            <!-- Realistic expectations -->
+            <section>
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    Realistic Timeline for Self-Defence Capability
+                </h2>
+                <div class="space-y-4">
+                    {
+                        [
+                            {
+                                time: "0–3 months",
+                                desc: "White Belt fundamentals. You will develop improved awareness, learn basic striking, and begin building the fitness base that underpins everything else.",
+                            },
+                            {
+                                time: "3–6 months",
+                                desc: "Yellow–Green Belt. Technique starts to become automatic. You begin light contact pad work. Your reaction speed and physical conditioning improve noticeably.",
+                            },
+                            {
+                                time: "6–12 months",
+                                desc: "Green–Blue Belt. Light controlled sparring begins. This is where real pressure-testing starts and self-defence capability becomes meaningful.",
+                            },
+                            {
+                                time: "1–3 years",
+                                desc: "Consistent training. By this point you have thousands of repetitions underway, regular sparring experience, and the psychological confidence that only comes from knowing you have been tested.",
+                            },
+                        ].map((phase) => (
+                            <div class="flex gap-4 border-b border-white/10 pb-4">
+                                <div class="text-blue-belt-end font-oswald font-bold uppercase text-sm w-32 shrink-0 pt-1">
+                                    {phase.time}
+                                </div>
+                                <p class="text-gray-300 text-sm">
+                                    {phase.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section
+                class="text-center bg-white/5 border border-blue-belt-end/20 rounded-2xl p-10"
+            >
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    Start Building Real Capability
+                </h2>
+                <p class="text-gray-300 mb-8 max-w-xl mx-auto">
+                    Your first class at Superior Taekwondo is free. Three
+                    locations across North West Auckland. Olympian-coached. No
+                    pressure, no obligation.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button href="/contact" variant="primary"
+                        >Book Your Free Trial</Button
+                    >
+                    <Button href="/schedule" variant="secondary"
+                        >View Class Schedule</Button
+                    >
+                </div>
+            </section>
+        </div>
+
+        <RelatedContent
+            posts={[
+                {
+                    title: "How to Choose a Taekwondo Club",
+                    slug: "how-to-choose-a-taekwondo-club",
+                },
+                {
+                    title: "Adult Taekwondo Fitness",
+                    slug: "adult-taekwondo-fitness",
+                },
+                {
+                    title: "Taekwondo for Beginners",
+                    slug: "taekwondo-for-beginners",
+                },
+            ]}
+            actions={[
+                { label: "Book Your Free Trial", href: "/contact" },
+                { label: "View Class Schedule", href: "/schedule" },
+            ]}
+        />
+    </main>
+    <Footer />
+</Layout>

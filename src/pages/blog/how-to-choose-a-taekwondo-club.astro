@@ -439,31 +439,23 @@ const faqs = [
 
         <!-- Related Content -->
         <RelatedContent
-            title="More Guides for Your Journey"
-            items={[
+            posts={[
                 {
                     title: "Taekwondo for Beginners",
-                    description:
-                        "Everything you need to know before your first class.",
-                    href: "/blog/taekwondo-for-beginners",
-                    image: "/images/blog/blog_beginners_hero.webp",
-                    category: "Beginner Guide",
+                    slug: "taekwondo-for-beginners",
                 },
                 {
-                    title: "What to Expect in Your First Class",
-                    description: "Remove the mystery from day one.",
-                    href: "/blog/first-taekwondo-class",
-                    image: "/images/blog/blog_beginners_hero.webp",
-                    category: "Beginner Guide",
+                    title: "Your First Taekwondo Class",
+                    slug: "first-taekwondo-class",
                 },
                 {
-                    title: "Our Class Types",
-                    description:
-                        "From Tiny Tigers to Competition Team — find the right fit.",
-                    href: "/classes/general",
-                    image: "/images/blog/blog_beginners_hero.webp",
-                    category: "Classes",
+                    title: "Adult Taekwondo Fitness",
+                    slug: "adult-taekwondo-fitness",
                 },
+            ]}
+            actions={[
+                { label: "Book Your Free Trial", href: "/contact" },
+                { label: "View Class Schedule", href: "/schedule" },
             ]}
         />
     </main>

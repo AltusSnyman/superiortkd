@@ -57,7 +57,28 @@ const homepageFaqSchema = JSON.stringify({
 	],
 });
 
-const homepageHeadContent = `<script type="application/ld+json">${homepageFaqSchema}<\/script>`;
+const websiteSchema = JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	name: "Superior Taekwondo",
+	url: "https://superiortkd.co.nz",
+	description:
+		"New Zealand's premier World Taekwondo (WT) club in North West Auckland.",
+	potentialAction: {
+		"@type": "SearchAction",
+		target: {
+			"@type": "EntryPoint",
+			urlTemplate:
+				"https://superiortkd.co.nz/blog?q={search_term_string}",
+		},
+		"query-input": "required name=search_term_string",
+	},
+});
+
+const homepageHeadContent = [
+	`<script type="application/ld+json">${homepageFaqSchema}<\/script>`,
+	`<script type="application/ld+json">${websiteSchema}<\/script>`,
+].join("");
 ---
 
 <Layout

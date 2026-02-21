@@ -144,11 +144,99 @@ const plans = [
         ],
     },
 ];
+
+const offersSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MartialArtsSchool",
+    url: "https://superiortkd.co.nz",
+    name: "Superior Taekwondo",
+    hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Taekwondo Membership Options",
+        itemListElement: [
+            {
+                "@type": "Offer",
+                name: "1 Session Per Week (Weekly Membership)",
+                description: "1 Taekwondo session per week. Access to all 3 locations.",
+                priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: "27.00",
+                    priceCurrency: "NZD",
+                    unitCode: "WEE",
+                    unitText: "per week",
+                },
+                url: "https://superiortkd.co.nz/pricing",
+                eligibleRegion: "NZ",
+                seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
+            },
+            {
+                "@type": "Offer",
+                name: "Unlimited Sessions (Weekly Membership)",
+                description: "Unlimited Taekwondo sessions per week. Access to all 3 locations.",
+                priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: "39.00",
+                    priceCurrency: "NZD",
+                    unitCode: "WEE",
+                    unitText: "per week",
+                },
+                url: "https://superiortkd.co.nz/pricing",
+                eligibleRegion: "NZ",
+                seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
+            },
+            {
+                "@type": "Offer",
+                name: "1 Session Per Week (Term)",
+                description: "1 Taekwondo session per week for 10-week term.",
+                priceSpecification: {
+                    "@type": "PriceSpecification",
+                    price: "250.00",
+                    priceCurrency: "NZD",
+                    description: "Per 10-week term",
+                },
+                url: "https://superiortkd.co.nz/pricing",
+                eligibleRegion: "NZ",
+                seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
+            },
+            {
+                "@type": "Offer",
+                name: "Unlimited Sessions Per Term",
+                description: "Unlimited Taekwondo sessions for 10-week term. Best value for frequent trainers.",
+                priceSpecification: {
+                    "@type": "PriceSpecification",
+                    price: "350.00",
+                    priceCurrency: "NZD",
+                    description: "Per 10-week term",
+                },
+                url: "https://superiortkd.co.nz/pricing",
+                eligibleRegion: "NZ",
+                seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
+            },
+            {
+                "@type": "Offer",
+                name: "Concession Card (10 Sessions)",
+                description: "10-session concession card valid for 5 months.",
+                priceSpecification: {
+                    "@type": "PriceSpecification",
+                    price: "265.00",
+                    priceCurrency: "NZD",
+                    description: "10 sessions, valid 5 months",
+                },
+                url: "https://superiortkd.co.nz/pricing",
+                eligibleRegion: "NZ",
+                seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
+            },
+        ],
+    },
+});
+
+const pricingHeadContent = `<script type="application/ld+json">${offersSchema}<\/script>`;
 ---
 
 <Layout
     title="Pricing & Memberships | Superior Taekwondo"
     description="Affordable Taekwondo class pricing and membership options. Weekly plans, term concessions, and family discounts available."
+    headContent={pricingHeadContent}
 >
     <script type="application/ld+json">
         {
