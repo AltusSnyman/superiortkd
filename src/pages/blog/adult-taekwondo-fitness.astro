@@ -60,7 +60,19 @@ const faqs = [
 ];
 ---
 
-<Layout title={title} description={description} headContent={headContent}>
+<Layout
+    title={title}
+    description={description}
+    headContent={headContent}
+    breadcrumbs={[
+        { name: "Home", url: "https://superiortkd.co.nz" },
+        { name: "Blog", url: "https://superiortkd.co.nz/blog" },
+        {
+            name: "Adult Taekwondo Fitness",
+            url: "https://superiortkd.co.nz/blog/adult-taekwondo-fitness",
+        },
+    ]}
+>
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"

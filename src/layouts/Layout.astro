@@ -7,6 +7,7 @@ interface Props {
 	description?: string;
 	image?: string;
 	headContent?: string;
+	breadcrumbs?: { name: string; url: string }[];
 }
 
 const {
@@ -14,7 +15,21 @@ const {
 	description = "Join Superior Taekwondo in North West Auckland. Professional martial arts training for all ages. Build confidence, discipline, and strength.",
 	image = "/images/og-image.jpg",
 	headContent,
+	breadcrumbs,
 } = Astro.props;
+
+const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
+	? JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		itemListElement: breadcrumbs.map((crumb, i) => ({
+			"@type": "ListItem",
+			position: i + 1,
+			name: crumb.name,
+			item: crumb.url,
+		})),
+	})
+	: null;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -158,6 +173,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 			}
 		</script>
 		{headContent && <Fragment set:html={headContent} />}
+		{breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema}></script>}
 
 		<!-- Critical CSS: above-fold shell rendered before any external CSS downloads -->
 		<style>

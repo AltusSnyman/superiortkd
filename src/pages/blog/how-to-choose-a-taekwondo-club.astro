@@ -65,7 +65,19 @@ const faqs = [
 ];
 ---
 
-<Layout title={title} description={description} headContent={headContent}>
+<Layout
+    title={title}
+    description={description}
+    headContent={headContent}
+    breadcrumbs={[
+        { name: "Home", url: "https://superiortkd.co.nz" },
+        { name: "Blog", url: "https://superiortkd.co.nz/blog" },
+        {
+            name: "How to Choose a Taekwondo Club",
+            url: "https://superiortkd.co.nz/blog/how-to-choose-a-taekwondo-club",
+        },
+    ]}
+>
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"
