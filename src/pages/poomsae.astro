@@ -2,9 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import PoomsaeSection from "../components/PoomsaeSection.tsx";
+
+// Canonical override — the authoritative long-form page is /classes/poomsae
+const canonicalOverride = `<link rel="canonical" href="https://superiortkd.co.nz/classes/poomsae" />`;
 ---
 
-<Layout title="Poomsae Classes | Superior Taekwondo" description="Specialized Poomsae training. Master the art of forms and patterns with focused instruction.">
+<Layout title="Poomsae Classes | Superior Taekwondo" description="Specialized Poomsae training. Master the art of forms and patterns with focused instruction." headContent={canonicalOverride}>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",

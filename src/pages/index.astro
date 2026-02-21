@@ -9,11 +9,61 @@ import Reviews from "../components/Reviews.astro";
 import ReadyToTrain from "../components/ReadyToTrain.astro";
 import LatestNews from "../components/LatestNews.astro";
 import Footer from "../components/Footer.astro";
+
+const homepageFaqSchema = JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: [
+		{
+			"@type": "Question",
+			name: "Where is Superior Taekwondo located?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "Superior Taekwondo is based in North West Auckland. Our main dojo is at 94 Mill Road, Helensville. We also run classes in Kaukapakapa and Waimauku, serving students across the region including Kumeu, Huapai, Riverhead, and Westgate.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "Can I try a class before joining Superior Taekwondo?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "Yes. Contact us to arrange a free trial class. We welcome students of all ages and experience levels to come and experience training before committing to a membership.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "Who is the head instructor at Superior Taekwondo?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "Head instructor Andrea Kilday is a 2016 Rio Olympian, Oceania Gold Medallist, and 2nd Dan Black Belt. She brings elite-level technical knowledge and real Olympic competition experience directly to every class at Superior Taekwondo.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "What age can children start Taekwondo at Superior Taekwondo?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "Children can start from age 5 in our Tiny Tigers programme. This class builds confidence, coordination, and discipline through age-appropriate Taekwondo fundamentals in a fun, structured environment.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "How long does it take to get a Black Belt in Taekwondo?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "The average journey to 1st Dan Black Belt at Superior Taekwondo takes 3–5 years of consistent training. Progress depends on attendance, individual development, and readiness at each grading stage. Our structured curriculum ensures every student advances at the right pace.",
+			},
+		},
+	],
+});
+
+const homepageHeadContent = `<script type="application/ld+json">${homepageFaqSchema}<\/script>`;
 ---
 
 <Layout
 	title="Superior Taekwondo | Constructing Champions"
 	description="New Zealand's premier World Taekwondo (WT) club. Train with an Olympian in Helensville, Kaukapakapa & Waimauku. Book your free trial today."
+	headContent={homepageHeadContent}
 >
 	<main class="overflow-x-hidden">
 		<Hero />

@@ -2,11 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import CompetitionSection from "../components/CompetitionSection.tsx";
+
+// Canonical override — the authoritative long-form page is /classes/competition
+const canonicalOverride = `<link rel="canonical" href="https://superiortkd.co.nz/classes/competition" />`;
 ---
 
 <Layout
     title="Competition Team | Superior Taekwondo"
     description="Join our elite competition team. Training for local and national Taekwondo tournaments with specialized coaching."
+    headContent={canonicalOverride}
 >
     <script type="application/ld+json">
         {
