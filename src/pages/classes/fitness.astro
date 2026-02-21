@@ -1,0 +1,466 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+
+const title =
+    "Martial Arts Fitness Classes Auckland | Fight Fit | Superior Taekwondo";
+const description =
+    "Fight-specific fitness training in North West Auckland. Build explosive power, functional strength, cardio endurance, and mobility using martial arts conditioning methods at Superior Taekwondo.";
+
+const faqs = [
+    {
+        question: "Do I need Taekwondo experience to join the Fitness Class?",
+        answer: "No experience required. The Fitness Class is open to anyone looking for a physically demanding, martial arts-inspired workout. No sparring or contact is involved — it is pure conditioning training.",
+    },
+    {
+        question: "How is this different from the General Class?",
+        answer: "The General Class follows the full Taekwondo curriculum — technique, patterns, sparring, and grading. The Fitness Class focuses exclusively on physical conditioning: cardio, strength, explosiveness, and mobility. It is complementary to, not a replacement for, the General Class.",
+    },
+    {
+        question: "Will I get injured?",
+        answer: "We take injury prevention seriously. Every session includes proper warm-up and cool-down. Intensity is progressive and movement quality is prioritised over load or speed. Beginners are coached carefully through all movements.",
+    },
+    {
+        question: "What should I expect in a typical session?",
+        answer: "Expect a full-body workout using bag work, pad drills, agility ladders, plyometrics, and functional strength exercises. Sessions are structured with clear warm-up, working, and recovery phases. You will finish dripping with sweat and feeling excellent.",
+    },
+    {
+        question: "Is this suitable for people who want to lose weight?",
+        answer: "Yes. High-intensity martial arts conditioning is one of the most effective methods for improving body composition. Combined with proper nutrition, consistent Fitness Class attendance produces significant results.",
+    },
+    {
+        question:
+            "Can existing Taekwondo students do this class as well as their regular training?",
+        answer: "Absolutely — and we recommend it. Competition athletes especially benefit from the dedicated conditioning focus. Many of our General and Competition class students also attend the Fitness Class to develop their athletic base.",
+    },
+];
+---
+
+<Layout
+    title={title}
+    description={description}
+    image="/images/blog/blog_olympic_hero.webp"
+>
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+        })}
+    ></script>
+
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Martial Arts Fitness Class — Fight Fit Training",
+            provider: {
+                "@type": "MartialArtsSchool",
+                name: "Superior Taekwondo",
+                url: "https://superiortkd.co.nz",
+            },
+            description:
+                "High-intensity martial arts conditioning class focused on explosive power, functional strength, cardiovascular endurance, and mobility in North West Auckland.",
+            areaServed:
+                "Helensville, Kaukapakapa, Waimauku, North West Auckland, New Zealand",
+        })}
+    ></script>
+
+    <main class="bg-black min-h-screen pb-12 text-gray-300 font-body">
+        <BlogHero
+            title="Fitness Class"
+            subtitle="Train like a fighter. No martial arts experience needed. Pure conditioning — explosive power, iron endurance, and total mobility using the methods that build champions."
+            image="/images/blog/blog_olympic_hero.webp"
+            category="Conditioning"
+            readTime="8 Min Read"
+        />
+
+        <article class="container mx-auto px-4 max-w-3xl mt-12">
+            <nav class="flex mb-8 text-sm text-gray-500">
+                <a href="/" class="hover:text-blue-belt-end transition-colors"
+                    >Home</a
+                >
+                <span class="mx-2">/</span>
+                <a
+                    href="/classes/general"
+                    class="hover:text-blue-belt-end transition-colors"
+                    >Classes</a
+                >
+                <span class="mx-2">/</span>
+                <span class="text-gray-300">Fitness</span>
+            </nav>
+
+            <section class="mb-16 prose prose-lg prose-invert max-w-none">
+                <p
+                    class="lead text-2xl text-white font-oswald font-medium mb-6"
+                >
+                    The fittest athletes in any combat sport train like
+                    warriors. Now you can too.
+                </p>
+                <p>
+                    The Fitness Class at <a
+                        href="/"
+                        class="text-blue-belt-end hover:underline"
+                        >Superior Taekwondo</a
+                    > brings the conditioning methods of elite martial artists to
+                    anyone willing to put in the work. No experience in Taekwondo,
+                    no fighting, no contact — just real, purposeful training designed
+                    to transform your body and athletic capacity.
+                </p>
+                <p>
+                    This is not a bootcamp with kicks painted on. Every
+                    exercise, every drill, every movement pattern in this class
+                    is drawn from the actual conditioning practices of
+                    competitive Taekwondo athletes. That means it is functional,
+                    specific, and effective in a way that generic gym workouts
+                    simply cannot replicate.
+                </p>
+                <p>
+                    The focus areas of our Fitness Class are: <strong
+                        >explosive power</strong
+                    > (the ability to generate force rapidly), <strong
+                        >fight-endurance cardio</strong
+                    > (interval and sustained capacity training), <strong
+                        >functional mobility</strong
+                    > (flexibility and range of motion that actually transfers to
+                    movement), and <strong>core stability</strong> (the foundation
+                    for everything else). These are not random — they are the exact
+                    physical qualities that separate good athletes from elite ones.
+                </p>
+                <p>
+                    Classes run from our <strong>Helensville</strong> facility, accessible
+                    from across <strong>North West Auckland</strong> including <strong
+                        >Kaukapakapa</strong
+                    >, <strong>Waimauku</strong>, <strong>Huapai</strong>, and <strong
+                        >Kumeu</strong
+                    >. View the <a
+                        href="/schedule"
+                        class="text-blue-belt-end hover:underline"
+                        >class schedule</a
+                    > for current session times.
+                </p>
+            </section>
+
+            <!-- Training Methods -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    Training Methods
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {
+                        [
+                            {
+                                title: "Heavy Bag Work",
+                                body: "Striking a bag is one of the most effective full-body conditioning tools available. Sessions include structured bag rounds targeting power, speed, and endurance at varying intensities.",
+                                icon: "🥊",
+                            },
+                            {
+                                title: "Thai Pad & Focus Mitt Drills",
+                                body: "Partner-based pad work develops coordination, reaction speed, and explosive striking power. Pad holders are coached to create realistic targets that challenge accuracy and timing.",
+                                icon: "🎯",
+                            },
+                            {
+                                title: "Plyometric Training",
+                                body: "Jump squats, box work, explosive lunges, and dynamic kicking drills build the fast-twitch muscle engagement that separates explosive athletes from strong-but-slow ones.",
+                                icon: "⚡",
+                            },
+                            {
+                                title: "Interval Conditioning",
+                                body: "Work:rest ratio training modelled after actual fight durations. Structured intervals build the specific anaerobic and aerobic capacity needed for sustained high-intensity effort.",
+                                icon: "🔥",
+                            },
+                            {
+                                title: "Mobility & Flexibility Work",
+                                body: "Progressive stretching, hip mobility sequences, and dynamic flexibility drills developed specifically around the kicking and movement demands of Taekwondo. Increasing mobility decreases injury risk and improves all athletic performance.",
+                                icon: "🧘",
+                            },
+                            {
+                                title: "Functional Core Training",
+                                body: "Anti-rotation, hip flexion, lateral stability, and rotational power exercises that build the core strength needed for explosive movement — not just a flat stomach.",
+                                icon: "💪",
+                            },
+                        ].map((item) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/40 transition-colors">
+                                <div class="text-3xl mb-3">{item.icon}</div>
+                                <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                    {item.title}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {item.body}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Session Structure -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    What a Session Looks Like
+                </h2>
+                <div class="space-y-5">
+                    {
+                        [
+                            {
+                                phase: "Dynamic Warm-Up (10 min)",
+                                detail: "Joint mobilisation, dynamic stretches, light plyometrics, and movement prep. We start every session by preparing the body for the demands ahead — no cold muscles are ever pushed to maximum.",
+                            },
+                            {
+                                phase: "Power Block (15–20 min)",
+                                detail: "Explosive strength and speed exercises. This block focuses on fast-twitch development — plyometrics, reactive drills, and power-output movements. Done early while the nervous system is fresh.",
+                            },
+                            {
+                                phase: "Conditioning Work (20–25 min)",
+                                detail: "High-intensity intervals using bags, pads, and bodyweight circuits. Typically 3–5 rounds of structured work:rest. This is the core of the session — where cardiovascular and muscular endurance is developed.",
+                            },
+                            {
+                                phase: "Mobility Focus (8–10 min)",
+                                detail: "Targeted flexibility work developed around the hip, hamstring, and thoracic spine mobility that Taekwondo demands. Progressive — beginners start where they are, advanced practitioners continue to extend range.",
+                            },
+                            {
+                                phase: "Cool-Down (5–8 min)",
+                                detail: "Static stretching, breathing regulation, and recovery movement to bring heart rate down and begin the recovery process. A proper cool-down is not optional — it is part of the training.",
+                            },
+                        ].map((step) => (
+                            <div class="flex gap-4 items-start border border-white/10 rounded-xl p-5 hover:border-blue-belt-end/30 transition-colors">
+                                <div class="font-oswald text-blue-belt-end font-bold text-base w-52 shrink-0 leading-tight">
+                                    {step.phase}
+                                </div>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {step.detail}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Results -->
+            <section
+                class="mb-16 bg-white/5 border border-white/10 rounded-2xl p-8"
+            >
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 text-center"
+                >
+                    What You Will Notice
+                </h2>
+                <p class="text-gray-300 text-center mb-8 max-w-xl mx-auto">
+                    Within weeks of consistent Fitness Class attendance,
+                    students typically report notable changes across multiple
+                    physical and mental dimensions.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {
+                        [
+                            {
+                                timeline: "Weeks 1–3",
+                                changes: [
+                                    "Improved cardiovascular recovery between exercises",
+                                    "Better sleep quality and energy during the day",
+                                    "Increased confidence in high-effort activities",
+                                    "Noticeable DOMS (muscle soreness) — a sign your body is adapting",
+                                ],
+                            },
+                            {
+                                timeline: "Weeks 4–8",
+                                changes: [
+                                    "Measurable increase in explosive kick speed and power",
+                                    "Significantly improved hip mobility and hamstring flexibility",
+                                    "Greater endurance — workouts that felt brutal become manageable",
+                                    "Leaner body composition with sustained training",
+                                ],
+                            },
+                            {
+                                timeline: "Months 3+",
+                                changes: [
+                                    "Athletic confidence that transfers to other sports and activities",
+                                    "Functional strength that feels different from gym strength",
+                                    "Mental resilience from pushing through difficult sessions consistently",
+                                    "A changed relationship with physical effort and capacity",
+                                ],
+                            },
+                        ].map((block) => (
+                            <div class="bg-deep-space-black/50 rounded-xl p-6 border border-white/10">
+                                <h3 class="font-oswald text-blue-belt-end text-lg mb-4 uppercase">
+                                    {block.timeline}
+                                </h3>
+                                <ul class="space-y-2">
+                                    {block.changes.map((c) => (
+                                        <li class="text-sm text-gray-400 flex gap-2">
+                                            <span class="text-blue-belt-end shrink-0">
+                                                ▸
+                                            </span>{" "}
+                                            {c}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Who It's For -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    Who Should Join?
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {
+                        [
+                            {
+                                label: "Complete Beginners",
+                                body: "No martial arts background needed. If you want a structured, coached workout that pushes you further than you can push yourself in an ordinary gym, this class is designed for you.",
+                            },
+                            {
+                                label: "Cross-Training Athletes",
+                                body: "Runners, cyclists, football players, and gym-goers who want to add fight-specific conditioning to their programme. Combat sports training is consistently rated among the highest in cardiovascular demand.",
+                            },
+                            {
+                                label: "Taekwondo Students",
+                                body: "Serious practitioners who want to develop the physical base to excel in competition. The Fitness Class is the ideal complement to General or Competition class training.",
+                            },
+                        ].map((card) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/30 transition-colors text-center">
+                                <h3 class="text-lg font-bold font-oswald text-blue-belt-end mb-3">
+                                    {card.label}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {card.body}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Related Links -->
+            <section
+                class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-white/10 mb-16"
+            >
+                <div class="space-y-4">
+                    <p
+                        class="text-blue-belt-end font-bold uppercase tracking-widest text-xs mb-4"
+                    >
+                        Explore Classes
+                    </p>
+                    {
+                        [
+                            {
+                                label: "General Class",
+                                href: "/classes/general",
+                            },
+                            {
+                                label: "Competition Class",
+                                href: "/classes/competition",
+                            },
+                            {
+                                label: "Olympic Taekwondo Info",
+                                href: "/blog/olympic-taekwondo",
+                            },
+                        ].map((link) => (
+                            <a
+                                href={link.href}
+                                class="group flex items-center justify-between p-5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-belt-end/40 transition-all duration-300"
+                            >
+                                <span class="font-oswald text-white group-hover:text-blue-belt-end transition-colors text-lg">
+                                    {link.label}
+                                </span>
+                                <span class="text-blue-belt-end ml-4 group-hover:translate-x-1 transition-transform shrink-0">
+                                    →
+                                </span>
+                            </a>
+                        ))
+                    }
+                </div>
+                <div class="space-y-4">
+                    <p
+                        class="text-blue-belt-end font-bold uppercase tracking-widest text-xs mb-4"
+                    >
+                        Take Action
+                    </p>
+                    {
+                        [
+                            { label: "View Class Schedule", href: "/schedule" },
+                            { label: "View Pricing", href: "/pricing" },
+                            { label: "Contact Us", href: "/contact" },
+                        ].map((link) => (
+                            <a
+                                href={link.href}
+                                class="group flex items-center justify-between p-5 rounded-xl bg-blue-belt-start/20 border border-blue-belt-end/20 hover:bg-blue-belt-start/40 hover:border-blue-belt-end/60 transition-all duration-300"
+                            >
+                                <span class="font-oswald text-white group-hover:text-blue-belt-end transition-colors text-lg">
+                                    {link.label}
+                                </span>
+                                <span class="text-blue-belt-end ml-4 group-hover:translate-x-1 transition-transform shrink-0">
+                                    →
+                                </span>
+                            </a>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 text-center"
+                >
+                    Frequently Asked Questions
+                </h2>
+                <div class="space-y-6">
+                    {
+                        faqs.map((faq) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/50 transition-colors">
+                                <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-gray-400">{faq.answer}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section
+                class="text-center bg-blue-belt-end/10 rounded-3xl p-12 border border-blue-belt-end/20"
+            >
+                <h2
+                    class="text-3xl md:text-4xl font-black font-oswald text-white uppercase mb-6"
+                >
+                    Train Like a Fighter
+                </h2>
+                <p class="text-gray-300 max-w-xl mx-auto mb-8">
+                    You do not need to compete to train like a champion. Join
+                    our Fitness Class and discover what you are actually capable
+                    of.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="/contact" variant="primary"
+                        >Start Training</Button
+                    >
+                    <Button href="/schedule" variant="outline"
+                        >View Schedule</Button
+                    >
+                </div>
+            </section>
+        </article>
+    </main>
+    <Footer />
+</Layout>

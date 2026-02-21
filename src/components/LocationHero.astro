@@ -1,0 +1,65 @@
+---
+import ThreeBackground from "./ThreeBackground.jsx";
+import Button from "./Button.astro";
+
+interface Props {
+    title: string;
+    subtitle?: string;
+    image?: string;
+}
+
+const { title, subtitle, image = "/images/hero-poster.webp" } = Astro.props;
+---
+
+<section
+    class="relative w-full h-[60vh] min-h-[500px] overflow-hidden flex items-center justify-center bg-deep-space-black"
+    id="hero"
+>
+    <!-- Image Background -->
+    <div class="absolute inset-0 z-0 select-none pointer-events-none">
+        <img
+            src={image}
+            alt={title}
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            class="w-full h-full object-cover opacity-50 mix-blend-overlay"
+        />
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-deep-space-black"
+        >
+        </div>
+    </div>
+
+    <!-- 3D Background Layer (Overlay) -->
+    <div
+        class="absolute inset-0 z-0 opacity-60 mix-blend-plus-lighter pointer-events-none"
+    >
+        <ThreeBackground client:load />
+    </div>
+
+    <div
+        class="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center gap-6"
+    >
+        <h1
+            class="text-4xl md:text-6xl lg:text-8xl font-black font-oswald tracking-tighter text-white drop-shadow-2xl uppercase leading-none opacity-0 animate-fade-in [animation-delay:200ms] [animation-fill-mode:forwards]"
+        >
+            {title}
+        </h1>
+
+        {
+            subtitle && (
+                <h2 class="text-lg md:text-2xl font-bold text-white max-w-3xl opacity-0 animate-slide-up [animation-delay:400ms] [animation-fill-mode:forwards] tracking-wide drop-shadow-lg text-shadow-sm">
+                    {subtitle}
+                </h2>
+            )
+        }
+
+        <div
+            class="mt-8 opacity-0 animate-slide-up [animation-delay:600ms] [animation-fill-mode:forwards] flex gap-4"
+        >
+            <Button href="#intro" variant="primary">Start Training</Button>
+            <Button href="/contact" variant="secondary">Contact Us</Button>
+        </div>
+    </div>
+</section>

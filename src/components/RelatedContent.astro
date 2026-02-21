@@ -1,0 +1,76 @@
+---
+interface RelatedPost {
+    title: string;
+    slug: string;
+}
+
+interface ActionLink {
+    label: string;
+    href: string;
+}
+
+interface Props {
+    posts: RelatedPost[];
+    actions?: ActionLink[];
+}
+
+const {
+    posts,
+    actions = [
+        { label: "View Class Schedule", href: "/schedule" },
+        { label: "See Pricing", href: "/pricing" },
+    ],
+} = Astro.props;
+---
+
+<section
+    class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-white/10 mt-8"
+>
+    <!-- Read Next -->
+    <div class="space-y-4">
+        <p
+            class="text-blue-belt-end font-bold uppercase tracking-widest text-xs mb-4"
+        >
+            Read Next
+        </p>
+        {
+            posts.map((post) => (
+                <a
+                    href={`/blog/${post.slug}`}
+                    class="group flex items-center justify-between p-5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-belt-end/40 transition-all duration-300"
+                >
+                    <span class="font-oswald text-white group-hover:text-blue-belt-end transition-colors text-lg leading-tight">
+                        {post.title}
+                    </span>
+                    <span class="text-blue-belt-end ml-4 group-hover:translate-x-1 transition-transform shrink-0">
+                        →
+                    </span>
+                </a>
+            ))
+        }
+    </div>
+
+    <!-- Take Action -->
+    <div class="space-y-4">
+        <p
+            class="text-blue-belt-end font-bold uppercase tracking-widest text-xs mb-4"
+        >
+            Take Action
+        </p>
+        {
+            actions.map((action) => (
+                <a
+                    href={action.href}
+                    class="group flex items-center justify-between p-5 rounded-xl bg-blue-belt-start/20 border border-blue-belt-end/20 hover:bg-blue-belt-start/40 hover:border-blue-belt-end/60 transition-all duration-300"
+                >
+                    <span class="font-oswald text-white group-hover:text-blue-belt-end transition-colors text-lg">
+                        {action.label}
+                    </span>
+                    <span class="text-blue-belt-end ml-4 group-hover:translate-x-1 transition-transform shrink-0">
+                        →
+                    </span>
+                </a>
+            ))
+        }
+    </div>
+</section>

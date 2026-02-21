@@ -3,11 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { VerticalCutReveal } from "./ui/vertical-cut-reveal";
 
 // Generate array of 62 images
+// Note: gallery-58 was corrupt (XML file, not a real image) — skipped
 const images = Array.from({ length: 62 }, (_, i) => ({
-    src: `/gallery/gallery-${i + 1}.jpg`,
+    src: `/gallery/gallery-${i + 1}.webp`,
     alt: `Superior Taekwondo Gallery Image ${i + 1}`,
     id: i
-}));
+})).filter((img) => !img.src.includes("gallery-58"));
 
 export default function GallerySection() {
     const [selectedId, setSelectedId] = useState<number | null>(null);

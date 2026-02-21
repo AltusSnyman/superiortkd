@@ -1,38 +1,63 @@
-
 import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 
-const srcDir = 'src/assets';
-const destDir = 'public/images';
+const DIRS = [
+    'public/images',
+    'public/images/blog',
+    'public/images/locations',
+    'public/gallery',
+];
 
-if (!fs.existsSync(destDir)) {
-    fs.mkdirSync(destDir, { recursive: true });
-}
+const QUALITY = 82;
+let totalSaved = 0;
+let totalConverted = 0;
 
-fs.readdir(srcDir, (err, files) => {
-    if (err) {
-        console.error("Could not list the directory.", err);
-        process.exit(1);
+async function convertDir(dir) {
+    if (!fs.existsSync(dir)) {
+        console.warn(`Skipping missing dir: ${dir}`);
+        return;
     }
 
-    files.forEach((file, index) => {
-        const filePath = path.join(srcDir, file);
+    const files = fs.readdirSync(dir);
+
+    for (const file of files) {
+        const filePath = path.join(dir, file);
+        const stat = fs.statSync(filePath);
+        if (stat.isDirectory()) continue;
+
         const ext = path.extname(file).toLowerCase();
+        if (!['.png', '.jpg', '.jpeg'].includes(ext)) continue;
 
-        if (['.png', '.jpg', '.jpeg'].includes(ext)) {
-            const fileName = path.basename(file, ext);
-            const destPath = path.join(destDir, `${fileName}.webp`);
+        const base = path.basename(file, ext);
+        const destPath = path.join(dir, `${base}.webp`);
 
-            sharp(filePath)
-                .webp({ quality: 80 })
-                .toFile(destPath)
-                .then(() => {
-                    console.log(`Optimized: ${file} -> ${fileName}.webp`);
-                })
-                .catch(err => {
-                    console.error(`Error processing ${file}:`, err);
-                });
+        // Skip if WebP already exists
+        if (fs.existsSync(destPath)) {
+            console.log(`  ⏭  Already exists: ${destPath}`);
+            continue;
         }
-    });
-});
+
+        try {
+            const originalSize = stat.size;
+            await sharp(filePath).webp({ quality: QUALITY }).toFile(destPath);
+            const newSize = fs.statSync(destPath).size;
+            const saved = originalSize - newSize;
+            totalSaved += saved;
+            totalConverted++;
+            const pct = ((saved / originalSize) * 100).toFixed(1);
+            console.log(`  ✅ ${file} → ${base}.webp  (${(originalSize / 1024).toFixed(0)}KB → ${(newSize / 1024).toFixed(0)}KB, saved ${pct}%)`);
+        } catch (err) {
+            console.error(`  ❌ Error: ${file}:`, err.message);
+        }
+    }
+}
+
+console.log('🖼  Superior TKD — Image Optimizer\n');
+
+for (const dir of DIRS) {
+    console.log(`📁 ${dir}`);
+    await convertDir(dir);
+}
+
+console.log(`\n🎉 Done! Converted ${totalConverted} images, saved ${(totalSaved / 1024).toFixed(0)} KB total.`);

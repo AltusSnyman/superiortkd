@@ -1,0 +1,308 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+import RelatedContent from "../../components/RelatedContent.astro";
+
+const title = "Your First Taekwondo Class: What to Expect | Superior Taekwondo";
+const description =
+    "Nervous about your first Taekwondo class? Don't be! Here is a breakdown of what happens, what to wear, and how to prepare for day one.";
+
+// FAQ Data
+const faqs = [
+    {
+        question: "Do I need a uniform for my first class?",
+        answer: "No. You can wear comfortable workout clothes (t-shirt and track pants or shorts). We will organize a uniform for you once you decide to join officially.",
+    },
+    {
+        question: "Will I have to spar on day one?",
+        answer: "Absolutely not. Sparring is an advanced skill. Your first few classes will focus on basic movements, balance, and having fun.",
+    },
+    {
+        question: "What should I bring?",
+        answer: "Bring a water bottle and a positive attitude! We train barefoot, so no special shoes are needed.",
+    },
+];
+---
+
+<Layout title={title} description={description}>
+    <!-- FAQ Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer,
+                },
+            })),
+        })}
+    ></script>
+
+    <main class="bg-black min-h-screen pb-12 text-gray-300 font-body">
+        <BlogHero
+            title="What to Expect in Your First Class"
+            subtitle="The hardest part of Taekwondo is walking through the door for the first time. We've made this guide to remove the mystery."
+            image="/images/blog/blog_first_class_hero.webp"
+            category="New Students"
+            readTime="5 Min Read"
+        />
+        <article class="container mx-auto px-4 max-w-3xl mt-12">
+            <!-- Breadcrumb -->
+            <nav class="flex mb-8 text-sm text-gray-500">
+                <a
+                    href="/blog"
+                    class="hover:text-blue-belt-end transition-colors">Blog</a
+                >
+                <span class="mx-2">/</span>
+                <span class="text-gray-300">First Class</span>
+            </nav>
+
+            <!-- Content -->
+            <div class="prose prose-lg prose-invert max-w-none space-y-12">
+                <!-- Section 1 -->
+                <section>
+                    <h2
+                        class="text-3xl font-bold font-oswald text-white uppercase mb-6 border-l-4 border-blue-belt-end pl-4"
+                    >
+                        Before You Arrive
+                    </h2>
+                    <p>
+                        Preparation starts at home. Here is a quick checklist to
+                        ensure a smooth start:
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex gap-4">
+                            <div
+                                class="bg-white/10 rounded-full w-8 h-8 flex items-center justify-center shrink-0 text-white font-bold"
+                            >
+                                1
+                            </div>
+                            <p>
+                                <strong>Clothing:</strong> Wear loose, comfortable
+                                clothing like gym shorts or leggings and a t-shirt.
+                                Avoid zippers or buttons that could scratch.
+                            </p>
+                        </li>
+                        <li class="flex gap-4">
+                            <div
+                                class="bg-white/10 rounded-full w-8 h-8 flex items-center justify-center shrink-0 text-white font-bold"
+                            >
+                                2
+                            </div>
+                            <p>
+                                <strong>Feet:</strong> Wash your feet! We train barefoot
+                                on mats.
+                            </p>
+                        </li>
+                        <li class="flex gap-4">
+                            <div
+                                class="bg-white/10 rounded-full w-8 h-8 flex items-center justify-center shrink-0 text-white font-bold"
+                            >
+                                3
+                            </div>
+                            <p>
+                                <strong>Jewelry:</strong> Remove necklaces, watches,
+                                and dangling earrings for safety.
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section 2 -->
+                <section>
+                    <h2
+                        class="text-3xl font-bold font-oswald text-white uppercase mb-6 border-l-4 border-blue-belt-end pl-4"
+                    >
+                        The Class Structure
+                    </h2>
+                    <p>
+                        Most classes at Superior Taekwondo follow a standard
+                        60-minute format.
+                    </p>
+
+                    <div class="space-y-6 mt-8">
+                        <div class="border-l-2 border-white/20 pl-6 relative">
+                            <span
+                                class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-blue-belt-end"
+                            ></span>
+                            <strong class="text-white block text-lg mb-1"
+                                >Warm-up (10-15 mins)</strong
+                            >
+                            <p class="text-sm text-gray-400">
+                                Jogging, jumping jacks, and dynamic stretching
+                                to get the blood flowing and prevent injury.
+                            </p>
+                        </div>
+                        <div class="border-l-2 border-white/20 pl-6 relative">
+                            <span
+                                class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-blue-belt-end"
+                            ></span>
+                            <strong class="text-white block text-lg mb-1"
+                                >Basics (15-20 mins)</strong
+                            >
+                            <p class="text-sm text-gray-400">
+                                Practicing fundamental movements. For beginners,
+                                this means learning how to stand, punch, and do
+                                a basic front kick.
+                            </p>
+                        </div>
+                        <div class="border-l-2 border-white/20 pl-6 relative">
+                            <span
+                                class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-blue-belt-end"
+                            ></span>
+                            <strong class="text-white block text-lg mb-1"
+                                >Activity / Drills (15-20 mins)</strong
+                            >
+                            <p class="text-sm text-gray-400">
+                                Pad work! You’ll get to kick cushions held by a
+                                partner. This is usually the most fun part.
+                            </p>
+                        </div>
+                        <div class="border-l-2 border-white/20 pl-6 relative">
+                            <span
+                                class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-blue-belt-end"
+                            ></span>
+                            <strong class="text-white block text-lg mb-1"
+                                >Warm-down (5 mins)</strong
+                            >
+                            <p class="text-sm text-gray-400">
+                                Static stretching and breathing exercises to
+                                finish the session.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3 -->
+                <section>
+                    <h2
+                        class="text-3xl font-bold font-oswald text-white uppercase mb-6 border-l-4 border-blue-belt-end pl-4"
+                    >
+                        Common Fears vs Reality
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+                        <div
+                            class="bg-red-900/10 p-6 rounded-xl border border-red-500/20"
+                        >
+                            <span
+                                class="uppercase text-xs font-bold text-red-400 mb-2 block"
+                                >The Fear</span
+                            >
+                            <p class="text-white font-bold text-lg">
+                                "I will look stupid and uncoordinated."
+                            </p>
+                        </div>
+                        <div
+                            class="bg-green-900/10 p-6 rounded-xl border border-green-500/20"
+                        >
+                            <span
+                                class="uppercase text-xs font-bold text-green-400 mb-2 block"
+                                >The Reality</span
+                            >
+                            <p class="text-white font-bold text-lg">
+                                "Everyone looks uncoordinated on day one. Even
+                                Black Belts started here. We celebrate effort,
+                                not perfection."
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+                        <div
+                            class="bg-red-900/10 p-6 rounded-xl border border-red-500/20"
+                        >
+                            <span
+                                class="uppercase text-xs font-bold text-red-400 mb-2 block"
+                                >The Fear</span
+                            >
+                            <p class="text-white font-bold text-lg">
+                                "I'm not fit enough."
+                            </p>
+                        </div>
+                        <div
+                            class="bg-green-900/10 p-6 rounded-xl border border-green-500/20"
+                        >
+                            <span
+                                class="uppercase text-xs font-bold text-green-400 mb-2 block"
+                                >The Reality</span
+                            >
+                            <p class="text-white font-bold text-lg">
+                                "You don't get fit to do Taekwondo; you do
+                                Taekwondo to get fit. Go at your own pace."
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <section
+                    class="bg-blue-belt-end/10 rounded-3xl p-10 border border-blue-belt-end/20 text-center my-12"
+                >
+                    <h2
+                        class="text-3xl font-bold font-oswald text-white uppercase mb-4"
+                    >
+                        Book Your Free Trial
+                    </h2>
+                    <p class="text-gray-300 mb-8 max-w-xl mx-auto">
+                        Now that you know what to expect, there is nothing
+                        holding you back. We can't wait to welcome you to the
+                        team.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <Button href="/pricing" variant="primary"
+                            >Book Now</Button
+                        >
+                        <Button href="/contact" variant="outline"
+                            >Ask a Question</Button
+                        >
+                    </div>
+                </section>
+            </div>
+
+            <!-- FAQ -->
+            <section class="mt-16 pt-12 border-t border-white/10">
+                <h2
+                    class="text-2xl font-bold font-oswald text-white uppercase mb-8"
+                >
+                    First Class FAQs
+                </h2>
+                <div class="space-y-4">
+                    {
+                        faqs.map((faq) => (
+                            <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+                                <h3 class="text-lg font-bold text-white mb-2">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-gray-400 text-sm">
+                                    {faq.answer}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+        </article>
+    </main>
+    <RelatedContent
+        posts={[
+            {
+                title: "Taekwondo for Beginners",
+                slug: "taekwondo-for-beginners",
+            },
+            {
+                title: "Preparing for Your Belt Test",
+                slug: "preparing-for-belt-test",
+            },
+        ]}
+        actions={[
+            { label: "Book a Free Trial", href: "/pricing" },
+            { label: "View Class Times", href: "/schedule" },
+        ]}
+    />
+    <Footer />
+</Layout>

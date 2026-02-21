@@ -1,46 +1,101 @@
 ---
-import Card from './Card.astro';
+import Card from "./Card.astro";
 ---
 
 <section class="py-24 bg-black text-white relative">
     <!-- Background Texture -->
-    <div class="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-overlay">
-        <img src="/images/wall-of-fame.png" alt="Medals" class="w-full h-full object-cover grayscale" />
+    <div
+        class="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-overlay"
+    >
+        <img
+            src="/images/wall-of-fame.webp"
+            alt="Medals"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover grayscale"
+        />
     </div>
 
     <div class="container mx-auto px-4 relative z-10">
-        <h2 class="text-4xl md:text-6xl font-black font-oswald uppercase text-center mb-16 tracking-tighter drop-shadow-lg">
+        <h2
+            class="text-4xl md:text-6xl font-black font-oswald uppercase text-center mb-16 tracking-tighter drop-shadow-lg"
+        >
             A History of <span class="text-blue-gradient">Victory</span>
         </h2>
-        
+
         <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <!-- Column 1: International -->
-            <Card title="International" class="h-full bg-black/60 border-white/5 hover:border-blue-belt-end/30">
+            <Card
+                title="International"
+                class="h-full bg-black/60 border-white/5 hover:border-blue-belt-end/30"
+            >
                 <ul class="space-y-4 font-body text-gray-300 text-lg">
-                    <li class="border-b border-white/5 pb-2">2016 US Open Masters – <span class="text-blue-gradient font-bold float-right">Gold</span></li>
-                    <li class="border-b border-white/5 pb-2">2016 Oceania Selection – <span class="text-blue-gradient font-bold float-right">Gold</span></li>
-                    <li class="border-b border-white/5 pb-2">2015 Pacific Games – <span class="text-blue-gradient font-bold float-right">Gold</span></li>
-                    <li class="border-b border-white/5 pb-2">2014 Gold Coast Open – <span class="text-blue-gradient font-bold float-right">Triple Gold</span></li>
+                    <li class="border-b border-white/5 pb-2">
+                        2016 US Open Masters – <span
+                            class="text-blue-gradient font-bold float-right"
+                            >Gold</span>
+                    </li>
+                    <li class="border-b border-white/5 pb-2">
+                        2016 Oceania Selection – <span
+                            class="text-blue-gradient font-bold float-right"
+                            >Gold</span>
+                    </li>
+                    <li class="border-b border-white/5 pb-2">
+                        2015 Pacific Games – <span
+                            class="text-blue-gradient font-bold float-right"
+                            >Gold</span>
+                    </li>
+                    <li class="border-b border-white/5 pb-2">
+                        2014 Gold Coast Open – <span
+                            class="text-blue-gradient font-bold float-right"
+                            >Triple Gold</span>
+                    </li>
                 </ul>
             </Card>
 
             <!-- Column 2: New Zealand -->
-            <Card title="New Zealand" class="h-full bg-black/80 border-blue-belt-end/20 scale-105 shadow-[0_0_50px_rgba(0,229,255,0.1)] z-10 hover:border-blue-belt-end/60">
-                <ul class="space-y-4 font-body text-gray-100 text-lg font-medium">
-                    <li class="border-b border-white/10 pb-2">10x TNZ National Champion</li>
-                    <li class="border-b border-white/10 pb-2">9x Federation Nat. Champion</li>
-                    <li class="border-b border-white/10 pb-2">2021 Hyeon Mu Best Fighter</li>
-                    <li class="border-b border-white/10 pb-2">2025 Kukkiwon Cup – <span class="text-blue-gradient font-bold float-right">Gold</span></li>
+            <Card
+                title="New Zealand"
+                class="h-full bg-black/80 border-blue-belt-end/20 scale-105 shadow-[0_0_50px_rgba(0,229,255,0.1)] z-10 hover:border-blue-belt-end/60"
+            >
+                <ul
+                    class="space-y-4 font-body text-gray-100 text-lg font-medium"
+                >
+                    <li class="border-b border-white/10 pb-2">
+                        10x TNZ National Champion
+                    </li>
+                    <li class="border-b border-white/10 pb-2">
+                        9x Federation Nat. Champion
+                    </li>
+                    <li class="border-b border-white/10 pb-2">
+                        2021 Hyeon Mu Best Fighter
+                    </li>
+                    <li class="border-b border-white/10 pb-2">
+                        2025 Kukkiwon Cup – <span
+                            class="text-blue-gradient font-bold float-right"
+                            >Gold</span>
+                    </li>
                 </ul>
             </Card>
 
             <!-- Column 3: Legacy -->
-            <Card title="Legacy" class="h-full bg-black/60 border-white/5 hover:border-blue-belt-end/30">
+            <Card
+                title="Legacy"
+                class="h-full bg-black/60 border-white/5 hover:border-blue-belt-end/30"
+            >
                 <ul class="space-y-4 font-body text-gray-300 text-lg">
-                    <li class="border-b border-white/5 pb-2">Rio 2016 Olympic Games</li>
-                    <li class="border-b border-white/5 pb-2">Beijing 2008 Qualified</li>
-                    <li class="border-b border-white/5 pb-2">6x South Island Champion</li>
-                    <li class="pt-2 italic text-sm text-gray-400">"Perseverance conquers all."</li>
+                    <li class="border-b border-white/5 pb-2">
+                        Rio 2016 Olympic Games
+                    </li>
+                    <li class="border-b border-white/5 pb-2">
+                        Beijing 2008 Qualified
+                    </li>
+                    <li class="border-b border-white/5 pb-2">
+                        6x South Island Champion
+                    </li>
+                    <li class="pt-2 italic text-sm text-gray-400">
+                        "Perseverance conquers all."
+                    </li>
                 </ul>
             </Card>
         </div>

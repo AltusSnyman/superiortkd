@@ -1,0 +1,308 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+import RelatedContent from "../../components/RelatedContent.astro";
+
+const title =
+    "Taekwondo for Beginners: The Ultimate Guide | Superior Taekwondo";
+const description =
+    "Starting Taekwondo? Read our comprehensive guide for beginners. Learn about belts, etiquette, benefits, and what to expect on your journey.";
+
+// FAQ Data
+const faqs = [
+    {
+        question: "Do I need to be fit to start Taekwondo?",
+        answer: "No! Taekwondo is for everyone. You will get fit as you train. Our classes are designed to build your fitness levels gradually.",
+    },
+    {
+        question: "Am I too old to start?",
+        answer: "Never. We have students starting in their 30s, 40s, 50s, and beyond. Taekwondo is a lifelong journey adaptable to all ages.",
+    },
+    {
+        question: "How long until I get my Black Belt?",
+        answer: "The average journey takes 3-5 years of consistent training. However, the goal is not just the belt, but the person you become along the way.",
+    },
+    {
+        question: "Is Taekwondo safe?",
+        answer: "Yes. Safety is our top priority. Beginners practice non-contact or light-contact drills. Sparring gear is mandatory for advanced training.",
+    },
+];
+---
+
+<Layout title={title} description={description}>
+    <!-- FAQ Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer,
+                },
+            })),
+        })}
+    ></script>
+
+    <main class="bg-black min-h-screen pb-12 text-gray-300 font-body">
+        <BlogHero
+            title="Taekwondo for Beginners"
+            subtitle="Embarking on a martial arts journey can be one of the most transformative decisions of your life. Whether you want confidence, self-defense, or fitness, Taekwondo offers it all."
+            image="/images/blog/blog_beginners_hero.webp"
+            category="Guides"
+            readTime="10 Min Read"
+        />
+        <article class="container mx-auto px-4 max-w-3xl mt-12">
+            <!-- Breadcrumb -->
+            <nav class="flex mb-8 text-sm text-gray-500">
+                <a
+                    href="/blog"
+                    class="hover:text-blue-belt-end transition-colors">Blog</a
+                >
+                <span class="mx-2">/</span>
+                <span class="text-gray-300">Beginners Guide</span>
+            </nav>
+
+            <!-- Content -->
+            <div class="prose prose-lg prose-invert max-w-none space-y-12">
+                <!-- Section 1 -->
+                <section>
+                    <h2
+                        class="text-3xl font-bold font-oswald text-white uppercase mb-6 border-l-4 border-blue-belt-end pl-4"
+                    >
+                        Why Choose Taekwondo?
+                    </h2>
+                    <p>
+                        Taekwondo is more than just kicking and punching; it is
+                        a way of life. Originating in Korea over 2,000 years
+                        ago, it has evolved into a modern Olympic sport while
+                        retaining its traditional roots.
+                    </p>
+                    <p>Here are the core benefits you can expect:</p>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                        <li>
+                            <strong>Physical Fitness:</strong> Improving cardiovascular
+                            health, flexibility, and strength.
+                        </li>
+                        <li>
+                            <strong>Mental Focus:</strong> Developing discipline,
+                            concentration, and stress relief.
+                        </li>
+                        <li>
+                            <strong>Self-Defense:</strong> Learning practical skills
+                            to protect yourself and others.
+                        </li>
+                        <li>
+                            <strong>Community:</strong> Joining a supportive family
+                            of like-minded individuals.
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section 2 -->
+                <section>
+                    <h2
+                        class="text-3xl font-bold font-oswald text-white uppercase mb-6 border-l-4 border-blue-belt-end pl-4"
+                    >
+                        Understanding the Belt System
+                    </h2>
+                    <p>
+                        The belt system is a visual representation of your
+                        progress. As a beginner, you start at <span
+                            class="text-white font-bold">White Belt</span
+                        > (10th Kup), symbolizing innocence and a readiness to learn.
+                    </p>
+                    <p>
+                        You will progress through colored belts (Yellow, Green,
+                        Blue, Red) before reaching the coveted <span
+                            class="text-white font-bold">Black Belt</span
+                        > (1st Dan). Each grade requires you to demonstrate new patterns
+                        (Poomsae), sparring skills, and technical knowledge.
+                    </p>
+                    <div
+                        class="bg-white/5 p-6 rounded-xl border border-white/10 my-8"
+                    >
+                        <h3 class="text-xl font-bold text-white mb-2">
+                            Did You Know?
+                        </h3>
+                        <p class="text-sm text-gray-400">
+                            The black belt is not the end of the journey; it is
+                            considered the beginning of true understanding. In
+                            Korea, a 1st Dan is often called a "novice expert".
+                        </p>
+                    </div>
+                    <p>
+                        Interested in the full timeline? Check out our detailed <a
+                            href="/blog/taekwondo-grading-system"
+                            class="text-blue-belt-end hover:underline"
+                            >Grading System Guide</a
+                        >.
+                    </p>
+                </section>
+
+                <!-- Section 3 -->
+                <section>
+                    <h2
+                        class="text-3xl font-bold font-oswald text-white uppercase mb-6 border-l-4 border-blue-belt-end pl-4"
+                    >
+                        Dojang Etiquette
+                    </h2>
+                    <p>
+                        Respect is the cornerstone of Taekwondo. The training
+                        hall (Dojang) is a place of learning and discipline.
+                    </p>
+                    <h3 class="text-xl font-bold text-white mt-6 mb-4">
+                        Key Rules to Remember:
+                    </h3>
+                    <ul class="list-decimal pl-6 space-y-3 text-gray-300">
+                        <li>
+                            <strong>Bow Usage:</strong> Always bow to the flags and
+                            the instructor when entering or leaving the dojang. This
+                            shows respect for the art and the space.
+                        </li>
+                        <li>
+                            <strong>Address Instructors Properly:</strong> Use "Sir"
+                            or "Ma'am" when speaking to black belts or instructors.
+                        </li>
+                        <li>
+                            <strong>Uniform (Dobok):</strong> Keep your uniform clean
+                            and belt tied correctly. It represents your mindset.
+                        </li>
+                        <li>
+                            <strong>Punctuality:</strong> Arrive 10 minutes early
+                            to warm up and calm your mind.
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section 4 -->
+                <section>
+                    <h2
+                        class="text-3xl font-bold font-oswald text-white uppercase mb-6 border-l-4 border-blue-belt-end pl-4"
+                    >
+                        What to Expect in Your First Month
+                    </h2>
+                    <p>
+                        The first few weeks are about building a foundation. You
+                        might feel uncoordinated at first—this is normal!
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                        <div
+                            class="bg-gradient-to-br from-gray-900 to-black p-6 rounded-xl border border-white/10"
+                        >
+                            <h4 class="text-lg font-bold text-white mb-2">
+                                Week 1: Stance & Basics
+                            </h4>
+                            <p class="text-sm text-gray-400">
+                                Learning how to stand (Walking Stance), make a
+                                fist, and perform basic blocks.
+                            </p>
+                        </div>
+                        <div
+                            class="bg-gradient-to-br from-gray-900 to-black p-6 rounded-xl border border-white/10"
+                        >
+                            <h4 class="text-lg font-bold text-white mb-2">
+                                Week 2: The Ap-Chagi
+                            </h4>
+                            <p class="text-sm text-gray-400">
+                                Your first kick! The Front Snap Kick (Ap-Chagi)
+                                is the basis for all other kicks.
+                            </p>
+                        </div>
+                        <div
+                            class="bg-gradient-to-br from-gray-900 to-black p-6 rounded-xl border border-white/10"
+                        >
+                            <h4 class="text-lg font-bold text-white mb-2">
+                                Week 3: Patterns
+                            </h4>
+                            <p class="text-sm text-gray-400">
+                                Introduction to the first steps of Taegeuk Il
+                                Jang (Pattern 1).
+                            </p>
+                        </div>
+                        <div
+                            class="bg-gradient-to-br from-gray-900 to-black p-6 rounded-xl border border-white/10"
+                        >
+                            <h4 class="text-lg font-bold text-white mb-2">
+                                Week 4: Confidence
+                            </h4>
+                            <p class="text-sm text-gray-400">
+                                You will notice improved posture, louder kihap
+                                (yell), and better focus.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <section
+                    class="bg-blue-belt-end/10 rounded-3xl p-10 border border-blue-belt-end/20 text-center my-12"
+                >
+                    <h2
+                        class="text-3xl font-bold font-oswald text-white uppercase mb-4"
+                    >
+                        Start Your Journey Today
+                    </h2>
+                    <p class="text-gray-300 mb-8 max-w-xl mx-auto">
+                        There is no perfect time to start. The best time is now.
+                        Join us at Superior Taekwondo in Helensville and
+                        discover what you are capable of.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <Button href="/pricing" variant="primary"
+                            >Book Free Trial</Button
+                        >
+                        <Button href="/contact" variant="outline"
+                            >Contact Us</Button
+                        >
+                    </div>
+                </section>
+            </div>
+
+            <!-- FAQ -->
+            <section class="mt-16 pt-12 border-t border-white/10">
+                <h2
+                    class="text-2xl font-bold font-oswald text-white uppercase mb-8"
+                >
+                    Beginner FAQs
+                </h2>
+                <div class="space-y-4">
+                    {
+                        faqs.map((faq) => (
+                            <div class="bg-white/5 border border-white/10 rounded-lg p-6">
+                                <h3 class="text-lg font-bold text-white mb-2">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-gray-400 text-sm">
+                                    {faq.answer}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+        </article>
+    </main>
+    <RelatedContent
+        posts={[
+            {
+                title: "Your First Taekwondo Class",
+                slug: "first-taekwondo-class",
+            },
+            {
+                title: "Grading & Belt System",
+                slug: "taekwondo-grading-system",
+            },
+        ]}
+        actions={[
+            { label: "View Pricing & Free Trial", href: "/pricing" },
+            { label: "See Class Schedule", href: "/schedule" },
+        ]}
+    />
+    <Footer />
+</Layout>

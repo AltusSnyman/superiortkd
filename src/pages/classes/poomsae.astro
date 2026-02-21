@@ -1,0 +1,469 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+
+const title = "Poomsae Taekwondo Classes Helensville | Superior Taekwondo";
+const description =
+    "Dedicated Poomsae (patterns) classes in Helensville, North West Auckland. Master the Taegeuk series, develop perfect technique, and prepare for grading and Poomsae tournaments at Superior Taekwondo.";
+
+const faqs = [
+    {
+        question: "What is Poomsae?",
+        answer: "Poomsae are predetermined sequences of blocks, strikes, and kicks performed against imaginary opponents. They are a core part of World Taekwondo (WT) curriculum and are assessed at every grading from white belt to black belt.",
+    },
+    {
+        question: "Is Poomsae only for grading purposes?",
+        answer: "Not at all. Poomsae is also a competitive discipline in its own right. World Taekwondo hosts Poomsae-specific tournaments at regional, national, and international levels. It is a pathway for athletes who love the technical art of Taekwondo.",
+    },
+    {
+        question: "Do I need to be flexible to do Poomsae?",
+        answer: "No. Poomsae focuses on precision, power, balance, and rhythm rather than extreme flexibility. Flexibility develops naturally over time as a result of regular training.",
+    },
+    {
+        question: "Can children participate in the Poomsae class?",
+        answer: "Yes. Poomsae training is excellent for children as it develops focus, memory, coordination, and discipline. We tailor the approach based on age and belt level.",
+    },
+    {
+        question: "How does Poomsae help with sparring?",
+        answer: "Poomsae develops the mechanical quality of every technique — better chamber, better extension, better balance. Athletes with strong Poomsae foundations typically generate more power and move more efficiently in sparring.",
+    },
+    {
+        question: "Which Poomsae will I learn?",
+        answer: "Students begin with Taegeuk Il Jang (1st form) and progress through all eight Taegeuk forms as they advance through the belt system. Black belts learn the Palgwe and Yudanja series.",
+    },
+];
+---
+
+<Layout
+    title={title}
+    description={description}
+    image="/images/blog/blog_world_tkd_hero.webp"
+>
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+        })}
+    ></script>
+
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Poomsae Taekwondo Class",
+            provider: {
+                "@type": "MartialArtsSchool",
+                name: "Superior Taekwondo",
+                url: "https://superiortkd.co.nz",
+            },
+            description:
+                "Dedicated Poomsae pattern training class for all belt levels at Superior Taekwondo Helensville.",
+            areaServed: "Helensville, North West Auckland, New Zealand",
+        })}
+    ></script>
+
+    <main class="bg-black min-h-screen pb-12 text-gray-300 font-body">
+        <BlogHero
+            title="Poomsae Class"
+            subtitle="The art within the art. Poomsae is where power meets precision, and discipline becomes beauty. Master the patterns that define World Taekwondo."
+            image="/images/blog/blog_world_tkd_hero.webp"
+            category="Poomsae"
+            readTime="8 Min Read"
+        />
+
+        <article class="container mx-auto px-4 max-w-3xl mt-12">
+            <nav class="flex mb-8 text-sm text-gray-500">
+                <a href="/" class="hover:text-blue-belt-end transition-colors"
+                    >Home</a
+                >
+                <span class="mx-2">/</span>
+                <a
+                    href="/classes/general"
+                    class="hover:text-blue-belt-end transition-colors"
+                    >Classes</a
+                >
+                <span class="mx-2">/</span>
+                <span class="text-gray-300">Poomsae</span>
+            </nav>
+
+            <section class="mb-16 prose prose-lg prose-invert max-w-none">
+                <p
+                    class="lead text-2xl text-white font-oswald font-medium mb-6"
+                >
+                    Every champion starts by mastering the basics — and in
+                    Taekwondo, the basics live in Poomsae.
+                </p>
+                <p>
+                    The word <em>Poomsae</em> (품새) translates roughly as "form"
+                    or "pattern." These are prearranged sequences of techniques —
+                    blocks, strikes, stances, and kicks — performed with a level
+                    of skill that reveals the true depth of a practitioner's understanding.
+                    At <a href="/" class="text-blue-belt-end hover:underline"
+                        >Superior Taekwondo</a
+                    >, Poomsae is not an afterthought between gradings. It is a
+                    dedicated discipline with its own class, its own curriculum,
+                    and its own community of passionate practitioners.
+                </p>
+                <p>
+                    Our Poomsae class is open to students of all belt levels,
+                    from beginners working through Taegeuk Il Jang to black
+                    belts refining the advanced Yudanja series. Whether your
+                    goal is to perform flawlessly at your next <a
+                        href="/grading"
+                        class="text-blue-belt-end hover:underline">grading</a
+                    >, qualify for a Poomsae tournament, or simply deepen your
+                    technical understanding of Taekwondo, this class is for you.
+                </p>
+                <p>
+                    Classes are held at our <strong>Helensville</strong> dojang,
+                    easily accessible from <strong>Kaukapakapa</strong>, <strong
+                        >Waimauku</strong
+                    >, <strong>Huapai</strong>, and the wider <strong
+                        >Rodney District</strong
+                    >.
+                </p>
+            </section>
+
+            <!-- What Poomsae Is -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 border-l-4 border-blue-belt-end pl-4"
+                >
+                    Understanding Poomsae
+                </h2>
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="w-full md:w-2/3 space-y-4 text-gray-300">
+                        <p>
+                            In the World Taekwondo (WT) system, Poomsae serves
+                            several important functions. First, it is a grading
+                            requirement at every rank — from white belt through
+                            to black belt and beyond. Each new belt level
+                            introduces a new Poomsae that must be performed to a
+                            specific standard before promotion is granted.
+                        </p>
+                        <p>
+                            Second, Poomsae is a competitive sport in its own
+                            right. The <a
+                                href="/blog/world-taekwondo"
+                                class="text-blue-belt-end hover:underline"
+                                >World Taekwondo</a
+                            > organisation runs official Poomsae championships at
+                            national and international levels, with age and division
+                            categories from juniors to masters.
+                        </p>
+                        <p>
+                            Third — and perhaps most importantly for long-term
+                            development — Poomsae is the training laboratory for
+                            technique. Performing a pattern forces you to
+                            execute every technique in isolation, making
+                            weaknesses visible and fixable. Athletes who neglect
+                            Poomsae often hit a ceiling in their technical
+                            progression; those who embrace it break through it.
+                        </p>
+                    </div>
+                    <div
+                        class="w-full md:w-1/3 bg-white/5 p-6 rounded-xl border border-white/10"
+                    >
+                        <h3
+                            class="font-oswald text-white text-lg mb-4 uppercase"
+                        >
+                            The Taegeuk Series
+                        </h3>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            {
+                                [
+                                    "Taegeuk 1 — White/Yellow",
+                                    "Taegeuk 2 — Yellow",
+                                    "Taegeuk 3 — Yellow/Green",
+                                    "Taegeuk 4 — Green",
+                                    "Taegeuk 5 — Green/Blue",
+                                    "Taegeuk 6 — Blue",
+                                    "Taegeuk 7 — Blue/Red",
+                                    "Taegeuk 8 — Red/Black",
+                                ].map((t) => (
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-blue-belt-end">
+                                            ▸
+                                        </span>{" "}
+                                        {t}
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What's Included -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    What the Class Covers
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {
+                        [
+                            {
+                                title: "Pattern Learning",
+                                body: "Step-by-step instruction for each Taegeuk form, broken down into manageable sections with clear instruction on direction, sequence, and technique selection.",
+                                icon: "📚",
+                            },
+                            {
+                                title: "Technique Refinement",
+                                body: "Detailed correction of stances, chamber positions, extension, breath control, and eye focus. Poomsae reveals every technical detail — and we address them all.",
+                                icon: "🎯",
+                            },
+                            {
+                                title: "Power & Kihap",
+                                body: "Poomsae requires demonstration of power, speed, and spirit. We develop effective muscle activation, correct tension timing, and the confidence to perform with presence.",
+                                icon: "⚡",
+                            },
+                            {
+                                title: "Rhythm & Flow",
+                                body: "A great Poomsae is not a series of isolated techniques — it flows. We work on transitions, pacing, and the rhythm that separates a mechanical performance from an artistic one.",
+                                icon: "🎵",
+                            },
+                            {
+                                title: "Competition Poomsae",
+                                body: "For those pursuing Poomsae competition, we cover judging criteria, expression scoring, and how to adapt technique for both technical and freestyle categories.",
+                                icon: "🏅",
+                            },
+                            {
+                                title: "Grading Preparation",
+                                body: "Focused preparation for upcoming TNZ-aligned gradings. We know exactly what examiners look for and coach students to meet that standard with confidence.",
+                                icon: "✅",
+                            },
+                        ].map((item) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/40 transition-colors">
+                                <div class="text-3xl mb-3">{item.icon}</div>
+                                <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                    {item.title}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {item.body}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Benefits -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    The Benefits of Regular Poomsae Training
+                </h2>
+                <div class="space-y-6 text-gray-300">
+                    <p>
+                        Poomsae training delivers benefits that extend far
+                        beyond the dojang floor. Here is what consistent
+                        practice develops in our students:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {
+                            [
+                                {
+                                    benefit: "Memory & Cognitive Function",
+                                    detail: "Learning complex sequences challenges and strengthens the brain. Students who regularly learn new Poomsae often report improvements in concentration and memory in other areas of life.",
+                                },
+                                {
+                                    benefit: "Body Awareness & Coordination",
+                                    detail: "Poomsae demands precise control over every limb simultaneously. Over time, this develops exceptional body awareness, spatial intelligence, and coordination.",
+                                },
+                                {
+                                    benefit: "Balance & Stability",
+                                    detail: "Many Poomsae techniques require single-leg stability and controlled weight transfer. Regular practice significantly improves proprioception and core stability.",
+                                },
+                                {
+                                    benefit:
+                                        "Stress Relief & Mind-Body Connection",
+                                    detail: "The focused, meditative quality of Poomsae practice is deeply calming. Many practitioners describe it as a form of moving meditation that clears the mind.",
+                                },
+                                {
+                                    benefit: "Technical Depth",
+                                    detail: "Every technique that appears in a Poomsae also appears in sparring. Perfecting technique in the controlled environment of patterns accelerates improvement across all aspects of Taekwondo.",
+                                },
+                                {
+                                    benefit: "Confidence & Presentation",
+                                    detail: "Performing in front of assessors or judges builds composure under observation — a transferable skill that benefits students in school, work, and social situations.",
+                                },
+                            ].map((item) => (
+                                <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                                    <h3 class="font-oswald text-white text-lg mb-2">
+                                        {item.benefit}
+                                    </h3>
+                                    <p class="text-sm text-gray-400 leading-relaxed">
+                                        {item.detail}
+                                    </p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
+
+            <!-- Who It's For -->
+            <section
+                class="mb-16 bg-white/5 border border-white/10 rounded-2xl p-8"
+            >
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 text-center"
+                >
+                    Who Is This Class For?
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    {
+                        [
+                            {
+                                label: "Grading-Focused Students",
+                                body: "You want to go into your next grading feeling completely prepared. We will make sure your pattern is clean, confident, and examiner-ready.",
+                            },
+                            {
+                                label: "Pattern Enthusiasts",
+                                body: "You love the artistry of Taekwondo and want to go deep on technique. Poomsae class is your space to pursue that interest with like-minded practitioners.",
+                            },
+                            {
+                                label: "Aspiring Competitors",
+                                body: "You want to compete in Poomsae tournaments. We will develop your performance skills and help you understand the judging criteria for your division.",
+                            },
+                        ].map((card) => (
+                            <div class="bg-deep-space-black/50 rounded-xl p-6 border border-white/10">
+                                <h3 class="text-lg font-bold font-oswald text-blue-belt-end mb-3">
+                                    {card.label}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {card.body}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Related Links -->
+            <section
+                class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-white/10 mb-16"
+            >
+                <div class="space-y-4">
+                    <p
+                        class="text-blue-belt-end font-bold uppercase tracking-widest text-xs mb-4"
+                    >
+                        Explore More Classes
+                    </p>
+                    {
+                        [
+                            {
+                                label: "General Class",
+                                href: "/classes/general",
+                            },
+                            {
+                                label: "Competition Class",
+                                href: "/classes/competition",
+                            },
+                            { label: "Grading Information", href: "/grading" },
+                        ].map((link) => (
+                            <a
+                                href={link.href}
+                                class="group flex items-center justify-between p-5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-belt-end/40 transition-all duration-300"
+                            >
+                                <span class="font-oswald text-white group-hover:text-blue-belt-end transition-colors text-lg">
+                                    {link.label}
+                                </span>
+                                <span class="text-blue-belt-end ml-4 group-hover:translate-x-1 transition-transform shrink-0">
+                                    →
+                                </span>
+                            </a>
+                        ))
+                    }
+                </div>
+                <div class="space-y-4">
+                    <p
+                        class="text-blue-belt-end font-bold uppercase tracking-widest text-xs mb-4"
+                    >
+                        Take Action
+                    </p>
+                    {
+                        [
+                            { label: "View Schedule", href: "/schedule" },
+                            {
+                                label: "Belt Grading System",
+                                href: "/blog/taekwondo-grading-system",
+                            },
+                            { label: "Contact Us", href: "/contact" },
+                        ].map((link) => (
+                            <a
+                                href={link.href}
+                                class="group flex items-center justify-between p-5 rounded-xl bg-blue-belt-start/20 border border-blue-belt-end/20 hover:bg-blue-belt-start/40 hover:border-blue-belt-end/60 transition-all duration-300"
+                            >
+                                <span class="font-oswald text-white group-hover:text-blue-belt-end transition-colors text-lg">
+                                    {link.label}
+                                </span>
+                                <span class="text-blue-belt-end ml-4 group-hover:translate-x-1 transition-transform shrink-0">
+                                    →
+                                </span>
+                            </a>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 text-center"
+                >
+                    Frequently Asked Questions
+                </h2>
+                <div class="space-y-6">
+                    {
+                        faqs.map((faq) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/50 transition-colors">
+                                <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-gray-400">{faq.answer}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section
+                class="text-center bg-blue-belt-end/10 rounded-3xl p-12 border border-blue-belt-end/20"
+            >
+                <h2
+                    class="text-3xl md:text-4xl font-black font-oswald text-white uppercase mb-6"
+                >
+                    Master the Art of Poomsae
+                </h2>
+                <p class="text-gray-300 max-w-xl mx-auto mb-8">
+                    Deepen your Taekwondo practice through the timeless
+                    discipline of pattern training. Join the Poomsae class at
+                    Superior Taekwondo.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="/contact" variant="primary"
+                        >Enquire Now</Button
+                    >
+                    <Button href="/schedule" variant="outline"
+                        >View Schedule</Button
+                    >
+                </div>
+            </section>
+        </article>
+    </main>
+    <Footer />
+</Layout>

@@ -1,0 +1,452 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+
+const title =
+    "Kids Taekwondo Classes Helensville | Tiny Tigers | Superior Taekwondo";
+const description =
+    "Taekwondo classes for children aged 5 and up in Helensville, North West Auckland. Our Tiny Tigers programme builds confidence, focus, coordination, and respect in a safe and fun environment.";
+
+const faqs = [
+    {
+        question: "What age is Tiny Tigers for?",
+        answer: "Tiny Tigers is designed for children aged 5 to approximately 10 years old. The class format is tailored specifically for young attention spans, energy levels, and developmental stages.",
+    },
+    {
+        question:
+            "My child has never done a martial art before — is that okay?",
+        answer: "Absolutely. The class is designed for complete beginners. We use games, stations, and age-appropriate drills to introduce concepts gradually in a way that feels fun, not overwhelming.",
+    },
+    {
+        question: "Will my child be taught to fight?",
+        answer: "Taekwondo teaches controlled, purposeful movement — not fighting. The Tiny Tigers programme emphasises self-control, respect, and discipline at all times. Any partner work is non-contact or very lightly supervised contact with protective pads only.",
+    },
+    {
+        question: "How long are the classes?",
+        answer: "Tiny Tigers classes are typically 45–60 minutes — an appropriate duration for young children to stay engaged and absorb learning without fatigue or attention drift.",
+    },
+    {
+        question: "Do children get belts and belt grades?",
+        answer: "Yes. Children progress through the Junior Colour Belt system, which includes half-belt increments (e.g., white-yellow, yellow) to provide more frequent recognition of progress. Gradings are a positive, encouraging experience.",
+    },
+    {
+        question: "What do parents do during class?",
+        answer: "Parents are welcome to observe from a designated viewing area. We encourage you to watch and celebrate your child's progress. Many parents find it inspiring enough to eventually join an adult class themselves!",
+    },
+];
+---
+
+<Layout
+    title={title}
+    description={description}
+    image="/images/blog/blog_schedule_hero.webp"
+>
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+        })}
+    ></script>
+
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Tiny Tigers Kids Taekwondo Classes",
+            provider: {
+                "@type": "MartialArtsSchool",
+                name: "Superior Taekwondo",
+                url: "https://superiortkd.co.nz",
+            },
+            description:
+                "Taekwondo classes designed for children aged 5–10 in Helensville and North West Auckland. Builds confidence, coordination, focus, and respect.",
+            areaServed:
+                "Helensville, Kaukapakapa, Waimauku, North West Auckland, New Zealand",
+        })}
+    ></script>
+
+    <main class="bg-black min-h-screen pb-12 text-gray-300 font-body">
+        <BlogHero
+            title="Tiny Tigers"
+            subtitle="Big hearts, fierce spirits. Our Tiny Tigers programme gives children aged 5 and up the confidence, focus, and discipline to thrive — in the dojang and in life."
+            image="/images/blog/blog_schedule_hero.webp"
+            category="Kids — Ages 5+"
+            readTime="8 Min Read"
+        />
+
+        <article class="container mx-auto px-4 max-w-3xl mt-12">
+            <nav class="flex mb-8 text-sm text-gray-500">
+                <a href="/" class="hover:text-blue-belt-end transition-colors"
+                    >Home</a
+                >
+                <span class="mx-2">/</span>
+                <a
+                    href="/classes/general"
+                    class="hover:text-blue-belt-end transition-colors"
+                    >Classes</a
+                >
+                <span class="mx-2">/</span>
+                <span class="text-gray-300">Tiny Tigers</span>
+            </nav>
+
+            <section class="mb-16 prose prose-lg prose-invert max-w-none">
+                <p
+                    class="lead text-2xl text-white font-oswald font-medium mb-6"
+                >
+                    The greatest gift you can give a child is belief in
+                    themselves — and that starts here.
+                </p>
+                <p>
+                    The Tiny Tigers programme at <a
+                        href="/"
+                        class="text-blue-belt-end hover:underline"
+                        >Superior Taekwondo</a
+                    > is purpose-built for young children aged 5 and up. We understand
+                    that young children are not simply small adults — they have different
+                    learning styles, attention spans, and developmental needs. Our
+                    Tiny Tigers classes are designed by coaches who understand child
+                    development, not just Taekwondo.
+                </p>
+                <p>
+                    Every session blends age-appropriate martial arts
+                    instruction with engaging games, movement challenges, and
+                    character-building activities. Children learn to listen,
+                    focus, follow instructions, and respect others — without
+                    ever feeling like they are being lectured. The lessons come
+                    through the training itself.
+                </p>
+                <p>
+                    The result? Children who stand taller, look adults in the
+                    eye with confidence, take their responsibilities seriously,
+                    and approach challenges with a "I'll try again" mindset.
+                    These are not just martial arts skills — they are life
+                    skills that Taekwondo uniquely delivers.
+                </p>
+                <p>
+                    Tiny Tigers classes run from our <strong>Helensville</strong
+                    > dojang, convenient for families across <strong
+                        >Kaukapakapa</strong
+                    >, <strong>Waimauku</strong>, <strong>Huapai</strong>, and
+                    the wider <strong>Rodney District</strong>.
+                </p>
+            </section>
+
+            <!-- What Children Learn -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    What Your Child Will Develop
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {
+                        [
+                            {
+                                title: "Confidence",
+                                body: "Every breakthrough in class — nailing a new kick, earning a stripe, performing in front of others — builds the self-belief that carries children through challenges outside the dojang.",
+                                icon: "⭐",
+                            },
+                            {
+                                title: "Focus & Attention",
+                                body: "Taekwondo class requires listening and responding to instructions. Young students who train regularly show measurable improvements in classroom attention and task completion.",
+                                icon: "🎯",
+                            },
+                            {
+                                title: "Coordination & Movement",
+                                body: "Kicking, blocking, jumping, and footwork patterns develop whole-body coordination, spatial awareness, and athletic fundamentals that benefit every sport and physical activity.",
+                                icon: "🏃",
+                            },
+                            {
+                                title: "Respect & Discipline",
+                                body: "Bowing in and out, addressing instructors respectfully, waiting patiently for their turn — these rituals build genuine respect and self-discipline without coercion.",
+                                icon: "🙏",
+                            },
+                            {
+                                title: "Perseverance",
+                                body: "Learning a new kick perfectly takes many attempts. The experience of trying, failing, and trying again — and finally succeeding — builds the resilience children will need throughout life.",
+                                icon: "💪",
+                            },
+                            {
+                                title: "Stranger Danger Awareness",
+                                body: "In age-appropriate language, we teach personal safety awareness: the value of personal space, trusting body instincts, and seeking trusted adults when something feels wrong.",
+                                icon: "🛡️",
+                            },
+                        ].map((item) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/40 transition-colors">
+                                <div class="text-3xl mb-3">{item.icon}</div>
+                                <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                    {item.title}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {item.body}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Class Structure -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    A Typical Tiny Tigers Class
+                </h2>
+                <div class="space-y-5">
+                    {
+                        [
+                            {
+                                phase: "Warm-Up (10 min)",
+                                detail: "Fun movement games that get hearts pumping and bodies ready for training. Games are chosen to develop agility, coordination, and listening skills simultaneously.",
+                            },
+                            {
+                                phase: "Technique Time (20 min)",
+                                detail: "Age-appropriate kicking, blocking, and striking drills. Techniques are introduced with simple language, visual demonstrations, and immediate practice. Repetition builds muscle memory without monotony through varied drill formats.",
+                            },
+                            {
+                                phase: "Character Focus (5 min)",
+                                detail: "A short discussion of the weekly character value — discipline, respect, courage, honesty, or perseverance. Concepts are illustrated through stories and relatable examples from the children's own lives.",
+                            },
+                            {
+                                phase: "Poomsae Practice (10 min)",
+                                detail: "Introduction and practice of the pattern relevant to each child's belt level. Pattern memorisation develops cognitive skills alongside physical ones.",
+                            },
+                            {
+                                phase: "Game Time (5–10 min)",
+                                detail: "A structured game that reinforces the session's technique or character focus in a playful, competitive format. This is often a highlight of the class and motivates attendance.",
+                            },
+                            {
+                                phase: "Cool-Down & Close (5 min)",
+                                detail: "Stretching, breathing, and a formal class closing bow. We end each class by asking students to name one thing they learned or improved today — building reflection habits.",
+                            },
+                        ].map((step) => (
+                            <div class="flex gap-4 items-start border border-white/10 rounded-xl p-5 hover:border-blue-belt-end/30 transition-colors">
+                                <div class="font-oswald text-blue-belt-end font-bold text-base w-44 shrink-0 leading-tight">
+                                    {step.phase}
+                                </div>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {step.detail}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Belt System for Juniors -->
+            <section
+                class="mb-16 bg-white/5 border border-white/10 rounded-2xl p-8"
+            >
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 text-center"
+                >
+                    The Junior Belt Journey
+                </h2>
+                <p class="text-gray-300 text-center mb-6 max-w-xl mx-auto">
+                    The junior colour belt system includes half-belts and
+                    stripes that provide more frequent recognition milestones —
+                    keeping children motivated through the natural ups and downs
+                    of learning.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {
+                        [
+                            { belt: "White", detail: "First steps" },
+                            {
+                                belt: "White-Yellow",
+                                detail: "Growing foundations",
+                            },
+                            { belt: "Yellow", detail: "Building confidence" },
+                            {
+                                belt: "Yellow-Green",
+                                detail: "Developing skills",
+                            },
+                            { belt: "Green", detail: "Expanding technique" },
+                            {
+                                belt: "Green-Blue",
+                                detail: "Increasing fluency",
+                            },
+                            { belt: "Blue", detail: "Tactical awareness" },
+                            { belt: "Red", detail: "Advanced practitioner" },
+                        ].map((b) => (
+                            <div class="text-center bg-deep-space-black/50 rounded-xl p-4 border border-white/10">
+                                <p class="font-oswald text-blue-belt-end font-bold">
+                                    {b.belt}
+                                </p>
+                                <p class="text-xs text-gray-500 mt-1">
+                                    {b.detail}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+                <p class="text-center mt-6">
+                    <a
+                        href="/blog/taekwondo-grading-system"
+                        class="text-blue-belt-end hover:underline text-sm"
+                        >Learn about the full grading system →</a
+                    >
+                </p>
+            </section>
+
+            <!-- Parent Info -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    What Parents Need to Know
+                </h2>
+                <div class="space-y-4">
+                    {
+                        [
+                            {
+                                q: "Safety",
+                                a: "All drills are non-contact or lightly supervised with protective pads. We maintain a strict positive behaviour policy and provide a safe, structured environment at all times.",
+                            },
+                            {
+                                q: "Uniform (Dobok)",
+                                a: "A white Taekwondo uniform (dobok) is required once your child begins regular training. We can advise on where to purchase one that fits correctly and meets club standards.",
+                            },
+                            {
+                                q: "Attendance",
+                                a: "Consistency is key to progress. We recommend attending at least twice per week where possible. Gradings require a minimum number of classes to ensure the child is genuinely prepared.",
+                            },
+                            {
+                                q: "Parent Involvement",
+                                a: "You are encouraged to observe from the viewing area. For home reinforcement, we can provide guidance on how to practise belt requirements at home with your child.",
+                            },
+                            {
+                                q: "Club Values",
+                                a: "Superior Taekwondo is a community. We expect respectful behaviour from students AND parents. The values we teach in class should be modelled at home — and vice versa.",
+                            },
+                        ].map((item) => (
+                            <div class="border border-white/10 rounded-xl p-5 hover:border-blue-belt-end/30 transition-colors">
+                                <p class="font-oswald text-white font-bold mb-1">
+                                    {item.q}
+                                </p>
+                                <p class="text-gray-400 text-sm">{item.a}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Related Links -->
+            <section
+                class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-white/10 mb-16"
+            >
+                <div class="space-y-4">
+                    <p
+                        class="text-blue-belt-end font-bold uppercase tracking-widest text-xs mb-4"
+                    >
+                        Related Classes
+                    </p>
+                    {
+                        [
+                            {
+                                label: "General Class (Teens & Adults)",
+                                href: "/classes/general",
+                            },
+                            { label: "Grading Information", href: "/grading" },
+                            { label: "Club Guidelines", href: "/guidelines" },
+                        ].map((link) => (
+                            <a
+                                href={link.href}
+                                class="group flex items-center justify-between p-5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-belt-end/40 transition-all duration-300"
+                            >
+                                <span class="font-oswald text-white group-hover:text-blue-belt-end transition-colors text-lg">
+                                    {link.label}
+                                </span>
+                                <span class="text-blue-belt-end ml-4 group-hover:translate-x-1 transition-transform shrink-0">
+                                    →
+                                </span>
+                            </a>
+                        ))
+                    }
+                </div>
+                <div class="space-y-4">
+                    <p
+                        class="text-blue-belt-end font-bold uppercase tracking-widest text-xs mb-4"
+                    >
+                        Take Action
+                    </p>
+                    {
+                        [
+                            { label: "View Class Schedule", href: "/schedule" },
+                            { label: "View Pricing", href: "/pricing" },
+                            { label: "Contact Us", href: "/contact" },
+                        ].map((link) => (
+                            <a
+                                href={link.href}
+                                class="group flex items-center justify-between p-5 rounded-xl bg-blue-belt-start/20 border border-blue-belt-end/20 hover:bg-blue-belt-start/40 hover:border-blue-belt-end/60 transition-all duration-300"
+                            >
+                                <span class="font-oswald text-white group-hover:text-blue-belt-end transition-colors text-lg">
+                                    {link.label}
+                                </span>
+                                <span class="text-blue-belt-end ml-4 group-hover:translate-x-1 transition-transform shrink-0">
+                                    →
+                                </span>
+                            </a>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 text-center"
+                >
+                    Frequently Asked Questions
+                </h2>
+                <div class="space-y-6">
+                    {
+                        faqs.map((faq) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/50 transition-colors">
+                                <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-gray-400">{faq.answer}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section
+                class="text-center bg-blue-belt-end/10 rounded-3xl p-12 border border-blue-belt-end/20"
+            >
+                <h2
+                    class="text-3xl md:text-4xl font-black font-oswald text-white uppercase mb-6"
+                >
+                    Give Your Child the Gift of Confidence
+                </h2>
+                <p class="text-gray-300 max-w-xl mx-auto mb-8">
+                    Enrol your child in Tiny Tigers today. A few months from
+                    now, you will see a different child — more confident, more
+                    focused, more themselves.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="/contact" variant="primary"
+                        >Enquire Now</Button
+                    >
+                    <Button href="/schedule" variant="outline"
+                        >View Schedule</Button
+                    >
+                </div>
+            </section>
+        </article>
+    </main>
+    <Footer />
+</Layout>

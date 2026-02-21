@@ -1,0 +1,449 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+
+const title =
+    "Taekwondo Grading & Belt System: The Complete Guide | Superior Taekwondo";
+const description =
+    "Understand the WT Taekwondo belt system. From White Belt to Black Belt, learn about the requirements, timelines, and meaning behind every grade.";
+
+// FAQ Data for Schema
+const faqs = [
+    {
+        question: "How long does it take to get a Black Belt in Taekwondo?",
+        answer: "Typically, it takes between 3 to 5 years of consistent training to achieve a 1st Dan Black Belt. This depends on the student's dedication, frequency of training, and ability to pass regular gradings.",
+    },
+    {
+        question: "What is the difference between Kup and Dan grades?",
+        answer: "Kup grades are the colored belts (beginner to intermediate), counting down from 10th Kup (White Belt) to 1st Kup (Red Belt with Black Tip). Dan grades are the Black Belt ranks (expert), counting up from 1st Dan to 9th Dan.",
+    },
+    {
+        question: "How often are gradings held?",
+        answer: "At Superior Taekwondo, color belt gradings are typically held every 3-4 months. Students must show improvement in techniques, patterns (Poomsae), and sparring to be eligible to grade.",
+    },
+    {
+        question: "What is the minimum age for a Black Belt?",
+        answer: "Students under 15 years old receive a 'Poom' rank (Junior Black Belt), which converts to a 'Dan' rank (Adult Black Belt) when they turn 15. There is no maximum age!",
+    },
+    {
+        question: "Do I have to spar to get my belts?",
+        answer: "Sparring is a requirement for most belt levels as it demonstrates the practical application of techniques. However, for lower belts, this is light contact and focuses on controlled movement.",
+    },
+];
+
+const beltSystem = [
+    {
+        color: "White",
+        kup: "10th Kup",
+        meaning:
+            "Innocence. A beginner with no previous knowledge of Taekwondo.",
+    },
+    {
+        color: "Yellow",
+        kup: "8th Kup",
+        meaning:
+            "Earth. The foundation is being laid for a plant to take root and grow.",
+    },
+    {
+        color: "Green",
+        kup: "6th Kup",
+        meaning: "Growth. The plant's leaves start to grow as skill develops.",
+    },
+    {
+        color: "Blue",
+        kup: "4th Kup",
+        meaning:
+            "Sky. The plant grows towards the blue sky as training progresses.",
+    },
+    {
+        color: "Red",
+        kup: "2th Kup",
+        meaning:
+            "Danger. A warning to the student to exercise control and to the opponent to beware.",
+    },
+    {
+        color: "Black",
+        kup: "1st Dan",
+        meaning:
+            "Maturity. Opposite of white, signifying mastery and imperviousness to darkness/fear.",
+    },
+];
+---
+
+<Layout
+    title={title}
+    description={description}
+    image="/images/blog/blog_grading_system_hero.webp"
+>
+    <!-- FAQ Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer,
+                },
+            })),
+        })}
+    ></script>
+
+    <main class="bg-black min-h-screen pb-12 text-gray-300 font-body">
+        <BlogHero
+            title="Understanding the Grading System"
+            subtitle="The road to Black Belt is long, but every step is a victory. Here is how the belt system works and what each color represents."
+            image="/images/blog/blog_grading_system_hero.webp"
+            category="Guides"
+            readTime="6 Min Read"
+        />
+        <article class="container mx-auto px-4 max-w-3xl mt-12">
+            <!-- Breadcrumb -->
+            <nav class="flex mb-8 text-sm text-gray-500">
+                <a
+                    href="/blog"
+                    class="hover:text-blue-belt-end transition-colors">Blog</a
+                >
+                <span class="mx-2">/</span>
+                <span class="text-gray-300">Grading System</span>
+            </nav>
+
+            <!-- Introduction -->
+            <section class="mb-16 prose prose-lg prose-invert max-w-none">
+                <p
+                    class="lead text-2xl text-white font-oswald font-medium mb-6"
+                >
+                    In Taekwondo, the belt is more than just a piece of fabric
+                    holding your uniform together. It is a visual representation
+                    of your knowledge, skill, and dedication.
+                </p>
+                <p>
+                    At <strong>Superior Taekwondo</strong>, we adhere to the
+                    official World Taekwondo (WT) and Kukkiwon grading system.
+                    This ensures that the rank you earn in our Helensville
+                    dojang is recognized globally, from Seoul to Los Angeles to
+                    London.
+                </p>
+            </section>
+
+            <!-- The Belt Order -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    The Belt Hierarchy
+                </h2>
+                <div class="space-y-4">
+                    {
+                        beltSystem.map((belt, index) => (
+                            <div class="flex flex-col md:flex-row gap-4 md:items-center bg-white/5 p-6 rounded-xl border border-white/10 hover:border-blue-belt-end/30 transition-all group">
+                                <div class="flex items-center gap-4 md:w-1/4">
+                                    <div
+                                        class={`w-12 h-12 rounded-full border-2 border-white/20 shadow-lg`}
+                                        style={{
+                                            backgroundColor:
+                                                belt.color.toLowerCase() ===
+                                                "white"
+                                                    ? "white"
+                                                    : `var(--color-${belt.color.toLowerCase()}-500, ${
+                                                          belt.color
+                                                      })`,
+                                        }}
+                                    />
+                                    <div>
+                                        <span class="block text-2xl font-black font-oswald text-white uppercase">
+                                            {belt.color} Belt
+                                        </span>
+                                        <span class="text-sm text-blue-belt-end font-bold">
+                                            {belt.kup}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <p class="text-gray-300">
+                                        <strong class="text-white">
+                                            Meaning:
+                                        </strong>{" "}
+                                        {belt.meaning}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Progression Timeline -->
+            <section
+                class="mb-16 border border-white/10 rounded-2xl p-8 bg-gradient-to-r from-gray-900 to-black"
+            >
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 text-center"
+                >
+                    Timeline to Black Belt
+                </h2>
+                <p class="text-center text-gray-400 mb-8 max-w-2xl mx-auto">
+                    While every student involves at their own pace, here is a
+                    general guideline for consistent students training 2-3 times
+                    per week.
+                </p>
+
+                <div class="relative max-w-3xl mx-auto">
+                    <div
+                        class="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-white/10 -translate-x-1/2"
+                    >
+                    </div>
+
+                    <div class="space-y-12">
+                        <!-- Step 1 -->
+                        <div
+                            class="relative flex flex-col md:flex-row items-center"
+                        >
+                            <div
+                                class="md:w-1/2 md:pr-12 md:text-right pl-20 md:pl-0"
+                            >
+                                <h4 class="text-xl font-bold text-white">
+                                    Beginner (White - Yellow)
+                                </h4>
+                                <p class="text-sm text-gray-400">
+                                    0 - 12 Months
+                                </p>
+                                <p class="text-sm text-gray-500 mt-2">
+                                    Focus on basic stances, flexibility, and
+                                    etiquette. Learning the first patterns
+                                    (Taegeuk Il Jang).
+                                </p>
+                            </div>
+                            <div
+                                class="absolute left-8 md:left-1/2 w-4 h-4 bg-white rounded-full -translate-x-1/2 border-4 border-black box-content z-10"
+                            >
+                            </div>
+                            <div class="hidden md:block md:w-1/2"></div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div
+                            class="relative flex flex-col md:flex-row items-center"
+                        >
+                            <div class="hidden md:block md:w-1/2"></div>
+                            <div
+                                class="absolute left-8 md:left-1/2 w-4 h-4 bg-blue-500 rounded-full -translate-x-1/2 border-4 border-black box-content z-10"
+                            >
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 pl-20">
+                                <h4 class="text-xl font-bold text-white">
+                                    Intermediate (Green - Blue)
+                                </h4>
+                                <p class="text-sm text-gray-400">
+                                    1 - 2.5 Years
+                                </p>
+                                <p class="text-sm text-gray-500 mt-2">
+                                    Introduction to sparring, board breaking,
+                                    and more complex combinations. Refining
+                                    technique.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div
+                            class="relative flex flex-col md:flex-row items-center"
+                        >
+                            <div
+                                class="md:w-1/2 md:pr-12 md:text-right pl-20 md:pl-0"
+                            >
+                                <h4 class="text-xl font-bold text-white">
+                                    Advanced (Red - Cho Dan Bo)
+                                </h4>
+                                <p class="text-sm text-gray-400">
+                                    2.5 - 3.5 Years
+                                </p>
+                                <p class="text-sm text-gray-500 mt-2">
+                                    Mastering advanced kicks (spinning),
+                                    leadership skills, and preparation for the
+                                    rigorous Black Belt grading.
+                                </p>
+                            </div>
+                            <div
+                                class="absolute left-8 md:left-1/2 w-4 h-4 bg-red-600 rounded-full -translate-x-1/2 border-4 border-black box-content z-10"
+                            >
+                            </div>
+                            <div class="hidden md:block md:w-1/2"></div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div
+                            class="relative flex flex-col md:flex-row items-center"
+                        >
+                            <div class="hidden md:block md:w-1/2"></div>
+                            <div
+                                class="absolute left-8 md:left-1/2 w-4 h-4 bg-black rounded-full -translate-x-1/2 border-4 border-white box-content z-10 shadow-[0_0_15px_rgba(255,255,255,0.5)]"
+                            >
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 pl-20">
+                                <h4 class="text-xl font-bold text-white">
+                                    Black Belt (1st Dan)
+                                </h4>
+                                <p class="text-sm text-gray-400">
+                                    3.5 - 5 Years
+                                </p>
+                                <p class="text-sm text-gray-500 mt-2">
+                                    Completion of the basic curriculum. The
+                                    student is now considered a serious
+                                    practitioner ready to begin advanced
+                                    learning.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What Happens at a Grading -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 border-l-4 border-blue-belt-end pl-4"
+                >
+                    The Grading Day
+                </h2>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="w-full md:w-2/3">
+                        <p class="mb-4 text-gray-300">
+                            Gradings are formal examinations overseen by a
+                            certified Master Instructor. They are designed to
+                            test your physical and mental readiness for the next
+                            level.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                            <div class="bg-white/5 p-4 rounded-lg">
+                                <strong class="text-white block mb-1"
+                                    >Poomsae (Patterns)</strong
+                                >
+                                <p class="text-sm text-gray-400">
+                                    Performing set sequences of defense and
+                                    attack with precision.
+                                </p>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-lg">
+                                <strong class="text-white block mb-1"
+                                    >Kyorugi (Sparring)</strong
+                                >
+                                <p class="text-sm text-gray-400">
+                                    Demonstrating practical application against
+                                    a partner.
+                                </p>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-lg">
+                                <strong class="text-white block mb-1"
+                                    >Kyukpa (Breaking)</strong
+                                >
+                                <p class="text-sm text-gray-400">
+                                    Breaking wooden boards to test power and
+                                    focus (usually green belt+).
+                                </p>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-lg">
+                                <strong class="text-white block mb-1"
+                                    >Terminology</strong
+                                >
+                                <p class="text-sm text-gray-400">
+                                    Answering questions about Korean terms and
+                                    Taekwondo history.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="w-full md:w-1/3 bg-blue-belt-end/10 p-6 rounded-xl border border-blue-belt-end/20 flex flex-col justify-center items-center text-center"
+                    >
+                        <h3 class="text-xl font-bold text-white mb-2">
+                            Ready to Start?
+                        </h3>
+                        <p class="text-sm text-gray-400 mb-6">
+                            Every Master was once a white belt who never gave
+                            up.
+                        </p>
+                        <Button href="/pricing" variant="primary"
+                            >Start Your Trial</Button
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 text-center"
+                >
+                    Grading FAQ
+                </h2>
+                <div class="space-y-6">
+                    {
+                        faqs.map((faq) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/50 transition-colors">
+                                <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-gray-400">{faq.answer}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Connected Links -->
+            <section
+                class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-white/10"
+            >
+                <a
+                    href="/blog/world-taekwondo"
+                    class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+                >
+                    <span
+                        class="text-blue-belt-end text-sm font-bold uppercase mb-2 block"
+                        >Read Next</span
+                    >
+                    <h3
+                        class="text-xl font-oswald text-white group-hover:text-blue-belt-end transition-colors"
+                    >
+                        World Taekwondo &rarr;
+                    </h3>
+                </a>
+                <a
+                    href="/blog/olympic-taekwondo"
+                    class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+                >
+                    <span
+                        class="text-blue-belt-end text-sm font-bold uppercase mb-2 block"
+                        >Read Next</span
+                    >
+                    <h3
+                        class="text-xl font-oswald text-white group-hover:text-blue-belt-end transition-colors"
+                    >
+                        Olympic Taekwondo &rarr;
+                    </h3>
+                </a>
+                <a
+                    href="/schedule"
+                    class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+                >
+                    <span
+                        class="text-blue-belt-end text-sm font-bold uppercase mb-2 block"
+                        >Action</span
+                    >
+                    <h3
+                        class="text-xl font-oswald text-white group-hover:text-blue-belt-end transition-colors"
+                    >
+                        View Schedule &rarr;
+                    </h3>
+                </a>
+            </section>
+        </article>
+    </main>
+    <Footer />
+</Layout>

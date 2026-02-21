@@ -122,7 +122,7 @@ export default function ContactSection() {
                                     <div>
                                         <h4 className="text-white font-bold uppercase tracking-wider mb-1">Email</h4>
                                         <a href="mailto:superiorfitnessnz@gmail.com" className="hover:text-blue-belt-end transition-colors text-lg">superiorfitnessnz@gmail.com</a>
-                                        <p className="text-sm text-gray-500 mt-1">We'll respond within 24 hours</p>
+                                        <p className="text-sm text-gray-500 mt-1">For fastest response, call us directly</p>
                                     </div>
                                 </div>
 

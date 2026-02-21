@@ -1,0 +1,129 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+
+const posts = [
+  // New Guides
+  {
+    title: "Taekwondo for Beginners: A Complete Guide",
+    slug: "taekwondo-for-beginners",
+    excerpt: "Thinking about starting? Here is everything you need to know about the journey from White Belt to Black Belt.",
+    category: "Guides",
+    image: "/images/blog/blog_beginners_hero.webp"
+  },
+  {
+    title: "Preparing for Your Belt Test",
+    slug: "preparing-for-belt-test",
+    excerpt: "Nervous about grading? Use our checklist to prepare your patterns, sparring, and mindset for success.",
+    category: "Training",
+    image: "/images/blog/blog_grading_hero.webp"
+  },
+  {
+    title: "Your First Class: What to Expect",
+    slug: "first-taekwondo-class",
+    excerpt: "Walking into the dojang for the first time? We break down exactly what happens in your first class.",
+    category: "New Students",
+    image: "/images/blog/blog_first_class_hero.webp"
+  },
+  // Pillar Content
+  {
+    title: "The History of Taekwondo",
+    slug: "history-of-taekwondo",
+    category: "Community",
+    image: "/images/blog/blog_history_hero.webp"
+  },
+   {
+    title: "Olympic Taekwondo",
+    slug: "olympic-taekwondo",
+    excerpt: "The ultimate stage. Understand weight classes, scoring systems, and the pathway from club level to the Olympic Games.",
+    image: "/images/blog/blog_olympic_hero.webp", 
+    category: "Sport"
+  },
+   {
+    title: "World Taekwondo (WT)",
+    slug: "world-taekwondo",
+    excerpt: "Meet the global governing body. Learn about their mission, the Kukkiwon connection, and why alignment matters.",
+    image: "/images/blog/blog_world_tkd_hero.webp", 
+    category: "Education"
+  },
+  {
+    title: "Grading & Belt System",
+    slug: "taekwondo-grading-system",
+    excerpt: "A complete visual guide to the belt colors, meanings, and the timeline from White Belt to Black Belt.",
+    image: "/images/blog/blog_grading_system_hero.webp", 
+    category: "Guides"
+  },
+  {
+    title: "2026 Competition Rules",
+    slug: "competition-rules",
+    excerpt: "Stay ahead of the game with our breakdown of the latest rules, including new scoring for turning kicks and penalty changes.",
+    image: "/images/blog/blog_tournament_hero.webp", 
+    category: "Sport"
+  },
+  {
+    title: "WT vs ITF: The Difference",
+    slug: "wt-vs-itf-taekwondo",
+    excerpt: "Confused by the different styles? We explain the key technical and historical differences between World Taekwondo and ITF.",
+    image: "/images/blog/blog_world_tkd_hero.webp", 
+    category: "Education"
+  }
+];
+
+const title = "Superior Taekwondo Blog | Insights, Tips & News";
+const description = "Read the latest articles from Superior Taekwondo. Expert advice on training, grading, competition, and martial arts philosophy.";
+---
+
+<Layout title={title} description={description}>
+  <main class="bg-black min-h-screen pt-24 pb-12 text-gray-300 font-body">
+    <div class="container mx-auto px-4">
+      <!-- Header -->
+      <header class="mb-16 text-center">
+        <p class="text-blue-belt-end font-bold tracking-widest uppercase text-sm mb-4">The Knowledge Hub</p>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black font-oswald text-white uppercase tracking-tighter mb-6 leading-none">
+          Superior <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-belt-start to-blue-belt-end">Insights</span>
+        </h1>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+          Deep dives into training, philosophy, and the martial arts lifestyle.
+        </p>
+      </header>
+
+      <!-- Blog Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="group block bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-blue-belt-end/50 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2">
+            <!-- Image Placeholder / Gradient -->
+            <div class="h-48 bg-gradient-to-br from-gray-800 to-black relative overflow-hidden">
+                {post.image ? (
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
+                  <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-black"></div>
+                )}
+                <div class="absolute inset-0 bg-blue-belt-end/10 group-hover:bg-blue-belt-end/20 transition-colors pointer-events-none"></div>
+                <!-- Category Badge -->
+                <span class="absolute top-4 left-4 bg-blue-belt-end text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10">
+                    {post.category}
+                </span>
+            </div>
+            
+            <div class="p-6">
+                <h2 class="text-2xl font-bold font-oswald text-white mb-3 group-hover:text-blue-belt-end transition-colors leading-tight">
+                    {post.title}
+                </h2>
+                <p class="text-gray-400 text-sm mb-4 line-clamp-3">
+                    {post.excerpt}
+                </p>
+                <span class="text-blue-belt-end text-sm font-bold uppercase flex items-center gap-2">
+                    Read Article <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

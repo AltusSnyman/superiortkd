@@ -1,0 +1,454 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+
+const title =
+    "Adult & Teen Taekwondo Classes Auckland North West | Superior Taekwondo";
+const description =
+    "General Taekwondo classes for adults and teenagers in Helensville, Kaukapakapa & Waimauku. Learn striking, sparring, patterns, and self-defence in a welcoming community at Superior Taekwondo.";
+
+const faqs = [
+    {
+        question: "What age group is the General Class for?",
+        answer: "The General Class is for teenagers (roughly 13+) and adults of all ages. We regularly have students in their 30s, 40s, 50s, and beyond. There is no upper age limit — Taekwondo is a lifelong pursuit.",
+    },
+    {
+        question: "Do I need to be fit to start?",
+        answer: "No. We build your fitness as part of the process. Every class includes warm-up, conditioning, and cool-down components tailored to the group's level. You will improve your fitness naturally over weeks and months.",
+    },
+    {
+        question: "Do I need any prior martial arts experience?",
+        answer: "Not at all. The General Class is designed to welcome complete beginners and continue developing experienced practitioners simultaneously. Our coaches are skilled at individualising instruction within group settings.",
+    },
+    {
+        question: "Will I have to spar?",
+        answer: "Sparring is introduced gradually and is never forced. Beginner students start with non-contact drills. Full-contact sparring with protective gear is introduced once a student has developed sufficient confidence and technique.",
+    },
+    {
+        question: "How long before I earn my first belt?",
+        answer: "Most students complete their first grading after approximately 3 months of regular attendance. The colour belt progression continues roughly every 3–4 months with consistent training and grading preparation.",
+    },
+    {
+        question: "Can I train if I have an injury or physical limitation?",
+        answer: "In many cases, yes. Please discuss any injuries or limitations with our coaches before your first class. We modify training plans where possible and work within your capabilities safely.",
+    },
+];
+---
+
+<Layout
+    title={title}
+    description={description}
+    image="/images/blog/blog_beginners_hero.webp"
+>
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+        })}
+    ></script>
+
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "General Taekwondo Class — Adults & Teenagers",
+            provider: {
+                "@type": "MartialArtsSchool",
+                name: "Superior Taekwondo",
+                url: "https://superiortkd.co.nz",
+            },
+            description:
+                "General Taekwondo classes for adults and teenagers in North West Auckland offering striking, sparring, Poomsae, and self-defence.",
+            areaServed:
+                "Helensville, Kaukapakapa, Waimauku, North West Auckland, New Zealand",
+        })}
+    ></script>
+
+    <main class="bg-black min-h-screen pb-12 text-gray-300 font-body">
+        <BlogHero
+            title="General Class"
+            subtitle="The complete Taekwondo experience. Technique, sparring, fitness, and community — for teenagers and adults ready to commit to something extraordinary."
+            image="/images/blog/blog_beginners_hero.webp"
+            category="All Levels"
+            readTime="9 Min Read"
+        />
+
+        <article class="container mx-auto px-4 max-w-3xl mt-12">
+            <nav class="flex mb-8 text-sm text-gray-500">
+                <a href="/" class="hover:text-blue-belt-end transition-colors"
+                    >Home</a
+                >
+                <span class="mx-2">/</span>
+                <span class="text-gray-300">Classes / General</span>
+            </nav>
+
+            <section class="mb-16 prose prose-lg prose-invert max-w-none">
+                <p
+                    class="lead text-2xl text-white font-oswald font-medium mb-6"
+                >
+                    You do not need a reason to start Taekwondo. You just need
+                    to start.
+                </p>
+                <p>
+                    The General Class at <a
+                        href="/"
+                        class="text-blue-belt-end hover:underline"
+                        >Superior Taekwondo</a
+                    > is the heart of what we do. It is where beginners take their
+                    first steps, where intermediate students sharpen their skills,
+                    and where experienced practitioners continue to grow. It is a
+                    space built on respect, challenge, and community.
+                </p>
+                <p>
+                    Every class is structured to deliver progress across all
+                    four pillars of Taekwondo: <strong
+                        >striking and kicking technique</strong
+                    >, <strong>Poomsae (patterns)</strong>, <strong
+                        >sparring</strong
+                    >, and <strong>physical conditioning</strong>. Over time,
+                    these pillars reinforce each other — better technique makes
+                    sparring more effective, conditioning makes technique
+                    sharper, and patterns build the mechanical foundation for
+                    everything else.
+                </p>
+                <p>
+                    Our General Class is for teenagers and adults across the
+                    full belt spectrum. Whether you are lacing up a dobok for
+                    the first time or returning to Taekwondo after years away,
+                    you will find a class designed to meet you exactly where you
+                    are. We run classes across our locations in <strong
+                        >Helensville</strong
+                    >, <strong>Kaukapakapa</strong>, and <strong
+                        >Waimauku</strong
+                    > — check the <a
+                        href="/schedule"
+                        class="text-blue-belt-end hover:underline"
+                        >class schedule</a
+                    > for times near you.
+                </p>
+            </section>
+
+            <!-- Curriculum -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    What Every Class Includes
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {
+                        [
+                            {
+                                title: "Warm-Up & Mobility",
+                                body: "Every session begins with dynamic warm-up routines developed to prepare joints and muscles for the demands of Taekwondo. Mobility work is incorporated from day one, gradually improving flexibility without injury risk.",
+                                icon: "🔥",
+                            },
+                            {
+                                title: "Fundamental Techniques",
+                                body: "Stances, blocks, punches, and the full range of Taekwondo kicks — from the essential front kick to spinning heel kicks. Beginners learn from the ground up; advanced students refine mechanics and timing.",
+                                icon: "🥋",
+                            },
+                            {
+                                title: "Poomsae (Patterns)",
+                                body: "Each belt level has a corresponding Taegeuk pattern that must be mastered for <a href='/grading' class='text-blue-belt-end hover:underline'>grading</a>. Pattern training is integrated into every class and deepens technical understanding.",
+                                icon: "📐",
+                            },
+                            {
+                                title: "Combination Drills",
+                                body: "Real Taekwondo happens in sequences, not single techniques. We drill multi-technique combinations with partners using pads and mitts, developing timing, accuracy, and power generation.",
+                                icon: "⚡",
+                            },
+                            {
+                                title: "Controlled Sparring",
+                                body: "Introduced progressively based on readiness. Students begin with pre-arranged sparring scenarios, advancing to freestyle sparring with full protective gear as confidence and skill develop.",
+                                icon: "🛡️",
+                            },
+                            {
+                                title: "Conditioning & Cool-Down",
+                                body: "Class endings include functional conditioning (core, legs, agility) and a structured cool-down with stretching. Fitness is a by-product of great Taekwondo training, not an add-on.",
+                                icon: "💪",
+                            },
+                        ].map((item) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/40 transition-colors">
+                                <div
+                                    class="text-3xl mb-3"
+                                    set:html={item.icon}
+                                />
+                                <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                    {item.title}
+                                </h3>
+                                <p
+                                    class="text-gray-400 text-sm leading-relaxed"
+                                    set:html={item.body}
+                                />
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Belt Progression -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    Your Belt Progression Path
+                </h2>
+                <p class="text-gray-300 mb-6">
+                    Progression through the belt system is measured and
+                    celebrated. Each rank represents a genuine increase in
+                    technical and personal development. There is no shortcutting
+                    the process — and that is what makes each belt meaningful.
+                </p>
+                <div class="space-y-4">
+                    {
+                        [
+                            {
+                                belt: "White Belt",
+                                detail: "Begin your journey. Learn fundamental stances, basic kicks and blocks, and Taegeuk 1 pattern. No prior experience needed.",
+                            },
+                            {
+                                belt: "Yellow Belt",
+                                detail: "Build on foundations. Develop power and coordination. Introduce basic sparring concepts and more complex combinations.",
+                            },
+                            {
+                                belt: "Green Belt",
+                                detail: "Technique becomes more fluid. Sparring increases in complexity. Poomsae precision is emphasized in preparation for grading.",
+                            },
+                            {
+                                belt: "Blue Belt",
+                                detail: "Mid-way milestone. Strategy enters the sparring conversation. Techniques become more diverse and combinations more sophisticated.",
+                            },
+                            {
+                                belt: "Red Belt",
+                                detail: "Advanced practitioner. Sparring is dynamic and purposeful. Students begin to develop their own fighting style and personal strengths.",
+                            },
+                            {
+                                belt: "Black Belt",
+                                detail: "A beginning, not an end. Black belt represents the foundation from which true mastery begins. Advanced patterns, leadership, and continued refinement.",
+                            },
+                        ].map((step) => (
+                            <div class="flex gap-4 items-start border border-white/10 rounded-xl p-5 hover:border-blue-belt-end/30 transition-colors">
+                                <div class="font-oswald text-blue-belt-end font-bold text-lg w-28 shrink-0">
+                                    {step.belt}
+                                </div>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {step.detail}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+                <div class="mt-6">
+                    <a
+                        href="/blog/taekwondo-grading-system"
+                        class="text-blue-belt-end hover:underline text-sm"
+                        >Read our full grading system guide →</a
+                    >
+                </div>
+            </section>
+
+            <!-- Who It's For -->
+            <section
+                class="mb-16 bg-white/5 border border-white/10 rounded-2xl p-8"
+            >
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 text-center"
+                >
+                    For Every Stage of Life
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {
+                        [
+                            {
+                                label: "Teenagers (13+)",
+                                body: "Build athletic discipline at a critical developmental age. Taekwondo develops physical confidence, respect for others, and the ability to set and reach goals — skills that shape character for life.",
+                            },
+                            {
+                                label: "Young Adults",
+                                body: "Channel energy into purposeful training. Build functional fitness, real-world self-defense awareness, and a community of people who take their health and growth seriously.",
+                            },
+                            {
+                                label: "Parents Returning to Training",
+                                body: "Many of our adult students return to martial arts after a decade away. We meet you where you are and build from there — no ego, no pressure, genuine progress.",
+                            },
+                            {
+                                label: "Over 40s",
+                                body: "Taekwondo is one of the best full-body activities for maintaining strength, flexibility, cognitive sharpness, and social connection into later life. You are never too old to start.",
+                            },
+                        ].map((card) => (
+                            <div class="bg-deep-space-black/50 rounded-xl p-6 border border-white/10">
+                                <h3 class="text-lg font-bold font-oswald text-blue-belt-end mb-3">
+                                    {card.label}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {card.body}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Promise -->
+            <section
+                class="mb-16 bg-blue-belt-end/10 border border-blue-belt-end/20 rounded-2xl p-8"
+            >
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 text-center"
+                >
+                    Our Commitment to You
+                </h2>
+                <div class="max-w-2xl mx-auto space-y-4 text-gray-300">
+                    <p>
+                        We take our responsibility as coaches seriously. When
+                        you join our General Class, you are not just buying
+                        access to a training space — you are joining a community
+                        with coaches who genuinely care about your progress.
+                    </p>
+                    <p>
+                        We will tell you the truth about your development. We
+                        will celebrate your improvements and address your
+                        weaknesses directly, because honest feedback is the
+                        fastest path to real growth. We will not flatter you or
+                        rush your grading for revenue.
+                    </p>
+                    <p>
+                        We are aligned with <a
+                            href="/blog/world-taekwondo"
+                            class="text-blue-belt-end hover:underline"
+                            >World Taekwondo (WT)</a
+                        > and <a
+                            href="/blog/taekwondo-in-new-zealand"
+                            class="text-blue-belt-end hover:underline"
+                            >Taekwondo New Zealand (TNZ)</a
+                        > — meaning every grade you earn is nationally and internationally
+                        recognised. Your progress goes with you, wherever life takes
+                        you.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Related Links -->
+            <section
+                class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-white/10 mb-16"
+            >
+                <div class="space-y-4">
+                    <p
+                        class="text-blue-belt-end font-bold uppercase tracking-widest text-xs mb-4"
+                    >
+                        Other Classes
+                    </p>
+                    {
+                        [
+                            {
+                                label: "Tiny Tigers (Ages 5–10)",
+                                href: "/classes/tiny-tigers",
+                            },
+                            {
+                                label: "Competition Class",
+                                href: "/classes/competition",
+                            },
+                            {
+                                label: "Fitness Class",
+                                href: "/classes/fitness",
+                            },
+                        ].map((link) => (
+                            <a
+                                href={link.href}
+                                class="group flex items-center justify-between p-5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-belt-end/40 transition-all duration-300"
+                            >
+                                <span class="font-oswald text-white group-hover:text-blue-belt-end transition-colors text-lg">
+                                    {link.label}
+                                </span>
+                                <span class="text-blue-belt-end ml-4 group-hover:translate-x-1 transition-transform shrink-0">
+                                    →
+                                </span>
+                            </a>
+                        ))
+                    }
+                </div>
+                <div class="space-y-4">
+                    <p
+                        class="text-blue-belt-end font-bold uppercase tracking-widest text-xs mb-4"
+                    >
+                        Take Action
+                    </p>
+                    {
+                        [
+                            { label: "View Class Schedule", href: "/schedule" },
+                            { label: "View Pricing", href: "/pricing" },
+                            { label: "Contact Us", href: "/contact" },
+                        ].map((link) => (
+                            <a
+                                href={link.href}
+                                class="group flex items-center justify-between p-5 rounded-xl bg-blue-belt-start/20 border border-blue-belt-end/20 hover:bg-blue-belt-start/40 hover:border-blue-belt-end/60 transition-all duration-300"
+                            >
+                                <span class="font-oswald text-white group-hover:text-blue-belt-end transition-colors text-lg">
+                                    {link.label}
+                                </span>
+                                <span class="text-blue-belt-end ml-4 group-hover:translate-x-1 transition-transform shrink-0">
+                                    →
+                                </span>
+                            </a>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 text-center"
+                >
+                    Frequently Asked Questions
+                </h2>
+                <div class="space-y-6">
+                    {
+                        faqs.map((faq) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/50 transition-colors">
+                                <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-gray-400">{faq.answer}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section
+                class="text-center bg-blue-belt-end/10 rounded-3xl p-12 border border-blue-belt-end/20"
+            >
+                <h2
+                    class="text-3xl md:text-4xl font-black font-oswald text-white uppercase mb-6"
+                >
+                    Begin Your Journey Today
+                </h2>
+                <p class="text-gray-300 max-w-xl mx-auto mb-8">
+                    Whatever your age, fitness level, or experience — there is a
+                    place for you in our General Class. Take the first step.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="/contact" variant="primary"
+                        >Book a Trial Class</Button
+                    >
+                    <Button href="/pricing" variant="outline"
+                        >View Pricing</Button
+                    >
+                </div>
+            </section>
+        </article>
+    </main>
+    <Footer />
+</Layout>

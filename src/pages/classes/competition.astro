@@ -1,0 +1,497 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+import TrustBar from "../../components/TrustBar.astro";
+
+const title = "Competition Taekwondo Training Auckland | Superior Taekwondo";
+const description =
+    "Elite competition Taekwondo training in North West Auckland. Strategy, sparring, conditioning, and tournament preparation for athletes of all levels at Superior Taekwondo.";
+
+const faqs = [
+    {
+        question: "Do I need previous competition experience to join?",
+        answer: "No. We welcome athletes transitioning from general training into competition. We assess your current skill level and develop a personalised training pathway suited to your goals and experience.",
+    },
+    {
+        question: "What age can athletes start competition training?",
+        answer: "We typically introduce competition training from around 10–12 years of age, though this depends on the individual's maturity and technical foundation. Our coaches assess readiness on a case-by-case basis.",
+    },
+    {
+        question: "How often does the competition team train?",
+        answer: "Competition team sessions are held in addition to regular class attendance. Frequency varies by season and upcoming tournament schedule. Athletes are expected to maintain consistent training attendance.",
+    },
+    {
+        question: "What equipment do I need for competition training?",
+        answer: "You will need an approved WTF-style dobok (uniform), full sparring gear including hogu (chest protector), head guard, forearm/shin guards, and a mouthguard. We can advise on approved brands and suppliers.",
+    },
+    {
+        question: "Can I compete internationally from this club?",
+        answer: "Yes. Several Superior Taekwondo athletes have represented New Zealand at international events. We are aligned with Taekwondo New Zealand (TNZ) and actively support athletes pursuing national team selection.",
+    },
+    {
+        question:
+            "What is the difference between Kyorugi and Poomsae competition?",
+        answer: "Kyorugi is Olympic-style point sparring — a dynamic, tactical combat sport. Poomsae is pattern-based competition judged on technique, power, and presentation. Our competition class focuses primarily on Kyorugi.",
+    },
+];
+---
+
+<Layout
+    title={title}
+    description={description}
+    image="/images/blog/blog_tournament_hero.webp"
+>
+    <!-- FAQ Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer,
+                },
+            })),
+        })}
+    ></script>
+
+    <!-- Service Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Competition Taekwondo Training",
+            provider: {
+                "@type": "MartialArtsSchool",
+                name: "Superior Taekwondo",
+                url: "https://superiortkd.co.nz",
+            },
+            description:
+                "Elite WT competition sparring training, strategy development, and tournament preparation for athletes in North West Auckland.",
+            areaServed: "North West Auckland, New Zealand",
+        })}
+    ></script>
+
+    <main class="bg-black min-h-screen pb-12 text-gray-300 font-body">
+        <BlogHero
+            title="Competition Class"
+            subtitle="Where strategy meets explosiveness. Train like a champion, compete like one. Our competition programme develops complete athletes for WT Taekwondo."
+            image="/images/blog/blog_tournament_hero.webp"
+            category="Competition"
+            readTime="8 Min Read"
+        />
+        <TrustBar />
+
+        <article class="container mx-auto px-4 max-w-3xl mt-12">
+            <!-- Breadcrumb -->
+            <nav class="flex mb-8 text-sm text-gray-500">
+                <a href="/" class="hover:text-blue-belt-end transition-colors"
+                    >Home</a
+                >
+                <span class="mx-2">/</span>
+                <a
+                    href="/classes/general"
+                    class="hover:text-blue-belt-end transition-colors"
+                    >Classes</a
+                >
+                <span class="mx-2">/</span>
+                <span class="text-gray-300">Competition</span>
+            </nav>
+
+            <!-- Introduction -->
+            <section class="mb-16 prose prose-lg prose-invert max-w-none">
+                <p
+                    class="lead text-2xl text-white font-oswald font-medium mb-6"
+                >
+                    Competition Taekwondo is not just fighting — it is chess at
+                    full speed.
+                </p>
+                <p>
+                    At <a href="/" class="text-blue-belt-end hover:underline"
+                        >Superior Taekwondo</a
+                    >, our competition programme is designed for athletes who
+                    want more than just fitness. We develop complete
+                    competitors: technically sharp, physically dominant, and
+                    mentally resilient. Whether your goal is your first regional
+                    podium or a place on the New Zealand national team, this is
+                    where that journey gets serious.
+                </p>
+                <p>
+                    Our head coach brings Olympic-level insight to every
+                    session. That means you are not just learning how to kick
+                    hard — you are learning <em>why</em> the right kick at the right
+                    moment wins the match. Strategy, timing, distance management,
+                    and mental composure are trained as deliberately as any physical
+                    skill.
+                </p>
+                <p>
+                    The competition team trains out of our base in <strong
+                        >Helensville</strong
+                    >, serving athletes from across <strong
+                        >North West Auckland</strong
+                    >, <strong>Kaukapakapa</strong>, <strong>Waimauku</strong>,
+                    and the wider Rodney District.
+                </p>
+            </section>
+
+            <!-- What's Included -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    What Competition Training Includes
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {
+                        [
+                            {
+                                title: "Tactical Strategy",
+                                body: "Every athlete receives individual tactical coaching. We study opponent tendencies, build counter-attacking setups, and develop a personal fighting style that exploits your strengths.",
+                                icon: "🧠",
+                            },
+                            {
+                                title: "Setup & Combination Drills",
+                                body: "Competition is won on combinations, not single strikes. We drill structured attack chains, feint-to-score sequences, and defensive counters until they are instinctive under pressure.",
+                                icon: "⚡",
+                            },
+                            {
+                                title: "Live Sparring",
+                                body: "Controlled, purposeful sparring with a focus on applying tactical learning in real-time situations. Sparring is analysed and debriefed to accelerate development.",
+                                icon: "🥋",
+                            },
+                            {
+                                title: "Fight Conditioning",
+                                body: "Competition-specific fitness: explosive power, anaerobic capacity, match-duration endurance, and rapid recovery. Conditioning is tailored to the demands of WT tournament formats.",
+                                icon: "💪",
+                            },
+                            {
+                                title: "Video Analysis",
+                                body: "Athletes review sparring footage to identify patterns, correct habits, and develop self-awareness — a method used by elite combat sports programmes worldwide.",
+                                icon: "🎬",
+                            },
+                            {
+                                title: "Tournament Preparation",
+                                body: "Pre-competition camps, weight management guidance, mental preparation techniques, and warm-up protocols ensure athletes peak on competition day.",
+                                icon: "🏅",
+                            },
+                        ].map((item) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/40 transition-colors">
+                                <div class="text-3xl mb-3">{item.icon}</div>
+                                <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                    {item.title}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {item.body}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- How the Programme Works -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    How the Programme Works
+                </h2>
+                <div class="space-y-6">
+                    {
+                        [
+                            {
+                                step: "01",
+                                title: "Assessment & Placement",
+                                body: "New competition students complete an initial assessment. We review technical foundation, fitness base, and competitive history to determine the right entry point and design an individual development plan.",
+                            },
+                            {
+                                step: "02",
+                                title: "Technical Foundation Sessions",
+                                body: "Before live sparring becomes the focus, we refine fundamental mechanics — guard position, footwork patterns, chamber-to-extension efficiency, and defensive habits. Good competition is built on excellent basics.",
+                            },
+                            {
+                                step: "03",
+                                title: "Tactical Training Blocks",
+                                body: "Training follows structured blocks tied to the competition calendar. Each block has a theme — for example, counter-attacking or closing distance — which is developed systematically over several weeks.",
+                            },
+                            {
+                                step: "04",
+                                title: "Sparring & Live Application",
+                                body: "Progressive sparring introduces athletes to full-speed application. Early rounds are theme-driven (e.g., 'attack only from the lead leg'); later rounds simulate match-condition pressure.",
+                            },
+                            {
+                                step: "05",
+                                title: "Competition & Review",
+                                body: "Athletes compete at TNZ-affiliated tournaments with full coach support. Post-tournament reviews identify what worked, what to adjust, and how to set goals for the next cycle.",
+                            },
+                        ].map((step) => (
+                            <div class="flex gap-6 items-start">
+                                <div class="text-4xl font-black font-oswald text-blue-belt-end/40 w-16 shrink-0">
+                                    {step.step}
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                        {step.title}
+                                    </h3>
+                                    <p class="text-gray-400 leading-relaxed">
+                                        {step.body}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Who This Is For -->
+            <section
+                class="mb-16 bg-white/5 border border-white/10 rounded-2xl p-8"
+            >
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 text-center"
+                >
+                    Who Is Competition Training For?
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    {
+                        [
+                            {
+                                label: "The Ambitious Beginner",
+                                body: "You have been in general class for 6+ months, you love the challenge, and you want to test yourself against others. Competition training will accelerate your development dramatically.",
+                            },
+                            {
+                                label: "The Returning Athlete",
+                                body: "You competed before — school, another club — and want to get back into it with proper coaching. We will assess where you are and build from there.",
+                            },
+                            {
+                                label: "The National Aspirant",
+                                body: "You are chasing TNZ selection, Australian Open qualification, or the Olympic pathway. This programme is built around athletes with that level of ambition.",
+                            },
+                        ].map((card) => (
+                            <div class="bg-deep-space-black/50 rounded-xl p-6 border border-white/10">
+                                <h3 class="text-lg font-bold font-oswald text-blue-belt-end mb-3">
+                                    {card.label}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {card.body}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Problems It Solves -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    Common Problems We Fix
+                </h2>
+                <div class="space-y-4">
+                    {
+                        [
+                            {
+                                problem:
+                                    "Losing on the scoreboard despite feeling competitive",
+                                fix: "We study the scoring system and teach athletes to optimise every exchange for maximum points.",
+                            },
+                            {
+                                problem:
+                                    "Gassing out in the second and third rounds",
+                                fix: "Our conditioning programme is matched to the exact energy demands of a WT match format.",
+                            },
+                            {
+                                problem: "Freezing under tournament pressure",
+                                fix: "We use progressive stress inoculation in training and teach mental reset routines used by elite athletes.",
+                            },
+                            {
+                                problem:
+                                    "Training the same thing every session with no progress",
+                                fix: "Our periodised programming has clear blocks, themes, and measurable milestones so development is visible.",
+                            },
+                            {
+                                problem: "No coach support at tournaments",
+                                fix: "Our coaches attend tournaments with the team, providing cornering, real-time strategy adjustments, and emotional support.",
+                            },
+                        ].map((item) => (
+                            <div class="border border-white/10 rounded-xl p-5 hover:border-blue-belt-end/30 transition-colors">
+                                <p class="text-white font-bold mb-1">
+                                    ❌ {item.problem}
+                                </p>
+                                <p class="text-gray-400 text-sm">
+                                    ✅ {item.fix}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Customer Promise -->
+            <section
+                class="mb-16 bg-blue-belt-end/10 border border-blue-belt-end/20 rounded-2xl p-8"
+            >
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-6 text-center"
+                >
+                    Our Promise to You
+                </h2>
+                <div class="max-w-2xl mx-auto space-y-4 text-gray-300">
+                    <p>
+                        We are transparent about what competition training
+                        requires: commitment, consistency, and a willingness to
+                        be challenged. We will not tell you it is easy — but we
+                        will tell you it is worth it.
+                    </p>
+                    <p>
+                        Every athlete in our competition programme receives an
+                        honest assessment of their development. We celebrate
+                        wins and we address weaknesses directly — because that
+                        is how champions are made.
+                    </p>
+                    <p>
+                        We are aligned with <a
+                            href="/blog/world-taekwondo"
+                            class="text-blue-belt-end hover:underline"
+                            >World Taekwondo (WT)</a
+                        > and <a
+                            href="/blog/taekwondo-in-new-zealand"
+                            class="text-blue-belt-end hover:underline"
+                            >Taekwondo New Zealand (TNZ)</a
+                        >, so every grade, every result, and every ranking point
+                        your athlete earns is officially recognised.
+                    </p>
+                    <p class="font-bold text-white">
+                        No false promises. Just serious coaching for serious
+                        athletes.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Related Links -->
+            <section
+                class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-white/10 mb-16"
+            >
+                <div class="space-y-4">
+                    <p
+                        class="text-blue-belt-end font-bold uppercase tracking-widest text-xs mb-4"
+                    >
+                        Explore More Classes
+                    </p>
+                    {
+                        [
+                            {
+                                label: "General Class",
+                                href: "/classes/general",
+                            },
+                            {
+                                label: "Fitness Class",
+                                href: "/classes/fitness",
+                            },
+                            {
+                                label: "Poomsae Class",
+                                href: "/classes/poomsae",
+                            },
+                        ].map((link) => (
+                            <a
+                                href={link.href}
+                                class="group flex items-center justify-between p-5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-belt-end/40 transition-all duration-300"
+                            >
+                                <span class="font-oswald text-white group-hover:text-blue-belt-end transition-colors text-lg">
+                                    {link.label}
+                                </span>
+                                <span class="text-blue-belt-end ml-4 group-hover:translate-x-1 transition-transform shrink-0">
+                                    →
+                                </span>
+                            </a>
+                        ))
+                    }
+                </div>
+                <div class="space-y-4">
+                    <p
+                        class="text-blue-belt-end font-bold uppercase tracking-widest text-xs mb-4"
+                    >
+                        Take Action
+                    </p>
+                    {
+                        [
+                            {
+                                label: "View Training Schedule",
+                                href: "/schedule",
+                            },
+                            {
+                                label: "Read Competition Rules",
+                                href: "/blog/competition-rules",
+                            },
+                            { label: "Contact Us", href: "/contact" },
+                        ].map((link) => (
+                            <a
+                                href={link.href}
+                                class="group flex items-center justify-between p-5 rounded-xl bg-blue-belt-start/20 border border-blue-belt-end/20 hover:bg-blue-belt-start/40 hover:border-blue-belt-end/60 transition-all duration-300"
+                            >
+                                <span class="font-oswald text-white group-hover:text-blue-belt-end transition-colors text-lg">
+                                    {link.label}
+                                </span>
+                                <span class="text-blue-belt-end ml-4 group-hover:translate-x-1 transition-transform shrink-0">
+                                    →
+                                </span>
+                            </a>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 text-center"
+                >
+                    Frequently Asked Questions
+                </h2>
+                <div class="space-y-6">
+                    {
+                        faqs.map((faq) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-blue-belt-end/50 transition-colors">
+                                <h3 class="text-xl font-bold font-oswald text-white mb-2">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-gray-400">{faq.answer}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section
+                class="text-center bg-blue-belt-end/10 rounded-3xl p-12 border border-blue-belt-end/20"
+            >
+                <h2
+                    class="text-3xl md:text-4xl font-black font-oswald text-white uppercase mb-6"
+                >
+                    Ready to Compete?
+                </h2>
+                <p class="text-gray-300 max-w-xl mx-auto mb-8">
+                    Take the first step toward tournament excellence. Talk to
+                    our coaching team about joining the competition programme.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="/contact" variant="primary"
+                        >Get in Touch</Button
+                    >
+                    <Button href="/schedule" variant="outline"
+                        >View Schedule</Button
+                    >
+                </div>
+            </section>
+        </article>
+    </main>
+    <Footer />
+</Layout>

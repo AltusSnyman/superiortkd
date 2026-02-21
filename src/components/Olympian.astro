@@ -12,12 +12,18 @@ import { Image } from "astro:assets";
         >
             <img
                 src="/images/andrea1.webp"
-                alt="Andrea Kilday Portrait"
+                alt="Andrea Kilday — 2016 Rio Olympian and Head Instructor at Superior Taekwondo"
                 class="absolute inset-0 w-full h-full object-contain object-center opacity-100 transition-opacity duration-500"
             />
             <div
                 class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-deep-space-black to-transparent"
             >
+            </div>
+            <!-- Credential Badge on image -->
+            <div
+                class="absolute top-4 right-4 bg-blue-belt-end/90 backdrop-blur-sm text-black font-bold font-oswald text-sm uppercase px-3 py-1.5 rounded-full tracking-wider shadow-lg"
+            >
+                🥇 2016 Rio Olympian
             </div>
         </div>
 
@@ -34,22 +40,26 @@ import { Image } from "astro:assets";
             <h3
                 class="text-2xl md:text-3xl font-bold font-oswald text-blue-gradient uppercase tracking-wide"
             >
-                3rd Dan Black Belt <span class="mx-2 text-blue-belt-end/50"
+                2nd Dan Black Belt <span class="mx-2 text-blue-belt-end/50"
                     >|</span
                 > Rio 2016 Olympian
             </h3>
 
             <p class="text-lg leading-relaxed text-gray-300 font-body">
                 Andrea Kilday is not just a teacher; she is a testament to
-                resilience. A dominant force in the -49kg division, Andrea’s
+                resilience. A dominant force in the -49kg division, Andrea's
                 journey took her to the pinnacle of sport: The Olympic Games.
                 After qualifying for Beijing 2008 but facing non-selection, she
                 demonstrated the ultimate black belt tenet—<strong
                     >Perseverance</strong
-                >—fighting her way back to win Gold at the Oceania Qualifiers
-                and representing New Zealand at the Rio 2016 Olympics.
+                >—fighting her way back to win Gold at the Oceania Olympic
+                Qualifier and representing New Zealand at the <strong
+                    >Rio 2016 Olympics</strong
+                >. She now brings that Olympic standard directly to students
+                across North West Auckland.
             </p>
 
+            <!-- Verified credentials list -->
             <ul
                 class="space-y-4 mt-4 font-bold font-oswald text-xl uppercase tracking-wider text-gray-200"
             >
@@ -58,14 +68,33 @@ import { Image } from "astro:assets";
                     Olympian (-49kg)
                 </li>
                 <li class="flex items-center gap-4">
-                    <span class="text-blue-gradient hover-glow">★</span> Pacific
-                    Games Gold Medalist (2015)
+                    <span class="text-blue-gradient hover-glow">★</span>
+                    Oceania Olympic Qualifier — Gold Medallist (2016)
                 </li>
                 <li class="flex items-center gap-4">
-                    <span class="text-blue-gradient hover-glow">★</span> Oceania
-                    Olympic Selection Gold (2007 & 2016)
+                    <span class="text-blue-gradient hover-glow">★</span> Pacific
+                    Games Gold Medallist (2015)
+                </li>
+                <li class="flex items-center gap-4">
+                    <span class="text-blue-gradient hover-glow">★</span>
+                    Oceania Championships Gold (2007)
+                </li>
+                <li class="flex items-center gap-4">
+                    <span class="text-blue-gradient hover-glow">★</span>
+                    2nd Dan Black Belt — WT Certified
                 </li>
             </ul>
+
+            <!-- Club badge -->
+            <div
+                class="mt-2 inline-flex items-center gap-3 bg-white/5 border border-blue-belt-end/30 rounded-full px-5 py-3 self-start"
+            >
+                <span class="text-blue-belt-end text-lg">🏆</span>
+                <span
+                    class="font-oswald font-bold text-white uppercase tracking-wider text-sm"
+                    >Auckland's Top Competition Club</span
+                >
+            </div>
         </div>
     </div>
 </section>

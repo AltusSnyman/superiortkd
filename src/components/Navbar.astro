@@ -6,6 +6,7 @@ const links = [
     { text: "Photos", href: "/gallery" },
     { text: "Schedule", href: "/schedule" },
     { text: "Pricing", href: "/pricing" },
+    { text: "News", href: "/blog" },
 ];
 
 const dropdownLinks = [
@@ -14,6 +15,16 @@ const dropdownLinks = [
     { text: "Competition Team", href: "/competition" },
     { text: "Tournaments", href: "/tournaments" },
     { text: "Poomsae Class", href: "/poomsae" },
+];
+
+const locationLinks = [
+    { text: "Helensville", href: "/locations/helensville" },
+    { text: "Auckland", href: "/locations/auckland" },
+    { text: "Kaukapakapa", href: "/locations/kaukapakapa" },
+    { text: "Waimauku", href: "/locations/waimauku" },
+    { text: "Huapai", href: "/locations/huapai" },
+    { text: "Rodney District", href: "/locations/rodney" },
+    { text: "Auckland North West", href: "/locations/auckland-nw" },
 ];
 ---
 
@@ -84,12 +95,43 @@ const dropdownLinks = [
                 </div>
             </div>
 
-            <a
-                href="/contact"
-                class="text-sm font-bold font-oswald uppercase tracking-wider text-gray-300 hover:text-blue-belt-end transition-colors hover-glow hover:-translate-y-0.5 transform duration-200"
-            >
-                Contact
-            </a>
+            {/* Locations Dropdown */}
+            <div class="relative group">
+                <button
+                    class="text-sm font-bold font-oswald uppercase tracking-wider text-gray-300 hover:text-blue-belt-end transition-colors flex items-center gap-1 py-4"
+                >
+                    Locations
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4 transition-transform group-hover:rotate-180"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2"
+                >
+                    <div
+                        class="bg-deep-space-black border border-white/10 rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden w-56"
+                    >
+                        {
+                            locationLinks.map((link) => (
+                                <a
+                                    href={link.href}
+                                    class="block px-6 py-3 text-sm font-oswald text-gray-300 hover:bg-white/5 hover:text-blue-belt-end transition-colors uppercase tracking-wide"
+                                >
+                                    {link.text}
+                                </a>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
 
             <a
                 href="/members"
@@ -106,7 +148,8 @@ const dropdownLinks = [
         <!-- Mobile Menu Button -->
         <button
             id="mobile-menu-btn"
-            class="md:hidden text-white hover:text-blue-belt-end transition-colors focus:outline-none"
+            class="md:hidden p-3 -mr-3 text-white hover:text-blue-belt-end transition-colors focus:outline-none rounded-lg"
+            aria-label="Open navigation menu"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +177,7 @@ const dropdownLinks = [
                 links.map((link) => (
                     <a
                         href={link.href}
-                        class="text-xl font-bold font-oswald uppercase tracking-wider text-white hover:text-blue-belt-end transition-colors"
+                        class="min-h-[48px] flex items-center justify-center w-full text-xl font-bold font-oswald uppercase tracking-wider text-white hover:text-blue-belt-end transition-colors"
                     >
                         {link.text}
                     </a>
@@ -142,6 +185,25 @@ const dropdownLinks = [
             }
 
             {/* Mobile Dropdown Items */}
+            <div class="w-full border-t border-white/10 pt-4 mt-2">
+                <p
+                    class="text-blue-belt-end font-oswald uppercase tracking-widest text-xs mb-4 text-center"
+                >
+                    Locations
+                </p>
+                <div class="flex flex-col gap-4 items-center">
+                    {
+                        locationLinks.map((link) => (
+                            <a
+                                href={link.href}
+                                class="min-h-[48px] flex items-center justify-center w-full text-lg font-bold font-oswald uppercase tracking-wider text-gray-300 hover:text-white transition-colors"
+                            >
+                                {link.text}
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
             <div class="w-full border-t border-white/10 pt-4 mt-2">
                 <p
                     class="text-blue-belt-end font-oswald uppercase tracking-widest text-xs mb-4 text-center"

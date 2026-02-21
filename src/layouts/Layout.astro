@@ -1,16 +1,19 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import "../styles/global.css";
 
 interface Props {
 	title?: string;
 	description?: string;
 	image?: string;
+	headContent?: string;
 }
 
 const {
 	title = "Superior Taekwondo | Constructing Champions",
 	description = "Join Superior Taekwondo in North West Auckland. Professional martial arts training for all ages. Build confidence, discipline, and strength.",
 	image = "/images/og-image.jpg",
+	headContent,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -20,9 +23,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- LCP resource hint: preload hero poster so the browser fetches it ASAP -->
+		<link rel="preload" as="image" href="/images/hero-poster.webp" fetchpriority="high" />
 
 		<!-- Canonical URL -->
 		<link rel="canonical" href={canonicalURL} />
@@ -46,7 +52,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-		<!-- JSON-LD (GEO) -->
+		<!-- JSON-LD — Global MartialArtsSchool Schema -->
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
@@ -56,20 +62,48 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 				"description": "Premier Olympic and Traditional Taekwondo club in New Zealand. Developing champions in sport and life through World Taekwondo (WT) curriculum.",
 				"slogan": "Constructing Champions",
 				"url": "https://superiortkd.co.nz",
-				"telephone": "0275201613",
+				"telephone": "+6427520163",
 				"email": "superiorfitnessnz@gmail.com",
+				"priceRange": "$$",
 				"address": {
 					"@type": "PostalAddress",
 					"streetAddress": "94 Mill Road",
 					"addressLocality": "Helensville",
+					"addressRegion": "Auckland",
 					"postalCode": "0800",
 					"addressCountry": "NZ"
 				},
 				"geo": {
 					"@type": "GeoCoordinates",
-					"latitude": -36.678,
-					"longitude": 174.449
+					"latitude": -36.6782,
+					"longitude": 174.4491
 				},
+				"openingHoursSpecification": [
+					{
+						"@type": "OpeningHoursSpecification",
+						"dayOfWeek": ["Monday", "Wednesday", "Friday"],
+						"opens": "17:30",
+						"closes": "20:00"
+					},
+					{
+						"@type": "OpeningHoursSpecification",
+						"dayOfWeek": ["Saturday"],
+						"opens": "09:00",
+						"closes": "12:00"
+					}
+				],
+				"areaServed": [
+					"Helensville",
+					"Kaukapakapa",
+					"Waimauku",
+					"Huapai",
+					"Kumeu",
+					"Muriwai",
+					"Riverhead",
+					"Westgate",
+					"North West Auckland",
+					"Rodney District"
+				],
 				"sameAs": [
 					"https://facebook.com/superiortkd",
 					"https://instagram.com/superiortkd"
@@ -123,20 +157,86 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 				"knowsAbout": ["Taekwondo", "Martial Arts", "Olympic Sport", "Self Defense", "Fitness", "Discipline"]
 			}
 		</script>
+		{headContent && <Fragment set:html={headContent} />}
 
-		<!-- Google Fonts -->
+		<!-- Critical CSS: above-fold shell rendered before any external CSS downloads -->
+		<style>
+			/* Base reset for instant paint */
+			*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+			html {
+				background-color: #000000;
+				color: #ffffff;
+				scroll-behavior: smooth;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+			}
+			body {
+				background-color: #000000;
+				color: #ffffff;
+				min-height: 100vh;
+			}
+			/* Navbar shell — prevents layout shift while JS hydrates */
+			nav, header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 50;
+				background-color: rgba(0,0,0,0.85);
+			}
+			/* Hero shell — full viewport height, dark bg, no flash */
+			section#hero {
+				position: relative;
+				width: 100%;
+				min-height: 100vh;
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: #000000;
+			}
+			/* Font fallback stacks while web fonts load */
+			h1, h2, h3, h4, h5, h6 {
+				font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif;
+				line-height: 1;
+				text-transform: uppercase;
+				font-weight: 900;
+			}
+			/* Prevent FOUC on gradient text */
+			.text-blue-gradient {
+				background: linear-gradient(to right, #001F3F, #00E5FF);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				color: transparent;
+			}
+		</style>
+
+		<!-- Google Fonts: non-blocking load via media=print trick -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&family=Oswald:wght@400;500;700&family=Roboto:wght@400;500&display=swap"
-			rel="stylesheet"
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@400;500;700&display=swap"
 		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@400;500;700&display=swap"
+			rel="stylesheet"
+			media="print"
+			onload="this.media='all'"
+		/>
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@400;500;700&display=swap"
+				rel="stylesheet"
+			/>
+		</noscript>
 	</head>
 	<body class="bg-black text-white antialiased">
 		<Navbar />
 		<slot />
-		<script>
-			import "../styles/global.css";
-		</script>
+		<!-- global.css is imported in frontmatter; Astro injects it as <link> in <head> -->
 	</body>
 </html>

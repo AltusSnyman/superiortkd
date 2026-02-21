@@ -1,0 +1,303 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LocationHero from "../../components/LocationHero.astro";
+import Footer from "../../components/Footer.astro";
+import { locationData } from "../../lib/locationData";
+
+export function getStaticPaths() {
+    return locationData.map((location) => ({
+        params: { slug: location.slug },
+        props: { location },
+    }));
+}
+
+const { location } = Astro.props;
+
+const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "MartialArtsSchool",
+    name: "Superior Taekwondo",
+    description: location.metaDescription,
+    url: `https://superiortkd.co.nz/locations/${location.slug}`,
+    telephone: "+6427520163",
+    email: "superiorfitnessnz@gmail.com",
+    address: {
+        "@type": "PostalAddress",
+        streetAddress: "94 Mill Road",
+        addressLocality: "Helensville",
+        addressRegion: "Auckland",
+        postalCode: "0800",
+        addressCountry: "NZ",
+    },
+    geo: {
+        "@type": "GeoCoordinates",
+        latitude: -36.6782,
+        longitude: 174.4491,
+    },
+    areaServed: location.serviceArea.neighborhoods,
+    openingHoursSpecification: [
+        {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Wednesday", "Friday"],
+            opens: "17:30",
+            closes: "20:00",
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Saturday"],
+            opens: "09:00",
+            closes: "12:00",
+        },
+    ],
+    priceRange: "$$",
+    sameAs: [
+        "https://facebook.com/superiortkd",
+        "https://instagram.com/superiortkd",
+    ],
+};
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: location.faq.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+        },
+    })),
+};
+
+const headContent = `
+<script type="application/ld+json">${JSON.stringify(
+    localBusinessSchema
+)}</script>
+<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>
+`;
+---
+
+<Layout
+    title={location.title}
+    description={location.metaDescription}
+    headContent={headContent}
+>
+    <LocationHero
+        title={location.title.split("|")[0]}
+        subtitle="Constructing Champions in Your Community"
+        image={location.heroImage}
+    />
+
+    <div
+        class="bg-deep-space-black text-gray-300 font-body relative overflow-hidden"
+        id="intro"
+    >
+        <!-- Background Elements -->
+        <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-belt-start/5 rounded-full blur-[120px] pointer-events-none"
+        >
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-belt-end/5 rounded-full blur-[120px] pointer-events-none"
+        >
+        </div>
+
+        <div
+            class="container mx-auto px-4 py-16 md:py-24 relative z-10 space-y-24"
+        >
+            <!-- Intro Section -->
+            <section class="max-w-4xl mx-auto">
+                <h2
+                    class="text-3xl md:text-5xl font-black font-oswald text-white uppercase mb-8 tracking-wide"
+                >
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-belt-start to-blue-belt-end"
+                    >
+                        {location.introTitle}
+                    </span>
+                </h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    {
+                        location.introContent.map((paragraph) => (
+                            <p>{paragraph}</p>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-blue-belt-start to-blue-belt-end opacity-20 blur-2xl transform -rotate-6"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm"
+                    >
+                        <h3
+                            class="text-2xl font-bold font-oswald text-white mb-4 uppercase"
+                        >
+                            {location.historyTitle}
+                        </h3>
+                        <div class="space-y-4">
+                            {
+                                location.historyContent.map((paragraph) => (
+                                    <p>{paragraph}</p>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 space-y-6">
+                    <!-- Placeholder for an image or graphic -->
+                    <div
+                        class="aspect-video bg-gradient-to-br from-white/5 to-white/10 rounded-2xl border border-white/10 flex items-center justify-center p-8"
+                    >
+                        <span
+                            class="text-white/20 font-oswald text-4xl uppercase text-center"
+                            >Constructing Champions</span
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section class="max-w-5xl mx-auto">
+                <h2
+                    class="text-3xl md:text-4xl font-bold font-oswald text-center text-white mb-16 uppercase"
+                >
+                    {location.whyChooseUs.title}
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    {
+                        location.whyChooseUs.items.map((item, index) => (
+                            <div class="bg-white/5 border border-white/10 p-8 rounded-xl hover:bg-white/10 transition-colors duration-300 group">
+                                <div class="text-4xl font-black text-white/10 mb-4 font-oswald group-hover:text-blue-belt-end/20 transition-colors">
+                                    0{index + 1}
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 font-oswald">
+                                    {item.title}
+                                </h3>
+                                <p class="text-gray-400">{item.content}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Service Area & Neighborhoods -->
+            <section
+                class="bg-gradient-to-b from-white/5 to-transparent rounded-3xl p-8 md:p-12 border border-white/10"
+            >
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3
+                            class="text-2xl font-bold font-oswald text-white mb-6 uppercase"
+                        >
+                            {location.serviceArea.title}
+                        </h3>
+                        <p class="mb-8">{location.serviceArea.description}</p>
+
+                        <div class="grid grid-cols-2 gap-8">
+                            <div>
+                                <h4
+                                    class="text-blue-belt-end font-bold mb-4 uppercase text-sm tracking-wider"
+                                >
+                                    Neighborhoods
+                                </h4>
+                                <ul class="space-y-2">
+                                    {
+                                        location.serviceArea.neighborhoods.map(
+                                            (hood) => (
+                                                <li class="flex items-center gap-2 text-sm">
+                                                    <span class="w-1.5 h-1.5 bg-blue-belt-end rounded-full" />
+                                                    {hood}
+                                                </li>
+                                            )
+                                        )
+                                    }
+                                </ul>
+                            </div>
+                            <div>
+                                <h4
+                                    class="text-blue-belt-end font-bold mb-4 uppercase text-sm tracking-wider"
+                                >
+                                    Major Landmarks
+                                </h4>
+                                <ul class="space-y-2">
+                                    {
+                                        location.serviceArea.landmarks.map(
+                                            (mark) => (
+                                                <li class="flex items-center gap-2 text-sm">
+                                                    <span class="w-1.5 h-1.5 bg-blue-belt-start rounded-full" />
+                                                    {mark}
+                                                </li>
+                                            )
+                                        )
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h3
+                                class="text-xl font-bold font-oswald text-white mb-4 uppercase"
+                            >
+                                {location.weatherImpact.title}
+                            </h3>
+                            <p
+                                class="text-sm leading-relaxed p-6 bg-black/30 rounded-xl border-l-4 border-blue-belt-start"
+                            >
+                                {location.weatherImpact.content}
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4
+                                class="text-white font-bold mb-4 uppercase text-sm tracking-wider"
+                            >
+                                Major Routes
+                            </h4>
+                            <div class="flex flex-wrap gap-3">
+                                {
+                                    location.serviceArea.majorRoutes.map(
+                                        (route) => (
+                                            <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-blue-200 border border-white/10">
+                                                {route}
+                                            </span>
+                                        )
+                                    )
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section (SEO Rich) -->
+            <section class="max-w-3xl mx-auto">
+                <h2
+                    class="text-3xl font-bold font-oswald text-center text-white mb-12 uppercase"
+                >
+                    Local Questions
+                </h2>
+                <div class="space-y-6">
+                    {
+                        location.faq.map((item) => (
+                            <div class="border-b border-white/10 pb-6">
+                                <h3 class="text-lg font-bold text-white mb-2">
+                                    {item.question}
+                                </h3>
+                                <p class="text-gray-400">{item.answer}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+        </div>
+    </div>
+    <Footer />
+</Layout>
