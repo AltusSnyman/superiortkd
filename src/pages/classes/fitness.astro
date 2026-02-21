@@ -43,6 +43,17 @@ const faqs = [
     description={description}
     image="/images/blog/blog_olympic_hero.webp"
 >
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
+            { "@type": "ListItem", "position": 2, "name": "Classes", "item": "https://superiortkd.co.nz/classes/" },
+            { "@type": "ListItem", "position": 3, "name": "Martial Arts Fitness Classes Auckland", "item": `https://superiortkd.co.nz/classes/${"fitness"}` }
+        ]
+    })}></script>
+
     <script
         type="application/ld+json"
         set:html={JSON.stringify({
@@ -452,8 +463,9 @@ const faqs = [
                     of.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <Button href="/contact" variant="primary"
-                        >Start Training</Button
+                    <Button
+                        href="https://superior-taekwondo.gymdesk.com/signup"
+                        variant="primary">Sign Up Now</Button
                     >
                     <Button href="/schedule" variant="outline"
                         >View Schedule</Button

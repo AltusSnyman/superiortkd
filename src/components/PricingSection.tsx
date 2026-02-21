@@ -215,7 +215,7 @@ export default function PricingSection({ plans }: PricingSectionProps) {
                                         </div>
 
                                         <a
-                                            href="mailto:superiorfitnessnz@gmail.com?subject=Membership Enquiry"
+                                            href="https://superior-taekwondo.gymdesk.com/signup"
                                             className={`block w-full text-center py-4 rounded-xl font-bold font-oswald uppercase tracking-wider transition-all duration-300 ${plan.recommended
                                                 ? "bg-gradient-to-r from-blue-belt-start to-blue-belt-end text-black shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:shadow-[0_0_30px_rgba(0,229,255,0.6)] hover:-translate-y-1"
                                                 : "bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:border-blue-belt-end/50 hover:text-blue-belt-end"

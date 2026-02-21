@@ -111,6 +111,17 @@ const beltSystem = [
         },
     ]}
 >
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://superiortkd.co.nz/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Taekwondo Grading & Belt System: The Complete Guide", "item": `https://superiortkd.co.nz/blog/${"taekwondo-grading-system"}` }
+        ]
+    })}></script>
+
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"
@@ -402,8 +413,9 @@ const beltSystem = [
                             Every Master was once a white belt who never gave
                             up.
                         </p>
-                        <Button href="/pricing" variant="primary"
-                            >Start Your Trial</Button
+                        <Button
+                            href="https://superior-taekwondo.gymdesk.com/signup"
+                            variant="primary">Start Your Trial</Button
                         >
                     </div>
                 </div>

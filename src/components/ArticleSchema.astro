@@ -1,0 +1,63 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    image: string;
+    datePublished: string;
+    dateModified: string;
+    authorName?: string;
+}
+
+const {
+    title,
+    description,
+    image,
+    datePublished,
+    dateModified,
+    authorName = "Superior Taekwondo",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Ensure absolute URL
+const imageUrl = image.startsWith("http")
+    ? image
+    : new URL(image, Astro.site).toString();
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": canonicalURL.toString(),
+    },
+    headline: title,
+    description: description,
+    image: imageUrl,
+    author: {
+        "@type": authorName === "Andrea Kilday" ? "Person" : "Organization",
+        name: authorName,
+        ...(authorName === "Andrea Kilday"
+            ? {
+                  url: "https://superiortkd.co.nz",
+                  sameAs: [
+                      "https://www.olympic.org.nz/athletes/andrea-kilday/",
+                      "https://www.taekwondodata.com/andrea-melisa-kilday.abch.html",
+                      "https://en.wikipedia.org/wiki/Andrea_Kilday",
+                  ],
+              }
+            : {}),
+    },
+    publisher: {
+        "@type": "MartialArtsSchool",
+        name: "Superior Taekwondo",
+        logo: {
+            "@type": "ImageObject",
+            url: new URL("/images/logo.png", Astro.site).toString(),
+        },
+    },
+    datePublished: datePublished,
+    dateModified: dateModified,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>

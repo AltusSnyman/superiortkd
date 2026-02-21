@@ -65,6 +65,17 @@ const faqs = [
         },
     ]}
 >
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://superiortkd.co.nz/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Preparing for Your Belt Test: A Student", "item": `https://superiortkd.co.nz/blog/${"preparing-for-belt-test"}` }
+        ]
+    })}></script>
+
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"

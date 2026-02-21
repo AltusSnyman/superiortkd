@@ -53,7 +53,7 @@ export default function CompetitionSection() {
                                         <li className="flex gap-3"><span className="text-blue-belt-end">✓</span> High-Intensity Sparring Fitness</li>
                                     </ul>
 
-                                    <a href="mailto:superiorfitnessnz@gmail.com?subject=Join Competition Team" className="inline-block mt-4 bg-blue-gradient text-black font-bold font-oswald uppercase px-8 py-3 rounded hover:scale-105 transition-transform shadow-[0_0_20px_rgba(0,229,255,0.4)]">
+                                    <a href="https://superior-taekwondo.gymdesk.com/signup" className="inline-block mt-4 bg-blue-gradient text-black font-bold font-oswald uppercase px-8 py-3 rounded hover:scale-105 transition-transform shadow-[0_0_20px_rgba(0,229,255,0.4)]">
                                         Join The Team
                                     </a>
                                 </div>

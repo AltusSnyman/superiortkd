@@ -72,6 +72,17 @@ const faqs = [
         },
     ]}
 >
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://superiortkd.co.nz/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "What is Taekwondo? The Complete Guide", "item": `https://superiortkd.co.nz/blog/${"what-is-taekwondo"}` }
+        ]
+    })}></script>
+
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"
@@ -592,7 +603,7 @@ const faqs = [
                     Join us for a class and discover what you are capable of.
                 </p>
                 <Button
-                    href="/pricing"
+                    href="https://superior-taekwondo.gymdesk.com/signup"
                     variant="primary"
                     class="text-lg px-8 py-4 shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:shadow-[0_0_30px_rgba(0,229,255,0.6)]"
                 >
