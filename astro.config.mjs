@@ -12,6 +12,9 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+  build: {
+    inlineStylesheets: 'always'
+  },
   redirects: {
     '/schedule': 'http://superior-taekwondo.gymdesk.com/schedule'
   },
