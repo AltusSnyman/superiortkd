@@ -96,7 +96,7 @@ const title = "Superior Taekwondo Blog | Insights, Tips & News";
 const description = "Read the latest articles from Superior Taekwondo. Expert advice on training, grading, competition, and martial arts philosophy.";
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description="Explore the Superior Taekwondo blog for expert advice on martial arts training, Olympic-level tips, grading preparation, and club news in North West Auckland.">
   <main class="bg-black min-h-screen pt-24 pb-12 text-gray-300 font-body">
     <div class="container mx-auto px-4">
       <!-- Header -->
@@ -120,6 +120,8 @@ const description = "Read the latest articles from Superior Taekwondo. Expert ad
                   <img 
                     src={post.image} 
                     alt={post.title} 
+                    loading="lazy"
+                    decoding="async"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 ) : (
