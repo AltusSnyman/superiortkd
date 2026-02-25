@@ -1,6 +1,17 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
+
+// Import blog hero images for optimization
+import beginnersHero from "../../assets/blog/blog_beginners_hero.png";
+import olympicHero from "../../assets/blog/blog_olympic_hero.png";
+import tournamentHero from "../../assets/blog/blog_tournament_hero.png";
+import gradingHero from "../../assets/blog/blog_grading_hero.png";
+import firstClassHero from "../../assets/blog/blog_first_class_hero.png";
+import historyHero from "../../assets/blog/blog_history_hero.png";
+import worldTkdHero from "../../assets/blog/blog_world_tkd_hero.png";
+import gradingSystemHero from "../../assets/blog/blog_grading_system_hero.png";
 
 const posts = [
   // New high-intent posts (2026 SEO sprint)
@@ -9,21 +20,21 @@ const posts = [
     slug: "how-to-choose-a-taekwondo-club",
     excerpt: "Not all clubs are equal. Here are the 7 questions every parent and adult should ask before joining — including one most people never think to ask.",
     category: "Advice",
-    image: "/images/blog/blog_beginners_hero.webp"
+    image: beginnersHero
   },
   {
     title: "Adult Taekwondo: Fitness, Confidence & Self-Defence",
     slug: "adult-taekwondo-fitness",
     excerpt: "Burn 400–700 calories per session, build functional strength, and develop real self-defence skills. No experience needed.",
     category: "Fitness",
-    image: "/images/blog/blog_olympic_hero.webp"
+    image: olympicHero
   },
   {
     title: "Self-Defence Classes Auckland: What Actually Works",
     slug: "self-defence-auckland",
     excerpt: "Skip the one-day seminars. Here is why consistent Taekwondo training is the only realistic path to genuine self-defence capability.",
     category: "Self-Defence",
-    image: "/images/blog/blog_tournament_hero.webp"
+    image: tournamentHero
   },
   // Existing guides
   {
@@ -31,69 +42,68 @@ const posts = [
     slug: "taekwondo-for-beginners",
     excerpt: "Thinking about starting? Here is everything you need to know about the journey from White Belt to Black Belt.",
     category: "Guides",
-    image: "/images/blog/blog_beginners_hero.webp"
+    image: beginnersHero
   },
   {
     title: "Preparing for Your Belt Test",
     slug: "preparing-for-belt-test",
     excerpt: "Nervous about grading? Use our checklist to prepare your patterns, sparring, and mindset for success.",
     category: "Training",
-    image: "/images/blog/blog_grading_hero.webp"
+    image: gradingHero
   },
   {
     title: "Your First Class: What to Expect",
     slug: "first-taekwondo-class",
     excerpt: "Walking into the dojang for the first time? We break down exactly what happens in your first class.",
     category: "New Students",
-    image: "/images/blog/blog_first_class_hero.webp"
+    image: firstClassHero
   },
   // Pillar Content
   {
     title: "The History of Taekwondo",
     slug: "history-of-taekwondo",
     category: "Community",
-    image: "/images/blog/blog_history_hero.webp"
+    image: historyHero
   },
-   {
+  {
     title: "Olympic Taekwondo",
     slug: "olympic-taekwondo",
     excerpt: "The ultimate stage. Understand weight classes, scoring systems, and the pathway from club level to the Olympic Games.",
-    image: "/images/blog/blog_olympic_hero.webp",
+    image: olympicHero,
     category: "Sport"
   },
-   {
+  {
     title: "World Taekwondo (WT)",
     slug: "world-taekwondo",
     excerpt: "Meet the global governing body. Learn about their mission, the Kukkiwon connection, and why alignment matters.",
-    image: "/images/blog/blog_world_tkd_hero.webp",
+    image: worldTkdHero,
     category: "Education"
   },
   {
     title: "Grading & Belt System",
     slug: "taekwondo-grading-system",
     excerpt: "A complete visual guide to the belt colors, meanings, and the timeline from White Belt to Black Belt.",
-    image: "/images/blog/blog_grading_system_hero.webp",
+    image: gradingSystemHero,
     category: "Guides"
   },
   {
     title: "2026 Competition Rules",
     slug: "competition-rules",
     excerpt: "Stay ahead of the game with our breakdown of the latest rules, including new scoring for turning kicks and penalty changes.",
-    image: "/images/blog/blog_tournament_hero.webp",
+    image: tournamentHero,
     category: "Sport"
   },
   {
     title: "WT vs ITF: The Difference",
     slug: "wt-vs-itf-taekwondo",
     excerpt: "Confused by the different styles? We explain the key technical and historical differences between World Taekwondo and ITF.",
-    image: "/images/blog/blog_world_tkd_hero.webp",
+    image: worldTkdHero,
     category: "Education"
   }
 ];
 
 
 const title = "Superior Taekwondo Blog | Insights, Tips & News";
-const description = "Read the latest articles from Superior Taekwondo. Expert advice on training, grading, competition, and martial arts philosophy.";
 ---
 
 <Layout title={title} description="Explore the Superior Taekwondo blog for expert advice on martial arts training, Olympic-level tips, grading preparation, and club news in North West Auckland.">
@@ -114,12 +124,14 @@ const description = "Read the latest articles from Superior Taekwondo. Expert ad
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           <a href={`/blog/${post.slug}`} class="group block bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-blue-belt-end/50 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2">
-            <!-- Image Placeholder / Gradient -->
+            <!-- Image Container -->
             <div class="h-48 bg-gradient-to-br from-gray-800 to-black relative overflow-hidden">
                 {post.image ? (
-                  <img 
+                  <Image 
                     src={post.image} 
                     alt={post.title} 
+                    width={400}
+                    height={400}
                     loading="lazy"
                     decoding="async"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
