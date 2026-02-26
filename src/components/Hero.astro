@@ -1,5 +1,5 @@
 ---
-import ThreeBackground from "./ThreeBackground.jsx";
+import LazyThreeBackground from "./LazyThreeBackground.jsx";
 import Button from "./Button.astro";
 ---
 
@@ -29,7 +29,7 @@ import Button from "./Button.astro";
     <div
         class="absolute inset-0 z-0 opacity-80 mix-blend-plus-lighter hidden md:block"
     >
-        <ThreeBackground client:media="(min-width: 1024px)" />
+        <LazyThreeBackground client:only="react" />
     </div>
 
     <div

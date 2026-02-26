@@ -1,5 +1,5 @@
 ---
-import ThreeBackground from "./ThreeBackground.jsx";
+import LazyThreeBackground from "./LazyThreeBackground.jsx";
 import Button from "./Button.astro";
 
 interface Props {
@@ -35,7 +35,7 @@ const { title, subtitle, image = "/images/hero-poster.webp" } = Astro.props;
     <div
         class="absolute inset-0 z-0 opacity-60 mix-blend-plus-lighter pointer-events-none hidden md:block"
     >
-        <ThreeBackground client:media="(min-width: 1024px)" />
+        <LazyThreeBackground client:only="react" />
     </div>
 
     <div
