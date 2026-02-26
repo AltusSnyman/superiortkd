@@ -33,9 +33,9 @@ const { title, subtitle, image = "/images/hero-poster.webp" } = Astro.props;
 
     <!-- 3D Background Layer (Overlay) -->
     <div
-        class="absolute inset-0 z-0 opacity-60 mix-blend-plus-lighter pointer-events-none"
+        class="absolute inset-0 z-0 opacity-60 mix-blend-plus-lighter pointer-events-none hidden md:block"
     >
-        <ThreeBackground client:idle />
+        <ThreeBackground client:media="(min-width: 1024px)" />
     </div>
 
     <div
