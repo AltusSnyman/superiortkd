@@ -35,7 +35,7 @@ const { title, subtitle, image = "/images/hero-poster.webp" } = Astro.props;
     <div
         class="absolute inset-0 z-0 opacity-60 mix-blend-plus-lighter pointer-events-none"
     >
-        <ThreeBackground client:load />
+        <ThreeBackground client:idle />
     </div>
 
     <div
