@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import andreaPortrait from "../assets/andrea1.png";
+import andreaPortrait from "../assets/andrea2.jpeg";
 ---
 
 <!-- Person Schema: Andrea Kilday -->
@@ -12,7 +12,7 @@ import andreaPortrait from "../assets/andrea1.png";
     "jobTitle": "Head Instructor",
     "description": "2016 Rio Olympian, Oceania Gold Medallist, and 3rd Dan Black Belt WT Lv 2 certified. Head Instructor at Superior Taekwondo, North West Auckland.",
     "url": "https://superiortkd.co.nz",
-    "image": "https://superiortkd.co.nz/images/andrea1.webp",
+    "image": "https://superiortkd.co.nz/images/andrea2.webp",
     "nationality": "New Zealand",
     "sameAs": [
         "https://www.olympic.org.nz/athletes/andrea-kilday/",
@@ -63,7 +63,7 @@ import andreaPortrait from "../assets/andrea1.png";
                 height={600}
                 loading="lazy"
                 decoding="async"
-                class="absolute inset-0 w-full h-full object-contain object-center opacity-100 transition-opacity duration-500"
+                class="absolute inset-0 w-full h-full object-contain object-center opacity-0 animate-fade-in animate-slide-up [animation-fill-mode:forwards] transition-all duration-700"
             />
             <div
                 class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-deep-space-black to-transparent"
