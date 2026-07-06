@@ -20,6 +20,11 @@ export default defineConfig({
   },
 
   integrations: [react(), sitemap({
+    // Exclude non-canonical duplicates — these pages canonicalise to /classes/*
+    filter: (page) => {
+      const path = new URL(page).pathname.replace(/\/$/, '');
+      return path !== '/poomsae' && path !== '/competition';
+    },
     serialize(item) {
       // High priority for Home
       if (item.url === 'https://superiortkd.co.nz/') {

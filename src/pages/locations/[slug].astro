@@ -98,13 +98,7 @@ const headContent = `
                 {
                     "@type": "ListItem",
                     position: 2,
-                    name: "Locations",
-                    item: "https://superiortkd.co.nz/locations/",
-                },
-                {
-                    "@type": "ListItem",
-                    position: 3,
-                    name: location.name,
+                    name: location.title.split("|")[0].trim(),
                     item: `https://superiortkd.co.nz/locations/${location.slug}`,
                 },
             ],

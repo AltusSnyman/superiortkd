@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout
+    title="Page Not Found | Superior Taekwondo"
+    description="The page you are looking for could not be found. Explore Superior Taekwondo's classes, pricing, and locations across North West Auckland."
+>
+    <main
+        class="min-h-[70vh] flex items-center justify-center bg-deep-space-black relative overflow-hidden pt-24 pb-16"
+    >
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-blue-belt-start/10 to-transparent pointer-events-none"
+        >
+        </div>
+        <div class="container mx-auto px-4 text-center relative z-10 max-w-3xl">
+            <p
+                class="text-blue-belt-end font-bold tracking-widest uppercase text-sm mb-4"
+            >
+                Error 404
+            </p>
+            <h1
+                class="text-5xl md:text-7xl font-black font-oswald uppercase tracking-tighter text-white leading-none mb-6"
+            >
+                Page Not <span class="text-blue-gradient">Found</span>
+            </h1>
+            <p class="text-lg text-gray-300 mb-10 font-body">
+                Looks like this page tapped out. The page you're after may have
+                moved or no longer exists — but your training doesn't have to
+                stop here.
+            </p>
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            >
+                <Button href="/" variant="primary">Back to Home</Button>
+                <Button href="/contact" variant="secondary">Contact Us</Button>
+            </div>
+            <nav class="mt-12 text-sm text-gray-400 font-body" aria-label="Popular pages">
+                <p class="mb-3 uppercase tracking-wider text-gray-500">Popular pages</p>
+                <ul class="flex flex-wrap gap-x-6 gap-y-2 justify-center">
+                    <li><a href="/classes/tiny-tigers" class="hover:text-blue-belt-end transition-colors">Kids Classes</a></li>
+                    <li><a href="/classes/general" class="hover:text-blue-belt-end transition-colors">Adult &amp; Teen Classes</a></li>
+                    <li><a href="/pricing" class="hover:text-blue-belt-end transition-colors">Pricing</a></li>
+                    <li><a href="/locations/helensville" class="hover:text-blue-belt-end transition-colors">Helensville Dojang</a></li>
+                    <li><a href="/blog" class="hover:text-blue-belt-end transition-colors">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+    <Footer />
+</Layout>
