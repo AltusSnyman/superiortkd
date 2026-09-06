@@ -46,7 +46,7 @@ export default function TournamentsSection() {
                             <CardContent className="text-gray-300 font-body">
                                 <p className="mb-4">Students who are not on an unlimited membership and would like to attend extra classes to prepare for tournaments will incur an additional cost.</p>
                                 <div className="flex items-center gap-4 text-white">
-                                    <span className="text-3xl font-bold text-blue-belt-end">$10</span>
+                                    <span className="text-3xl font-bold text-blue-belt-end">$20</span>
                                     <span className="text-sm">per student / per class</span>
                                 </div>
                                 <p className="mt-4 text-xs text-gray-500">Payments must be made via the app or by EFTPOS before the class begins.</p>
