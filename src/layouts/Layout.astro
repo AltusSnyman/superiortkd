@@ -42,6 +42,14 @@ const ogType = /^\/blog\/.+/.test(Astro.url.pathname) ? "article" : "website";
 <!DOCTYPE html>
 <html lang="en-NZ" class="scroll-smooth">
 	<head>
+		<!-- Google tag (gtag.js) -->
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-R20DXRB33V"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-R20DXRB33V');
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -224,5 +232,11 @@ const ogType = /^\/blog\/.+/.test(Astro.url.pathname) ? "article" : "website";
 		<Navbar />
 		<slot />
 		<!-- global.css is imported in frontmatter; Astro injects it as <link> in <head> -->
+		<script
+			is:inline
+			src="https://widgets.leadconnectorhq.com/loader.js"
+			data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+			data-widget-id="6aa7ca7ec8d7749cb04bafbe"
+		></script>
 	</body>
 </html>
