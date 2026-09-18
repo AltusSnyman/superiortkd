@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import LocationHero from "../../components/LocationHero.astro";
 import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
 import { locationData } from "../../lib/locationData";
 
 export function getStaticPaths() {
@@ -13,49 +14,9 @@ export function getStaticPaths() {
 
 const { location } = Astro.props;
 
-const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "MartialArtsSchool",
-    name: "Superior Taekwondo",
-    description: location.metaDescription,
-    url: `https://superiortkd.co.nz/locations/${location.slug}`,
-    telephone: "+64275201613",
-    email: "superiorfitnessnz@gmail.com",
-    address: {
-        "@type": "PostalAddress",
-        streetAddress: "94 Mill Road",
-        addressLocality: "Helensville",
-        addressRegion: "Auckland",
-        postalCode: "0800",
-        addressCountry: "NZ",
-    },
-    geo: {
-        "@type": "GeoCoordinates",
-        latitude: -36.6782,
-        longitude: 174.4491,
-    },
-    areaServed: location.serviceArea.neighborhoods,
-    openingHoursSpecification: [
-        {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Wednesday", "Friday"],
-            opens: "17:30",
-            closes: "20:00",
-        },
-        {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Saturday"],
-            opens: "09:00",
-            closes: "12:00",
-        },
-    ],
-    priceRange: "$$",
-    sameAs: [
-        "https://facebook.com/superiortkd",
-        "https://instagram.com/superiortkd",
-    ],
-};
-
+// The shared Layout already emits the site-wide local-business schema block,
+// so this page only needs the FAQPage schema — a duplicate business-schema
+// block here would be a duplication error.
 const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -70,43 +31,27 @@ const faqSchema = {
 };
 
 const headContent = `
-<script type="application/ld+json">${JSON.stringify(
-    localBusinessSchema
-)}</script>
 <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>
 `;
+
+const breadcrumbs = [
+    { name: "Home", url: "https://superiortkd.co.nz/" },
+    { name: "Venues", url: "https://superiortkd.co.nz/locations/" },
+    {
+        name: location.heading ?? location.title.split("|")[0].trim(),
+        url: `https://superiortkd.co.nz/locations/${location.slug}/`,
+    },
+];
 ---
 
 <Layout
     title={location.title}
     description={location.metaDescription}
     headContent={headContent}
+    breadcrumbs={breadcrumbs}
 >
-    <!-- Breadcrumb Schema -->
-    <script
-        type="application/ld+json"
-        set:html={JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-                {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Home",
-                    item: "https://superiortkd.co.nz/",
-                },
-                {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: location.title.split("|")[0].trim(),
-                    item: `https://superiortkd.co.nz/locations/${location.slug}`,
-                },
-            ],
-        })}
-    ></script>
-
     <LocationHero
-        title={location.title.split("|")[0]}
+        title={location.heading ?? location.title.split("|")[0]}
         subtitle="Constructing Champions in Your Community"
         image={location.heroImage}
     />
@@ -145,6 +90,56 @@ const headContent = `
                             <p>{paragraph}</p>
                         ))
                     }
+                </div>
+            </section>
+
+            <!-- Where You'll Train (single dojang, every location page) -->
+            <section
+                class="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12"
+            >
+                <h2
+                    class="text-3xl md:text-4xl font-bold font-oswald text-white mb-8 uppercase text-center"
+                >
+                    Where you'll train
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <p class="text-lg font-bold text-white mb-1">
+                            Superior Taekwondo
+                        </p>
+                        <p class="text-gray-300 mb-1">
+                            94 Mill Road, Helensville 0875
+                        </p>
+                        <p class="text-gray-400 mb-6">North West Auckland</p>
+                        <div class="mb-4">
+                            <Button href="/contact/#trial" variant="primary">
+                                Book a free trial
+                            </Button>
+                        </div>
+                        <div class="flex flex-wrap gap-6 text-sm">
+                            <a
+                                href="/classes/"
+                                class="text-blue-belt-end hover:underline font-oswald uppercase tracking-wider"
+                            >
+                                Classes
+                            </a>
+                            <a
+                                href="/pricing/"
+                                class="text-blue-belt-end hover:underline font-oswald uppercase tracking-wider"
+                            >
+                                Prices
+                            </a>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border border-white/10">
+                        <iframe
+                            src="https://www.google.com/maps?q=Superior+Taekwondo,+94+Mill+Road,+Helensville&output=embed"
+                            loading="lazy"
+                            title="Map to Superior Taekwondo, 94 Mill Road, Helensville"
+                            class="w-full h-72 md:h-80"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </div>
                 </div>
             </section>
 

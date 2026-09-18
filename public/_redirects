@@ -1,2 +1,10 @@
+# Mirrored in netlify.toml at the repository root. Keep the two in sync.
+
+# Thin, cannibalising location pages folded into /locations/auckland/
+/locations/rodney-north-west      /locations/auckland/   301!
+/locations/rodney-north-west/*    /locations/auckland/   301!
+/locations/auckland-north-west    /locations/auckland/   301!
+/locations/auckland-north-west/*  /locations/auckland/   301!
+
 # Redirect www to non-www
 https://www.superiortkd.co.nz/* https://superiortkd.co.nz/:splat 301!

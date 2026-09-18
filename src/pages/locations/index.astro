@@ -1,0 +1,154 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import Card from "../../components/Card.astro";
+import ScheduleGrid from "../../components/ScheduleGrid.astro";
+import { locationData } from "../../lib/locationData";
+
+const title = "Our Taekwondo Venues, North West Auckland";
+const description =
+	"Superior Taekwondo trains at one dojang, 94 Mill Road, Helensville. Find your area for drive times and class suggestions across North West Auckland.";
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://superiortkd.co.nz/" },
+	{ name: "Venues", url: "https://superiortkd.co.nz/locations/" },
+];
+
+// Card grid is generated from the location data so every surviving location
+// page is linked automatically and the one-line description stays in sync
+// with each page's own copy.
+const locationCards = locationData.map((location) => ({
+	name: location.heading ?? location.title.split("|")[0].trim(),
+	href: `/locations/${location.slug}/`,
+	description: location.introContent[0],
+}));
+---
+
+<Layout title={title} description={description} breadcrumbs={breadcrumbs}>
+	<main class="bg-black min-h-screen pb-12 text-gray-300 font-body">
+		<section class="pt-32 pb-16 container mx-auto px-4 text-center">
+			<h1
+				class="text-4xl md:text-6xl font-black font-oswald uppercase text-white mb-6"
+			>
+				Where we train, and who we serve
+			</h1>
+			<p class="text-lg text-gray-400 max-w-2xl mx-auto">
+				One dojang at 94 Mill Road, Helensville. Families train with
+				us from across North West Auckland; find your area below for
+				drive times and class suggestions.
+			</p>
+		</section>
+
+		<!-- Where You'll Train (single dojang) -->
+		<section
+			class="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 mb-20"
+		>
+			<h2
+				class="text-3xl md:text-4xl font-bold font-oswald text-white mb-8 uppercase text-center"
+			>
+				Where you'll train
+			</h2>
+			<div class="grid md:grid-cols-2 gap-8 items-start">
+				<div>
+					<p class="text-lg font-bold text-white mb-1">
+						Superior Taekwondo
+					</p>
+					<p class="text-gray-300 mb-1">
+						94 Mill Road, Helensville 0875
+					</p>
+					<p class="text-gray-400 mb-6">North West Auckland</p>
+					<div class="mb-4">
+						<Button href="/contact/#trial" variant="primary">
+							Book a free trial
+						</Button>
+					</div>
+					<div class="flex flex-wrap gap-6 text-sm">
+						<a
+							href="/classes/"
+							class="text-blue-belt-end hover:underline font-oswald uppercase tracking-wider"
+						>
+							Classes
+						</a>
+						<a
+							href="/pricing/"
+							class="text-blue-belt-end hover:underline font-oswald uppercase tracking-wider"
+						>
+							Prices
+						</a>
+					</div>
+				</div>
+				<div
+					class="rounded-2xl overflow-hidden border border-white/10"
+				>
+					<iframe
+						src="https://www.google.com/maps?q=Superior+Taekwondo,+94+Mill+Road,+Helensville&output=embed"
+						loading="lazy"
+						title="Map to Superior Taekwondo, 94 Mill Road, Helensville"
+						class="w-full h-72 md:h-80"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
+			</div>
+		</section>
+
+		<!-- Location / catchment area card grid -->
+		<section class="container mx-auto px-4 mb-20">
+			<h2
+				class="text-3xl md:text-4xl font-bold font-oswald text-center text-white mb-12 uppercase"
+			>
+				Find your area
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{
+					locationCards.map((item) => (
+						<a href={item.href} class="block h-full">
+							<Card title={item.name} class="h-full">
+								<p class="text-gray-400 text-sm leading-relaxed mb-4">
+									{item.description}
+								</p>
+								<span class="text-blue-belt-end font-oswald text-sm uppercase tracking-wider group-hover:translate-x-1 transition-transform inline-block">
+									Learn more →
+								</span>
+							</Card>
+						</a>
+					))
+				}
+			</div>
+		</section>
+
+		<section id="schedule" class="container mx-auto px-4 mb-20">
+			<h2
+				class="text-3xl md:text-4xl font-bold font-oswald text-center text-white mb-4 uppercase"
+			>
+				Weekly timetable
+			</h2>
+			<p class="text-center text-gray-400 max-w-2xl mx-auto mb-10">
+				Every class runs at 94 Mill Road, Helensville, six days a week.
+			</p>
+			<ScheduleGrid />
+		</section>
+
+		<section
+			class="text-center bg-blue-belt-end/10 rounded-3xl p-12 border border-blue-belt-end/20 container mx-auto max-w-4xl mb-16"
+		>
+			<h2
+				class="text-3xl md:text-4xl font-black font-oswald text-white uppercase mb-6"
+			>
+				Ready to start?
+			</h2>
+			<p class="text-gray-300 max-w-xl mx-auto mb-8">
+				Wherever you're driving in from, your first class at our
+				Helensville dojang is free.
+			</p>
+			<div class="flex flex-col sm:flex-row justify-center gap-4">
+				<Button href="/contact/#trial" variant="primary"
+					>Book a free trial</Button
+				>
+				<Button href="/classes/" variant="outline">See classes</Button
+				>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>

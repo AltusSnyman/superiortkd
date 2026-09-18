@@ -16,14 +16,15 @@ export default defineConfig({
     inlineStylesheets: 'always'
   },
   redirects: {
-    '/schedule': 'http://superior-taekwondo.gymdesk.com/schedule'
+    '/schedule': 'https://superior-taekwondo.gymdesk.com/schedule'
   },
 
   integrations: [react(), sitemap({
-    // Exclude non-canonical duplicates — these pages canonicalise to /classes/*
+    // Exclude non-canonical duplicates (these canonicalise to /classes/*),
+    // the 404 page, and the off-site /schedule redirect stub.
     filter: (page) => {
       const path = new URL(page).pathname.replace(/\/$/, '');
-      return path !== '/poomsae' && path !== '/competition';
+      return !['/poomsae', '/competition', '/404', '/schedule'].includes(path);
     },
     serialize(item) {
       // High priority for Home

@@ -1,6 +1,9 @@
 export interface LocationData {
     slug: string;
     title: string;
+    // Optional H1 override for the page hero. When omitted, the page falls
+    // back to deriving the heading from `title` (text before the first "|").
+    heading?: string;
     metaDescription: string;
     heroImage: string;
     introTitle: string;
@@ -35,7 +38,7 @@ export const locationData: LocationData[] = [
     {
         slug: "helensville",
         title: "Taekwondo Classes in Helensville | Superior Taekwondo",
-        metaDescription: "Premier Taekwondo training in Helensville. Build confidence and discipline with Olympic-level coaching right here in the heart of Kaipara. Join Superior Taekwondo today.",
+        metaDescription: "Taekwondo training in Helensville at 94 Mill Road. Build confidence and discipline with Olympian-led coaching. Your first class is free.",
         heroImage: "/images/locations/helensville-hero.webp",
         introTitle: "Helensville's Premier Martial Arts Academy",
         introContent: [
@@ -106,72 +109,145 @@ export const locationData: LocationData[] = [
     },
     {
         slug: "auckland",
-        title: "Best Taekwondo in Auckland | Superior Taekwondo",
-        metaDescription: "Leading the way in Auckland martial arts. Superior Taekwondo offers elite training for all ages across the Auckland region. Join the champions today.",
+        title: "Taekwondo Classes in Auckland's North West | Superior Taekwondo",
+        heading: "Taekwondo in Auckland: our dojang in the north-west",
+        metaDescription: "Looking for Taekwondo in Auckland? Our dojang is in Helensville, north-west of the city up SH16. Olympian coaching for kids, teens and adults. Free trial.",
         heroImage: "/images/locations/auckland-hero.webp",
-        introTitle: "Auckland's Choice for Excellence in Martial Arts",
+        introTitle: "One dojang, serving Auckland's north-west",
         introContent: [
-            "Auckland, the City of Sails, is a vibrant metropolis driven by ambition and diversity. In this fast-paced environment, finding a grounding force is essential. Superior Taekwondo offers that balance. We stand out in Auckland's crowded martial arts scene by prioritizing quality, integrity, and student success above all else.",
-            "Our academy represents the pinnacle of Taekwondo in Auckland. We don't just teach kicking and punching; we cultivate a mindset of success that translates into boardrooms, classrooms, and daily life across the city. From the bustling CBD to the quiet suburbs, our reputation for excellence draws students who demand the very best.",
-            "As Auckland grows, so does the need for community and discipline. We provide a sanctuary where Aucklanders can disconnect from the digital noise and reconnect with their physical and mental strength. Our curriculum is globally recognized, aligning with World Taekwondo standards, ensuring our students are competitive on an international level."
+            "We're not in the central city. Superior Taekwondo trains at one dojang at 94 Mill Road, Helensville, in Auckland's north-west up State Highway 16. Families come from Kumeū, Huapai, Waimauku, Kaukapakapa, Riverhead, Westgate and the Kaipara coast. Classes run for kids from age 4, teens and adults, six days a week, and every student is coached by a team led by 2016 Olympian Andrea Kilday. Your first class is free.",
+            "Getting to us means a drive up SH16, but families tell us it's worth it. Classes are practical: real technique, real fitness, and a clear belt path from white belt through to black, taught by a team that includes a 2016 Olympian. There's no franchise script here — just one dojang, one coaching team, and a training standard that meets World Taekwondo requirements.",
+            "We know Auckland is spread out and a Helensville address isn't for everyone. But if you're prepared to make the drive, you'll find a small, focused club rather than a big-city factory: kids' classes starting at 4pm on weekdays, a Saturday morning slot, and coaches who know every student by name."
         ],
-        historyTitle: "Growing with the Super City",
+        historyTitle: "One club, one address",
         historyContent: [
-            "Taekwondo has a rich history in Auckland, and Superior Taekwondo is at the forefront of its modern evolution. We have adapted to the changing needs of the Super City, offering flexible training schedules and programs that address contemporary challenges, such as bullying awareness and stress management.",
-            "Our instructors have trained and competed globally, bringing international experience back to Auckland. We are proud to raise the standard of martial arts education in New Zealand's largest city, developing athletes who represent Auckland with pride at national tournaments."
+            "Superior Taekwondo has always trained out of the one dojang in Helensville. We haven't tried to be a citywide chain with a branch in every suburb — instead we've focused on building a strong programme in one place and let families from across Auckland's north-west come to us.",
+            "Our instructors have trained and competed internationally, and that experience shapes the coaching here: modern, technical, and grounded in World Taekwondo standards, with a pathway from a first class through to competition."
         ],
         whyChooseUs: {
-            title: "Why Aucklanders choose Superior Taekwondo",
+            title: "Why families make the drive",
             items: [
                 {
-                    title: "Proven Track Record",
-                    content: "Our students consistently achieve top results in Auckland and National competitions."
+                    title: "Olympian-led coaching",
+                    content: "Head coach Andrea Kilday represented New Zealand at the Rio 2016 Olympics, and that standard runs through every class."
                 },
                 {
-                    title: "Holistic Development",
-                    content: "We focus on the complete development of the individual—mental, physical, and emotional."
+                    title: "One dojang, no gimmicks",
+                    content: "Everyone trains at 94 Mill Road, Helensville — not a chain of franchised locations. What you see is the club you join."
                 },
                 {
-                    title: "Professional Standards",
-                    content: "We maintain the highest professional standards in safety, curriculum, and facility management."
+                    title: "A class for every age",
+                    content: "Tiny Tigers from age 4, a General class for teens and adults, and a Performance Pathway for students who want to compete."
                 }
             ]
         },
         serviceArea: {
-            title: "Serving Greater Auckland",
-            description: "Our reputation draws students from across the Auckland region who are willing to travel for superior quality training.",
+            title: "Where our Auckland families come from",
+            description: "We're based in Helensville, up SH16 from the city. Families who train with us travel in from across Auckland's north-west.",
             landmarks: [
-                "Sky Tower",
-                "Harbour Bridge",
-                "Waitakere Ranges",
-                "Auckland Domain",
-                "Eden Park"
+                "Westgate Shopping Centre",
+                "Kumeu Showgrounds",
+                "Riverhead Forest",
+                "Muriwai Beach",
+                "Kaipara Coast"
             ],
             neighborhoods: [
-                "North West Auckland",
-                "West Auckland",
-                "North Shore",
-                "Central Auckland",
-                "Rodney District"
+                "Kumeū",
+                "Huapai",
+                "Waimauku",
+                "Kaukapakapa",
+                "Riverhead",
+                "Westgate",
+                "Kaipara Coast"
             ],
             majorRoutes: [
-                "Northwestern Motorway (SH16)",
-                "State Highway 1",
-                "Upper Harbour Highway"
+                "State Highway 16",
+                "Coatesville-Riverhead Highway"
             ]
         },
         weatherImpact: {
-            title: "Resilience in Auckland's Climate",
-            content: "Auckland is known for its 'four seasons in one day'. This variability teaches us resilience—a core tenet of Taekwondo. Whether it's a humid summer session focusing on endurance or a crisp winter training building core strength, our program turns environmental challenges into training advantages."
+            title: "Training through Auckland's changeable weather",
+            content: "Auckland's weather can turn quickly, especially out toward the Kaipara coast. Training indoors at our Helensville dojang means class goes ahead rain or shine, whatever it's doing on the drive up SH16."
         },
         faq: [
             {
-                question: "Do you accept students from all over Auckland?",
-                answer: "Absolutely. We have families travelling from various parts of Auckland specifically for our high-standard training."
+                question: "Do you have a location in central Auckland?",
+                answer: "No — we train at one dojang, 94 Mill Road, Helensville, up SH16 from the city. There's no branch anywhere else in Auckland."
             },
             {
-                question: "Is there public transport nearby?",
-                answer: "Yes, our locations are accessible via major Auckland transport routes."
+                question: "Is it worth the drive from Auckland?",
+                answer: "Families travel in from Kumeū, Huapai, Waimauku, Riverhead and further because of the coaching, not the postcode. Come try a free class and decide for yourself."
+            }
+        ]
+    },
+    {
+        slug: "kumeu",
+        title: "Taekwondo Classes near Kumeū | Superior Taekwondo",
+        heading: "Taekwondo classes for Kumeū families",
+        metaDescription: "Taekwondo for Kumeū and Huapai families: kids from age 4, teens and adults. Our Helensville dojang is up SH16, Olympian-led. Free trial class.",
+        heroImage: "/images/hero-poster.webp",
+        introTitle: "Taekwondo classes for Kumeū families",
+        introContent: [
+            "Kumeū doesn't have its own dojang, but ours is a straightforward drive up State Highway 16 at 94 Mill Road, Helensville, with parking at the door. Kids' classes start at 4pm on weekdays, so families from Kumeū and Huapai can make it after school.",
+            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, who represented New Zealand at the Rio 2016 Olympics. Kids start in Tiny Tigers from age 4, where the focus is listening, balance, confidence and having fun in a structured class. Teens and adults train in the General class, which mixes fitness, technique and self-defence, and students who want to compete can move into the Performance Pathway squad.",
+            "Memberships start at $30 a week for one class, or $40 a week for unlimited training, with sibling discounts for families. Your first class is free: come along, meet the coaches, and see if it fits."
+        ],
+        historyTitle: "Training the north-west since day one",
+        historyContent: [
+            "Superior Taekwondo has never had a branch in Kumeū — our dojang has always been the one at 94 Mill Road, Helensville. Kumeū and Huapai families have simply made the short trip up SH16 part of their week.",
+            "As Kumeū and Huapai have grown, so has the number of families making that drive. We've kept the club to one site rather than opening a second location, so every student trains under the same coaching team."
+        ],
+        whyChooseUs: {
+            title: "Why Kumeū families choose Superior Taekwondo",
+            items: [
+                {
+                    title: "Easy drive up SH16",
+                    content: "94 Mill Road, Helensville is a straightforward run up State Highway 16, with parking at the door."
+                },
+                {
+                    title: "Olympian-led team",
+                    content: "Head coach Andrea Kilday represented New Zealand at the Rio 2016 Olympics, leading a team that coaches every belt level."
+                },
+                {
+                    title: "Classes for the whole family",
+                    content: "Tiny Tigers from age 4, a General class for teens and adults, and sibling discounts for families training together."
+                }
+            ]
+        },
+        serviceArea: {
+            title: "Serving Kumeū and Huapai",
+            description: "We don't have a dojang in Kumeū — everyone trains at 94 Mill Road, Helensville, up SH16. Here's what that drive looks like from around Kumeū and Huapai.",
+            landmarks: [
+                "Kumeu Showgrounds",
+                "Kumeū Village",
+                "Huapai Village"
+            ],
+            neighborhoods: [
+                "Kumeū",
+                "Huapai",
+                "Riverhead",
+                "Waimauku"
+            ],
+            majorRoutes: [
+                "State Highway 16"
+            ]
+        },
+        weatherImpact: {
+            title: "Training whatever Kumeū's weather is doing",
+            content: "Kumeū's weather can shift fast, especially heading into the wetter months. Training indoors at our Helensville dojang means class goes ahead as planned, whatever the drive up SH16 looks like that day."
+        },
+        faq: [
+            {
+                question: "Where is the nearest class to Kumeū?",
+                answer: "Our dojang is at 94 Mill Road, Helensville, up SH16 from Kumeū."
+            },
+            {
+                question: "What age can my child start?",
+                answer: "Tiny Tigers takes children from age 4. Teens and adults join the General class."
+            },
+            {
+                question: "Do I need any gear for the free trial?",
+                answer: "No. Wear comfortable sports clothes and bring water. Uniforms are arranged after you join."
             }
         ]
     },
@@ -182,7 +258,7 @@ export const locationData: LocationData[] = [
         heroImage: "/images/locations/kaukapakapa-hero.webp",
         introTitle: "Martial Arts for the Kaukapakapa Community",
         introContent: [
-            "Kaukapakapa is a growing community that values its rural roots while embracing the future. Superior Taekwondo is excited to be part of this growth, offering high-quality martial arts training accessible to 'Kau' residents. We provide a local activity that builds character, fitness, and community connections.",
+            "Kaukapakapa is a growing community that values its rural roots. We don't have a dojang in the village — families from Kaukapakapa train with us at our Helensville dojang, a short drive down SH16. It's become a local activity for many 'Kau' families: character, fitness and community connections, just a few minutes from home.",
             "For families in Kaukapakapa, finding quality extracurricular activities often means a long drive. We bridge that gap by being easily accessible via SH16. Our classes offer a constructive outlet for energy, teaching children respect and discipline, while offering adults a challenging way to stay fit and focused.",
             "The 'Kau' spirit of resilience and neighborliness is something we cherish. Our dojang is an extension of that community spirit—a place where everyone supports each other's journey to black belt and beyond. We are building a tribe of strong, confident individuals right here in the North West."
         ],
@@ -195,8 +271,8 @@ export const locationData: LocationData[] = [
             title: "Perfect for Kaukapakapa Residents",
             items: [
                 {
-                    title: "Short Commute",
-                    content: "Located just a short drive down SH16, we are the nearest premier facility for Kaukapakapa families."
+                    title: "Short drive down SH16",
+                    content: "94 Mill Road, Helensville is a short, easy drive down SH16 from Kaukapakapa — the closest dojang for local families."
                 },
                 {
                     title: "Values-Based Training",
@@ -210,9 +286,8 @@ export const locationData: LocationData[] = [
         },
         serviceArea: {
             title: "Services for Kaukapakapa & Surrounds",
-            description: "We proudly serve the wider Kaukapakapa area, welcoming students from the village and surrounding lifestyle blocks.",
+            description: "We proudly serve the wider Kaukapakapa area, welcoming students from the village and surrounding lifestyle blocks who train with us at our Helensville dojang.",
             landmarks: [
-                "Kaukapakapa Village Hall",
                 "Omeru Scenic Reserve",
                 "Kaipara Coast Sculpture Gardens",
                 "Kaukapakapa School"
@@ -241,7 +316,7 @@ export const locationData: LocationData[] = [
             },
             {
                 question: "Are there classes for young children?",
-                answer: "Yes, we have age-specific classes perfect for primary school aged children."
+                answer: "Yes, we have age-specific classes at our Helensville dojang perfect for primary school aged children."
             }
         ]
     },
@@ -252,7 +327,7 @@ export const locationData: LocationData[] = [
         heroImage: "/images/locations/waimauku-hero.webp",
         introTitle: "Empowering the Waimauku Community",
         introContent: [
-            "Waimauku is known for its beautiful vineyards, lifestyle blocks, and strong family focus. Superior Taekwondo complements this lifestyle by offering a discipline that enriches the mind and body. We are the preferred martial arts school for Waimauku families seeking a high standard of professional tuition.",
+            "Waimauku is known for its beautiful vineyards, lifestyle blocks, and strong family focus. We don't train in Waimauku itself — families from Waimauku train with us at our Helensville dojang, a short drive down SH16. It fits well alongside the area's goal-oriented, community-minded pace of life.",
             "We understand that Waimauku residents value quality and authenticity. That's exactly what we deliver. Our curriculum is authentic World Taekwondo, taught by instructors who are passionate about their craft. We offer a structured path to success that resonates with the goal-oriented nature of the local community.",
             "From fresh-faced beginners to serious competitors, our Waimauku students are some of our most dedicated. The short commute to our dojang makes it easy to integrate training into a weekly routine, providing a consistent foundation for personal development and physical fitness."
         ],
@@ -280,7 +355,7 @@ export const locationData: LocationData[] = [
         },
         serviceArea: {
             title: "Serving Waimauku & Muriwai",
-            description: "Ideally positioned to serve households in Waimauku, Muriwai, and the surrounding countryside.",
+            description: "Our Helensville dojang is well positioned for households in Waimauku, Muriwai, and the surrounding countryside, a short drive down SH16.",
             landmarks: [
                 "Waimauku School",
                 "Muriwai Beach",
@@ -323,13 +398,13 @@ export const locationData: LocationData[] = [
         heroImage: "/images/locations/huapai-hero.webp",
         introTitle: "Martial Arts Expertise for Huapai",
         introContent: [
-            "Huapai is experiencing rapid growth, transforming into a bustling hub of North West Auckland. Amidst this expansion, Superior Taekwondo offers a place of focus and stability. We provide Huapai residents with a world-class martial arts program that is convenient, challenging, and deeply rewarding.",
+            "Huapai is experiencing rapid growth, and we don't have a second dojang out here — Huapai families train with us at 94 Mill Road, Helensville, a short drive down SH16. It's a focused, convenient program without needing a branch on every corner.",
             "As new families move into the Huapai Triangle and surrounding developments, they are looking for connection. Our dojang is a melting pot where old locals and new residents come together with a shared purpose. We foster a welcoming environment where friendships are forged through shared sweat and achievement.",
             "For the youth of Huapai, we offer an essential outlet. In an era of screens and digital distractions, we get kids moving, thinking, and interacting. Our program develops the focus and self-discipline that translates directly to better performance at school and a more positive attitude at home."
         ],
         historyTitle: "Growing with the Community",
         historyContent: [
-            "Huapai's history is rooted in horticulture and community. As the orchards turn into homes, the need for positive community spaces is greater than ever. Superior Taekwondo is dedicated to growing alongside Huapai, providing a modern facility and program that meets the needs of today's families.",
+            "Huapai's history is rooted in horticulture and community. As the orchards turn into homes, the need for positive community spaces is greater than ever. Superior Taekwondo is dedicated to growing alongside Huapai, providing access to a modern dojang up the road in Helensville and a program that meets the needs of today's families.",
             "We embrace the dynamic energy of Huapai. Our classes are high-energy and forward-thinking, preparing students not just for tournaments, but for the challenges of modern life. We are proud to be a cornerstone of the new Huapai community."
         ],
         whyChooseUs: {
@@ -350,8 +425,8 @@ export const locationData: LocationData[] = [
             ]
         },
         serviceArea: {
-            title: "Centrally Serving Huapai",
-            description: "We are the local martial arts specialists for the expanding Huapai residential and business districts.",
+            title: "Serving Huapai families from Helensville",
+            description: "We don't have a branch in Huapai — our dojang is at 94 Mill Road, Helensville, a short drive down SH16 from the Huapai Triangle and surrounding growth areas.",
             landmarks: [
                 "Huapai District School",
                 "Huapai Domain",
@@ -384,150 +459,6 @@ export const locationData: LocationData[] = [
             {
                 question: "Do you cater to beginners?",
                 answer: "Yes, many of our Huapai students started with zero experience and are now moving through the ranks."
-            }
-        ]
-    },
-    {
-        slug: "rodney-north-west",
-        title: "Taekwondo in Rodney North West | Superior Taekwondo",
-        metaDescription: "Serving the wider Rodney North West district with premier Taekwondo training. Elite coaching for rural and urban communities.",
-        heroImage: "/images/locations/rodney-hero.webp",
-        introTitle: "Uniting Rodney North West Through Taekwondo",
-        introContent: [
-            "Rodney North West is a unique region, blending rugged coastlines, rolling farmland, and vibrant townships. Superior Taekwondo serves this diverse territory as the premier provider of Olympic martial arts. We actively bridge the distance between communities, bringing together students from across the district under one banner of excellence.",
-            "We understand the rural-urban mix of Rodney. Our students come from lifestyle blocks, farms, and village centers. What unites them is a desire for high standards. We don't believe that living outside the main city should mean compromising on quality coaching. We bring elite-level instruction to your doorstep.",
-            "Our academy fosters the gritty, hardworking spirit typical of the Rodney region. We channel that natural determination into refined technique and sporting success. Whether you are looking for self-defense, fitness, or a pathway to the Olympics, we provide the roadmap for Rodney residents."
-        ],
-        historyTitle: "A Spirit of Independence",
-        historyContent: [
-            "The Rodney North West area has always been characterized by a spirit of independence and resilience. We tap into that history, teaching students to be self-reliant yet respectful. Our dojang is a place where the traditional values of the district—hard work, community, and integrity—are reinforced daily.",
-            "As the region grows and changes, these core values remain our anchor. We are honored to contribute to the social fabric of Rodney North West, developing strong citizens who will lead their communities into the future."
-        ],
-        whyChooseUs: {
-            title: "The Rodney Regional Choice",
-            items: [
-                {
-                    title: "Regional Hub",
-                    content: "We act as a central hub for martial arts enthusiasts from across the North West district."
-                },
-                {
-                    title: "Elite Integrity",
-                    content: "We provide honest, high-quality training without the gimmicks, respecting the straightforward local culture."
-                },
-                {
-                    title: "Diverse Community",
-                    content: "Train with a diverse mix of people from all walks of life across the region."
-                }
-            ]
-        },
-        serviceArea: {
-            title: "Covering the District",
-            description: "Our reach extends across the beautiful and vast Rodney North West district.",
-            landmarks: [
-                "Shelly Beach",
-                "South Head",
-                "Woodhill Forest",
-                "Gibbs Farm",
-                "Kaipara Harbour"
-            ],
-            neighborhoods: [
-                "Helensville",
-                "Parakai",
-                "Kaukapakapa",
-                "Waimauku",
-                "Woodhill",
-                "South Head"
-            ],
-            majorRoutes: [
-                "State Highway 16",
-                "Old North Road",
-                "West Coast Road"
-            ]
-        },
-        weatherImpact: {
-            title: "Rugged Conditions, Resilient Spirits",
-            content: "Rodney North West is exposed to the elements, from the fresh westerlies to the summer sun. This environment breeds tough people. We channel that toughness into disciplined martial arts training. Our facility is a warm haven in winter and a cool, focused space in summer."
-        },
-        faq: [
-            {
-                question: "I live on a rural block, is it worth the drive?",
-                answer: "Our rural families tell us that the quality of instruction and the positive impact on their children make the drive 100% worth it."
-            },
-            {
-                question: "Do you have adult classes?",
-                answer: "Yes, we have a strong contingent of adults from across the district training for fitness and focus."
-            }
-        ]
-    },
-    {
-        slug: "auckland-north-west",
-        title: "Taekwondo Auckland North West | Superior Taekwondo",
-        metaDescription: "The definitive Taekwondo academy for Auckland North West. Join the movement. Expert coaching, strong community, superior results.",
-        heroImage: "/images/locations/auckland-nw-hero.webp",
-        introTitle: "The Heart of Martial Arts in Auckland North West",
-        introContent: [
-            "Auckland North West is one of the fastest-growing regions in New Zealand, a dynamic corridor of innovation and expansion. Superior Taekwondo acts as the heartbeat of martial arts in this sector. We operate at the intersection of tradition and modern growth, providing a grounding discipline amidst the rapid pace of development.",
-            "From Westgate to Kumeu, traffic and life are getting busier. We offer an oasis of focus. Our academy is where the North West comes to breathe, train, and improve. We are easily accessible for the thousands of families moving into the new developments, offering a 'third place' between home and work/school.",
-            "We are committed to setting the standard for the North West. As the region transforms, we ensure that the quality of recreational and sporting opportunities keeps pace. We offer a facility and a program that rivals anything in the central city, proving you don't need to cross the causeway to find excellence."
-        ],
-        historyTitle: "Pioneering the North West",
-        historyContent: [
-            "As Auckland expands North West, we are proud to be pioneers in establishing a high-performance culture in the region. We have watched the paddocks turn into suburbs, and we have welcomed the new families with open arms. We are building the traditions of tomorrow, today.",
-            "Our legacy in Auckland North West is built on results. We produce confident kids, focused teens, and fit adults. We are not just a business in the area; we are a key part of the social infrastructure that makes Auckland North West a great place to live."
-        ],
-        whyChooseUs: {
-            title: "North West's Top Choice",
-            items: [
-                {
-                    title: "Accessible Excellence",
-                    content: "High-performance training located conveniently for the North West corridor."
-                },
-                {
-                    title: "Future-Focused",
-                    content: "A modern curriculum designed for the needs of today's North West families."
-                },
-                {
-                    title: "Strong Network",
-                    content: "Be part of a strong, connected network of local families and professionals."
-                }
-            ]
-        },
-        serviceArea: {
-            title: "Serving the Growth Corridor",
-            description: "We serve the rapidly expanding communities along the North Western corridor.",
-            landmarks: [
-                "Westgate Shopping Centre",
-                "Costco Auckland",
-                "NorthWest Shopping Centre",
-                "Kumeu River Wines",
-                "Riverhead Forest"
-            ],
-            neighborhoods: [
-                "Kumeu",
-                "Huapai",
-                "Riverhead",
-                "Whenuapai",
-                "Westgate",
-                "Hobsonville"
-            ],
-            majorRoutes: [
-                "Northwestern Motorway (SH16)",
-                "State Highway 18",
-                "Coatesville-Riverhead Highway"
-            ]
-        },
-        weatherImpact: {
-            title: "Training Through the Seasons",
-            content: "The North West is known for its microclimates. Regardless of what the weather is doing outside—be it a storm rolling in from the Tasman or a humid calm—our training environment remains consistent. We provide stability in your weekly routine, rain or shine."
-        },
-        faq: [
-            {
-                question: "Is traffic an issue getting to you from Westgate?",
-                answer: "Local traffic flows can vary, but many find the drive against the city traffic very manageable."
-            },
-            {
-                question: "Do you have parking?",
-                answer: "Yes, we handle the busy North West lifestyle with ample parking and easy access."
             }
         ]
     }
