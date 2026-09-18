@@ -26,3 +26,14 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# agent-team tooling (project-local)
+tools/mcp-gsc/.venv/
+tools/mcp-gsc/credentials/
+tools/mcp-gsc/__pycache__/
+tools/geo-optimizer/.venv/
+tools/geo-optimizer/reports/
+tools/claude-seo/.venv/
+tools/claude-seo/data/
+tools/claude-seo/*.db
+._*

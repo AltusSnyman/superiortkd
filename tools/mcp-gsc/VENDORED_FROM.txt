@@ -1,0 +1,2 @@
+Vendored from https://github.com/AminForou/mcp-gsc
+commit d49eea9e5efb5eb645b722249303179b2c150b49 (v0.4.1, 2026-09-15)
