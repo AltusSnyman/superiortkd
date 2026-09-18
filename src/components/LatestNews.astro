@@ -60,7 +60,7 @@ const posts = [
             {
                 posts.map((post) => (
                     <a
-                        href={`/blog/${post.slug}`}
+                        href={`/blog/${post.slug}/`}
                         class="group block bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-blue-belt-end/50 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2"
                     >
                         <div class="h-48 bg-gradient-to-br from-gray-800 to-black relative overflow-hidden">
@@ -100,7 +100,7 @@ const posts = [
 
         <div class="mt-12 text-center">
             <a
-                href="/blog"
+                href="/blog/"
                 class="inline-block border border-white/20 hover:border-blue-belt-end text-white hover:text-blue-belt-end font-bold font-oswald uppercase tracking-widest py-3 px-8 rounded transition-all duration-300"
             >
                 View All Articles
