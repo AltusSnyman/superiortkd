@@ -33,14 +33,18 @@ export default function CompetitionSection() {
                                     <h2 className="text-3xl font-black font-oswald uppercase text-white mb-6">Schedule & Location</h2>
                                     <div className="space-y-4">
                                         <div className="border-l-4 border-blue-belt-start pl-4">
+                                            <p className="text-blue-belt-end font-bold text-lg">Monday</p>
+                                            <p className="text-white text-xl">5:30PM - 7:30PM</p>
+                                        </div>
+                                        <div className="border-l-4 border-blue-belt-start pl-4">
                                             <p className="text-blue-belt-end font-bold text-lg">Wednesday</p>
-                                            <p className="text-white text-xl">6:00PM - 8:30PM</p>
+                                            <p className="text-white text-xl">6:00PM - 8:00PM</p>
                                         </div>
                                         <div className="border-l-4 border-blue-belt-end pl-4">
                                             <p className="text-blue-belt-end font-bold text-lg">Saturday</p>
-                                            <p className="text-white text-xl">9:30AM - 11:30AM</p>
+                                            <p className="text-white text-xl">10:15AM - 12:45PM</p>
                                         </div>
-                                        <p className="text-gray-400 mt-4 pt-4 border-t border-white/10">Location: <span className="text-white font-bold">Kaukapakapa Hall</span></p>
+                                        <p className="text-gray-400 mt-4 pt-4 border-t border-white/10">Location: <span className="text-white font-bold">94 Mill Road, Helensville</span></p>
                                     </div>
                                 </div>
 

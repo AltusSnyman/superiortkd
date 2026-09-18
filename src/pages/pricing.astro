@@ -12,7 +12,7 @@ const pricingFaqSchema = {
             name: "How much do Taekwondo classes cost at Superior Taekwondo?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Weekly memberships start from $30 per week for one session, up to $39 per week for unlimited sessions. Family sibling discounts are available. Term-based concession options are also offered. A one-time sign-up fee of $25 applies to weekly memberships.",
+                text: "Weekly memberships start from $30 per week for one session. Unlimited training is $40 a week plus a $25 sign-up fee. Family sibling discounts are available. Term-based concession options are also offered. A one-time sign-up fee of $25 applies to weekly memberships.",
             },
         },
         {
@@ -28,7 +28,7 @@ const pricingFaqSchema = {
             name: "Can I pay per-term instead of weekly?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes. We offer per-term options including 1 session per week for $285 per 10 weeks, or unlimited sessions per term for $350 per 10 weeks. A concession card (10 sessions) is also available for $265.",
+                text: "Yes. One session a week is $300 for a 10-week term. Unlimited sessions are $400 for a 10-week term. A 10-session concession card is $285 and lasts five months.",
             },
         },
         {
@@ -41,10 +41,10 @@ const pricingFaqSchema = {
         },
         {
             "@type": "Question",
-            name: "Can I attend any location with my membership?",
+            name: "What does my membership cover?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes. All Superior Taekwondo membership options cover access to all three locations: Kaukapakapa, Helensville, and Waimauku.",
+                text: "All memberships cover every class on the timetable at our Helensville dojang, 94 Mill Road, six days a week.",
             },
         },
     ],
@@ -148,6 +148,9 @@ const plans = [
 const offersSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "MartialArtsSchool",
+    // Same @id as the global MartialArtsSchool in Layout.astro so Google merges
+    // the two nodes into one entity instead of reading a duplicate organisation.
+    "@id": "https://superiortkd.co.nz/#organization",
     url: "https://superiortkd.co.nz",
     name: "Superior Taekwondo",
     hasOfferCatalog: {
@@ -157,7 +160,7 @@ const offersSchema = JSON.stringify({
             {
                 "@type": "Offer",
                 name: "1 Session Per Week (Weekly Membership)",
-                description: "1 Taekwondo session per week. Access to all 3 locations.",
+                description: "1 Taekwondo session per week at our Helensville dojang.",
                 priceSpecification: {
                     "@type": "UnitPriceSpecification",
                     price: "30.00",
@@ -165,14 +168,14 @@ const offersSchema = JSON.stringify({
                     unitCode: "WEE",
                     unitText: "per week",
                 },
-                url: "https://superiortkd.co.nz/pricing",
+                url: "https://superiortkd.co.nz/pricing/",
                 eligibleRegion: "NZ",
                 seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
             },
             {
                 "@type": "Offer",
                 name: "Unlimited Sessions (Weekly Membership)",
-                description: "Unlimited Taekwondo sessions per week. Access to all 3 locations.",
+                description: "Unlimited Taekwondo sessions per week at our Helensville dojang.",
                 priceSpecification: {
                     "@type": "UnitPriceSpecification",
                     price: "40.00",
@@ -180,7 +183,7 @@ const offersSchema = JSON.stringify({
                     unitCode: "WEE",
                     unitText: "per week",
                 },
-                url: "https://superiortkd.co.nz/pricing",
+                url: "https://superiortkd.co.nz/pricing/",
                 eligibleRegion: "NZ",
                 seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
             },
@@ -194,7 +197,7 @@ const offersSchema = JSON.stringify({
                     priceCurrency: "NZD",
                     description: "Per 10-week term",
                 },
-                url: "https://superiortkd.co.nz/pricing",
+                url: "https://superiortkd.co.nz/pricing/",
                 eligibleRegion: "NZ",
                 seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
             },
@@ -208,7 +211,7 @@ const offersSchema = JSON.stringify({
                     priceCurrency: "NZD",
                     description: "Per 10-week term",
                 },
-                url: "https://superiortkd.co.nz/pricing",
+                url: "https://superiortkd.co.nz/pricing/",
                 eligibleRegion: "NZ",
                 seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
             },
@@ -222,7 +225,7 @@ const offersSchema = JSON.stringify({
                     priceCurrency: "NZD",
                     description: "10 sessions, valid 5 months",
                 },
-                url: "https://superiortkd.co.nz/pricing",
+                url: "https://superiortkd.co.nz/pricing/",
                 eligibleRegion: "NZ",
                 seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
             },
@@ -235,7 +238,7 @@ const pricingHeadContent = `<script type="application/ld+json">${offersSchema}<\
 
 <Layout
     title="Pricing & Memberships | Superior Taekwondo"
-    	description="Transparent pricing for Taekwondo classes in North West Auckland. Explore our weekly memberships, family sibling discounts, and flexible term-based options."
+    	description="Transparent pricing for Taekwondo in North West Auckland: weekly memberships, family sibling discounts and flexible term-based options."
     headContent={pricingHeadContent}
 >
     <script type="application/ld+json">
@@ -322,8 +325,8 @@ const pricingHeadContent = `<script type="application/ld+json">${offersSchema}<\
                         putting on hold.
                     </li>
                     <li>
-                        All locations included: Kaukapakapa, Helensville, and
-                        Waimauku.
+                        Every class on the timetable included, at our
+                        Helensville dojang.
                     </li>
                 </ul>
             </div>

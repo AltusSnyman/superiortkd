@@ -2,37 +2,31 @@
 const reviews = [
     {
         name: "Altus Snyman",
-        role: "Local Guide · 15 reviews · 2 photos",
         text: "The boys loved this class and training Taekwondo. Andrea is amazing and a great teach and coach. Highly recommended.",
         stars: 5,
     },
     {
         name: "Swati Loomba",
-        role: "Local Guide · 12 reviews · 10 photos",
         text: "My 4 year old girl has started with Superior earlier this year and absolutely loves each class. Andrea is lovely and so good with training our 3-6 years helping them build strength and discipline as they mark their journeys into life!",
         stars: 5,
     },
     {
         name: "Elizabeth Baroutsos",
-        role: "Local Guide · 10 reviews · 6 photos",
         text: "Absolutely could not recommend more. Andrea is such an inspiration and her passion for the sport really shines through at each training. She pushes her students to reach their full potential and is deeply invested in their development. Andrea you are a true Olympian and sportswomen, demonstrating elite characteristics both as an athlete and as a genuine human being.",
         stars: 5,
     },
     {
         name: "Natasha Crawford",
-        role: "4 reviews",
         text: "Highly recommend. Andrea is fireball of energy, focus, commitment and dedication. She will get you results and puts 100% into your training sessions.",
         stars: 5,
     },
     {
         name: "Isla Berry",
-        role: "10 reviews",
         text: "Andrea is such an awesome teacher! Would highly recommend her!!",
         stars: 5,
     },
     {
         name: "Connor Snyman",
-        role: "2 reviews",
         text: "Good fitness.",
         stars: 5,
     },
@@ -48,6 +42,14 @@ const doubledReviews = [...reviews, ...reviews];
         >
             Happy <span class="text-blue-gradient">Students</span>
         </h2>
+        <a
+            href="https://share.google/PTOQRY4CylXyyIwDT"
+            target="_blank"
+            rel="noopener"
+            class="inline-block mt-4 text-blue-belt-end font-body text-sm md:text-base hover:underline"
+        >
+            5.0 from 23 reviews on Google
+        </a>
     </div>
 
     <div class="relative w-full">
@@ -77,9 +79,6 @@ const doubledReviews = [...reviews, ...reviews];
                             <h3 class="font-oswald font-bold text-xl text-white uppercase tracking-wide">
                                 {review.name}
                             </h3>
-                            <p class="text-sm text-blue-belt-end/70 font-body">
-                                {review.role}
-                            </p>
                         </div>
                     </div>
                 ))

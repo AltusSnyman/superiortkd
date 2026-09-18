@@ -8,7 +8,7 @@ import andreaPortrait from "../assets/andrea3.webp";
 const title =
     "About Superior Taekwondo | Olympian-Led Club, North West Auckland";
 const description =
-    "Learn the story behind Superior Taekwondo. Led by 2016 Rio Olympian Andrea Kilday, we are North West Auckland's premier World Taekwondo club — built to develop champions in sport and life.";
+    "The story behind Superior Taekwondo. Led by 2016 Rio Olympian Andrea Kilday, a World Taekwondo club in North West Auckland built to develop champions.";
 
 const aboutSchema = JSON.stringify({
     "@context": "https://schema.org",
@@ -30,7 +30,7 @@ const aboutSchema = JSON.stringify({
             streetAddress: "94 Mill Road",
             addressLocality: "Helensville",
             addressRegion: "Auckland",
-            postalCode: "0800",
+            postalCode: "0875",
             addressCountry: "NZ",
         },
         founder: {
@@ -108,11 +108,11 @@ const headContent = `<script type="application/ld+json">${aboutSchema}<\/script>
                 </p>
                 <p class="text-gray-300 leading-relaxed font-body">
                     Every class we run — whether it is <a
-                        href="/classes/tiny-tigers"
+                        href="/classes/tiny-tigers/"
                         class="text-blue-belt-end hover:underline"
                         >Tiny Tigers</a
                     > for four-year-olds or <a
-                        href="/classes/competition"
+                        href="/classes/competition/"
                         class="text-blue-belt-end hover:underline"
                         >Competition Team</a
                     > training — is built on the same foundation: high standards,
@@ -120,10 +120,10 @@ const headContent = `<script type="application/ld+json">${aboutSchema}<\/script>
                     champion in the dojo and in life.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                    <Button href="/contact" variant="primary"
+                    <Button href="/contact/" variant="primary"
                         >Book a Free Trial</Button
                     >
-                    <Button href="/classes/general" variant="secondary"
+                    <Button href="/classes/general/" variant="secondary"
                         >View Classes</Button
                     >
                 </div>
@@ -139,7 +139,7 @@ const headContent = `<script type="application/ld+json">${aboutSchema}<\/script>
                         {
                             icon: "🏅",
                             label: "Oceania Olympic Selection",
-                            desc: ["Olympic Qualifier 2007", "Olympic Qualifier 2016"],
+                            desc: ["Olympic Qualifier", "Olympic Qualifier 2016"],
                         },
                         {
                             icon: "🏆",
@@ -318,32 +318,41 @@ const headContent = `<script type="application/ld+json">${aboutSchema}<\/script>
             <h2
                 class="text-4xl font-black font-oswald uppercase tracking-tight text-white mb-6"
             >
-                Three Locations. One Standard.
+                One Dojang. One Standard.
             </h2>
             <p class="text-gray-300 text-lg mb-10 max-w-2xl mx-auto font-body">
-                We run classes across North West Auckland so that everyone in
-                the region has access to Olympic-level instruction — no matter
-                where you live.
+                We train out of a single dojang at 94 Mill Road, Helensville,
+                so every student gets the same Olympic-level instruction under
+                the same roof. Students travel in from right across North West
+                Auckland to train with us.
             </p>
             <div
-                class="flex flex-wrap gap-4 justify-center text-sm font-oswald font-bold uppercase tracking-wider mb-10"
+                class="flex flex-wrap gap-2 justify-center text-sm font-oswald font-bold uppercase tracking-wider mb-10"
             >
+                <p class="w-full text-gray-400 text-xs tracking-widest mb-2">
+                    Areas We Serve
+                </p>
                 {
-                    ["Helensville", "Kaukapakapa", "Waimauku"].map((loc) => (
-                        <a
-                            href={`/locations/${loc.toLowerCase()}`}
-                            class="border border-blue-belt-end/30 hover:border-blue-belt-end text-gray-200 hover:text-blue-belt-end px-6 py-3 rounded-full transition-all duration-300"
-                        >
-                            📍 {loc}
-                        </a>
+                    [
+                        "Helensville",
+                        "Kumeū",
+                        "Huapai",
+                        "Waimauku",
+                        "Kaukapakapa",
+                        "Riverhead",
+                        "Westgate",
+                    ].map((area) => (
+                        <span class="border border-blue-belt-end/30 text-gray-200 px-6 py-3 rounded-full">
+                            📍 {area}
+                        </span>
                     ))
                 }
             </div>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button href="/contact" variant="primary"
+                <Button href="/contact/" variant="primary"
                     >Book Your Free Trial</Button
                 >
-                <Button href="http://superior-taekwondo.gymdesk.com/schedule" variant="secondary"
+                <Button href="https://superior-taekwondo.gymdesk.com/schedule" variant="secondary"
                     >View Class Schedule</Button
                 >
             </div>
