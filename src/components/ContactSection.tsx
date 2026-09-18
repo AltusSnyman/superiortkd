@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { TimelineContent } from "./ui/timeline-animation";
-import { VerticalCutReveal } from "./ui/vertical-cut-reveal";
 import { cn } from "../lib/utils";
 import { motion } from "motion/react";
 import { useRef } from "react";
@@ -36,19 +35,7 @@ export default function ContactSection() {
 
             <article className="text-center mb-16 relative z-50 px-4">
                 <h1 className="text-4xl md:text-5xl font-black font-oswald uppercase tracking-tighter text-white mb-4 drop-shadow-lg">
-                    <VerticalCutReveal
-                        splitBy="words"
-                        staggerDuration={0.15}
-                        staggerFrom="first"
-                        containerClassName="justify-center"
-                        transition={{
-                            type: "spring",
-                            stiffness: 250,
-                            damping: 40,
-                        }}
-                    >
-                        Book a free trial class
-                    </VerticalCutReveal>
+                    Book a free trial class
                 </h1>
 
                 <TimelineContent
@@ -64,10 +51,50 @@ export default function ContactSection() {
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                    {/* Contact Info */}
+                    {/* Contact Form */}
                     <TimelineContent
                         as="div"
                         animationNum={1}
+                        timelineRef={contactRef}
+                        customVariants={revealVariants}
+                    >
+                        <Card className="h-full bg-deep-space-black/80 backdrop-blur-md border border-white/10 p-8">
+                            <h3 className="text-2xl font-bold font-oswald uppercase tracking-wide text-white mb-8 border-b border-white/10 pb-4">
+                                Book your free trial
+                            </h3>
+
+                            <div className="min-h-[720px] w-full">
+                                <iframe
+                                    src="https://api.leadconnectorhq.com/widget/form/L3HyiQ9aU9bX3S5fOq2k"
+                                    style={{ width: "100%", height: "100%", minHeight: "720px", border: "none", borderRadius: "8px" }}
+                                    id="inline-L3HyiQ9aU9bX3S5fOq2k"
+                                    data-layout="{'id':'INLINE'}"
+                                    data-trigger-type="alwaysShow"
+                                    data-trigger-value=""
+                                    data-activation-type="alwaysActivated"
+                                    data-activation-value=""
+                                    data-deactivation-type="neverDeactivate"
+                                    data-deactivation-value=""
+                                    data-form-name="QUESTION"
+                                    data-height="undefined"
+                                    data-layout-iframe-id="inline-L3HyiQ9aU9bX3S5fOq2k"
+                                    data-form-id="L3HyiQ9aU9bX3S5fOq2k"
+                                    data-cookie-consent="true"
+                                    data-cookie-consent-provider="auto"
+                                    title="Free trial and enquiry form"
+                                ></iframe>
+                            </div>
+
+                            <p className="text-sm text-gray-500 mt-4">
+                                Prefer to talk? Call or text <a href="tel:0275201613" className="hover:text-blue-belt-end transition-colors">027 520 1613</a>, or email <a href="mailto:superiorfitnessnz@gmail.com" className="hover:text-blue-belt-end transition-colors">superiorfitnessnz@gmail.com</a>.
+                            </p>
+                        </Card>
+                    </TimelineContent>
+
+                    {/* Contact Info */}
+                    <TimelineContent
+                        as="div"
+                        animationNum={2}
                         timelineRef={contactRef}
                         customVariants={revealVariants}
                         className="space-y-8"
@@ -118,46 +145,6 @@ export default function ContactSection() {
                                     </div>
                                 </div>
                             </div>
-                        </Card>
-                    </TimelineContent>
-
-                    {/* Contact Form */}
-                    <TimelineContent
-                        as="div"
-                        animationNum={2}
-                        timelineRef={contactRef}
-                        customVariants={revealVariants}
-                    >
-                        <Card className="h-full bg-deep-space-black/80 backdrop-blur-md border border-white/10 p-8">
-                            <h3 className="text-2xl font-bold font-oswald uppercase tracking-wide text-white mb-8 border-b border-white/10 pb-4">
-                                Book your free trial
-                            </h3>
-
-                            <div className="min-h-[720px] w-full">
-                                <iframe
-                                    src="https://api.leadconnectorhq.com/widget/form/L3HyiQ9aU9bX3S5fOq2k"
-                                    style={{ width: "100%", height: "100%", minHeight: "720px", border: "none", borderRadius: "8px" }}
-                                    id="inline-L3HyiQ9aU9bX3S5fOq2k"
-                                    data-layout="{'id':'INLINE'}"
-                                    data-trigger-type="alwaysShow"
-                                    data-trigger-value=""
-                                    data-activation-type="alwaysActivated"
-                                    data-activation-value=""
-                                    data-deactivation-type="neverDeactivate"
-                                    data-deactivation-value=""
-                                    data-form-name="QUESTION"
-                                    data-height="undefined"
-                                    data-layout-iframe-id="inline-L3HyiQ9aU9bX3S5fOq2k"
-                                    data-form-id="L3HyiQ9aU9bX3S5fOq2k"
-                                    data-cookie-consent="true"
-                                    data-cookie-consent-provider="auto"
-                                    title="Free trial and enquiry form"
-                                ></iframe>
-                            </div>
-
-                            <p className="text-sm text-gray-500 mt-4">
-                                Prefer to talk? Call or text <a href="tel:0275201613" className="hover:text-blue-belt-end transition-colors">027 520 1613</a>, or email <a href="mailto:superiorfitnessnz@gmail.com" className="hover:text-blue-belt-end transition-colors">superiorfitnessnz@gmail.com</a>.
-                            </p>
                         </Card>
                     </TimelineContent>
                 </div>

@@ -279,11 +279,19 @@ const ogType = /^\/blog\/.+/.test(Astro.url.pathname) ? "article" : "website";
 		<Navbar />
 		<slot />
 		<!-- global.css is imported in frontmatter; Astro injects it as <link> in <head> -->
-		<script
-			is:inline
-			src="https://widgets.leadconnectorhq.com/loader.js"
-			data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-			data-widget-id="6aa7cf135b157680cb958f18"
-		></script>
+		<script is:inline>
+			window.addEventListener("load", function () {
+				setTimeout(function () {
+					var script = document.createElement("script");
+					script.src = "https://widgets.leadconnectorhq.com/loader.js";
+					script.setAttribute(
+						"data-resources-url",
+						"https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+					);
+					script.setAttribute("data-widget-id", "6aa7cf135b157680cb958f18");
+					document.body.appendChild(script);
+				}, 8000);
+			});
+		</script>
 	</body>
 </html>
