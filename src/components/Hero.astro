@@ -7,18 +7,11 @@ import Button from "./Button.astro";
     class="relative w-full min-h-[600px] h-svh md:h-screen overflow-hidden flex items-center justify-center bg-deep-space-black"
     id="hero"
 >
-    <!-- Video Background -->
-    <div class="absolute inset-0 z-0 select-none pointer-events-none">
-        <video
-            autoplay
-            loop
-            muted
-            playsinline
-            poster="/images/hero-poster.webp"
-            class="w-full h-full object-cover opacity-60 mix-blend-screen"
-        >
-            <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
+    <!-- Poster Background (video element removed; the previous background video file does not exist in production and 404s) -->
+    <div
+        class="absolute inset-0 z-0 select-none pointer-events-none bg-cover bg-center bg-no-repeat opacity-60 mix-blend-screen"
+        style="background-image: url('/images/hero-poster.webp');"
+    >
         <div
             class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"
         >
@@ -38,28 +31,24 @@ import Button from "./Button.astro";
         <h1
             class="text-5xl md:text-7xl lg:text-9xl font-black font-oswald tracking-tighter text-white drop-shadow-2xl uppercase leading-none opacity-0 animate-fade-in [animation-delay:200ms] [animation-fill-mode:forwards]"
         >
-            Unleash Your <br class="hidden md:block" />
-            <span
-                class="text-blue-gradient drop-shadow-[0_0_15px_rgba(0,229,255,0.4)]"
-                >Potential</span
-            >
-            <span class="sr-only"
-                >— Taekwondo Classes in North West Auckland</span
-            >
+            Taekwondo for kids, teens and adults, coached by an Olympian
         </h1>
 
         <h2
             class="text-lg md:text-2xl font-bold text-white max-w-2xl opacity-0 animate-slide-up [animation-delay:600ms] [animation-fill-mode:forwards] tracking-wide drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]"
         >
-            Train with an Olympian. The Premier Professional Taekwondo School in
-            North West Auckland. Coached by a <strong>2016 Rio Olympian</strong>
-            & Oceania Gold Medallist.
+            One dojang at 94 Mill Road, Helensville, serving families across North West Auckland. Head coach Andrea Kilday competed at Rio 2016. Your first class is free.
         </h2>
 
         <div
-            class="mt-8 opacity-0 animate-slide-up [animation-delay:900ms] [animation-fill-mode:forwards]"
+            class="mt-8 flex flex-col sm:flex-row gap-4 items-center opacity-0 animate-slide-up [animation-delay:900ms] [animation-fill-mode:forwards]"
         >
-            <Button href="#intro" variant="primary">Start Your Journey</Button>
+            <Button href="/contact/#trial" variant="primary"
+                >Book a free trial</Button
+            >
+            <Button href="#schedule" variant="secondary"
+                >See class times</Button
+            >
         </div>
     </div>
 

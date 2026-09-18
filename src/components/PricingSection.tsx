@@ -102,8 +102,11 @@ export default function PricingSection({ plans }: PricingSectionProps) {
 
 
             <article className="text-center mb-8 relative z-50 px-4">
-                {/* Animated Title */}
-                <h2 className="text-4xl md:text-5xl font-black font-oswald uppercase tracking-tighter text-white mb-4 drop-shadow-lg">
+                <h1 className="text-4xl md:text-5xl font-black font-oswald uppercase tracking-tighter text-white mb-4 drop-shadow-lg">
+                    Memberships and pricing
+                </h1>
+                {/* Animated sub-heading */}
+                <h2 className="text-xl md:text-2xl font-bold font-oswald uppercase tracking-widest text-blue-belt-end mb-4">
                     <VerticalCutReveal
                         splitBy="words"
                         staggerDuration={0.15}
@@ -210,19 +213,27 @@ export default function PricingSection({ plans }: PricingSectionProps) {
                                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                                     </svg>
                                                 </div>
-                                                <span>Access to all locations (Kaukapakapa, Helensville, Waimauku)</span>
+                                                <span>Train at our Helensville dojang, six days a week</span>
                                             </div>
                                         </div>
 
-                                        <a
-                                            href="https://superior-taekwondo.gymdesk.com/signup"
-                                            className={`block w-full text-center py-4 rounded-xl font-bold font-oswald uppercase tracking-wider transition-all duration-300 ${plan.recommended
-                                                ? "bg-gradient-to-r from-blue-belt-start to-blue-belt-end text-black shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:shadow-[0_0_30px_rgba(0,229,255,0.6)] hover:-translate-y-1"
-                                                : "bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:border-blue-belt-end/50 hover:text-blue-belt-end"
-                                                }`}
-                                        >
-                                            Select Plan
-                                        </a>
+                                        <div className="flex flex-col gap-3">
+                                            <a
+                                                href="/contact/#trial"
+                                                className={`block w-full text-center py-4 rounded-xl font-bold font-oswald uppercase tracking-wider transition-all duration-300 ${plan.recommended
+                                                    ? "bg-gradient-to-r from-blue-belt-start to-blue-belt-end text-black shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:shadow-[0_0_30px_rgba(0,229,255,0.6)] hover:-translate-y-1"
+                                                    : "bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:border-blue-belt-end/50 hover:text-blue-belt-end"
+                                                    }`}
+                                            >
+                                                Book a free trial first
+                                            </a>
+                                            <a
+                                                href="https://superior-taekwondo.gymdesk.com/signup"
+                                                className="block w-full text-center py-3 rounded-xl font-bold font-oswald uppercase tracking-wider text-sm text-gray-300 border border-white/10 hover:text-white hover:border-white/30 transition-all duration-300"
+                                            >
+                                                Join now
+                                            </a>
+                                        </div>
                                     </CardContent>
                                 </Card>
                             </TimelineContent>

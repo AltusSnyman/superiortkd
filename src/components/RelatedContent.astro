@@ -17,8 +17,8 @@ interface Props {
 const {
     posts,
     actions = [
-        { label: "View Class Schedule", href: "http://superior-taekwondo.gymdesk.com/schedule" },
-        { label: "See Pricing", href: "/pricing" },
+        { label: "View Class Schedule", href: "https://superior-taekwondo.gymdesk.com/schedule" },
+        { label: "See Pricing", href: "/pricing/" },
     ],
 } = Astro.props;
 ---
@@ -36,7 +36,7 @@ const {
         {
             posts.map((post) => (
                 <a
-                    href={`/blog/${post.slug}`}
+                    href={`/blog/${post.slug}/`}
                     class="group flex items-center justify-between p-5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-belt-end/40 transition-all duration-300"
                 >
                     <span class="font-oswald text-white group-hover:text-blue-belt-end transition-colors text-lg leading-tight">

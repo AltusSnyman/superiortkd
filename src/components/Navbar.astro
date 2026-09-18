@@ -3,32 +3,33 @@ import Button from "./Button.astro";
 
 const links = [
     { text: "Home", href: "/" },
-    { text: "About", href: "/about" },
-    { text: "Photos", href: "/gallery" },
-    { text: "Schedule", href: "http://superior-taekwondo.gymdesk.com/schedule" },
-    { text: "Pricing", href: "/pricing" },
-    { text: "News", href: "/blog" },
+    { text: "About", href: "/about/" },
+    { text: "Photos", href: "/gallery/" },
+    { text: "Classes", href: "/classes/" },
+    { text: "Venues", href: "/locations/" },
+    { text: "Pricing", href: "/pricing/" },
+    { text: "News", href: "/blog/" },
 ];
 
 const dropdownLinks = [
-    { text: "Kids Classes (Tiny Tigers)", href: "/classes/tiny-tigers" },
-    { text: "Adult & Teen Classes", href: "/classes/general" },
-    { text: "Fitness Class", href: "/classes/fitness" },
-    { text: "Poomsae Class", href: "/classes/poomsae" },
-    { text: "Competition Team", href: "/classes/competition" },
-    { text: "Club Guidelines", href: "/guidelines" },
-    { text: "Grading Info", href: "/grading" },
-    { text: "Tournaments", href: "/tournaments" },
+    { text: "Kids Classes (Tiny Tigers)", href: "/classes/tiny-tigers/" },
+    { text: "Adult & Teen Classes", href: "/classes/general/" },
+    { text: "Fitness Class", href: "/classes/fitness/" },
+    { text: "Poomsae Class", href: "/classes/poomsae/" },
+    { text: "Competition Team", href: "/classes/competition/" },
+    { text: "Club Guidelines", href: "/guidelines/" },
+    { text: "Grading Info", href: "/grading/" },
+    { text: "Tournaments", href: "/tournaments/" },
 ];
 
 const locationLinks = [
-    { text: "Helensville", href: "/locations/helensville" },
-    { text: "Auckland", href: "/locations/auckland" },
-    { text: "Kaukapakapa", href: "/locations/kaukapakapa" },
-    { text: "Waimauku", href: "/locations/waimauku" },
-    { text: "Huapai", href: "/locations/huapai" },
-    { text: "Rodney District", href: "/locations/rodney-north-west" },
-    { text: "Auckland North West", href: "/locations/auckland-north-west" },
+    { text: "Helensville", href: "/locations/helensville/" },
+    { text: "Auckland", href: "/locations/auckland/" },
+    { text: "Kaukapakapa", href: "/locations/kaukapakapa/" },
+    { text: "Waimauku", href: "/locations/waimauku/" },
+    { text: "Huapai", href: "/locations/huapai/" },
+    { text: "Kumeū", href: "/locations/kumeu/" },
+    { text: "All areas", href: "/locations/" },
 ];
 ---
 
@@ -104,7 +105,7 @@ const locationLinks = [
                 <button
                     class="text-sm font-bold font-oswald uppercase tracking-wider text-gray-300 hover:text-blue-belt-end transition-colors flex items-center gap-1 py-4"
                 >
-                    Locations
+                    Areas we serve
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="h-4 w-4 transition-transform group-hover:rotate-180"
@@ -138,15 +139,19 @@ const locationLinks = [
             </div>
 
             <a
-                href="http://superior-taekwondo.gymdesk.com/login"
+                href="https://superior-taekwondo.gymdesk.com/login"
                 class="text-sm font-bold font-oswald uppercase tracking-wider text-gray-300 hover:text-blue-belt-end transition-colors hover-glow hover:-translate-y-0.5 transform duration-200"
             >
                 Members Logon
             </a>
 
+            <Button href="/contact/#trial" variant="primary" class="scale-90"
+                >Free trial</Button
+            >
+
             <Button
                 href="https://superior-taekwondo.gymdesk.com/signup"
-                variant="primary"
+                variant="secondary"
                 class="scale-90">Join Now</Button
             >
         </div>
@@ -195,7 +200,7 @@ const locationLinks = [
                 <p
                     class="text-blue-belt-end font-oswald uppercase tracking-widest text-xs mb-4 text-center"
                 >
-                    Locations
+                    Areas we serve
                 </p>
                 <div class="flex flex-col gap-4 items-center">
                     {
@@ -230,22 +235,28 @@ const locationLinks = [
                 </div>
             </div>
             <a
-                href="/contact"
+                href="/contact/"
                 class="text-xl font-bold font-oswald uppercase tracking-wider text-white hover:text-blue-belt-end transition-colors mt-2"
             >
                 Contact
             </a>
 
             <a
-                href="http://superior-taekwondo.gymdesk.com/login"
+                href="https://superior-taekwondo.gymdesk.com/login"
                 class="text-xl font-bold font-oswald uppercase tracking-wider text-white hover:text-blue-belt-end transition-colors mt-2"
             >
                 Members Logon
             </a>
 
             <Button
-                href="/#intro"
+                href="/contact/#trial"
                 variant="primary"
+                class="w-full justify-center">Free trial</Button
+            >
+
+            <Button
+                href="https://superior-taekwondo.gymdesk.com/signup"
+                variant="secondary"
                 class="w-full justify-center">Join Now</Button
             >
         </div>
