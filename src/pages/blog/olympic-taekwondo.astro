@@ -29,7 +29,7 @@ const blogSchema = JSON.stringify({
     },
     mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": "https://superiortkd.co.nz/blog/olympic-taekwondo",
+        "@id": "https://superiortkd.co.nz/blog/olympic-taekwondo/",
     },
 });
 const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
@@ -66,25 +66,14 @@ const faqs = [
     image="/images/blog/blog_olympic_hero.webp"
     headContent={headContent}
     breadcrumbs={[
-        { name: "Home", url: "https://superiortkd.co.nz" },
-        { name: "Blog", url: "https://superiortkd.co.nz/blog" },
+        { name: "Home", url: "https://superiortkd.co.nz/" },
+        { name: "Blog", url: "https://superiortkd.co.nz/blog/" },
         {
             name: "Olympic Taekwondo",
-            url: "https://superiortkd.co.nz/blog/olympic-taekwondo",
+            url: "https://superiortkd.co.nz/blog/olympic-taekwondo/",
         },
     ]}
 >
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://superiortkd.co.nz/blog/" },
-            { "@type": "ListItem", "position": 3, "name": "Olympic Taekwondo: The Ultimate Guide to the Sport", "item": `https://superiortkd.co.nz/blog/${"olympic-taekwondo"}` }
-        ]
-    })}></script>
-
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"
@@ -114,7 +103,7 @@ const faqs = [
             <!-- Breadcrumb -->
             <nav class="flex mb-8 text-sm text-gray-500">
                 <a
-                    href="/blog"
+                    href="/blog/"
                     class="hover:text-blue-belt-end transition-colors">Blog</a
                 >
                 <span class="mx-2">/</span>
@@ -439,13 +428,13 @@ const faqs = [
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
                     <Button
-                        href="/competition"
+                        href="/competition/"
                         variant="primary"
                         class="w-full justify-center"
                         >Join Competition Team</Button
                     >
                     <Button
-                        href="/contact"
+                        href="/contact/"
                         variant="outline"
                         class="w-full justify-center">Contact Coach</Button
                     >
@@ -478,7 +467,7 @@ const faqs = [
                 class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-white/10"
             >
                 <a
-                    href="/blog/history-of-taekwondo"
+                    href="/blog/history-of-taekwondo/"
                     class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
                 >
                     <span
@@ -492,7 +481,7 @@ const faqs = [
                     </h3>
                 </a>
                 <a
-                    href="/blog/taekwondo-in-new-zealand"
+                    href="/blog/taekwondo-in-new-zealand/"
                     class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
                 >
                     <span
@@ -506,7 +495,7 @@ const faqs = [
                     </h3>
                 </a>
                 <a
-                    href="/blog/wt-vs-itf-taekwondo"
+                    href="/blog/wt-vs-itf-taekwondo/"
                     class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
                 >
                     <span

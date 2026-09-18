@@ -29,7 +29,7 @@ const blogSchema = JSON.stringify({
     },
     mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": "https://superiortkd.co.nz/blog/competition-rules",
+        "@id": "https://superiortkd.co.nz/blog/competition-rules/",
     },
 });
 const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
@@ -66,25 +66,14 @@ const faqs = [
     image="/images/blog/blog_tournament_hero.webp"
     headContent={headContent}
     breadcrumbs={[
-        { name: "Home", url: "https://superiortkd.co.nz" },
-        { name: "Blog", url: "https://superiortkd.co.nz/blog" },
+        { name: "Home", url: "https://superiortkd.co.nz/" },
+        { name: "Blog", url: "https://superiortkd.co.nz/blog/" },
         {
             name: "2026 Competition Rules",
-            url: "https://superiortkd.co.nz/blog/competition-rules",
+            url: "https://superiortkd.co.nz/blog/competition-rules/",
         },
     ]}
 >
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://superiortkd.co.nz/blog/" },
-            { "@type": "ListItem", "position": 3, "name": "WT Competition Rules 2026: The New Standard", "item": `https://superiortkd.co.nz/blog/${"competition-rules"}` }
-        ]
-    })}></script>
-
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"
@@ -114,7 +103,7 @@ const faqs = [
             <!-- Breadcrumb -->
             <nav class="flex mb-8 text-sm text-gray-500">
                 <a
-                    href="/blog"
+                    href="/blog/"
                     class="hover:text-blue-belt-end transition-colors">Blog</a
                 >
                 <span class="mx-2">/</span>
@@ -381,10 +370,10 @@ const faqs = [
                     win under the current and future rule sets.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <Button href="/competition" variant="primary"
+                    <Button href="/competition/" variant="primary"
                         >Join Competition Team</Button
                     >
-                    <Button href="/contact" variant="outline">Contact Us</Button
+                    <Button href="/contact/" variant="outline">Contact Us</Button
                     >
                 </div>
             </section>
@@ -415,7 +404,7 @@ const faqs = [
                 class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-white/10"
             >
                 <a
-                    href="/blog/olympic-taekwondo"
+                    href="/blog/olympic-taekwondo/"
                     class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
                 >
                     <span
@@ -429,7 +418,7 @@ const faqs = [
                     </h3>
                 </a>
                 <a
-                    href="/blog/world-taekwondo"
+                    href="/blog/world-taekwondo/"
                     class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
                 >
                     <span
@@ -443,7 +432,7 @@ const faqs = [
                     </h3>
                 </a>
                 <a
-                    href="/blog/taekwondo-grading-system"
+                    href="/blog/taekwondo-grading-system/"
                     class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
                 >
                     <span

@@ -8,7 +8,7 @@ import RelatedContent from "../../components/RelatedContent.astro";
 const title =
     "Adult Taekwondo Classes Auckland | Superior Taekwondo";
 const description =
-    "Discover why hundreds of Auckland adults are choosing Taekwondo for fitness. Burn calories, build strength, reduce stress, and develop real self-defence skills — no experience needed.";
+    "Why Auckland adults choose Taekwondo for fitness: burn calories, build strength, cut stress and learn real self-defence. No experience needed.";
 
 const blogSchema = JSON.stringify({
     "@context": "https://schema.org",
@@ -31,7 +31,7 @@ const blogSchema = JSON.stringify({
     },
     mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": "https://superiortkd.co.nz/blog/adult-taekwondo-fitness",
+        "@id": "https://superiortkd.co.nz/blog/adult-taekwondo-fitness/",
     },
 });
 const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
@@ -55,7 +55,7 @@ const faqs = [
     },
     {
         question: "What time are adult Taekwondo classes?",
-        answer: "Evening classes run Monday, Wednesday and Friday from 5:30pm–8:00pm, and Saturday mornings from 9:00am–12:00pm across our Helensville, Kaukapakapa, and Waimauku locations. Check our schedule page for the full timetable.",
+        answer: "Adults train Tuesday mornings 9:00–10:00am and weekday evenings from 5:30pm at our Helensville dojang, with a fitness circuit on Saturday mornings. The full timetable is on our classes page.",
     },
 ];
 ---
@@ -66,25 +66,14 @@ const faqs = [
     image="/images/blog/blog_olympic_hero.webp"
     headContent={headContent}
     breadcrumbs={[
-        { name: "Home", url: "https://superiortkd.co.nz" },
-        { name: "Blog", url: "https://superiortkd.co.nz/blog" },
+        { name: "Home", url: "https://superiortkd.co.nz/" },
+        { name: "Blog", url: "https://superiortkd.co.nz/blog/" },
         {
             name: "Adult Taekwondo Fitness",
-            url: "https://superiortkd.co.nz/blog/adult-taekwondo-fitness",
+            url: "https://superiortkd.co.nz/blog/adult-taekwondo-fitness/",
         },
     ]}
 >
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://superiortkd.co.nz/blog/" },
-            { "@type": "ListItem", "position": 3, "name": "Adult Taekwondo Classes Auckland: Fitness, Confidence & Self-Defence", "item": `https://superiortkd.co.nz/blog/${"adult-taekwondo-fitness"}` }
-        ]
-    })}></script>
-
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"
@@ -323,7 +312,7 @@ const faqs = [
                         [
                             {
                                 q: "When do classes run?",
-                                a: "Monday, Wednesday, and Friday evenings (5:30pm–8:00pm) plus Saturday mornings (9:00am–12:00pm) across Helensville, Kaukapakapa, and Waimauku.",
+                                a: "Adults train Tuesday mornings 9:00–10:00am and weekday evenings from 5:30pm at our Helensville dojang, with a fitness circuit on Saturday mornings. The full timetable is on our classes page.",
                             },
                             {
                                 q: "What do I wear?",
@@ -360,14 +349,14 @@ const faqs = [
                 </h2>
                 <p class="text-gray-300 mb-8 max-w-xl mx-auto">
                     No commitment. No pressure. Come and experience one class at
-                    any of our three North West Auckland locations. We will do
+                    our Helensville dojang. We will do
                     the rest.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button href="/contact" variant="primary"
+                    <Button href="/contact/" variant="primary"
                         >Book Your Free Trial</Button
                     >
-                    <Button href="http://superior-taekwondo.gymdesk.com/schedule" variant="secondary"
+                    <Button href="https://superior-taekwondo.gymdesk.com/schedule" variant="secondary"
                         >View Class Schedule</Button
                     >
                 </div>
@@ -390,8 +379,8 @@ const faqs = [
                 },
             ]}
             actions={[
-                { label: "Book Your Free Trial", href: "/contact" },
-                { label: "View Class Schedule", href: "http://superior-taekwondo.gymdesk.com/schedule" },
+                { label: "Book Your Free Trial", href: "/contact/" },
+                { label: "View Class Schedule", href: "https://superior-taekwondo.gymdesk.com/schedule" },
             ]}
         />
     </main>

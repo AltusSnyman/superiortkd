@@ -29,7 +29,7 @@ const blogSchema = JSON.stringify({
     },
     mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": "https://superiortkd.co.nz/blog/taekwondo-grading-system",
+        "@id": "https://superiortkd.co.nz/blog/taekwondo-grading-system/",
     },
 });
 const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
@@ -104,25 +104,14 @@ const beltSystem = [
     image="/images/blog/blog_grading_system_hero.webp"
     headContent={headContent}
     breadcrumbs={[
-        { name: "Home", url: "https://superiortkd.co.nz" },
-        { name: "Blog", url: "https://superiortkd.co.nz/blog" },
+        { name: "Home", url: "https://superiortkd.co.nz/" },
+        { name: "Blog", url: "https://superiortkd.co.nz/blog/" },
         {
             name: "Grading & Belt System",
-            url: "https://superiortkd.co.nz/blog/taekwondo-grading-system",
+            url: "https://superiortkd.co.nz/blog/taekwondo-grading-system/",
         },
     ]}
 >
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://superiortkd.co.nz/blog/" },
-            { "@type": "ListItem", "position": 3, "name": "Taekwondo Grading & Belt System: The Complete Guide", "item": `https://superiortkd.co.nz/blog/${"taekwondo-grading-system"}` }
-        ]
-    })}></script>
-
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"
@@ -152,7 +141,7 @@ const beltSystem = [
             <!-- Breadcrumb -->
             <nav class="flex mb-8 text-sm text-gray-500">
                 <a
-                    href="/blog"
+                    href="/blog/"
                     class="hover:text-blue-belt-end transition-colors">Blog</a
                 >
                 <span class="mx-2">/</span>
@@ -448,7 +437,7 @@ const beltSystem = [
                 class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-white/10"
             >
                 <a
-                    href="/blog/world-taekwondo"
+                    href="/blog/world-taekwondo/"
                     class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
                 >
                     <span
@@ -462,7 +451,7 @@ const beltSystem = [
                     </h3>
                 </a>
                 <a
-                    href="/blog/olympic-taekwondo"
+                    href="/blog/olympic-taekwondo/"
                     class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
                 >
                     <span
@@ -476,7 +465,7 @@ const beltSystem = [
                     </h3>
                 </a>
                 <a
-                    href="http://superior-taekwondo.gymdesk.com/schedule"
+                    href="https://superior-taekwondo.gymdesk.com/schedule"
                     class="group block p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
                 >
                     <span

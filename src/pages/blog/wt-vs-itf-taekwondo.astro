@@ -30,7 +30,7 @@ const faqs = [
     },
     {
         question: "Where can I find WT Taekwondo classes near me?",
-        answer: "Superior Taekwondo offers WT classes in Kaukapakapa, Helensville, and Waimauku in North West Auckland. We serve the local community with professional martial arts training.",
+        answer: "Superior Taekwondo runs WT classes from our Helensville dojang in North West Auckland, with students travelling in from Kaukapakapa, Waimauku, and beyond. We serve the local community with professional martial arts training.",
     },
 ];
 ---
@@ -40,18 +40,15 @@ const faqs = [
     description={description}
     image="/images/blog/blog_world_tkd_hero.webp"
     image="/images/blog/blog_world_tkd_hero.webp"
+    breadcrumbs={[
+        { name: "Home", url: "https://superiortkd.co.nz/" },
+        { name: "Blog", url: "https://superiortkd.co.nz/blog/" },
+        {
+            name: "WT vs ITF Taekwondo",
+            url: "https://superiortkd.co.nz/blog/wt-vs-itf-taekwondo/",
+        },
+    ]}
 >
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://superiortkd.co.nz/blog/" },
-            { "@type": "ListItem", "position": 3, "name": "WT Taekwondo vs ITF: Understanding the Differences", "item": `https://superiortkd.co.nz/blog/${"wt-vs-itf-taekwondo"}` }
-        ]
-    })}></script>
-
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"
@@ -80,7 +77,7 @@ Read"
 Breadcrumb -->
             <nav class="flex mb-8 text-sm text-gray-500">
                 <a
-                    href="/blog"
+                    href="/blog/"
                     class="hover:text-blue-belt-end transition-colors">Blog</a
                 >
                 <span class="mx-2">/</span>
@@ -269,7 +266,7 @@ Breadcrumb -->
                     </p>
                     <div class="my-8">
                         <Button
-                            href="/competition"
+                            href="/competition/"
                             variant="outline"
                             class="w-full sm:w-auto"
                             >Explore Our Competition Team</Button
@@ -321,8 +318,10 @@ Breadcrumb -->
                     Why We Choose WT for Our Local Community
                 </h2>
                 <p class="mb-6">
-                    Serving the communities of <strong class="text-white"
-                        >Kaukapakapa, Helensville, and Waimauku</strong
+                    Training from our dojang in <strong class="text-white"
+                        >Helensville</strong
+                    > and serving families across <strong class="text-white"
+                        >Kaukapakapa and Waimauku</strong
                     >, we believe WT Taekwondo offers the best holistic
                     development for our youth and adults.
                 </p>
@@ -336,10 +335,10 @@ Breadcrumb -->
                     recognized at any WT dojang.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button href="http://superior-taekwondo.gymdesk.com/schedule" variant="primary"
+                    <Button href="https://superior-taekwondo.gymdesk.com/schedule" variant="primary"
                         >View Class Schedule</Button
                     >
-                    <Button href="/contact" variant="outline">Contact Us</Button
+                    <Button href="/contact/" variant="outline">Contact Us</Button
                     >
                 </div>
             </section>

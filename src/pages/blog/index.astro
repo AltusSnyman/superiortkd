@@ -106,7 +106,7 @@ const posts = [
 const title = "Superior Taekwondo Blog | Insights, Tips & News";
 ---
 
-<Layout title={title} description="Explore the Superior Taekwondo blog for expert advice on martial arts training, Olympic-level tips, grading preparation, and club news in North West Auckland.">
+<Layout title={title} description="Expert advice on martial arts training, Olympic-level tips, grading preparation and club news from Superior Taekwondo in North West Auckland.">
   <main class="bg-black min-h-screen pt-24 pb-12 text-gray-300 font-body">
     <div class="container mx-auto px-4">
       <!-- Header -->
@@ -123,7 +123,7 @@ const title = "Superior Taekwondo Blog | Insights, Tips & News";
       <!-- Blog Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
-          <a href={`/blog/${post.slug}`} class="group block bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-blue-belt-end/50 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2">
+          <a href={`/blog/${post.slug}/`} class="group block bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-blue-belt-end/50 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2">
             <!-- Image Container -->
             <div class="h-48 bg-gradient-to-br from-gray-800 to-black relative overflow-hidden">
                 {post.image ? (

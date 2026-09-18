@@ -8,7 +8,7 @@ import RelatedContent from "../../components/RelatedContent.astro";
 const title =
     "Self-Defence Classes Auckland: What Works | Superior Taekwondo";
 const description =
-    "Looking for self-defence classes in Auckland? Discover why trained Taekwondo is the most practical and sustainable self-defence system available — and how to start today in North West Auckland.";
+    "Looking for self-defence classes in Auckland? Trained Taekwondo is the most practical, sustainable self-defence system there is. Start in the north-west.";
 
 const blogSchema = JSON.stringify({
     "@context": "https://schema.org",
@@ -31,7 +31,7 @@ const blogSchema = JSON.stringify({
     },
     mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": "https://superiortkd.co.nz/blog/self-defence-auckland",
+        "@id": "https://superiortkd.co.nz/blog/self-defence-auckland/",
     },
 });
 const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
@@ -43,7 +43,7 @@ const faqs = [
     },
     {
         question: "Are there self-defence classes near me in Auckland?",
-        answer: "Superior Taekwondo offers self-defence focused training across three North West Auckland locations: Helensville, Kaukapakapa, and Waimauku. We serve students from Kumeu, Huapai, Riverhead, Westgate, and surrounding areas.",
+        answer: "Superior Taekwondo runs self-defence focused training from our Helensville dojang, serving families across North West Auckland — Kumeu, Huapai, Waimauku, Kaukapakapa, Riverhead, Westgate, and surrounding areas.",
     },
     {
         question:
@@ -68,25 +68,14 @@ const faqs = [
     image="/images/blog/blog_tournament_hero.webp"
     headContent={headContent}
     breadcrumbs={[
-        { name: "Home", url: "https://superiortkd.co.nz" },
-        { name: "Blog", url: "https://superiortkd.co.nz/blog" },
+        { name: "Home", url: "https://superiortkd.co.nz/" },
+        { name: "Blog", url: "https://superiortkd.co.nz/blog/" },
         {
             name: "Self-Defence Classes Auckland",
-            url: "https://superiortkd.co.nz/blog/self-defence-auckland",
+            url: "https://superiortkd.co.nz/blog/self-defence-auckland/",
         },
     ]}
 >
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://superiortkd.co.nz/blog/" },
-            { "@type": "ListItem", "position": 3, "name": "Self-Defence Classes Auckland: What Actually Works in 2026", "item": `https://superiortkd.co.nz/blog/${"self-defence-auckland"}` }
-        ]
-    })}></script>
-
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"
@@ -243,9 +232,9 @@ const faqs = [
                     practical art for women.
                 </p>
                 <p class="leading-relaxed">
-                    At Superior Taekwondo, our dojangs are safe, respectful
-                    training environments. There is no macho culture. Every
-                    student — male or female, 5 years old or 55 — is held to the
+                    At Superior Taekwondo, our dojang is a safe, respectful
+                    training environment. There is no macho culture. Every
+                    student — male or female, 4 years old or 55 — is held to the
                     same standards of respect and courtesy.
                 </p>
             </section>
@@ -300,15 +289,15 @@ const faqs = [
                     Start Building Real Capability
                 </h2>
                 <p class="text-gray-300 mb-8 max-w-xl mx-auto">
-                    Your first class at Superior Taekwondo is free. Three
-                    locations across North West Auckland. Olympian-coached. No
-                    pressure, no obligation.
+                    Your first class at Superior Taekwondo is free. One
+                    dojang in Helensville, serving North West Auckland.
+                    Olympian-coached. No pressure, no obligation.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button href="/contact" variant="primary"
+                    <Button href="/contact/" variant="primary"
                         >Book Your Free Trial</Button
                     >
-                    <Button href="http://superior-taekwondo.gymdesk.com/schedule" variant="secondary"
+                    <Button href="https://superior-taekwondo.gymdesk.com/schedule" variant="secondary"
                         >View Class Schedule</Button
                     >
                 </div>
@@ -331,8 +320,8 @@ const faqs = [
                 },
             ]}
             actions={[
-                { label: "Book Your Free Trial", href: "/contact" },
-                { label: "View Class Schedule", href: "http://superior-taekwondo.gymdesk.com/schedule" },
+                { label: "Book Your Free Trial", href: "/contact/" },
+                { label: "View Class Schedule", href: "https://superior-taekwondo.gymdesk.com/schedule" },
             ]}
         />
     </main>
