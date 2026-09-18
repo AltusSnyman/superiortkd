@@ -12,7 +12,7 @@ const faqSchema = {
             name: "Where is Superior Taekwondo located?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Our main dojo is at 94 Mill Road, Helensville 0800, North West Auckland. We also run classes in Kaukapakapa and Waimauku. Contact us for exact location details for each training venue.",
+                text: "Our dojang is at 94 Mill Road, Helensville 0875, in North West Auckland. Families travel to us from Kumeū, Huapai, Waimauku, Kaukapakapa, Riverhead and Westgate.",
             },
         },
         {
@@ -20,7 +20,7 @@ const faqSchema = {
             name: "Can I try a class before joining?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes. We welcome trial classes so you can experience training before committing to a membership. Contact us via phone or email to arrange your first visit.",
+                text: "Yes. Your first class is free. Fill in the form on this page and we'll book you in, or call or text 027 520 1613.",
             },
         },
         {
@@ -36,7 +36,7 @@ const faqSchema = {
             name: "What information do I need when contacting you about enrolling?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "When enquiring about enrolment, it helps to let us know the name and age of the student, any prior martial arts experience, and which location is most convenient for you. We will then recommend the most suitable class and provide all next steps.",
+                text: "It helps to know the name and age of the student, any prior martial arts experience, and which days suit you. We'll then recommend the right class and send you the next steps.",
             },
         },
         {
@@ -53,12 +53,15 @@ const faqSchema = {
 
 <Layout
     title="Contact Us | Superior Taekwondo"
-    	description="Have questions? Contact Superior Taekwondo today. Find directions to our Helensville, Kaukapakapa, and Waimauku dojangs, or reach us via phone and email."
+    description="Book a free trial class at Superior Taekwondo, 94 Mill Road, Helensville. Olympian-led Taekwondo for kids from 4, teens and adults in North West Auckland."
 >
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}
     ></script>
     <main class="bg-deep-space-black min-h-screen pt-24 pb-12">
-        <ContactSection client:load />
+        <section id="trial">
+            <ContactSection client:load />
+        </section>
+        <script is:inline src="https://link.msgsndr.com/js/form_embed.js"></script>
     </main>
     <Footer />
 </Layout>

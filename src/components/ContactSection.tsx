@@ -3,31 +3,10 @@ import { TimelineContent } from "./ui/timeline-animation";
 import { VerticalCutReveal } from "./ui/vertical-cut-reveal";
 import { cn } from "../lib/utils";
 import { motion } from "motion/react";
-import React, { useRef, useState } from "react";
+import { useRef } from "react";
 
 export default function ContactSection() {
     const contactRef = useRef<HTMLDivElement>(null);
-    const [formState, setFormState] = useState({
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
-    });
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormState({
-            ...formState,
-            [e.target.name]: e.target.value
-        });
-    };
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Construct mailto link
-        const subject = encodeURIComponent(formState.subject || "Contact from Website");
-        const body = encodeURIComponent(`Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`);
-        window.location.href = `mailto:superiorfitnessnz@gmail.com?subject=${subject}&body=${body}`;
-    };
 
     const revealVariants = {
         visible: (i: number) => ({
@@ -56,7 +35,7 @@ export default function ContactSection() {
             </div>
 
             <article className="text-center mb-16 relative z-50 px-4">
-                <h2 className="text-4xl md:text-5xl font-black font-oswald uppercase tracking-tighter text-white mb-4 drop-shadow-lg">
+                <h1 className="text-4xl md:text-5xl font-black font-oswald uppercase tracking-tighter text-white mb-4 drop-shadow-lg">
                     <VerticalCutReveal
                         splitBy="words"
                         staggerDuration={0.15}
@@ -68,9 +47,9 @@ export default function ContactSection() {
                             damping: 40,
                         }}
                     >
-                        Get In Touch
+                        Book a free trial class
                     </VerticalCutReveal>
-                </h2>
+                </h1>
 
                 <TimelineContent
                     as="p"
@@ -79,7 +58,7 @@ export default function ContactSection() {
                     customVariants={revealVariants}
                     className="text-gray-300 font-body text-xl max-w-2xl mx-auto"
                 >
-                    Have questions? We're here to help you start your journey.
+                    Tell us who the class is for and when suits, and we'll be in touch to book your free first session.
                 </TimelineContent>
             </article>
 
@@ -134,7 +113,7 @@ export default function ContactSection() {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-bold uppercase tracking-wider mb-1">Location</h4>
-                                        <p className="text-lg">94 Mill Road, Helensville 0800</p>
+                                        <p className="text-lg">94 Mill Road, Helensville 0875</p>
                                         <p className="text-sm text-gray-500 mt-1">North West Auckland</p>
                                     </div>
                                 </div>
@@ -151,74 +130,34 @@ export default function ContactSection() {
                     >
                         <Card className="h-full bg-deep-space-black/80 backdrop-blur-md border border-white/10 p-8">
                             <h3 className="text-2xl font-bold font-oswald uppercase tracking-wide text-white mb-8 border-b border-white/10 pb-4">
-                                Send a Message
+                                Book your free trial
                             </h3>
 
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <label htmlFor="name" className="text-sm font-bold font-oswald uppercase tracking-wider text-gray-400">Name</label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            value={formState.name}
-                                            onChange={handleChange}
-                                            required
-                                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-belt-end focus:ring-1 focus:ring-blue-belt-end transition-all"
-                                            placeholder="Your Name"
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label htmlFor="email" className="text-sm font-bold font-oswald uppercase tracking-wider text-gray-400">Email</label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            value={formState.email}
-                                            onChange={handleChange}
-                                            required
-                                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-belt-end focus:ring-1 focus:ring-blue-belt-end transition-all"
-                                            placeholder="your@email.com"
-                                        />
-                                    </div>
-                                </div>
+                            <div className="min-h-[720px] w-full">
+                                <iframe
+                                    src="https://api.leadconnectorhq.com/widget/form/L3HyiQ9aU9bX3S5fOq2k"
+                                    style={{ width: "100%", height: "100%", minHeight: "720px", border: "none", borderRadius: "8px" }}
+                                    id="inline-L3HyiQ9aU9bX3S5fOq2k"
+                                    data-layout="{'id':'INLINE'}"
+                                    data-trigger-type="alwaysShow"
+                                    data-trigger-value=""
+                                    data-activation-type="alwaysActivated"
+                                    data-activation-value=""
+                                    data-deactivation-type="neverDeactivate"
+                                    data-deactivation-value=""
+                                    data-form-name="QUESTION"
+                                    data-height="undefined"
+                                    data-layout-iframe-id="inline-L3HyiQ9aU9bX3S5fOq2k"
+                                    data-form-id="L3HyiQ9aU9bX3S5fOq2k"
+                                    data-cookie-consent="true"
+                                    data-cookie-consent-provider="auto"
+                                    title="Free trial and enquiry form"
+                                ></iframe>
+                            </div>
 
-                                <div className="space-y-2">
-                                    <label htmlFor="subject" className="text-sm font-bold font-oswald uppercase tracking-wider text-gray-400">Subject</label>
-                                    <input
-                                        type="text"
-                                        id="subject"
-                                        name="subject"
-                                        value={formState.subject}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-belt-end focus:ring-1 focus:ring-blue-belt-end transition-all"
-                                        placeholder="How can we help?"
-                                    />
-                                </div>
-
-                                <div className="space-y-2">
-                                    <label htmlFor="message" className="text-sm font-bold font-oswald uppercase tracking-wider text-gray-400">Message</label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        value={formState.message}
-                                        onChange={handleChange}
-                                        required
-                                        rows={5}
-                                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-belt-end focus:ring-1 focus:ring-blue-belt-end transition-all resize-none"
-                                        placeholder="Your message..."
-                                    ></textarea>
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    className="w-full bg-gradient-to-r from-blue-belt-start to-blue-belt-end text-black font-bold font-oswald uppercase tracking-wider py-4 rounded-xl shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:shadow-[0_0_30px_rgba(0,229,255,0.6)] hover:-translate-y-1 transition-all duration-300"
-                                >
-                                    Send Message
-                                </button>
-                            </form>
+                            <p className="text-sm text-gray-500 mt-4">
+                                Prefer to talk? Call or text <a href="tel:0275201613" className="hover:text-blue-belt-end transition-colors">027 520 1613</a>, or email <a href="mailto:superiorfitnessnz@gmail.com" className="hover:text-blue-belt-end transition-colors">superiorfitnessnz@gmail.com</a>.
+                            </p>
                         </Card>
                     </TimelineContent>
                 </div>
@@ -239,7 +178,7 @@ export default function ContactSection() {
                             loading="lazy"
                             allowFullScreen
                             referrerPolicy="no-referrer-when-downgrade"
-                            src="https://maps.google.com/maps?q=94+Mill+Road,+Helensville+0800&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            src="https://www.google.com/maps?q=Superior+Taekwondo,+94+Mill+Road,+Helensville&output=embed"
                             className="grayscale invert hover:grayscale-0 hover:invert-0 transition-all duration-500"
                         ></iframe>
                     </Card>
