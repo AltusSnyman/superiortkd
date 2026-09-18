@@ -3,11 +3,18 @@ import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import Button from "../../components/Button.astro";
 import BlogHero from "../../components/BlogHero.astro";
+import ScheduleGrid from "../../components/ScheduleGrid.astro";
 
 const title =
     "Martial Arts Fitness Classes Auckland | Superior Taekwondo";
 const description =
-    "Fight-specific fitness training in North West Auckland. Build explosive power, functional strength, cardio endurance, and mobility using martial arts conditioning methods at Superior Taekwondo.";
+    "Fight-specific fitness training in North West Auckland. Build explosive power, functional strength, cardio endurance and mobility at Superior Taekwondo.";
+
+const breadcrumbs = [
+    { name: "Home", url: "https://superiortkd.co.nz/" },
+    { name: "Classes", url: "https://superiortkd.co.nz/classes/" },
+    { name: "Martial Arts Fitness Classes Auckland", url: "https://superiortkd.co.nz/classes/fitness/" },
+];
 
 const faqs = [
     {
@@ -42,18 +49,8 @@ const faqs = [
     title={title}
     description={description}
     image="/images/blog/blog_olympic_hero.webp"
+    breadcrumbs={breadcrumbs}
 >
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
-            { "@type": "ListItem", "position": 2, "name": "Classes", "item": "https://superiortkd.co.nz/classes/" },
-            { "@type": "ListItem", "position": 3, "name": "Martial Arts Fitness Classes Auckland", "item": `https://superiortkd.co.nz/classes/${"fitness"}` }
-        ]
-    })}></script>
-
     <script
         type="application/ld+json"
         set:html={JSON.stringify({
@@ -101,7 +98,7 @@ const faqs = [
                 >
                 <span class="mx-2">/</span>
                 <a
-                    href="/classes/general"
+                    href="/classes/"
                     class="hover:text-blue-belt-end transition-colors"
                     >Classes</a
                 >
@@ -153,7 +150,7 @@ const faqs = [
                     >, <strong>Waimauku</strong>, <strong>Huapai</strong>, and <strong
                         >Kumeu</strong
                     >. View the <a
-                        href="http://superior-taekwondo.gymdesk.com/schedule"
+                        href="https://superior-taekwondo.gymdesk.com/schedule"
                         class="text-blue-belt-end hover:underline"
                         >class schedule</a
                     > for current session times.
@@ -360,6 +357,21 @@ const faqs = [
                 </div>
             </section>
 
+            <!-- Class Times -->
+            <section id="schedule" class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    Class times
+                </h2>
+                <ScheduleGrid filter="Fitness" />
+                <div class="text-center mt-8">
+                    <Button href="/contact/#trial" variant="primary"
+                        >Book a free trial</Button
+                    >
+                </div>
+            </section>
+
             <!-- Related Links -->
             <section
                 class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-white/10 mb-16"
@@ -374,15 +386,15 @@ const faqs = [
                         [
                             {
                                 label: "General Class",
-                                href: "/classes/general",
+                                href: "/classes/general/",
                             },
                             {
                                 label: "Competition Class",
-                                href: "/classes/competition",
+                                href: "/classes/competition/",
                             },
                             {
                                 label: "Olympic Taekwondo Info",
-                                href: "/blog/olympic-taekwondo",
+                                href: "/blog/olympic-taekwondo/",
                             },
                         ].map((link) => (
                             <a
@@ -407,9 +419,10 @@ const faqs = [
                     </p>
                     {
                         [
-                            { label: "View Class Schedule", href: "http://superior-taekwondo.gymdesk.com/schedule" },
-                            { label: "View Pricing", href: "/pricing" },
-                            { label: "Contact Us", href: "/contact" },
+                            { label: "Book a free trial", href: "/contact/#trial" },
+                            { label: "View Class Schedule", href: "https://superior-taekwondo.gymdesk.com/schedule" },
+                            { label: "View Pricing", href: "/pricing/" },
+                            { label: "Contact Us", href: "/contact/" },
                         ].map((link) => (
                             <a
                                 href={link.href}
@@ -463,11 +476,14 @@ const faqs = [
                     of.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="/contact/#trial" variant="primary"
+                        >Book a free trial</Button
+                    >
                     <Button
                         href="https://superior-taekwondo.gymdesk.com/signup"
-                        variant="primary">Sign Up Now</Button
+                        variant="outline">Sign Up Now</Button
                     >
-                    <Button href="http://superior-taekwondo.gymdesk.com/schedule" variant="outline"
+                    <Button href="https://superior-taekwondo.gymdesk.com/schedule" variant="outline"
                         >View Schedule</Button
                     >
                 </div>

@@ -1,122 +1,76 @@
 ---
-const schedule = [
-    {
-        time: "16:00 - 16:45",
-        mon: "Kids (4-6yrs)",
-        tue: "Kids (4-6yrs)",
-        wed: "Kids (4-6yrs)",
-        thu: "Kids (4-6yrs)",
-        fri: "Sparring Intro",
-        sat: "-",
-        sun: "-",
-    },
-    {
-        time: "16:45 - 17:45",
-        mon: "Juniors (7-12yrs)",
-        tue: "Juniors (7-12yrs)",
-        wed: "Juniors (7-12yrs)",
-        thu: "Juniors (7-12yrs)",
-        fri: "Open Mat",
-        sat: "Kids (All Ages)",
-        sun: "-",
-    },
-    {
-        time: "17:45 - 18:45",
-        mon: "Teens & Adults",
-        tue: "Teens & Adults",
-        wed: "Teens & Adults",
-        thu: "Teens & Adults",
-        fri: "-",
-        sat: "Competition Team",
-        sun: "-",
-    },
-    {
-        time: "18:45 - 19:45",
-        mon: "Advanced Belts",
-        tue: "Sparring",
-        wed: "Advanced Belts",
-        thu: "Sparring",
-        fri: "-",
-        sat: "-",
-        sun: "-",
-    },
-];
+import { schedule, SCHEDULE_AS_OF, GYMDESK_SCHEDULE_URL, type ScheduleDay, type ClassSlot } from "../data/schedule";
 
-const days = ["Time", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+interface Props {
+	filter?: string;
+	title?: string;
+	heading?: "h2" | "h3";
+}
+
+const { filter, title, heading = "h2" } = Astro.props;
+const Heading = heading;
+
+const days: ScheduleDay[] = filter
+	? schedule
+			.map((day) => ({
+				...day,
+				slots: day.slots.filter((slot: ClassSlot) =>
+					slot.name.toLowerCase().includes(filter.toLowerCase()),
+				),
+			}))
+			.filter((day) => day.slots.length > 0)
+	: schedule;
 ---
 
-<div class="overflow-x-auto custom-scrollbar pb-4">
-    <div
-        class="min-w-[800px] w-full grid grid-cols-8 gap-1 text-center font-oswald text-sm md:text-base"
-    >
-        {/* Header Row */}
-        {
-            days.map((day, index) => (
-                <div
-                    class={`p-3 md:p-4 font-bold uppercase tracking-wider ${
-                        index === 0
-                            ? "bg-deep-space-black text-blue-belt-end"
-                            : "bg-blue-belt-start text-white"
-                    } border border-white/10`}
-                >
-                    {day}
-                </div>
-            ))
-        }
+<div class="w-full">
+	{title && (
+		<Heading class="text-2xl md:text-3xl font-bold font-oswald text-white uppercase mb-6 border-l-4 border-blue-belt-end pl-4">
+			{title}
+		</Heading>
+	)}
 
-        {/* Schedule Rows */}
-        {
-            schedule.map((row) => (
-                <>
-                    <div class="p-4 bg-deep-space-black text-gray-400 font-bold border border-white/5 flex items-center justify-center">
-                        {row.time}
-                    </div>
-                    {[
-                        row.mon,
-                        row.tue,
-                        row.wed,
-                        row.thu,
-                        row.fri,
-                        row.sat,
-                        row.sun,
-                    ].map((cell) => (
-                        <div
-                            class={`p-3 md:p-4 border border-white/5 flex items-center justify-center transition-all duration-300 hover:bg-white/5 group relative overflow-hidden ${
-                                cell === "-"
-                                    ? "bg-black/40 text-gray-700"
-                                    : "bg-white/5 text-gray-200"
-                            }`}
-                        >
-                            <span
-                                class={`relative z-10 ${
-                                    cell !== "-"
-                                        ? "group-hover:text-blue-belt-end group-hover:scale-105 transition-transform"
-                                        : ""
-                                }`}
-                            >
-                                {cell}
-                            </span>
-                            {cell !== "-" && (
-                                <div class="absolute inset-0 bg-blue-belt-start/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            )}
-                        </div>
-                    ))}
-                </>
-            ))
-        }
-    </div>
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-3 lg:gap-2">
+		{
+			days.map((day) => (
+				<div class="flex flex-col gap-2 min-w-0">
+					<div class="p-2 text-center font-oswald font-bold uppercase tracking-wider text-sm bg-blue-belt-start text-white border border-white/10 rounded-sm">
+						{day.day}
+					</div>
+					<div class="flex flex-col gap-2">
+						{day.slots.length > 0 ? (
+							day.slots.map((slot) => (
+								<div class="p-3 bg-white/5 border border-white/10 rounded-sm text-center hover:border-blue-belt-end/50 hover:bg-white/10 transition-colors duration-300">
+									<div class="text-xs font-bold text-blue-belt-end font-oswald tracking-wide mb-1 break-words">
+										{slot.time}
+									</div>
+									<div class="text-xs md:text-sm text-gray-200 leading-snug break-words">
+										{slot.name}
+									</div>
+								</div>
+							))
+						) : (
+							<div class="p-3 bg-black/40 border border-white/5 rounded-sm text-center text-gray-600 text-xs">
+								No class
+							</div>
+						)}
+					</div>
+				</div>
+			))
+		}
+	</div>
+
+	<div class="mt-6 text-sm text-gray-400 text-center space-y-1">
+		<p>All classes coached by Andrea Kilday and the Superior team.</p>
+		<p>
+			Timetable current as of {SCHEDULE_AS_OF}; book on{" "}
+			<a
+				href={GYMDESK_SCHEDULE_URL}
+				target="_blank"
+				rel="noopener"
+				class="text-blue-belt-end hover:underline"
+			>
+				GymDesk
+			</a>
+		</p>
+	</div>
 </div>
-
-<style>
-    /* Custom Scrollbar for the table */
-    .custom-scrollbar::-webkit-scrollbar {
-        height: 6px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.5);
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: var(--color-blue-belt-start);
-        border-radius: 3px;
-    }
-</style>

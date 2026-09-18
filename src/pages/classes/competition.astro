@@ -4,10 +4,17 @@ import Footer from "../../components/Footer.astro";
 import Button from "../../components/Button.astro";
 import BlogHero from "../../components/BlogHero.astro";
 import TrustBar from "../../components/TrustBar.astro";
+import ScheduleGrid from "../../components/ScheduleGrid.astro";
 
 const title = "Competition Taekwondo Training Auckland | Superior Taekwondo";
 const description =
-    "Elite competition Taekwondo training in North West Auckland. Strategy, sparring, conditioning, and tournament preparation for athletes of all levels at Superior Taekwondo.";
+    "Competition Taekwondo training in North West Auckland: strategy, sparring, conditioning and tournament preparation for athletes at every level.";
+
+const breadcrumbs = [
+    { name: "Home", url: "https://superiortkd.co.nz/" },
+    { name: "Classes", url: "https://superiortkd.co.nz/classes/" },
+    { name: "Competition Taekwondo Training Auckland", url: "https://superiortkd.co.nz/classes/competition/" },
+];
 
 const faqs = [
     {
@@ -42,18 +49,8 @@ const faqs = [
     title={title}
     description={description}
     image="/images/blog/blog_tournament_hero.webp"
+    breadcrumbs={breadcrumbs}
 >
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
-            { "@type": "ListItem", "position": 2, "name": "Classes", "item": "https://superiortkd.co.nz/classes/" },
-            { "@type": "ListItem", "position": 3, "name": "Competition Taekwondo Training Auckland", "item": `https://superiortkd.co.nz/classes/${"competition"}` }
-        ]
-    })}></script>
-
     <!-- FAQ Schema -->
     <script
         type="application/ld+json"
@@ -107,7 +104,7 @@ const faqs = [
                 >
                 <span class="mx-2">/</span>
                 <a
-                    href="/classes/general"
+                    href="/classes/"
                     class="hover:text-blue-belt-end transition-colors"
                     >Classes</a
                 >
@@ -369,11 +366,11 @@ const faqs = [
                     </p>
                     <p>
                         We are aligned with <a
-                            href="/blog/world-taekwondo"
+                            href="/blog/world-taekwondo/"
                             class="text-blue-belt-end hover:underline"
                             >World Taekwondo (WT)</a
                         > and <a
-                            href="/blog/taekwondo-in-new-zealand"
+                            href="/blog/taekwondo-in-new-zealand/"
                             class="text-blue-belt-end hover:underline"
                             >Taekwondo New Zealand (TNZ)</a
                         >, so every grade, every result, and every ranking point
@@ -383,6 +380,21 @@ const faqs = [
                         No false promises. Just serious coaching for serious
                         athletes.
                     </p>
+                </div>
+            </section>
+
+            <!-- Class Times -->
+            <section id="schedule" class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    Class times
+                </h2>
+                <ScheduleGrid filter="Performance Pathway" />
+                <div class="text-center mt-8">
+                    <Button href="/contact/#trial" variant="primary"
+                        >Book a free trial</Button
+                    >
                 </div>
             </section>
 
@@ -400,15 +412,15 @@ const faqs = [
                         [
                             {
                                 label: "General Class",
-                                href: "/classes/general",
+                                href: "/classes/general/",
                             },
                             {
                                 label: "Fitness Class",
-                                href: "/classes/fitness",
+                                href: "/classes/fitness/",
                             },
                             {
                                 label: "Poomsae Class",
-                                href: "/classes/poomsae",
+                                href: "/classes/poomsae/",
                             },
                         ].map((link) => (
                             <a
@@ -433,15 +445,16 @@ const faqs = [
                     </p>
                     {
                         [
+                            { label: "Book a free trial", href: "/contact/#trial" },
                             {
                                 label: "View Training Schedule",
-                                href: "http://superior-taekwondo.gymdesk.com/schedule",
+                                href: "https://superior-taekwondo.gymdesk.com/schedule",
                             },
                             {
                                 label: "Read Competition Rules",
-                                href: "/blog/competition-rules",
+                                href: "/blog/competition-rules/",
                             },
-                            { label: "Contact Us", href: "/contact" },
+                            { label: "Contact Us", href: "/contact/" },
                         ].map((link) => (
                             <a
                                 href={link.href}
@@ -494,11 +507,14 @@ const faqs = [
                     our coaching team about joining the competition programme.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="/contact/#trial" variant="primary"
+                        >Book a free trial</Button
+                    >
                     <Button
                         href="https://superior-taekwondo.gymdesk.com/signup"
-                        variant="primary">Sign Up Now</Button
+                        variant="outline">Sign Up Now</Button
                     >
-                    <Button href="http://superior-taekwondo.gymdesk.com/schedule" variant="outline"
+                    <Button href="https://superior-taekwondo.gymdesk.com/schedule" variant="outline"
                         >View Schedule</Button
                     >
                 </div>

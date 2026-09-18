@@ -9,6 +9,8 @@ import Reviews from "../components/Reviews.astro";
 import ReadyToTrain from "../components/ReadyToTrain.astro";
 import LatestNews from "../components/LatestNews.astro";
 import Footer from "../components/Footer.astro";
+import ScheduleGrid from "../components/ScheduleGrid.astro";
+import Button from "../components/Button.astro";
 
 const homepageFaqSchema = JSON.stringify({
 	"@context": "https://schema.org",
@@ -19,7 +21,7 @@ const homepageFaqSchema = JSON.stringify({
 			name: "Where is Superior Taekwondo located?",
 			acceptedAnswer: {
 				"@type": "Answer",
-				text: "Superior Taekwondo is based in North West Auckland. Our main dojo is at 94 Mill Road, Helensville. We also run classes in Kaukapakapa and Waimauku, serving students across the region including Kumeu, Huapai, Riverhead, and Westgate.",
+				text: "Superior Taekwondo trains at one dojang, 94 Mill Road, Helensville 0875, in North West Auckland. Families travel to us from Kumeū, Huapai, Waimauku, Kaukapakapa, Riverhead and Westgate.",
 			},
 		},
 		{
@@ -43,7 +45,7 @@ const homepageFaqSchema = JSON.stringify({
 			name: "What age can children start Taekwondo at Superior Taekwondo?",
 			acceptedAnswer: {
 				"@type": "Answer",
-				text: "Children can start from age 5 in our Tiny Tigers programme. This class builds confidence, coordination, and discipline through age-appropriate Taekwondo fundamentals in a fun, structured environment.",
+				text: "Children can start from age 4 in our Tiny Tigers programme. This class builds confidence, coordination, and discipline through age-appropriate Taekwondo fundamentals in a fun, structured environment.",
 			},
 		},
 		{
@@ -82,8 +84,8 @@ const homepageHeadContent = [
 ---
 
 <Layout
-	title="Superior Taekwondo | Constructing Champions"
-	description="Superior Taekwondo is North West Auckland's premier World Taekwondo (WT) club. Train with 2016 Rio Olympian Andrea Kilday in Helensville, Kaukapakapa & Waimauku. Book a free trial."
+	title="Taekwondo Classes North West Auckland | Superior Taekwondo"
+	description="Olympian-coached Taekwondo for kids from 4, teens and adults at our Helensville dojang, North West Auckland. Free trial class. Memberships from $30 a week."
 	headContent={homepageHeadContent}
 >
 	<main class="overflow-x-hidden">
@@ -91,6 +93,31 @@ const homepageHeadContent = [
 		<TrustBar />
 		<Intro />
 		<Olympian />
+
+		<section id="schedule" class="py-24 bg-deep-space-black">
+			<div class="container mx-auto px-4">
+				<div class="text-center max-w-2xl mx-auto mb-12">
+					<h2
+						class="text-4xl md:text-5xl font-black font-oswald uppercase text-white mb-4"
+					>
+						Class times
+					</h2>
+					<p class="text-gray-400 text-lg">
+						Six days a week at 94 Mill Road, Helensville. Your
+						first class is free.
+					</p>
+				</div>
+
+				<ScheduleGrid />
+
+				<div class="flex justify-center mt-10">
+					<Button href="/contact/#trial" variant="primary"
+						>Book a free trial</Button
+					>
+				</div>
+			</div>
+		</section>
+
 		<WallOfFame />
 		<Reviews />
 		<LatestNews />

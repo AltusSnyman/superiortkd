@@ -3,10 +3,17 @@ import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import Button from "../../components/Button.astro";
 import BlogHero from "../../components/BlogHero.astro";
+import ScheduleGrid from "../../components/ScheduleGrid.astro";
 
 const title = "Poomsae Taekwondo Classes Helensville | Superior Taekwondo";
 const description =
-    "Dedicated Poomsae (patterns) classes in Helensville, North West Auckland. Master the Taegeuk series, develop perfect technique, and prepare for grading and Poomsae tournaments at Superior Taekwondo.";
+    "Dedicated Poomsae (patterns) classes in Helensville, North West Auckland. Master the Taegeuk series and prepare for grading and Poomsae tournaments.";
+
+const breadcrumbs = [
+    { name: "Home", url: "https://superiortkd.co.nz/" },
+    { name: "Classes", url: "https://superiortkd.co.nz/classes/" },
+    { name: "Poomsae Taekwondo Classes Helensville", url: "https://superiortkd.co.nz/classes/poomsae/" },
+];
 
 const faqs = [
     {
@@ -40,18 +47,8 @@ const faqs = [
     title={title}
     description={description}
     image="/images/blog/blog_world_tkd_hero.webp"
+    breadcrumbs={breadcrumbs}
 >
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
-            { "@type": "ListItem", "position": 2, "name": "Classes", "item": "https://superiortkd.co.nz/classes/" },
-            { "@type": "ListItem", "position": 3, "name": "Poomsae Taekwondo Classes Helensville", "item": `https://superiortkd.co.nz/classes/${"poomsae"}` }
-        ]
-    })}></script>
-
     <script
         type="application/ld+json"
         set:html={JSON.stringify({
@@ -98,7 +95,7 @@ const faqs = [
                 >
                 <span class="mx-2">/</span>
                 <a
-                    href="/classes/general"
+                    href="/classes/"
                     class="hover:text-blue-belt-end transition-colors"
                     >Classes</a
                 >
@@ -129,7 +126,7 @@ const faqs = [
                     from beginners working through Taegeuk Il Jang to black
                     belts refining the advanced Yudanja series. Whether your
                     goal is to perform flawlessly at your next <a
-                        href="/grading"
+                        href="/grading/"
                         class="text-blue-belt-end hover:underline">grading</a
                     >, qualify for a Poomsae tournament, or simply deepen your
                     technical understanding of Taekwondo, this class is for you.
@@ -164,7 +161,7 @@ const faqs = [
                         <p>
                             Second, Poomsae is a competitive sport in its own
                             right. The <a
-                                href="/blog/world-taekwondo"
+                                href="/blog/world-taekwondo/"
                                 class="text-blue-belt-end hover:underline"
                                 >World Taekwondo</a
                             > organisation runs official Poomsae championships at
@@ -363,6 +360,21 @@ const faqs = [
                 </div>
             </section>
 
+            <!-- Class Times -->
+            <section id="schedule" class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    Class times
+                </h2>
+                <ScheduleGrid filter="Poomsae" />
+                <div class="text-center mt-8">
+                    <Button href="/contact/#trial" variant="primary"
+                        >Book a free trial</Button
+                    >
+                </div>
+            </section>
+
             <!-- Related Links -->
             <section
                 class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-white/10 mb-16"
@@ -377,13 +389,13 @@ const faqs = [
                         [
                             {
                                 label: "General Class",
-                                href: "/classes/general",
+                                href: "/classes/general/",
                             },
                             {
                                 label: "Competition Class",
-                                href: "/classes/competition",
+                                href: "/classes/competition/",
                             },
-                            { label: "Grading Information", href: "/grading" },
+                            { label: "Grading Information", href: "/grading/" },
                         ].map((link) => (
                             <a
                                 href={link.href}
@@ -407,12 +419,13 @@ const faqs = [
                     </p>
                     {
                         [
-                            { label: "View Schedule", href: "http://superior-taekwondo.gymdesk.com/schedule" },
+                            { label: "Book a free trial", href: "/contact/#trial" },
+                            { label: "View Schedule", href: "https://superior-taekwondo.gymdesk.com/schedule" },
                             {
                                 label: "Belt Grading System",
-                                href: "/blog/taekwondo-grading-system",
+                                href: "/blog/taekwondo-grading-system/",
                             },
-                            { label: "Contact Us", href: "/contact" },
+                            { label: "Contact Us", href: "/contact/" },
                         ].map((link) => (
                             <a
                                 href={link.href}
@@ -466,11 +479,14 @@ const faqs = [
                     Superior Taekwondo.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="/contact/#trial" variant="primary"
+                        >Book a free trial</Button
+                    >
                     <Button
                         href="https://superior-taekwondo.gymdesk.com/signup"
-                        variant="primary">Sign Up Now</Button
+                        variant="outline">Sign Up Now</Button
                     >
-                    <Button href="http://superior-taekwondo.gymdesk.com/schedule" variant="outline"
+                    <Button href="https://superior-taekwondo.gymdesk.com/schedule" variant="outline"
                         >View Schedule</Button
                     >
                 </div>

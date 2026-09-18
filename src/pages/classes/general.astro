@@ -3,11 +3,18 @@ import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import Button from "../../components/Button.astro";
 import BlogHero from "../../components/BlogHero.astro";
+import ScheduleGrid from "../../components/ScheduleGrid.astro";
 
 const title =
     "Adult & Teen Taekwondo Classes Auckland | Superior Taekwondo";
 const description =
-    "General Taekwondo classes for adults and teenagers in Helensville, Kaukapakapa & Waimauku. Learn striking, sparring, patterns, and self-defence in a welcoming community at Superior Taekwondo.";
+    "General Taekwondo for adults and teens at our Helensville dojang, North West Auckland. Striking, sparring, patterns and self-defence. Free first class.";
+
+const breadcrumbs = [
+    { name: "Home", url: "https://superiortkd.co.nz/" },
+    { name: "Classes", url: "https://superiortkd.co.nz/classes/" },
+    { name: "Adult & Teen Taekwondo Classes Auckland North West", url: "https://superiortkd.co.nz/classes/general/" },
+];
 
 const faqs = [
     {
@@ -41,18 +48,8 @@ const faqs = [
     title={title}
     description={description}
     image="/images/blog/blog_beginners_hero.webp"
+    breadcrumbs={breadcrumbs}
 >
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
-            { "@type": "ListItem", "position": 2, "name": "Classes", "item": "https://superiortkd.co.nz/classes/" },
-            { "@type": "ListItem", "position": 3, "name": "Adult & Teen Taekwondo Classes Auckland North West", "item": `https://superiortkd.co.nz/classes/${"general"}` }
-        ]
-    })}></script>
-
     <script
         type="application/ld+json"
         set:html={JSON.stringify({
@@ -136,12 +133,11 @@ const faqs = [
                     full belt spectrum. Whether you are lacing up a dobok for
                     the first time or returning to Taekwondo after years away,
                     you will find a class designed to meet you exactly where you
-                    are. We run classes across our locations in <strong
-                        >Helensville</strong
-                    >, <strong>Kaukapakapa</strong>, and <strong
+                    are. We run classes from our <strong>Helensville</strong> dojang,
+                    with families travelling in from <strong>Kaukapakapa</strong>, <strong
                         >Waimauku</strong
-                    > — check the <a
-                        href="http://superior-taekwondo.gymdesk.com/schedule"
+                    >, Huapai, Riverhead and Westgate — check the <a
+                        href="https://superior-taekwondo.gymdesk.com/schedule"
                         class="text-blue-belt-end hover:underline"
                         >class schedule</a
                     > for times near you.
@@ -170,7 +166,7 @@ const faqs = [
                             },
                             {
                                 title: "Poomsae (Patterns)",
-                                body: "Each belt level has a corresponding Taegeuk pattern that must be mastered for <a href='/grading' class='text-blue-belt-end hover:underline'>grading</a>. Pattern training is integrated into every class and deepens technical understanding.",
+                                body: "Each belt level has a corresponding Taegeuk pattern that must be mastered for <a href='/grading/' class='text-blue-belt-end hover:underline'>grading</a>. Pattern training is integrated into every class and deepens technical understanding.",
                                 icon: "📐",
                             },
                             {
@@ -261,7 +257,7 @@ const faqs = [
                 </div>
                 <div class="mt-6">
                     <a
-                        href="/blog/taekwondo-grading-system"
+                        href="/blog/taekwondo-grading-system/"
                         class="text-blue-belt-end hover:underline text-sm"
                         >Read our full grading system guide →</a
                     >
@@ -335,17 +331,37 @@ const faqs = [
                     </p>
                     <p>
                         We are aligned with <a
-                            href="/blog/world-taekwondo"
+                            href="/blog/world-taekwondo/"
                             class="text-blue-belt-end hover:underline"
                             >World Taekwondo (WT)</a
                         > and <a
-                            href="/blog/taekwondo-in-new-zealand"
+                            href="/blog/taekwondo-in-new-zealand/"
                             class="text-blue-belt-end hover:underline"
                             >Taekwondo New Zealand (TNZ)</a
                         > — meaning every grade you earn is nationally and internationally
                         recognised. Your progress goes with you, wherever life takes
                         you.
                     </p>
+                </div>
+            </section>
+
+            <!-- Class Times -->
+            <section id="schedule" class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    Class times
+                </h2>
+                <p class="text-gray-300 mb-6">
+                    General classes run as Youth Superior Legends (6–11), Cadets,
+                    Juniors and Senior Superior Legends (12+), the Tuesday morning
+                    Adults class and the Friday Family Class.
+                </p>
+                <ScheduleGrid />
+                <div class="text-center mt-8">
+                    <Button href="/contact/#trial" variant="primary"
+                        >Book a free trial</Button
+                    >
                 </div>
             </section>
 
@@ -362,16 +378,16 @@ const faqs = [
                     {
                         [
                             {
-                                label: "Tiny Tigers (Ages 5–10)",
-                                href: "/classes/tiny-tigers",
+                                label: "Tiny Tigers (from age 4)",
+                                href: "/classes/tiny-tigers/",
                             },
                             {
                                 label: "Competition Class",
-                                href: "/classes/competition",
+                                href: "/classes/competition/",
                             },
                             {
                                 label: "Fitness Class",
-                                href: "/classes/fitness",
+                                href: "/classes/fitness/",
                             },
                         ].map((link) => (
                             <a
@@ -396,9 +412,10 @@ const faqs = [
                     </p>
                     {
                         [
-                            { label: "View Class Schedule", href: "http://superior-taekwondo.gymdesk.com/schedule" },
-                            { label: "View Pricing", href: "/pricing" },
-                            { label: "Contact Us", href: "/contact" },
+                            { label: "Book a free trial", href: "/contact/#trial" },
+                            { label: "View Class Schedule", href: "https://superior-taekwondo.gymdesk.com/schedule" },
+                            { label: "View Pricing", href: "/pricing/" },
+                            { label: "Contact Us", href: "/contact/" },
                         ].map((link) => (
                             <a
                                 href={link.href}
@@ -451,11 +468,14 @@ const faqs = [
                     place for you in our General Class. Take the first step.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="/contact/#trial" variant="primary"
+                        >Book a free trial</Button
+                    >
                     <Button
                         href="https://superior-taekwondo.gymdesk.com/signup"
-                        variant="primary">Sign Up Now</Button
+                        variant="outline">Sign Up Now</Button
                     >
-                    <Button href="/pricing" variant="outline"
+                    <Button href="/pricing/" variant="outline"
                         >View Pricing</Button
                     >
                 </div>

@@ -3,16 +3,23 @@ import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import Button from "../../components/Button.astro";
 import BlogHero from "../../components/BlogHero.astro";
+import ScheduleGrid from "../../components/ScheduleGrid.astro";
 
 const title =
-    "Kids Taekwondo Classes Helensville | Tiny Tigers | Superior Taekwondo";
+    "Kids Taekwondo Classes North West Auckland | Superior Taekwondo";
 const description =
-    "Taekwondo classes for children aged 5 and up in Helensville, North West Auckland. Our Tiny Tigers programme builds confidence, focus, coordination, and respect in a safe and fun environment.";
+    "Tiny Tigers: kids' Taekwondo from age 4 at our Helensville dojang, North West Auckland. Olympian-led coaching. Confidence, focus, fitness. Free trial.";
+
+const breadcrumbs = [
+    { name: "Home", url: "https://superiortkd.co.nz/" },
+    { name: "Classes", url: "https://superiortkd.co.nz/classes/" },
+    { name: "Kids Taekwondo Classes North West Auckland", url: "https://superiortkd.co.nz/classes/tiny-tigers/" },
+];
 
 const faqs = [
     {
         question: "What age is Tiny Tigers for?",
-        answer: "Tiny Tigers is designed for children aged 5 to approximately 10 years old. The class format is tailored specifically for young attention spans, energy levels, and developmental stages.",
+        answer: "Tiny Tigers is designed for children from age 4 to approximately 10 years old. The class format is tailored specifically for young attention spans, energy levels, and developmental stages.",
     },
     {
         question:
@@ -42,18 +49,8 @@ const faqs = [
     title={title}
     description={description}
     image="/images/blog/blog_schedule_hero.webp"
+    breadcrumbs={breadcrumbs}
 >
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superiortkd.co.nz/" },
-            { "@type": "ListItem", "position": 2, "name": "Classes", "item": "https://superiortkd.co.nz/classes/" },
-            { "@type": "ListItem", "position": 3, "name": "Kids Taekwondo Classes Helensville", "item": `https://superiortkd.co.nz/classes/${"tiny-tigers"}` }
-        ]
-    })}></script>
-
     <script
         type="application/ld+json"
         set:html={JSON.stringify({
@@ -79,7 +76,7 @@ const faqs = [
                 url: "https://superiortkd.co.nz",
             },
             description:
-                "Taekwondo classes designed for children aged 5–10 in Helensville and North West Auckland. Builds confidence, coordination, focus, and respect.",
+                "Taekwondo classes designed for children from age 4 in Helensville and North West Auckland. Builds confidence, coordination, focus, and respect.",
             areaServed:
                 "Helensville, Kaukapakapa, Waimauku, North West Auckland, New Zealand",
         })}
@@ -88,9 +85,9 @@ const faqs = [
     <main class="bg-black min-h-screen pb-12 text-gray-300 font-body">
         <BlogHero
             title="Tiny Tigers"
-            subtitle="Big hearts, fierce spirits. Our Tiny Tigers programme gives children aged 5 and up the confidence, focus, and discipline to thrive — in the dojang and in life."
+            subtitle="Kids' Taekwondo from age 4. Our Tiny Tigers programme gives children the confidence, focus, and discipline to thrive — in the dojang and in life."
             image="/images/blog/blog_schedule_hero.webp"
-            category="Kids — Ages 5+"
+            category="Kids — Age 4+"
             readTime="8 Min Read"
         />
 
@@ -101,7 +98,7 @@ const faqs = [
                 >
                 <span class="mx-2">/</span>
                 <a
-                    href="/classes/general"
+                    href="/classes/"
                     class="hover:text-blue-belt-end transition-colors"
                     >Classes</a
                 >
@@ -121,7 +118,8 @@ const faqs = [
                         href="/"
                         class="text-blue-belt-end hover:underline"
                         >Superior Taekwondo</a
-                    > is purpose-built for young children aged 5 and up. We understand
+                    > (called <strong>Little Superior Legends</strong> on the timetable)
+                    is purpose-built for young children from age 4. We understand
                     that young children are not simply small adults — they have different
                     learning styles, attention spans, and developmental needs. Our
                     Tiny Tigers classes are designed by coaches who understand child
@@ -303,7 +301,7 @@ const faqs = [
                 </div>
                 <p class="text-center mt-6">
                     <a
-                        href="/blog/taekwondo-grading-system"
+                        href="/blog/taekwondo-grading-system/"
                         class="text-blue-belt-end hover:underline text-sm"
                         >Learn about the full grading system →</a
                     >
@@ -352,6 +350,21 @@ const faqs = [
                 </div>
             </section>
 
+            <!-- Class Times -->
+            <section id="schedule" class="mb-16">
+                <h2
+                    class="text-3xl font-bold font-oswald text-white uppercase mb-8 border-l-4 border-blue-belt-end pl-4"
+                >
+                    Class times
+                </h2>
+                <ScheduleGrid filter="Little Superior Legends" />
+                <div class="text-center mt-8">
+                    <Button href="/contact/#trial" variant="primary"
+                        >Book a free trial</Button
+                    >
+                </div>
+            </section>
+
             <!-- Related Links -->
             <section
                 class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-white/10 mb-16"
@@ -366,10 +379,10 @@ const faqs = [
                         [
                             {
                                 label: "General Class (Teens & Adults)",
-                                href: "/classes/general",
+                                href: "/classes/general/",
                             },
-                            { label: "Grading Information", href: "/grading" },
-                            { label: "Club Guidelines", href: "/guidelines" },
+                            { label: "Grading Information", href: "/grading/" },
+                            { label: "Club Guidelines", href: "/guidelines/" },
                         ].map((link) => (
                             <a
                                 href={link.href}
@@ -393,9 +406,10 @@ const faqs = [
                     </p>
                     {
                         [
-                            { label: "View Class Schedule", href: "http://superior-taekwondo.gymdesk.com/schedule" },
-                            { label: "View Pricing", href: "/pricing" },
-                            { label: "Contact Us", href: "/contact" },
+                            { label: "Book a free trial", href: "/contact/#trial" },
+                            { label: "View Class Schedule", href: "https://superior-taekwondo.gymdesk.com/schedule" },
+                            { label: "View Pricing", href: "/pricing/" },
+                            { label: "Contact Us", href: "/contact/" },
                         ].map((link) => (
                             <a
                                 href={link.href}
@@ -449,11 +463,14 @@ const faqs = [
                     focused, more themselves.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <Button href="/contact/#trial" variant="primary"
+                        >Book a free trial</Button
+                    >
                     <Button
                         href="https://superior-taekwondo.gymdesk.com/signup"
-                        variant="primary">Sign Up Now</Button
+                        variant="outline">Sign Up Now</Button
                     >
-                    <Button href="http://superior-taekwondo.gymdesk.com/schedule" variant="outline"
+                    <Button href="https://superior-taekwondo.gymdesk.com/schedule" variant="outline"
                         >View Schedule</Button
                     >
                 </div>

@@ -1,0 +1,115 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import Card from "../../components/Card.astro";
+import ScheduleGrid from "../../components/ScheduleGrid.astro";
+
+const title = "Taekwondo Classes: Kids, Teens, Adults, Competition";
+const description =
+	"Taekwondo classes in North West Auckland: kids from age 4, teens, adults, fitness, poomsae and the competition squad. Your first class is free.";
+
+const breadcrumbs = [
+	{ name: "Home", url: "https://superiortkd.co.nz/" },
+	{ name: "Classes", url: "https://superiortkd.co.nz/classes/" },
+];
+
+const classes = [
+	{
+		name: "Tiny Tigers",
+		href: "/classes/tiny-tigers/",
+		description:
+			"Taekwondo for children from age 4, building confidence, focus, coordination and respect in a safe, fun environment.",
+	},
+	{
+		name: "General Taekwondo",
+		href: "/classes/general/",
+		description:
+			"The complete Taekwondo experience for teens and adults — technique, patterns, sparring and fitness, for beginners through advanced belts.",
+	},
+	{
+		name: "Fitness",
+		href: "/classes/fitness/",
+		description:
+			"Fight-specific fitness training using martial arts conditioning methods to build explosive power, strength, cardio and mobility.",
+	},
+	{
+		name: "Poomsae",
+		href: "/classes/poomsae/",
+		description:
+			"Dedicated patterns training — master the Taegeuk series, sharpen technique and prepare for grading and Poomsae tournaments.",
+	},
+	{
+		name: "Competition Team",
+		href: "/classes/competition/",
+		description:
+			"Strategy, sparring and tournament preparation for athletes pursuing Kyorugi competition, from club level through to national selection.",
+	},
+];
+---
+
+<Layout title={title} description={description} breadcrumbs={breadcrumbs}>
+	<main class="bg-black min-h-screen pb-12 text-gray-300 font-body">
+		<section class="pt-32 pb-16 container mx-auto px-4 text-center">
+			<h1
+				class="text-4xl md:text-6xl font-black font-oswald uppercase text-white mb-6"
+			>
+				Our classes
+			</h1>
+			<p class="text-lg text-gray-400 max-w-2xl mx-auto">
+				Kids from age 4, teens, adults, fitness, poomsae, sparring and a
+				performance pathway squad. Your first class at any of them is
+				free.
+			</p>
+		</section>
+
+		<section class="container mx-auto px-4 mb-20">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{
+					classes.map((item) => (
+						<a href={item.href} class="block h-full">
+							<Card title={item.name} class="h-full">
+								<p class="text-gray-400 text-sm leading-relaxed mb-4">
+									{item.description}
+								</p>
+								<span class="text-blue-belt-end font-oswald text-sm uppercase tracking-wider group-hover:translate-x-1 transition-transform inline-block">
+									Learn more →
+								</span>
+							</Card>
+						</a>
+					))
+				}
+			</div>
+		</section>
+
+		<section id="schedule" class="container mx-auto px-4 mb-20">
+			<h2
+				class="text-3xl md:text-4xl font-bold font-oswald text-white uppercase mb-8 text-center"
+			>
+				Weekly timetable
+			</h2>
+			<ScheduleGrid />
+		</section>
+
+		<section
+			class="text-center bg-blue-belt-end/10 rounded-3xl p-12 border border-blue-belt-end/20 container mx-auto max-w-4xl mb-16"
+		>
+			<h2
+				class="text-3xl md:text-4xl font-black font-oswald text-white uppercase mb-6"
+			>
+				Ready to start?
+			</h2>
+			<p class="text-gray-300 max-w-xl mx-auto mb-8">
+				Whatever your age or experience, there is a class for you at
+				Superior Taekwondo.
+			</p>
+			<div class="flex flex-col sm:flex-row justify-center gap-4">
+				<Button href="/contact/#trial" variant="primary"
+					>Book a free trial</Button
+				>
+				<Button href="/pricing/" variant="outline">See prices</Button>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
