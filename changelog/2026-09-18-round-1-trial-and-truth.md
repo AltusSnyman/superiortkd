@@ -93,3 +93,8 @@ Site baseline for the round: 151 clicks / 20,338 impressions / 0.74% CTR / posit
 ## Next round (deferred from plan §7)
 
 Location-page depth (venue photos, coach block, age tiers), ActiveActivities / Auckland for Kids / TNZ listings (owner action), GBP posts cadence, replacing the three.js background with CSS (257 KB gzipped on 8 pages), RSS, and moving the blog to content collections.
+
+## Lead verification (Fable, after orchestrator hand-off)
+- Rebuilt: 39 pages, green. All eleven "must be 0" dist greps at zero; contact page carries the GoHighLevel form; /pricing/ has one H1; /classes/, /locations/, /locations/kumeu/ built; the two redirected location pages are gone and their 301s sit in both netlify.toml and _redirects; sitemap 36 URLs, no /404.
+- Mobile (375px) review of /, /contact/, /classes/, /locations/kumeu/, /locations/huapai/ found three gaps the verifiers missed, fixed in commit 5796445: the shared location hero still said "Start Training / Contact Us" (now "Book a free trial / See class times"); the contact H1 was hidden behind a JS text-reveal and the form sat below the details card (now plain H1, form first); the chat bubble covered the hero's second button on load (loader now injected 8 s after load).
+- Owner note: the GoHighLevel form's phone field shows a US placeholder "+1 (555) 000-0000"; set the form's default country to New Zealand in GoHighLevel.
