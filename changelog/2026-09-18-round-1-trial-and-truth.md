@@ -98,3 +98,8 @@ Location-page depth (venue photos, coach block, age tiers), ActiveActivities / A
 - Rebuilt: 39 pages, green. All eleven "must be 0" dist greps at zero; contact page carries the GoHighLevel form; /pricing/ has one H1; /classes/, /locations/, /locations/kumeu/ built; the two redirected location pages are gone and their 301s sit in both netlify.toml and _redirects; sitemap 36 URLs, no /404.
 - Mobile (375px) review of /, /contact/, /classes/, /locations/kumeu/, /locations/huapai/ found three gaps the verifiers missed, fixed in commit 5796445: the shared location hero still said "Start Training / Contact Us" (now "Book a free trial / See class times"); the contact H1 was hidden behind a JS text-reveal and the form sat below the details card (now plain H1, form first); the chat bubble covered the hero's second button on load (loader now injected 8 s after load).
 - Owner note: the GoHighLevel form's phone field shows a US placeholder "+1 (555) 000-0000"; set the form's default country to New Zealand in GoHighLevel.
+
+## Deployed and measured (2026-09-19)
+- Pushed as fast-forward eb6763c → 11d27d6 on AltusSnyman/superiortkd `main`; Netlify live within ~45 s.
+- Production checks: both retired location pages 301 to /locations/auckland/; /classes/, /locations/, /locations/kumeu/, /llms.txt, sitemap-index live; all forbidden strings at zero on home, pricing, about, contact; GoHighLevel form present; one H1 on /pricing/; timetable on home; honest Google review line live; sitemap 36 URLs.
+- geo-optimizer 4.18.1, production: **homepage 58 → 68**, **history post 61 → 71**. Remaining tool suggestions (definition opening on home, aria-live) deferred.
