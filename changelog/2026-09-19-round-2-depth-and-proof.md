@@ -24,3 +24,8 @@ Branch `growth/depth-and-proof-2026-09-19` · Plan: `plan-round2.md` · Team: Fa
 
 ## Re-check 2026-10-16
 GA4: free_trial_click / gymdesk_click / phone_click counts. GSC: /locations/kumeu/ and the three posts indexed; /locations/auckland/ CTR ≥1%; Core Web Vitals after the three.js removal. GEO home ≥72.
+
+## Deployed and measured (2026-09-19)
+- Pushed as fast-forward 11d27d6 → 5c3b8b4 on AltusSnyman/superiortkd `main`; Netlify live within ~45 s.
+- Production checks: three posts and their WebP heroes 200; dojang photos 200; homepage has the reviews widget, class finder and GA4 events, loads zero island JS, no three.js references, no "Snyman"; Kumeū page has the address, exterior photo, drive-time line and FAQs; sitemap 39 URLs; llms.txt lists the guides.
+- geo-optimizer 4.18.1, production: homepage 68 (unchanged from round 1; round 2 targeted conversion and performance, the tool's remaining ask is a definition-style opening paragraph), Kumeū page 64. Reports in tools/geo-optimizer/reports/.
