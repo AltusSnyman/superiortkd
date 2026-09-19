@@ -1,0 +1,331 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+import RelatedContent from "../../components/RelatedContent.astro";
+
+const title = "Women's Self-Defence Classes in Auckland: What Actually Works";
+const description =
+    "Looking for women's self-defence in Auckland? Why regular training beats a one-off workshop, what Taekwondo teaches that transfers, and how to start at any fitness level.";
+
+const blogSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    image: "https://superiortkd.co.nz/images/blog/womens-self-defence-classes-auckland-hero-1600.webp",
+    datePublished: "2026-09-19",
+    dateModified: "2026-09-19",
+    author: {
+        "@type": "Person",
+        name: "Andrea Kilday",
+        jobTitle: "Head Instructor, 2016 Rio Olympian",
+        url: "https://superiortkd.co.nz",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "Superior Taekwondo",
+        url: "https://superiortkd.co.nz",
+    },
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://superiortkd.co.nz/blog/womens-self-defence-classes-auckland/",
+    },
+});
+const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
+
+const faqs = [
+    {
+        question: "Is a one-off self-defence workshop enough?",
+        answer: "A single workshop can raise awareness, but physical skills only become reliable through repetition. Regular Taekwondo training builds the same distance management and striking skills under ongoing, low-pressure practice, which is what tends to make techniques usable rather than just familiar.",
+    },
+    {
+        question: "Do I need to be fit to start women's self-defence classes?",
+        answer: "No. Superior Taekwondo's Adults class runs Tuesday at 9:00am and is designed to build fitness alongside technique, whatever level you start at. Adults can also train in any 12+ evening class, so you can fit sessions around your week and your current fitness.",
+    },
+    {
+        question: "Where can I try women's self-defence classes in Auckland?",
+        answer: "Superior Taekwondo trains from one dojang at 94 Mill Road, Helensville, serving North West Auckland including Kumeū, Huapai, Waimauku and Kaukapakapa. Your first class is free, with no obligation to continue.",
+    },
+];
+---
+
+<Layout
+    title={title}
+    description={description}
+    image="/images/blog/womens-self-defence-classes-auckland-hero-1600.webp"
+    headContent={headContent}
+    breadcrumbs={[
+        { name: "Home", url: "https://superiortkd.co.nz/" },
+        { name: "Blog", url: "https://superiortkd.co.nz/blog/" },
+        {
+            name: "Women's Self-Defence Classes in Auckland",
+            url: "https://superiortkd.co.nz/blog/womens-self-defence-classes-auckland/",
+        },
+    ]}
+>
+    <!-- FAQ Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+        })}
+    ></script>
+
+    <BlogHero
+        title="Women's Self-Defence Classes in Auckland: What Actually Works"
+        subtitle="A one-off workshop can teach you a few moves. Regular training is what makes them usable. Here is the difference, and how to start."
+        image="/images/blog/womens-self-defence-classes-auckland-hero-1600.webp"
+        alt="Red kick pads and a water bottle on a blue mat at the edge of an empty training hall"
+        category="Self-Defence"
+        readTime="7 min read"
+    />
+
+    <main class="bg-deep-space-black text-white pb-12 text-gray-300 font-body">
+        <div class="container mx-auto px-4 max-w-4xl py-12 space-y-10">
+            <p class="text-xl leading-relaxed text-gray-200">
+                Searching for women's self-defence classes in Auckland
+                usually turns up two very different things: the weekend
+                workshop, and the ongoing class at a martial arts club.
+                They are not the same product, and it is worth
+                understanding the difference before you choose either one.
+            </p>
+            <p class="leading-relaxed">
+                Both have their place. A workshop can be a good starting
+                point if you have never trained before and want a low-key
+                introduction. But if the goal is genuine, lasting
+                capability — the kind that is still there six months later,
+                under pressure — that comes from a different approach
+                altogether.
+            </p>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    One-Off Workshop or Regular Training?
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    A single self-defence workshop has a real place — it can
+                    raise awareness and introduce a few basic ideas in a
+                    couple of hours. What it cannot do is turn a technique
+                    into something your body does automatically. That takes
+                    repetition, over weeks and months, not an afternoon.
+                </p>
+                <p class="leading-relaxed mb-4">
+                    Regular Taekwondo training gives you that repetition
+                    without it feeling like a chore, because you are
+                    training for fitness, skill and enjoyment at the same
+                    time, and the self-defence value builds in the
+                    background as a by-product of consistent classes.
+                </p>
+                <p class="leading-relaxed">
+                    Think of it less as "self-defence training" in the
+                    dedicated sense, and more as regular martial arts
+                    training that happens to make you harder to catch off
+                    guard, physically stronger, and more comfortable moving
+                    under pressure — all of which are useful well beyond any
+                    single situation.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    What Transfers from Taekwondo to Real Situations
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    Taekwondo is not designed as a self-defence system first,
+                    but several parts of regular training carry over
+                    directly into real-world awareness and capability:
+                </p>
+                <div class="grid md:grid-cols-3 gap-6">
+                    {
+                        [
+                            {
+                                title: "Distance",
+                                desc: "Sparring trains you to read and control the space between yourself and another person — instinctively knowing when someone is too close is one of the most practical skills training builds.",
+                            },
+                            {
+                                title: "Kicks",
+                                desc: "Taekwondo's strength is powerful, fast kicks that use the longest limb available and do not rely on matching an opponent's size or strength.",
+                            },
+                            {
+                                title: "Awareness",
+                                desc: "Regular training sharpens general body awareness and composure under pressure, built gradually through sparring against a moving, resisting partner.",
+                            },
+                        ].map((item) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 class="font-oswald font-bold text-white uppercase text-lg mb-2">
+                                    {item.title}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {item.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+                <p class="leading-relaxed mt-4">
+                    None of this is about training to expect danger. It is
+                    about steady, ordinary classes that happen to build
+                    useful skills alongside fitness and confidence.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    Starting at Any Fitness Level
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    You do not need any martial arts background, or any
+                    particular level of fitness, to start. Superior
+                    Taekwondo's Adults class runs Tuesday at 9:00am, and
+                    adults are also welcome in any 12+ evening class, so you
+                    can pick whichever fits your week.
+                </p>
+                <p class="leading-relaxed mb-4">
+                    Classes build fitness and technique together, at a pace
+                    set by the group, not by whoever is fittest in the room.
+                    You can see exactly when each class runs on the full
+                    <a href="/classes/" class="text-blue-belt-end hover:underline">class timetable</a>
+                    before you commit to anything.
+                </p>
+                <p class="leading-relaxed">
+                    If you have never done any martial arts before, that is
+                    completely normal in an adult class — most people
+                    starting out are in the same position, working from
+                    fundamentals like stance, basic kicks and simple
+                    drills before anything resembling sparring is
+                    introduced. Nobody is expected to arrive fit or
+                    experienced.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    Training with Other Women and Families
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    Superior Taekwondo's adult classes are mixed, and many
+                    of the women who train with us are there for the same
+                    combination of fitness, confidence and self-defence
+                    value. Head coach Andrea Kilday is a 3rd Dan, World
+                    Taekwondo (WT) Level 2 coach who competed at the Rio
+                    2016 Olympics and won gold at the 2015 Pacific Games,
+                    and coaches every class on the timetable herself.
+                </p>
+                <p class="leading-relaxed mb-4">
+                    The club also runs a Friday Superior Family Class for
+                    households who want to train together, which is worth
+                    knowing about if self-defence is something you would
+                    rather build as a family habit than a solo one.
+                </p>
+                <p class="leading-relaxed">
+                    Training alongside other women who started in the same
+                    position — new to martial arts, unsure what to expect —
+                    tends to make the first few weeks easier. Nobody in an
+                    adult class is judging anyone else's fitness or
+                    experience; most people in the room are simply working
+                    through the same early stage you are.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    Your First Class Is Free
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    The most useful way to find out whether this kind of
+                    training suits you is to try a class. Superior
+                    Taekwondo's first class is free, with no obligation
+                    afterwards. From there, one session a week starts from
+                    $30, or $40 a week for unlimited classes, plus a
+                    one-off $25 sign-up fee.
+                </p>
+                <p class="leading-relaxed mb-4">
+                    The dojang is at 94 Mill Road, Helensville, with parking
+                    at the door, and the club holds a 5.0 rating from 23
+                    Google reviews from students training across North West
+                    Auckland.
+                </p>
+                <p class="leading-relaxed">
+                    There is no pressure to sign up on the spot. The point
+                    of a free first class is simply to let you see how a
+                    session runs, meet the coach, and decide for yourself
+                    whether it is the right fit, before you spend anything
+                    at all.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    Frequently Asked Questions
+                </h2>
+                <div class="space-y-6">
+                    {
+                        faqs.map((faq) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 class="font-oswald font-bold text-white text-lg mb-2">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {faq.answer}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section
+                class="text-center bg-white/5 border border-blue-belt-end/20 rounded-2xl p-10"
+            >
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    Start with a Free Class
+                </h2>
+                <p class="text-gray-300 mb-8 max-w-xl mx-auto">
+                    Tuesday 9:00am, or any 12+ evening class. Olympian-coached,
+                    in Helensville. No experience or fitness level required.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button href="/contact/#trial" variant="primary"
+                        >Book Your Free Trial</Button
+                    >
+                    <Button href="/classes/" variant="secondary"
+                        >View Class Timetable</Button
+                    >
+                </div>
+            </section>
+        </div>
+
+        <RelatedContent
+            posts={[
+                {
+                    title: "Self-Defence Classes Auckland: What Actually Works",
+                    slug: "self-defence-auckland",
+                },
+                {
+                    title: "Adult Taekwondo: Fitness, Confidence & Self-Defence",
+                    slug: "adult-taekwondo-fitness",
+                },
+                {
+                    title: "Kids' Martial Arts in West Auckland: How to Choose a Club",
+                    slug: "kids-martial-arts-west-auckland",
+                },
+            ]}
+            actions={[
+                { label: "View Class Schedule", href: "https://superior-taekwondo.gymdesk.com/schedule" },
+                { label: "See Pricing", href: "/pricing/" },
+            ]}
+        />
+    </main>
+    <Footer />
+</Layout>

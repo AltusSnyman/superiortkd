@@ -1,5 +1,4 @@
 ---
-import LazyThreeBackground from "./LazyThreeBackground.jsx";
 import Button from "./Button.astro";
 
 interface Props {
@@ -31,11 +30,11 @@ const { title, subtitle, image = "/images/hero-poster.webp" } = Astro.props;
         </div>
     </div>
 
-    <!-- 3D Background Layer (Overlay) -->
+    <!-- CSS Glow Background Layer (Overlay) — pure CSS, no JS -->
     <div
-        class="absolute inset-0 z-0 opacity-60 mix-blend-plus-lighter pointer-events-none hidden md:block"
+        class="absolute inset-0 z-0 opacity-60 mix-blend-plus-lighter pointer-events-none hidden md:block hero-css-glow"
+        aria-hidden="true"
     >
-        <LazyThreeBackground client:only="react" />
     </div>
 
     <div
@@ -63,3 +62,51 @@ const { title, subtitle, image = "/images/hero-poster.webp" } = Astro.props;
         </div>
     </div>
 </section>
+
+<style>
+    .hero-css-glow {
+        background:
+            radial-gradient(
+                circle at 30% 25%,
+                rgba(0, 229, 255, 0.35),
+                transparent 55%
+            ),
+            radial-gradient(
+                circle at 75% 75%,
+                rgba(0, 31, 63, 0.65),
+                transparent 60%
+            ),
+            var(--color-deep-space-black, #000000);
+    }
+
+    .hero-css-glow::after {
+        content: "";
+        position: absolute;
+        inset: -20%;
+        background: radial-gradient(
+            circle at 50% 50%,
+            rgba(0, 229, 255, 0.25),
+            transparent 60%
+        );
+        filter: blur(60px);
+        animation: hero-glow-drift 12s ease-in-out infinite;
+    }
+
+    @keyframes hero-glow-drift {
+        0%,
+        100% {
+            transform: scale(1) translate(0, 0);
+            opacity: 0.6;
+        }
+        50% {
+            transform: scale(1.15) translate(3%, -3%);
+            opacity: 0.9;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .hero-css-glow::after {
+            animation: none;
+        }
+    }
+</style>

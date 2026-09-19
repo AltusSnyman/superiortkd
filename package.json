@@ -6,18 +6,17 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "schedule:fetch": "node scripts/fetch-schedule.mjs",
+    "schedule:check": "node scripts/fetch-schedule.mjs --check"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.7.0",
     "@number-flow/react": "^0.5.11",
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.5.0",
     "@tailwindcss/vite": "^4.1.18",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@types/three": "^0.182.0",
     "astro": "^5.18.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.34.0",
@@ -26,7 +25,6 @@
     "react-dom": "^19.2.4",
     "sharp": "^0.34.5",
     "tailwind-merge": "^3.4.0",
-    "tailwindcss": "^4.1.18",
-    "three": "^0.182.0"
+    "tailwindcss": "^4.1.18"
   }
 }

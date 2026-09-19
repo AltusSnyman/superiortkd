@@ -1,9 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import LocationHero from "../../components/LocationHero.astro";
 import Footer from "../../components/Footer.astro";
 import Button from "../../components/Button.astro";
+import ClassFinder from "../../components/ClassFinder.astro";
 import { locationData } from "../../lib/locationData";
+import exteriorImg from "../../assets/dojang/dojang-exterior.jpg";
+import interiorImg from "../../assets/dojang/dojang-interior-1.jpg";
 
 export function getStaticPaths() {
     return locationData.map((location) => ({
@@ -13,6 +17,11 @@ export function getStaticPaths() {
 }
 
 const { location } = Astro.props;
+
+// The driveTime field is stored lower-case (it's mid-sentence in most
+// places it's used); capitalise it only where it opens a sentence, without
+// altering the verbatim wording.
+const driveTimeSentence = `${location.driveTime.charAt(0).toUpperCase()}${location.driveTime.slice(1)}`;
 
 // The shared Layout already emits the site-wide local-business schema block,
 // so this page only needs the FAQPage schema — a duplicate business-schema
@@ -143,6 +152,56 @@ const breadcrumbs = [
                 </div>
             </section>
 
+            <!-- Getting Here (drive time + exterior photo) -->
+            <section class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="rounded-2xl overflow-hidden border border-white/10">
+                    <Image
+                        src={exteriorImg}
+                        alt="The Superior Taekwondo dojang building and signage at 94 Mill Road, Helensville"
+                        width={768}
+                        height={1024}
+                        loading="lazy"
+                        decoding="async"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <div>
+                    <h2
+                        class="text-2xl md:text-3xl font-bold font-oswald text-white mb-6 uppercase"
+                    >
+                        {location.gettingHere.title}
+                    </h2>
+                    <div class="space-y-4 text-lg leading-relaxed">
+                        {
+                            location.gettingHere.content.map((paragraph) => (
+                                <p>{paragraph}</p>
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
+
+            <!-- Classes that suit families from this place -->
+            <section class="max-w-4xl mx-auto">
+                <h2
+                    class="text-2xl md:text-3xl font-bold font-oswald text-white mb-6 uppercase"
+                >
+                    {location.classesForFamilies.title}
+                </h2>
+                <div class="space-y-4 text-lg leading-relaxed">
+                    {
+                        location.classesForFamilies.content.map((paragraph) => (
+                            <p>{paragraph}</p>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- ClassFinder table -->
+            <section class="max-w-5xl mx-auto">
+                <ClassFinder />
+            </section>
+
             <!-- History Section -->
             <section class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="order-2 md:order-1 relative">
@@ -168,14 +227,16 @@ const breadcrumbs = [
                     </div>
                 </div>
                 <div class="order-1 md:order-2 space-y-6">
-                    <!-- Placeholder for an image or graphic -->
-                    <div
-                        class="aspect-video bg-gradient-to-br from-white/5 to-white/10 rounded-2xl border border-white/10 flex items-center justify-center p-8"
-                    >
-                        <span
-                            class="text-white/20 font-oswald text-4xl uppercase text-center"
-                            >Constructing Champions</span
-                        >
+                    <div class="aspect-video rounded-2xl overflow-hidden border border-white/10">
+                        <Image
+                            src={interiorImg}
+                            alt="Students training on the mat inside the Superior Taekwondo dojang in Helensville"
+                            width={1024}
+                            height={576}
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full h-full object-cover"
+                        />
                     </div>
                 </div>
             </section>
@@ -264,12 +325,12 @@ const breadcrumbs = [
                             <h3
                                 class="text-xl font-bold font-oswald text-white mb-4 uppercase"
                             >
-                                {location.weatherImpact.title}
+                                Drive time
                             </h3>
                             <p
                                 class="text-sm leading-relaxed p-6 bg-black/30 rounded-xl border-l-4 border-blue-belt-start"
                             >
-                                {location.weatherImpact.content}
+                                {driveTimeSentence}. We're at 94 Mill Road, Helensville, with parking at the door.
                             </p>
                         </div>
 

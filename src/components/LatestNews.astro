@@ -1,33 +1,34 @@
 ---
-import { Image } from "astro:assets";
-import beginnersHero from "../assets/blog/blog_beginners_hero.png";
-import olympicHero from "../assets/blog/blog_olympic_hero.png";
-import tournamentHero from "../assets/blog/blog_tournament_hero.png";
-
 const posts = [
     {
-        title: "How to Choose a Taekwondo Club in Auckland",
-        slug: "how-to-choose-a-taekwondo-club",
+        title: "After-School Activities in Kumeū: Is Taekwondo Right for Your Child?",
+        slug: "after-school-activities-kumeu",
         excerpt:
-            "Not all clubs are equal. Here are the 7 questions every parent and adult should ask before joining — including one most people never think to ask.",
-        category: "Advice",
-        image: beginnersHero,
+            "Weighing after-school options in Kumeū and Huapai? What Taekwondo gives kids from age 4, and how the Helensville dojang fits a school run.",
+        category: "For Parents",
+        imageSrc: "/images/blog/after-school-activities-kumeu-hero-1600.webp",
+        imageAlt:
+            "A quiet New Zealand suburban street in the late afternoon with school bags on a porch bench",
     },
     {
-        title: "Adult Taekwondo: Fitness & Self-Defence",
-        slug: "adult-taekwondo-fitness",
+        title: "Kids' Martial Arts in West Auckland: How to Choose a Club",
+        slug: "kids-martial-arts-west-auckland",
         excerpt:
-            "Burn 400–700 cal per session, build real strength, and develop self-defence capability. No experience needed — Olympian-coached.",
-        category: "Fitness",
-        image: olympicHero,
+            "Karate, Taekwondo or MMA for your child? A parent's guide to what each teaches and what to look for in a coach.",
+        category: "For Parents",
+        imageSrc: "/images/blog/kids-martial-arts-west-auckland-hero-1600.webp",
+        imageAlt:
+            "A row of coloured martial-arts belts, white through to black, folded on a wooden bench",
     },
     {
-        title: "Self-Defence Classes Auckland",
-        slug: "self-defence-auckland",
+        title: "Women's Self-Defence Classes in Auckland",
+        slug: "womens-self-defence-classes-auckland",
         excerpt:
-            "Skip the one-day seminars. Here is why structured Taekwondo training is the only realistic path to genuine self-defence capability.",
+            "Why regular training beats a one-off workshop, and what Taekwondo teaches that actually transfers.",
         category: "Self-Defence",
-        image: tournamentHero,
+        imageSrc: "/images/blog/womens-self-defence-classes-auckland-hero-1600.webp",
+        imageAlt:
+            "Red kick pads and a water bottle on a blue mat at the edge of an empty training hall",
     },
 ];
 ---
@@ -64,9 +65,9 @@ const posts = [
                         class="group block bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-blue-belt-end/50 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2"
                     >
                         <div class="h-48 bg-gradient-to-br from-gray-800 to-black relative overflow-hidden">
-                            <Image
-                                src={post.image}
-                                alt={post.title}
+                            <img
+                                src={post.imageSrc}
+                                alt={post.imageAlt}
                                 width={403}
                                 height={192}
                                 loading="lazy"

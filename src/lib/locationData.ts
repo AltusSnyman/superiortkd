@@ -8,6 +8,18 @@ export interface LocationData {
     heroImage: string;
     introTitle: string;
     introContent: string[]; // Array of paragraphs
+    // Verbatim drive-time claim for this place, lower-case start (capitalise
+    // when it opens a sentence). One of the fixed set from the copy brief —
+    // never invent a more precise number or a distance in km.
+    driveTime: string;
+    gettingHere: {
+        title: string;
+        content: string[];
+    };
+    classesForFamilies: {
+        title: string;
+        content: string[];
+    };
     historyTitle: string;
     historyContent: string[];
     whyChooseUs: {
@@ -24,10 +36,6 @@ export interface LocationData {
         neighborhoods: string[];
         majorRoutes: string[];
     };
-    weatherImpact: {
-        title: string;
-        content: string;
-    };
     faq: {
         question: string;
         answer: string;
@@ -38,39 +46,54 @@ export const locationData: LocationData[] = [
     {
         slug: "helensville",
         title: "Taekwondo Classes in Helensville | Superior Taekwondo",
-        metaDescription: "Taekwondo training in Helensville at 94 Mill Road. Build confidence and discipline with Olympian-led coaching. Your first class is free.",
+        metaDescription: "Taekwondo training in Helensville at 94 Mill Road. Kids from age 4, teens and adults, coached by a 2016 Olympian. Your first class is free.",
         heroImage: "/images/locations/helensville-hero.webp",
-        introTitle: "Helensville's Premier Martial Arts Academy",
+        introTitle: "Taekwondo training in the middle of Helensville",
         introContent: [
-            "Superior Taekwondo is proud to call Helensville home. Located at 94 Mill Road, our dojang sits at the heart of this historic township, serving the community with world-class martial arts training. Since our establishment, we have been dedicated to constructing champions not just in sport, but in life, right here in the Kaipara District.",
-            "Helensville is known for its strong community spirit and rich heritage, values that align perfectly with the tenets of Taekwondo: Courtesy, Integrity, Perseverance, Self-Control, and Indomitable Spirit. Our classes cater to all ages and skill levels, from young beginners taking their first steps on the mat to seasoned athletes aiming for the national stage.",
-            "We understand the unique rhythm of life in Helensville. Whether you're commuting back from the city or working locally in our thriving rural industries, our class schedules are designed to fit your busy lifestyle. We provide a supportive, disciplined environment where students can escape the daily grind and focus on personal growth."
+            "Superior Taekwondo trains at 94 Mill Road, Helensville, just off Commercial Road in the middle of town. We're a World Taekwondo club, and we've trained here since 2016 — no branch, no franchise, just the one dojang.",
+            "Every class is led by head coach Andrea Kilday, a 3rd Dan black belt, WT Level 2 coach and 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, older kids and teens move through Youth Superior Legends and the Cadets, Juniors and Seniors classes, and adults train alongside them on Tuesday mornings and Friday evenings.",
+            "If you're already in Helensville, this is the closest training on offer — no highway drive, just parking at the door. Sessions start at $30 a week for one class or $40 a week for unlimited training, with sibling tiers at $55, $70, $80 and $90 a week for families with more than one child on the mat. We're rated 5.0 from 23 Google reviews, and your first class is free."
         ],
-        historyTitle: "A Legacy in the Kaipara District",
+        driveTime: "in town, a few minutes from Commercial Road",
+        gettingHere: {
+            title: "Getting here from Helensville",
+            content: [
+                "We're in town, a few minutes from Commercial Road. 94 Mill Road has parking right at the door, so you can pull in, walk your child to the mat and be back in the car within a couple of minutes.",
+                "There's no highway leg for local families — Mill Road runs through the middle of Helensville, and the dojang is easy to find on a first visit. If you have questions before you come in, call 027 520 1613, or check the live class timetable and book online at superior-taekwondo.gymdesk.com."
+            ]
+        },
+        classesForFamilies: {
+            title: "Classes that suit families from Helensville",
+            content: [
+                "Because you're already in town, the school run isn't the obstacle it can be for families driving in from further out. Little Superior Legends runs 4:00–4:40pm (ages 4–5) and Youth Superior Legends 4:45–5:30pm (ages 6–11), Monday to Thursday, so most primary-aged kids can go straight from school to the mat.",
+                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train Tuesday mornings, 9:00–10:00am, or join the whole family on Friday at 4:30–5:30pm for the Superior Family Class. Saturday mornings have the Fitness Circuit Class at 9:15am and the Performance Pathway squad from 10:15am to 12:45pm for students working toward competition."
+            ]
+        },
+        historyTitle: "One dojang, since 2016",
         historyContent: [
-            "Helensville has a storied past, from its origins as a timber milling town to its status today as a vibrant rural hub. Just as the town has evolved, so too has the martial arts landscape. Superior Taekwondo brings modern, Olympic-style training to the region, bridging the gap between traditional discipline and contemporary athletic performance.",
-            "Our presence in Helensville is more than just a business; it's a commitment to the future of our local youth. We have seen countless students from local schools like Helensville Primary and Kaipara College walk through our doors and transform into confident, respectful young leaders. We are honored to contribute to the legacy of this resilient town."
+            "Superior Taekwondo has trained at 94 Mill Road since 2016. It's a World Taekwondo club, and every class is led by head coach Andrea Kilday — a 3rd Dan black belt, WT Level 2 coach, and 2016 Rio Olympian who also won gold at the 2015 Pacific Games.",
+            "Helensville grew up as a timber and river-port town on the Kaipara Harbour, and Mill Road still runs through the centre of it. We've kept the club to one site rather than opening a second location — Helensville locals and families driving in from Kaukapakapa and Kumeū all train under the same coaching team, on the same World Taekwondo syllabus from a first white-belt class through to black belt grading."
         ],
         whyChooseUs: {
-            title: "Why Helensville Families Choose Superior Taekwondo",
+            title: "Why Helensville families choose Superior Taekwondo",
             items: [
                 {
-                    title: "Local Convenience",
-                    content: "Located directly on Mill Road, we are easily accessible for families across Helensville and Parakai. No need to battle Auckland traffic for elite training."
+                    title: "Local and close",
+                    content: "94 Mill Road is in the middle of Helensville, with parking at the door — no highway drive if you're already in town. There's extra parking on Commercial Road if the dojang car park is full."
                 },
                 {
-                    title: "Community Focus",
-                    content: "We are deeply embedded in the local community. We participate in local events and foster a family-friendly atmosphere where everyone knows your name."
+                    title: "Olympian-led coaching",
+                    content: "Every class is led by head coach Andrea Kilday, a 2016 Rio Olympian, 3rd Dan black belt and WT Level 2 coach."
                 },
                 {
-                    title: "Expert Instruction",
-                    content: "Led by Olympic-level instructors, we bring world-class expertise to our small-town setting, ensuring every student receives top-tier guidance."
+                    title: "One dojang, not a franchise",
+                    content: "One site, one coaching team, and a clear belt path from your first class through to black belt. A 10-week term is $300 for one class a week, or $400 for unlimited training."
                 }
             ]
         },
         serviceArea: {
-            title: "Serving the Entire Kaipara Region",
-            description: "While based in Helensville, our Taekwondo family extends throughout the surrounding areas. We are the central hub for martial arts education in the district.",
+            title: "Based in Helensville, serving the Kaipara district",
+            description: "We're based in the middle of Helensville, and families from across the wider Kaipara district come to the same dojang — there's no second site, and the class times and prices are the same wherever you're driving in from.",
             landmarks: [
                 "Helensville Railway Station",
                 "Kaipara River",
@@ -92,18 +115,18 @@ export const locationData: LocationData[] = [
                 "Parkhurst Road"
             ]
         },
-        weatherImpact: {
-            title: "Training Through Helensville's Changing Seasons",
-            content: "Helensville's weather can be unpredictable, from humid summers to damp winters near the Kaipara Harbour. Our facility is fully equipped to handle year-round training. We emphasize the importance of adaptability—just as we adapt to opponents in sparring, we adapt to our environment. On rainy winter nights, our dojang offers a warm, energetic refuge for constructive physical activity."
-        },
         faq: [
             {
-                question: "Where is your Helensville dojang located?",
-                answer: "We are located at 94 Mill Road, Helensville, easily accessible from the main town centre."
+                question: "How far is the dojang from Helensville?",
+                answer: "In town, a few minutes from Commercial Road. We're at 94 Mill Road, Helensville, with parking at the door."
             },
             {
-                question: "Do you have parking available?",
-                answer: "Yes, there is ample parking available for drop-offs and pick-ups."
+                question: "Which class should my child start in?",
+                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first class is free, so come and try."
+            },
+            {
+                question: "Do we have to buy a uniform before the trial?",
+                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join."
             }
         ]
     },
@@ -115,14 +138,29 @@ export const locationData: LocationData[] = [
         heroImage: "/images/locations/auckland-hero.webp",
         introTitle: "One dojang, serving Auckland's north-west",
         introContent: [
-            "We're not in the central city. Superior Taekwondo trains at one dojang at 94 Mill Road, Helensville, in Auckland's north-west up State Highway 16. Families come from Kumeū, Huapai, Waimauku, Kaukapakapa, Riverhead, Westgate and the Kaipara coast. Classes run for kids from age 4, teens and adults, six days a week, and every student is coached by a team led by 2016 Olympian Andrea Kilday. Your first class is free.",
-            "Getting to us means a drive up SH16, but families tell us it's worth it. Classes are practical: real technique, real fitness, and a clear belt path from white belt through to black, taught by a team that includes a 2016 Olympian. There's no franchise script here — just one dojang, one coaching team, and a training standard that meets World Taekwondo requirements.",
-            "We know Auckland is spread out and a Helensville address isn't for everyone. But if you're prepared to make the drive, you'll find a small, focused club rather than a big-city factory: kids' classes starting at 4pm on weekdays, a Saturday morning slot, and coaches who know every student by name."
+            "We're not in the central city. Superior Taekwondo trains at one dojang at 94 Mill Road, Helensville, up State Highway 16 from Auckland. Families come from Kumeū, Huapai, Waimauku, Kaukapakapa, Riverhead, Westgate and the Kaipara coast. Classes run for kids from age 4, teens and adults, six days a week, and every student is coached by a team led by 2016 Olympian Andrea Kilday. Your first class is free.",
+            "Getting to us means a drive up SH16, but families tell us it's worth it. Classes are practical: real technique, real fitness, and a clear belt path from white belt through to black. There's no franchise script here — just one dojang, one coaching team, and a training standard that meets World Taekwondo requirements.",
+            "Auckland is spread out and a Helensville address isn't for everyone. But if you're prepared to make the drive, you'll find a small, focused club rather than a big-city chain: kids' classes starting at 4pm on weekdays, a Saturday morning slot, and coaches who know every student by name. Sessions start at $30 a week for one class or $40 a week unlimited, with sibling tiers at $55, $70, $80 and $90 a week, and we're rated 5.0 from 23 Google reviews."
         ],
+        driveTime: "35 to 55 minutes north-west of the city on SH16, depending on where you start",
+        gettingHere: {
+            title: "Getting here from Auckland",
+            content: [
+                "From central Auckland, allow 35 to 55 minutes north-west of the city on SH16, depending on where you start and the time of day. Head out on State Highway 16 and stay on it through Westgate, Riverhead and Kumeū — Helensville is at the end of that run.",
+                "Once you reach Helensville, 94 Mill Road is easy to find, with parking right at the door. If you have questions before you make the trip, call 027 520 1613, or check the live class timetable and book online at superior-taekwondo.gymdesk.com."
+            ]
+        },
+        classesForFamilies: {
+            title: "Classes that suit families driving up from Auckland",
+            content: [
+                "A 35-to-55-minute drive makes a straight-after-school dash harder, so a lot of Auckland families use the classes that don't compete with the evening commute. The Superior Family Class runs Friday 4:30–5:30pm, and Saturday morning has the Fitness Circuit Class at 9:15am and the Performance Pathway squad from 10:15am to 12:45pm — all easier to plan around than a weekday peak-hour trip.",
+                "If you can manage the drive on a weeknight, Little Superior Legends (ages 4–5) runs 4:00–4:40pm and Youth Superior Legends (ages 6–11) 4:45–5:30pm, Monday to Thursday, with the 12-and-up class on Tuesday and Thursday, 5:30–6:30pm. Adults can also train Tuesday mornings, 9:00–10:00am, outside the school-run traffic altogether."
+            ]
+        },
         historyTitle: "One club, one address",
         historyContent: [
-            "Superior Taekwondo has always trained out of the one dojang in Helensville. We haven't tried to be a citywide chain with a branch in every suburb — instead we've focused on building a strong programme in one place and let families from across Auckland's north-west come to us.",
-            "Our instructors have trained and competed internationally, and that experience shapes the coaching here: modern, technical, and grounded in World Taekwondo standards, with a pathway from a first class through to competition."
+            "Superior Taekwondo has always trained out of the one dojang in Helensville. We're a World Taekwondo club, led by head coach Andrea Kilday — a 3rd Dan black belt, WT Level 2 coach, and 2016 Rio Olympian who also won gold at the 2015 Pacific Games.",
+            "We've never opened a branch in central Auckland. The dojang has always been at 94 Mill Road, Helensville, up SH16 from the city, and families from across the north-west make that drive rather than training at a franchise closer to home, training the same World Taekwondo syllabus from a first white-belt class through to black belt grading."
         ],
         whyChooseUs: {
             title: "Why families make the drive",
@@ -132,18 +170,18 @@ export const locationData: LocationData[] = [
                     content: "Head coach Andrea Kilday represented New Zealand at the Rio 2016 Olympics, and that standard runs through every class."
                 },
                 {
-                    title: "One dojang, no gimmicks",
-                    content: "Everyone trains at 94 Mill Road, Helensville — not a chain of franchised locations. What you see is the club you join."
+                    title: "One dojang, no franchise gimmicks",
+                    content: "Everyone trains at 94 Mill Road, Helensville — not a chain of branches. What you see is the club you join. A 10-week term is $300 for one class a week, or $400 for unlimited training."
                 },
                 {
                     title: "A class for every age",
-                    content: "Tiny Tigers from age 4, a General class for teens and adults, and a Performance Pathway for students who want to compete."
+                    content: "Little Superior Legends from age 4, Youth and 12+ classes for kids and teens, and an Adults class for parents who want to train too. Andrea Kilday holds a 3rd Dan black belt and a WT Level 2 coaching qualification."
                 }
             ]
         },
         serviceArea: {
             title: "Where our Auckland families come from",
-            description: "We're based in Helensville, up SH16 from the city. Families who train with us travel in from across Auckland's north-west.",
+            description: "We're based in Helensville, up SH16 from the city. Families who train with us travel in from across Auckland's north-west, and the same class times and pricing apply no matter which suburb you're driving in from.",
             landmarks: [
                 "Westgate Shopping Centre",
                 "Kumeu Showgrounds",
@@ -165,18 +203,18 @@ export const locationData: LocationData[] = [
                 "Coatesville-Riverhead Highway"
             ]
         },
-        weatherImpact: {
-            title: "Training through Auckland's changeable weather",
-            content: "Auckland's weather can turn quickly, especially out toward the Kaipara coast. Training indoors at our Helensville dojang means class goes ahead rain or shine, whatever it's doing on the drive up SH16."
-        },
         faq: [
             {
-                question: "Do you have a location in central Auckland?",
-                answer: "No — we train at one dojang, 94 Mill Road, Helensville, up SH16 from the city. There's no branch anywhere else in Auckland."
+                question: "How far is the dojang from central Auckland?",
+                answer: "35 to 55 minutes north-west of the city on SH16, depending on where you start. We're at 94 Mill Road, Helensville, with parking at the door."
             },
             {
-                question: "Is it worth the drive from Auckland?",
-                answer: "Families travel in from Kumeū, Huapai, Waimauku, Riverhead and further because of the coaching, not the postcode. Come try a free class and decide for yourself."
+                question: "Which class should my child start in?",
+                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first class is free, so come and try."
+            },
+            {
+                question: "Do we have to buy a uniform before the trial?",
+                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join."
             }
         ]
     },
@@ -189,34 +227,49 @@ export const locationData: LocationData[] = [
         introTitle: "Taekwondo classes for Kumeū families",
         introContent: [
             "Kumeū doesn't have its own dojang, but ours is a straightforward drive up State Highway 16 at 94 Mill Road, Helensville, with parking at the door. Kids' classes start at 4pm on weekdays, so families from Kumeū and Huapai can make it after school.",
-            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, who represented New Zealand at the Rio 2016 Olympics. Kids start in Tiny Tigers from age 4, where the focus is listening, balance, confidence and having fun in a structured class. Teens and adults train in the General class, which mixes fitness, technique and self-defence, and students who want to compete can move into the Performance Pathway squad.",
-            "Memberships start at $30 a week for one class, or $40 a week for unlimited training, with sibling discounts for families. Your first class is free: come along, meet the coaches, and see if it fits."
+            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, who represented New Zealand at the Rio 2016 Olympics. Kids start in Little Superior Legends from age 4, where the focus is listening, balance, confidence and having fun in a structured class. Teens and adults train in the 12+, Family and Adults classes, and students who want to compete can move into the Performance Pathway squad.",
+            "Sessions start at $30 a week for one class, or $40 a week for unlimited training, with sibling tiers at $55, $70, $80 and $90 a week for families with more than one child. A 10-week term is $300 for one class a week or $400 unlimited, and we're rated 5.0 from 23 Google reviews. Your first class is free: come along, meet the coaches, and see if it fits."
         ],
-        historyTitle: "Training the north-west since day one",
+        driveTime: "about 20 minutes up SH16",
+        gettingHere: {
+            title: "Getting here from Kumeū",
+            content: [
+                "From Kumeū, it's about 20 minutes up SH16 to 94 Mill Road, Helensville. Stay on State Highway 16 north-west through Huapai and Waimauku; Mill Road is on your right as you come into Helensville.",
+                "There's parking right at the door, so drop-off and pick-up is quick even on a school night. If you have questions before you visit, call 027 520 1613, or check the live class timetable and book online at superior-taekwondo.gymdesk.com."
+            ]
+        },
+        classesForFamilies: {
+            title: "Classes that suit families from Kumeū",
+            content: [
+                "Leaving Kumeū straight after school gives most families enough time to make Youth Superior Legends, 4:45–5:30pm, or the earlier Little Superior Legends session, 4:00–4:40pm, if you can get away a little sooner — both run Monday to Thursday.",
+                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train Tuesday mornings, 9:00–10:00am, or join the Superior Family Class on Friday, 4:30–5:30pm. Saturday mornings have the Fitness Circuit Class at 9:15am and the Performance Pathway squad from 10:15am to 12:45pm."
+            ]
+        },
+        historyTitle: "Training the north-west since 2016",
         historyContent: [
-            "Superior Taekwondo has never had a branch in Kumeū — our dojang has always been the one at 94 Mill Road, Helensville. Kumeū and Huapai families have simply made the short trip up SH16 part of their week.",
-            "As Kumeū and Huapai have grown, so has the number of families making that drive. We've kept the club to one site rather than opening a second location, so every student trains under the same coaching team."
+            "Superior Taekwondo has trained at 94 Mill Road, Helensville since 2016. It's a World Taekwondo club led by head coach Andrea Kilday — a 3rd Dan black belt, WT Level 2 coach, and 2016 Rio Olympian.",
+            "We've never opened a second site in Kumeū or Huapai. The dojang has always been at 94 Mill Road, and families from both townships make the run up SH16 rather than training at a franchise closer to home, on the same World Taekwondo syllabus from a first white-belt class through to black belt grading."
         ],
         whyChooseUs: {
             title: "Why Kumeū families choose Superior Taekwondo",
             items: [
                 {
-                    title: "Easy drive up SH16",
-                    content: "94 Mill Road, Helensville is a straightforward run up State Highway 16, with parking at the door."
+                    title: "A short run up SH16",
+                    content: "94 Mill Road, Helensville is about 20 minutes up State Highway 16, with parking at the door. A 10-week term is $300 for one class a week, or $400 for unlimited training."
                 },
                 {
                     title: "Olympian-led team",
-                    content: "Head coach Andrea Kilday represented New Zealand at the Rio 2016 Olympics, leading a team that coaches every belt level."
+                    content: "Head coach Andrea Kilday represented New Zealand at the Rio 2016 Olympics — she holds a 3rd Dan black belt and a WT Level 2 coaching qualification, and leads a team that coaches every belt level."
                 },
                 {
                     title: "Classes for the whole family",
-                    content: "Tiny Tigers from age 4, a General class for teens and adults, and sibling discounts for families training together."
+                    content: "Little Superior Legends from age 4, classes for teens and adults, and sibling discounts for families training together. We're rated 5.0 from 23 Google reviews."
                 }
             ]
         },
         serviceArea: {
             title: "Serving Kumeū and Huapai",
-            description: "We don't have a dojang in Kumeū — everyone trains at 94 Mill Road, Helensville, up SH16. Here's what that drive looks like from around Kumeū and Huapai.",
+            description: "We don't have a dojang in Kumeū — everyone trains at 94 Mill Road, Helensville, up SH16. Here's what that drive looks like from around Kumeū and Huapai, and the class times and pricing are the same for both townships. If a weekly class doesn't suit, a 10-session concession card is $285 and can be used at any class on the timetable.",
             landmarks: [
                 "Kumeu Showgrounds",
                 "Kumeū Village",
@@ -232,61 +285,72 @@ export const locationData: LocationData[] = [
                 "State Highway 16"
             ]
         },
-        weatherImpact: {
-            title: "Training whatever Kumeū's weather is doing",
-            content: "Kumeū's weather can shift fast, especially heading into the wetter months. Training indoors at our Helensville dojang means class goes ahead as planned, whatever the drive up SH16 looks like that day."
-        },
         faq: [
             {
-                question: "Where is the nearest class to Kumeū?",
-                answer: "Our dojang is at 94 Mill Road, Helensville, up SH16 from Kumeū."
+                question: "How far is the dojang from Kumeū?",
+                answer: "About 20 minutes up SH16. We're at 94 Mill Road, Helensville, with parking at the door."
             },
             {
-                question: "What age can my child start?",
-                answer: "Tiny Tigers takes children from age 4. Teens and adults join the General class."
+                question: "Which class should my child start in?",
+                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first class is free, so come and try."
             },
             {
-                question: "Do I need any gear for the free trial?",
-                answer: "No. Wear comfortable sports clothes and bring water. Uniforms are arranged after you join."
+                question: "Do we have to buy a uniform before the trial?",
+                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join."
             }
         ]
     },
     {
         slug: "kaukapakapa",
         title: "Taekwondo Classes for Kaukapakapa | Superior Taekwondo",
-        metaDescription: "Martial arts training for the Kaukapakapa community. Develop focus and strength with Superior Taekwondo. Local classes for kids and adults.",
+        metaDescription: "Taekwondo for Kaukapakapa families: about 15 minutes down the Kaipara Coast Highway to 94 Mill Road, Helensville. Kids from age 4. Free trial class.",
         heroImage: "/images/locations/kaukapakapa-hero.webp",
-        introTitle: "Martial Arts for the Kaukapakapa Community",
+        introTitle: "Taekwondo for Kaukapakapa families",
         introContent: [
-            "Kaukapakapa is a growing community that values its rural roots. We don't have a dojang in the village — families from Kaukapakapa train with us at our Helensville dojang, a short drive down SH16. It's become a local activity for many 'Kau' families: character, fitness and community connections, just a few minutes from home.",
-            "For families in Kaukapakapa, finding quality extracurricular activities often means a long drive. We bridge that gap by being easily accessible via SH16. Our classes offer a constructive outlet for energy, teaching children respect and discipline, while offering adults a challenging way to stay fit and focused.",
-            "The 'Kau' spirit of resilience and neighborliness is something we cherish. Our dojang is an extension of that community spirit—a place where everyone supports each other's journey to black belt and beyond. We are building a tribe of strong, confident individuals right here in the North West."
+            "Kaukapakapa doesn't have its own dojang — families from the village train with us at 94 Mill Road, Helensville, a short drive down the Kaipara Coast Highway. It's become a regular part of the week for a number of local families: a structured class, a free trial, and parking at the door.",
+            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving through Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train alongside them on Tuesday mornings and at the Friday Family Class.",
+            "Because the drive is short, the weekday classes are realistic even after a full day at school or work — and Saturday morning is there for families who'd rather not do a weeknight trip at all. Sessions start at $30 a week for one class or $40 a week unlimited, with sibling tiers at $55, $70, $80 and $90 a week, and we're rated 5.0 from 23 Google reviews."
         ],
-        historyTitle: "Deep Roots in the North West",
+        driveTime: "about 15 minutes down the Kaipara Coast Highway",
+        gettingHere: {
+            title: "Getting here from Kaukapakapa",
+            content: [
+                "From Kaukapakapa, it's about 15 minutes down the Kaipara Coast Highway to 94 Mill Road, Helensville. The route is a straightforward run south on SH16 — no turns to think about.",
+                "Parking is at the door, so there's no need to find street parking in town once you arrive. If you have questions before you come in, call 027 520 1613, or check the live class timetable and book online at superior-taekwondo.gymdesk.com."
+            ]
+        },
+        classesForFamilies: {
+            title: "Classes that suit families from Kaukapakapa",
+            content: [
+                "A 15-minute drive down the highway still leaves room for the after-school classes: Little Superior Legends runs 4:00–4:40pm (ages 4–5) and Youth Superior Legends 4:45–5:30pm (ages 6–11), Monday to Thursday.",
+                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train Tuesday mornings, 9:00–10:00am, or join the Superior Family Class on Friday, 4:30–5:30pm. Saturday has the Fitness Circuit Class at 9:15am and the Performance Pathway squad from 10:15am to 12:45pm, both a shorter round trip on a weekend."
+            ]
+        },
+        historyTitle: "Serving Kaukapakapa since 2016",
         historyContent: [
-            "Kaukapakapa has a deep history, from its early days of kauri milling to its modern vitality. As the area expands with new developments, the need for community anchors becomes stronger. Superior Taekwondo serves as one of those anchors, providing consistency and tradition in a changing world.",
-            "We honor the history of the region by fostering a culture of profound respect. Our students learn to respect their history, their instructors, and most importantly, themselves. We are proud to be the martial arts provider for the next generation of Kaukapakapa residents."
+            "Superior Taekwondo has trained at 94 Mill Road, Helensville since 2016. It's a World Taekwondo club led by head coach Andrea Kilday — a 3rd Dan black belt, WT Level 2 coach, and 2016 Rio Olympian.",
+            "Kaukapakapa sits on the Kaipara Coast Highway north of Helensville, close to the Kaipara Coast Sculpture Gardens and Kaukapakapa School. We've never opened a dojang in the village — families make the short drive down SH16 to train at 94 Mill Road instead, on the same World Taekwondo syllabus from a first white-belt class through to black belt grading."
         ],
         whyChooseUs: {
-            title: "Perfect for Kaukapakapa Residents",
+            title: "Why Kaukapakapa families choose Superior Taekwondo",
             items: [
                 {
-                    title: "Short drive down SH16",
-                    content: "94 Mill Road, Helensville is a short, easy drive down SH16 from Kaukapakapa — the closest dojang for local families."
+                    title: "A short drive down the highway",
+                    content: "94 Mill Road, Helensville is about 15 minutes down the Kaipara Coast Highway — the closest dojang for local families. A 10-week term is $300 for one class a week, or $400 for unlimited training."
                 },
                 {
-                    title: "Values-Based Training",
-                    content: "We reinforce the strong family values that the Kaukapakapa community is known for."
+                    title: "Olympian-led coaching",
+                    content: "Head coach Andrea Kilday represented New Zealand at the Rio 2016 Olympics — she holds a 3rd Dan black belt and a WT Level 2 coaching qualification, and leads a team that coaches every belt level."
                 },
                 {
-                    title: "Safe Environment",
-                    content: "A safe, structured environment for kids to learn self-defense and confidence."
+                    title: "Kids from age 4",
+                    content: "Little Superior Legends is a structured, age-appropriate starting point for younger children, four days a week, with sibling discounts once more than one child joins."
                 }
             ]
         },
         serviceArea: {
-            title: "Services for Kaukapakapa & Surrounds",
-            description: "We proudly serve the wider Kaukapakapa area, welcoming students from the village and surrounding lifestyle blocks who train with us at our Helensville dojang.",
+            title: "Serving Kaukapakapa and surrounds",
+            description: "We don't have a dojang in Kaukapakapa — the village and surrounding lifestyle blocks train with us at 94 Mill Road, Helensville, down the Kaipara Coast Highway. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $285 and can be used at any class on the timetable.",
             landmarks: [
                 "Omeru Scenic Reserve",
                 "Kaipara Coast Sculpture Gardens",
@@ -305,62 +369,76 @@ export const locationData: LocationData[] = [
                 "Peak Road"
             ]
         },
-        weatherImpact: {
-            title: "Training for All Conditions",
-            content: "Living in a rural setting like Kaukapakapa means being in touch with the elements. Our indoor training provides consistency regardless of the weather, ensuring that fitness goals aren't derailed by rain or winter darkness. It's the perfect year-round activity."
-        },
         faq: [
             {
-                question: "How far is the drive from Kaukapakapa?",
-                answer: "It's a quick and scenic drive south on SH16, usually taking less than 10-15 minutes."
+                question: "How far is the dojang from Kaukapakapa?",
+                answer: "About 15 minutes down the Kaipara Coast Highway. We're at 94 Mill Road, Helensville, with parking at the door."
             },
             {
-                question: "Are there classes for young children?",
-                answer: "Yes, we have age-specific classes at our Helensville dojang perfect for primary school aged children."
+                question: "Which class should my child start in?",
+                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first class is free, so come and try."
+            },
+            {
+                question: "Do we have to buy a uniform before the trial?",
+                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join."
             }
         ]
     },
     {
         slug: "waimauku",
         title: "Waimauku Taekwondo Classes | Superior Taekwondo",
-        metaDescription: "Empowering Waimauku families through Taekwondo. Expert martial arts tuition for kids and adults. Join our supportive North West community.",
+        metaDescription: "Taekwondo for Waimauku families: about 10 minutes up SH16 to 94 Mill Road, Helensville. Kids from age 4, Olympian-led coaching. Free trial class.",
         heroImage: "/images/locations/waimauku-hero.webp",
-        introTitle: "Empowering the Waimauku Community",
+        introTitle: "Taekwondo for Waimauku families",
         introContent: [
-            "Waimauku is known for its beautiful vineyards, lifestyle blocks, and strong family focus. We don't train in Waimauku itself — families from Waimauku train with us at our Helensville dojang, a short drive down SH16. It fits well alongside the area's goal-oriented, community-minded pace of life.",
-            "We understand that Waimauku residents value quality and authenticity. That's exactly what we deliver. Our curriculum is authentic World Taekwondo, taught by instructors who are passionate about their craft. We offer a structured path to success that resonates with the goal-oriented nature of the local community.",
-            "From fresh-faced beginners to serious competitors, our Waimauku students are some of our most dedicated. The short commute to our dojang makes it easy to integrate training into a weekly routine, providing a consistent foundation for personal development and physical fitness."
+            "Waimauku doesn't have its own dojang — we train out of 94 Mill Road, Helensville, one of the shortest drives of any of our catchment areas. Families from Waimauku, School Road and out toward Muriwai make the trip up SH16 as part of a normal week.",
+            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving into Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train Tuesday mornings, and the whole family can train together on Friday afternoons.",
+            "Sessions start at $30 a week for one class, or $40 a week unlimited, with sibling tiers at $55, $70, $80 and $90 a week for families training together. A 10-week term is $300 for one class a week or $400 unlimited, and we're rated 5.0 from 23 Google reviews. Your first class is free."
         ],
-        historyTitle: "A Tradition of Strength",
+        driveTime: "about 10 minutes up SH16",
+        gettingHere: {
+            title: "Getting here from Waimauku",
+            content: [
+                "From Waimauku, it's about 10 minutes up SH16 to 94 Mill Road, Helensville — one of the shorter drives on our books. Head north-west on State Highway 16 and you're at the door within minutes.",
+                "Parking is right outside, so there's no need to look for street parking once you arrive. If you have questions before you visit, call 027 520 1613, or check the live class timetable and book online at superior-taekwondo.gymdesk.com."
+            ]
+        },
+        classesForFamilies: {
+            title: "Classes that suit families from Waimauku",
+            content: [
+                "A 10-minute run up SH16 makes the after-school classes easy: Little Superior Legends, 4:00–4:40pm (ages 4–5), and Youth Superior Legends, 4:45–5:30pm (ages 6–11), both run Monday to Thursday.",
+                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train Tuesday mornings, 9:00–10:00am, or join the Superior Family Class on Friday, 4:30–5:30pm. Saturday mornings have the Fitness Circuit Class at 9:15am and the Performance Pathway squad from 10:15am to 12:45pm."
+            ]
+        },
+        historyTitle: "Serving Waimauku since 2016",
         historyContent: [
-            "Waimauku has evolved from a farming settlement to a sought-after lifestyle destination. Throughout this change, the desire for strong community activities has remained constant. Superior Taekwondo provides a modern 'village square'—a place where neighbors train together and support one another.",
-            "We are committed to upholding the tradition of strength and resilience. In a world of instant gratification, we teach the value of long-term dedication. This philosophy aligns perfectly with the hardworking spirit of the Waimauku region."
+            "Superior Taekwondo has trained at 94 Mill Road, Helensville since 2016. It's a World Taekwondo club led by head coach Andrea Kilday — a 3rd Dan black belt, WT Level 2 coach, and 2016 Rio Olympian.",
+            "Waimauku sits on SH16 between Kumeū and Helensville, close to Muriwai Beach and Waimauku School. We've never opened a dojang in the village — families make the short run up SH16 to train at 94 Mill Road instead, on the same World Taekwondo syllabus from a first white-belt class through to black belt grading, taught by the same coaching team every family trains under, wherever in the north-west they start from."
         ],
         whyChooseUs: {
-            title: "The Choice for Waimauku",
+            title: "Why Waimauku families choose Superior Taekwondo",
             items: [
                 {
-                    title: "Quality Instruction",
-                    content: "Waimauku parents expect the best, and we deliver with certified, experienced instructors."
+                    title: "One of the shorter drives",
+                    content: "94 Mill Road, Helensville is about 10 minutes up SH16 from Waimauku, with parking right at the door. A 10-week term is $300 for one class a week, or $400 for unlimited training."
                 },
                 {
-                    title: "Character Building",
-                    content: "Our focus on respect and integrity mirrors the values taught in local homes and schools."
+                    title: "Olympian-led coaching",
+                    content: "Head coach Andrea Kilday represented New Zealand at the Rio 2016 Olympics — she holds a 3rd Dan black belt and a WT Level 2 coaching qualification, and leads a team that coaches every belt level."
                 },
                 {
-                    title: "Family Discounts",
-                    content: "We offer options that make it affordable for the whole family to train together."
+                    title: "Family-friendly pricing",
+                    content: "Sibling discount tiers at $55, $70, $80 and $90 a week make it more affordable for more than one child to train, and the Friday Family Class is open to parents too."
                 }
             ]
         },
         serviceArea: {
-            title: "Serving Waimauku & Muriwai",
-            description: "Our Helensville dojang is well positioned for households in Waimauku, Muriwai, and the surrounding countryside, a short drive down SH16.",
+            title: "Serving Waimauku and Muriwai",
+            description: "We don't have a dojang in Waimauku — the village and the surrounding countryside train with us at 94 Mill Road, Helensville, a short drive up SH16. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $285 and can be used at any class on the timetable.",
             landmarks: [
                 "Waimauku School",
                 "Muriwai Beach",
                 "Glasgow Park",
-                "The Hunting Lodge",
                 "Waimauku Village Centre"
             ],
             neighborhoods: [
@@ -376,63 +454,77 @@ export const locationData: LocationData[] = [
                 "Waimauku Station Road"
             ]
         },
-        weatherImpact: {
-            title: "Consistency Despite the Weather",
-            content: "Waimauku's West Coast weather can be wild. When the surf is blown out at Muriwai or the fields are soaked, the dojang is always open. We provide a reliable, weather-proof venue for expending energy and maintaining fitness throughout the year."
-        },
         faq: [
             {
-                question: "Is it a long drive from Muriwai?",
-                answer: "Not at all. We are very convenient for Muriwai residents heading inland."
+                question: "How far is the dojang from Waimauku?",
+                answer: "About 10 minutes up SH16. We're at 94 Mill Road, Helensville, with parking at the door."
             },
             {
-                question: "Do you offer trial classes for Waimauku locals?",
-                answer: "Yes, we welcome you to come and try a class to feel the atmosphere."
+                question: "Which class should my child start in?",
+                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first class is free, so come and try."
+            },
+            {
+                question: "Do we have to buy a uniform before the trial?",
+                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join."
             }
         ]
     },
     {
         slug: "huapai",
-        title: "Huapai Martial Arts & Taekwondo | Superior Taekwondo",
-        metaDescription: "The top choice for Taekwondo in Huapai. Join a thriving community of martial artists. Classes for fitness, focus, and self-defense.",
+        title: "Huapai Taekwondo Classes | Superior Taekwondo",
+        metaDescription: "Taekwondo for Huapai families: about 20 minutes up SH16 to 94 Mill Road, Helensville. Kids from age 4, Olympian-led coaching. Free trial class.",
         heroImage: "/images/locations/huapai-hero.webp",
-        introTitle: "Martial Arts Expertise for Huapai",
+        introTitle: "Taekwondo for Huapai families",
         introContent: [
-            "Huapai is experiencing rapid growth, and we don't have a second dojang out here — Huapai families train with us at 94 Mill Road, Helensville, a short drive down SH16. It's a focused, convenient program without needing a branch on every corner.",
-            "As new families move into the Huapai Triangle and surrounding developments, they are looking for connection. Our dojang is a melting pot where old locals and new residents come together with a shared purpose. We foster a welcoming environment where friendships are forged through shared sweat and achievement.",
-            "For the youth of Huapai, we offer an essential outlet. In an era of screens and digital distractions, we get kids moving, thinking, and interacting. Our program develops the focus and self-discipline that translates directly to better performance at school and a more positive attitude at home."
+            "Huapai doesn't have its own dojang — families from the Huapai Triangle and surrounding streets train with us at 94 Mill Road, Helensville, a short drive down SH16. It's a straightforward addition to the week: one class, one trip, parking at the door.",
+            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving through Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train alongside them on Tuesday mornings and the Friday Family Class.",
+            "Sessions start at $30 a week for one class, or $40 a week for unlimited training, with sibling tiers at $55, $70, $80 and $90 a week for families with more than one child. A 10-week term is $300 for one class a week or $400 unlimited, and we're rated 5.0 from 23 Google reviews. Your first class is free."
         ],
-        historyTitle: "Growing with the Community",
+        driveTime: "about 20 minutes up SH16",
+        gettingHere: {
+            title: "Getting here from Huapai",
+            content: [
+                "From Huapai, it's about 20 minutes up SH16 to 94 Mill Road, Helensville. Stay on State Highway 16 north-west through Waimauku; Mill Road is on your right as you come into Helensville.",
+                "There's parking right at the door, so drop-off and pick-up is quick even on a school night. If you have questions before you visit, call 027 520 1613, or check the live class timetable and book online at superior-taekwondo.gymdesk.com."
+            ]
+        },
+        classesForFamilies: {
+            title: "Classes that suit families from Huapai",
+            content: [
+                "Leaving Huapai straight after school gives most families enough time to make Youth Superior Legends, 4:45–5:30pm, or the earlier Little Superior Legends session, 4:00–4:40pm, if you can get away a little sooner — both run Monday to Thursday.",
+                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train Tuesday mornings, 9:00–10:00am, or join the Superior Family Class on Friday, 4:30–5:30pm. Saturday mornings have the Fitness Circuit Class at 9:15am and the Performance Pathway squad from 10:15am to 12:45pm."
+            ]
+        },
+        historyTitle: "Serving Huapai since 2016",
         historyContent: [
-            "Huapai's history is rooted in horticulture and community. As the orchards turn into homes, the need for positive community spaces is greater than ever. Superior Taekwondo is dedicated to growing alongside Huapai, providing access to a modern dojang up the road in Helensville and a program that meets the needs of today's families.",
-            "We embrace the dynamic energy of Huapai. Our classes are high-energy and forward-thinking, preparing students not just for tournaments, but for the challenges of modern life. We are proud to be a cornerstone of the new Huapai community."
+            "Superior Taekwondo has trained at 94 Mill Road, Helensville since 2016. It's a World Taekwondo club led by head coach Andrea Kilday — a 3rd Dan black belt, WT Level 2 coach, and 2016 Rio Olympian.",
+            "Huapai sits alongside Kumeū on SH16, part of the fast-growing Huapai Triangle. We've never opened a second site here — Huapai families make the short drive down SH16 to train at 94 Mill Road, Helensville instead, on the same World Taekwondo syllabus from a first white-belt class through to black belt grading, taught by the same coaching team every family trains under, wherever in the north-west they start from."
         ],
         whyChooseUs: {
-            title: "Why Huapai Trains With Us",
+            title: "Why Huapai families choose Superior Taekwondo",
             items: [
                 {
-                    title: "Structured Learning",
-                    content: "Our clear belt progression gives students clear goals to strive for, ideal for the ambitious Huapai mindset."
+                    title: "A short run up SH16",
+                    content: "94 Mill Road, Helensville is about 20 minutes up State Highway 16, with parking right at the door. A 10-week term is $300 for one class a week, or $400 for unlimited training."
                 },
                 {
-                    title: "Modern Approach",
-                    content: "We blend traditional values with modern sports science, appealing to forward-thinking families."
+                    title: "Olympian-led coaching",
+                    content: "Head coach Andrea Kilday represented New Zealand at the Rio 2016 Olympics — she holds a 3rd Dan black belt and a WT Level 2 coaching qualification, and leads a team that coaches every belt level."
                 },
                 {
-                    title: "Convenient Location",
-                    content: "Just minutes away via SH16, making the school run or after-work training seamless."
+                    title: "A clear belt path",
+                    content: "One dojang, one coaching team, and a syllabus that runs from a first class through to black belt. We're rated 5.0 from 23 Google reviews."
                 }
             ]
         },
         serviceArea: {
             title: "Serving Huapai families from Helensville",
-            description: "We don't have a branch in Huapai — our dojang is at 94 Mill Road, Helensville, a short drive down SH16 from the Huapai Triangle and surrounding growth areas.",
+            description: "We don't have a dojang in Huapai — the Huapai Triangle and surrounding growth areas train with us at 94 Mill Road, Helensville, a short drive up SH16. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $285 and can be used at any class on the timetable.",
             landmarks: [
                 "Huapai District School",
                 "Huapai Domain",
                 "The Huapai Triangle",
-                "Kumeu Showgrounds",
-                "Nature's Point"
+                "Kumeu Showgrounds"
             ],
             neighborhoods: [
                 "Huapai Triangle",
@@ -447,18 +539,18 @@ export const locationData: LocationData[] = [
                 "Tapu Road"
             ]
         },
-        weatherImpact: {
-            title: "All-Weather Active Lifestyle",
-            content: "Huapai residents love an active lifestyle. Our indoor training facility ensures that even when the winter rains set in across the North West, your fitness regime doesn't have to pause. We offer a dry, safe, and professional environment to keep moving."
-        },
         faq: [
             {
-                question: "Is there traffic from Huapai?",
-                answer: "Traffic usually flows against the city commute, making the drive to us generally quick and stress-free."
+                question: "How far is the dojang from Huapai?",
+                answer: "About 20 minutes up SH16. We're at 94 Mill Road, Helensville, with parking at the door."
             },
             {
-                question: "Do you cater to beginners?",
-                answer: "Yes, many of our Huapai students started with zero experience and are now moving through the ranks."
+                question: "Which class should my child start in?",
+                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first class is free, so come and try."
+            },
+            {
+                question: "Do we have to buy a uniform before the trial?",
+                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join."
             }
         ]
     }

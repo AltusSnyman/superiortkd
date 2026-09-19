@@ -14,6 +14,31 @@ import worldTkdHero from "../../assets/blog/blog_world_tkd_hero.png";
 import gradingSystemHero from "../../assets/blog/blog_grading_system_hero.png";
 
 const posts = [
+  // Local content cluster (September 2026)
+  {
+    title: "After-School Activities in Kumeū: Is Taekwondo Right for Your Child?",
+    slug: "after-school-activities-kumeu",
+    excerpt: "Weighing after-school options in Kumeū and Huapai? What Taekwondo gives kids from age 4, and how the Helensville dojang fits a school run.",
+    category: "For Parents",
+    imageSrc: "/images/blog/after-school-activities-kumeu-hero-1600.webp",
+    imageAlt: "A quiet New Zealand suburban street in the late afternoon with school bags on a porch bench"
+  },
+  {
+    title: "Kids' Martial Arts in West Auckland: How to Choose a Club",
+    slug: "kids-martial-arts-west-auckland",
+    excerpt: "Karate, Taekwondo or MMA for your child? A parent's guide to what each teaches, what to look for in a coach, and questions to ask on your first visit.",
+    category: "For Parents",
+    imageSrc: "/images/blog/kids-martial-arts-west-auckland-hero-1600.webp",
+    imageAlt: "A row of coloured martial-arts belts, white through to black, folded on a wooden bench"
+  },
+  {
+    title: "Women's Self-Defence Classes in Auckland: What Actually Works",
+    slug: "womens-self-defence-classes-auckland",
+    excerpt: "Why regular training beats a one-off workshop, what Taekwondo teaches that transfers, and how to start at any fitness level.",
+    category: "Self-Defence",
+    imageSrc: "/images/blog/womens-self-defence-classes-auckland-hero-1600.webp",
+    imageAlt: "Red kick pads and a water bottle on a blue mat at the edge of an empty training hall"
+  },
   // New high-intent posts (2026 SEO sprint)
   {
     title: "How to Choose a Taekwondo Club in Auckland",
@@ -126,10 +151,20 @@ const title = "Superior Taekwondo Blog | Insights, Tips & News";
           <a href={`/blog/${post.slug}/`} class="group block bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-blue-belt-end/50 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2">
             <!-- Image Container -->
             <div class="h-48 bg-gradient-to-br from-gray-800 to-black relative overflow-hidden">
-                {post.image ? (
-                  <Image 
-                    src={post.image} 
-                    alt={post.title} 
+                {post.imageSrc ? (
+                  <img
+                    src={post.imageSrc}
+                    alt={post.imageAlt || post.title}
+                    width={400}
+                    height={400}
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : post.image ? (
+                  <Image
+                    src={post.image}
+                    alt={post.title}
                     width={400}
                     height={400}
                     loading="lazy"

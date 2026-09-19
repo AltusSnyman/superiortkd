@@ -1,0 +1,312 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+import RelatedContent from "../../components/RelatedContent.astro";
+
+const title = "Kids' Martial Arts in West Auckland: How to Choose a Club";
+const description =
+    "Karate, Taekwondo or MMA for your child in West Auckland? A parent's guide to what each teaches, what to look for in a coach, and questions to ask before you join.";
+
+const blogSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    image: "https://superiortkd.co.nz/images/blog/kids-martial-arts-west-auckland-hero-1600.webp",
+    datePublished: "2026-09-19",
+    dateModified: "2026-09-19",
+    author: {
+        "@type": "Person",
+        name: "Andrea Kilday",
+        jobTitle: "Head Instructor, 2016 Rio Olympian",
+        url: "https://superiortkd.co.nz",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "Superior Taekwondo",
+        url: "https://superiortkd.co.nz",
+    },
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://superiortkd.co.nz/blog/kids-martial-arts-west-auckland/",
+    },
+});
+const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
+
+const faqs = [
+    {
+        question: "What is the best martial art for kids in West Auckland?",
+        answer: "There is no single best option — Karate, Taekwondo and MMA each teach different things. Taekwondo is known for its kicking and Olympic sparring style, Karate for linear striking and kata, and MMA for a mix of striking and grappling. The right choice usually comes down to which class your child enjoys and which coach they respond to.",
+    },
+    {
+        question: "What should I look for in a kids' martial arts coach?",
+        answer: "Look at the coach's actual credentials — their grading rank, any national governing body affiliation such as World Taekwondo, and how they run a children's class specifically, not just an adult one. Competition experience at a genuine level, such as an Olympic Games, is one sign of depth of knowledge, though it is not the only thing that makes a good kids' coach.",
+    },
+    {
+        question: "How much do kids' martial arts classes cost in Auckland?",
+        answer: "Costs vary by club, but as a guide, Superior Taekwondo starts from $30 a week for one class, or $40 a week for unlimited training, plus a $25 sign-up fee. Most reputable clubs also offer a free or low-cost trial class, which is worth using to compare before you commit to a term.",
+    },
+];
+---
+
+<Layout
+    title={title}
+    description={description}
+    image="/images/blog/kids-martial-arts-west-auckland-hero-1600.webp"
+    headContent={headContent}
+    breadcrumbs={[
+        { name: "Home", url: "https://superiortkd.co.nz/" },
+        { name: "Blog", url: "https://superiortkd.co.nz/blog/" },
+        {
+            name: "Kids' Martial Arts in West Auckland",
+            url: "https://superiortkd.co.nz/blog/kids-martial-arts-west-auckland/",
+        },
+    ]}
+>
+    <!-- FAQ Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+        })}
+    ></script>
+
+    <BlogHero
+        title="Kids' Martial Arts in West Auckland: How to Choose a Club"
+        subtitle="Karate, Taekwondo or MMA? A plain guide to what each style teaches and what to check before you sign up."
+        image="/images/blog/kids-martial-arts-west-auckland-hero-1600.webp"
+        alt="A row of coloured martial-arts belts, white through to black, folded on a wooden bench"
+        category="For Parents"
+        readTime="8 min read"
+    />
+
+    <main class="bg-deep-space-black text-white pb-12 text-gray-300 font-body">
+        <div class="container mx-auto px-4 max-w-4xl py-12 space-y-10">
+            <p class="text-xl leading-relaxed text-gray-200">
+                West Auckland has no shortage of kids' martial arts clubs,
+                and the options can look fairly similar from the outside —
+                a mat, a belt system, a coach in a uniform. The differences
+                that actually matter for your child are usually underneath
+                that surface. Here is what to look at before you choose.
+            </p>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    The Three Main Options and What They Teach
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    {
+                        [
+                            {
+                                title: "Karate",
+                                desc: "Traditional Karate styles focus on linear strikes, blocks and kata — set patterns of movement performed solo. Many clubs place a strong emphasis on discipline and precision from the first grading.",
+                            },
+                            {
+                                title: "Taekwondo",
+                                desc: "Taekwondo is built around fast, powerful kicking and Olympic-style sparring, alongside patterns (poomsae) and self-defence basics. World Taekwondo clubs follow the same curriculum used at Olympic level, scaled to a child's age and grade.",
+                            },
+                            {
+                                title: "MMA",
+                                desc: "Mixed martial arts for kids usually blends striking with basic grappling. Programmes vary a lot between gyms, so it is worth asking exactly what is taught to under-12s versus what is shown in adult classes.",
+                            },
+                        ].map((item) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 class="font-oswald font-bold text-white uppercase text-lg mb-2">
+                                    {item.title}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {item.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+                <p class="leading-relaxed mt-4">
+                    None of the three is objectively "better" for a child —
+                    the right one is usually whichever style holds their
+                    attention and whichever club has a coach who genuinely
+                    enjoys teaching kids.
+                </p>
+                <p class="leading-relaxed mt-4">
+                    It is also worth watching a class before deciding, if a
+                    club allows it. Reading about a style on a website only
+                    tells you so much — seeing how a coach actually talks to
+                    a group of children, and how the kids respond, usually
+                    tells you more in ten minutes than any description can.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    What to Look for in the Coach
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    The style matters less than the person leading the
+                    class. A few practical things to check before you join:
+                </p>
+                <ul class="list-disc list-inside space-y-3 text-gray-200 ml-4">
+                    <li>
+                        <strong class="text-white">Actual rank and credentials.</strong>
+                        Ask what grade the coach holds and how long they
+                        have been teaching, not just training.
+                    </li>
+                    <li>
+                        <strong class="text-white">National body affiliation.</strong>
+                        For Taekwondo, that means checking whether the club
+                        is affiliated with World Taekwondo (WT), the sport's
+                        Olympic governing body. Superior Taekwondo, for
+                        example, has been a World Taekwondo club since it
+                        was founded in 2016, and head coach Andrea Kilday is
+                        a 3rd Dan and WT Level 2 coach.
+                    </li>
+                    <li>
+                        <strong class="text-white">Real competition experience, as one example.</strong>
+                        This is not a claim that every good coach has
+                        competed internationally — plenty of excellent kids'
+                        coaches have not. But it is one useful data point.
+                        Andrea competed at the Rio 2016 Olympics in the
+                        -49kg division and won gold at the 2015 Pacific
+                        Games, which is the kind of experience that shows up
+                        in how a class is actually coached.
+                    </li>
+                    <li>
+                        <strong class="text-white">A children's class, not a shrunk adult class.</strong>
+                        Watch a session if you can. Good kids' coaching
+                        looks different from adult coaching — shorter drills,
+                        more structure, and games built around the same
+                        techniques.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    Class Sizes, Ages and Belts
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    Ask how a club actually splits its age groups. At
+                    Superior Taekwondo, for example, Little Superior Legends
+                    takes 4 and 5-year-olds, Youth Superior Legends covers
+                    ages 6 to 11 across all belts, and Cadets, Juniors and
+                    Seniors covers 12 and up. Keeping the age bands this
+                    tight means a 5-year-old is not training alongside a
+                    12-year-old doing the same drills at the same intensity.
+                </p>
+                <p class="leading-relaxed">
+                    You can see how any club structures its week on its own
+                    <a href="/classes/" class="text-blue-belt-end hover:underline">class page</a>
+                    — it is a fair way to compare how seriously different
+                    clubs treat age-appropriate coaching.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    Costs and Trial Policies to Compare
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    Pricing structures vary between clubs, so compare like
+                    for like — weekly fees, sign-up costs, and whether
+                    unlimited training is offered. As a benchmark, Superior
+                    Taekwondo starts from $30 a week for one class or $40 a
+                    week unlimited, plus a one-off $25 sign-up fee, with
+                    10-week term options at $300 or $400 and a $285
+                    concession card valid for five months.
+                </p>
+                <p class="leading-relaxed">
+                    Just as importantly, check the trial policy. A club that
+                    is confident in its coaching will usually let you try a
+                    class before you pay for a term — Superior Taekwondo's
+                    first class is free, with no obligation.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    Questions to Ask on Your First Visit
+                </h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-200 ml-4">
+                    <li>How long have you been coaching children specifically?</li>
+                    <li>What happens in a typical class from start to finish?</li>
+                    <li>How do you handle a child who is struggling to keep up, or one who is far ahead?</li>
+                    <li>Is there a free or low-cost trial, and what happens after it?</li>
+                    <li>What does the belt or grading pathway actually look like?</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    Frequently Asked Questions
+                </h2>
+                <div class="space-y-6">
+                    {
+                        faqs.map((faq) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 class="font-oswald font-bold text-white text-lg mb-2">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {faq.answer}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section
+                class="text-center bg-white/5 border border-blue-belt-end/20 rounded-2xl p-10"
+            >
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    See It for Yourself
+                </h2>
+                <p class="text-gray-300 mb-8 max-w-xl mx-auto">
+                    If you are comparing clubs across West Auckland, the
+                    easiest test is a trial class. Superior Taekwondo in
+                    Helensville offers a free first class, Olympian-coached.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button href="/contact/#trial" variant="primary"
+                        >Book Your Free Trial</Button
+                    >
+                    <Button href="/classes/" variant="secondary"
+                        >View Class Timetable</Button
+                    >
+                </div>
+            </section>
+        </div>
+
+        <RelatedContent
+            posts={[
+                {
+                    title: "How to Choose a Taekwondo Club",
+                    slug: "how-to-choose-a-taekwondo-club",
+                },
+                {
+                    title: "After-School Activities in Kumeū",
+                    slug: "after-school-activities-kumeu",
+                },
+                {
+                    title: "Your First Class: What to Expect",
+                    slug: "first-taekwondo-class",
+                },
+            ]}
+            actions={[
+                { label: "View Class Schedule", href: "https://superior-taekwondo.gymdesk.com/schedule" },
+                { label: "See Pricing", href: "/pricing/" },
+            ]}
+        />
+    </main>
+    <Footer />
+</Layout>

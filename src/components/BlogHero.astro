@@ -5,9 +5,16 @@ interface Props {
     image: string;
     category: string;
     readTime: string;
+    /**
+     * Alt text for the hero banner image. Defaults to the post title, which is
+     * only correct when the image literally depicts the title. Posts whose hero
+     * is a scene photo should pass a plain description of what the photo shows.
+     */
+    alt?: string;
 }
 
-const { title, subtitle, image, category, readTime } = Astro.props;
+const { title, subtitle, image, category, readTime, alt } = Astro.props;
+const heroAlt = alt ?? title;
 ---
 
 <div
@@ -17,7 +24,7 @@ const { title, subtitle, image, category, readTime } = Astro.props;
     <div class="absolute inset-0 z-0">
         <img
             src={image}
-            alt={title}
+            alt={heroAlt}
             loading="eager"
             fetchpriority="high"
             decoding="async"

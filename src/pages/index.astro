@@ -11,6 +11,7 @@ import LatestNews from "../components/LatestNews.astro";
 import Footer from "../components/Footer.astro";
 import ScheduleGrid from "../components/ScheduleGrid.astro";
 import Button from "../components/Button.astro";
+import ClassFinder from "../components/ClassFinder.astro";
 
 const homepageFaqSchema = JSON.stringify({
 	"@context": "https://schema.org",
@@ -115,6 +116,12 @@ const homepageHeadContent = [
 						>Book a free trial</Button
 					>
 				</div>
+			</div>
+		</section>
+
+		<section class="py-24 bg-black">
+			<div class="container mx-auto px-4">
+				<ClassFinder />
 			</div>
 		</section>
 

@@ -1,0 +1,310 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Button from "../../components/Button.astro";
+import BlogHero from "../../components/BlogHero.astro";
+import RelatedContent from "../../components/RelatedContent.astro";
+
+const title =
+    "After-School Activities in Kumeū: Is Taekwondo Right for Your Child?";
+const description =
+    "Weighing after-school options in Kumeū and Huapai? What Taekwondo gives kids from age 4, what a week looks like, and how the Helensville dojang fits a school run.";
+
+const blogSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    image: "https://superiortkd.co.nz/images/blog/after-school-activities-kumeu-hero-1600.webp",
+    datePublished: "2026-09-19",
+    dateModified: "2026-09-19",
+    author: {
+        "@type": "Person",
+        name: "Andrea Kilday",
+        jobTitle: "Head Instructor, 2016 Rio Olympian",
+        url: "https://superiortkd.co.nz",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "Superior Taekwondo",
+        url: "https://superiortkd.co.nz",
+    },
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://superiortkd.co.nz/blog/after-school-activities-kumeu/",
+    },
+});
+const headContent = `<script type="application/ld+json">${blogSchema}<\/script>`;
+
+const faqs = [
+    {
+        question: "What age can my child start Taekwondo in Kumeū?",
+        answer: "Superior Taekwondo takes children from age 4 in Little Superior Legends, which runs Monday, Tuesday and Wednesday from 4:00 to 4:40pm. From age 6 kids move into Youth Superior Legends, which trains Monday to Thursday from 4:45 to 5:30pm.",
+    },
+    {
+        question: "How far is Superior Taekwondo from Kumeū and Huapai?",
+        answer: "The dojang is at 94 Mill Road, Helensville — about 20 minutes up SH16 from Kumeū and Huapai, with parking right at the door.",
+    },
+    {
+        question: "How much does an after-school Taekwondo class cost?",
+        answer: "One session a week starts from $30, or $40 a week for unlimited classes, plus a one-off $25 sign-up fee. A 10-week term is $300 for one session a week or $400 unlimited, and your first class is free.",
+    },
+];
+---
+
+<Layout
+    title={title}
+    description={description}
+    image="/images/blog/after-school-activities-kumeu-hero-1600.webp"
+    headContent={headContent}
+    breadcrumbs={[
+        { name: "Home", url: "https://superiortkd.co.nz/" },
+        { name: "Blog", url: "https://superiortkd.co.nz/blog/" },
+        {
+            name: "After-School Activities in Kumeū",
+            url: "https://superiortkd.co.nz/blog/after-school-activities-kumeu/",
+        },
+    ]}
+>
+    <!-- FAQ Schema -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+        })}
+    ></script>
+
+    <BlogHero
+        title="After-School Activities in Kumeū: Is Taekwondo Right for Your Child?"
+        subtitle="Weighing up the options for the school run home? Here is what a week of Taekwondo actually looks like for a Kumeū or Huapai family."
+        image="/images/blog/after-school-activities-kumeu-hero-1600.webp"
+        alt="A quiet New Zealand suburban street in the late afternoon with school bags on a porch bench"
+        category="For Parents"
+        readTime="7 min read"
+    />
+
+    <main class="bg-deep-space-black text-white pb-12 text-gray-300 font-body">
+        <div class="container mx-auto px-4 max-w-4xl py-12 space-y-10">
+            <p class="text-xl leading-relaxed text-gray-200">
+                Kumeū and Huapai have grown fast, and so has the list of
+                after-school options competing for a spot in the family
+                calendar. If you are trying to work out whether Taekwondo
+                deserves a place in that line-up, here is a plain look at
+                what it involves, what it costs, and what an actual week
+                looks like once school finishes.
+            </p>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    What Parents in Kumeū Are Usually Looking For
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    Most of the parents who ask us about after-school
+                    Taekwondo are not looking for a future Olympian. They are
+                    looking for something more ordinary: an activity that
+                    burns off the after-school energy, teaches a bit of
+                    structure and respect, and does not turn Tuesday night
+                    into a logistics headache.
+                </p>
+                <p class="leading-relaxed">
+                    A few things come up again and again in those
+                    conversations — a class time that actually fits before
+                    dinner, a coach who is qualified rather than just
+                    enthusiastic, and a club close enough to Kumeū and
+                    Huapai that the drive itself is not the reason the
+                    activity gets dropped after a term.
+                </p>
+                <p class="leading-relaxed mt-4">
+                    There is also a quieter question underneath all of this:
+                    will my child actually stick with it? An after-school
+                    activity only pays off if it survives past the first few
+                    weeks, which usually comes down to whether the class
+                    itself is genuinely engaging for a young child, not just
+                    whether it looks good on paper.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    What a Taekwondo Class Actually Does for a 6-Year-Old
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    At Little Superior Legends and early Youth Superior
+                    Legends level, a class is not sparring and board breaks.
+                    It is games, balance work, and listening skills, built
+                    around simple Taekwondo movement — kicks, stances, and
+                    patterns broken into pieces a young child can actually
+                    follow.
+                </p>
+                <p class="leading-relaxed mb-4">
+                    The structure matters more than it sounds. Lining up,
+                    bowing in, waiting a turn, following an instruction the
+                    first time it is given — these are the habits that
+                    parents often notice transferring back into the
+                    classroom and at home, more than any specific kick or
+                    technique.
+                </p>
+                <p class="leading-relaxed">
+                    Classes are coached throughout by Andrea Kilday, a 3rd
+                    Dan and World Taekwondo (WT) Level 2 coach who competed
+                    at the Rio 2016 Olympics and won gold at the 2015
+                    Pacific Games. Superior Taekwondo has been a World
+                    Taekwondo club since it was founded in 2016, so the
+                    curriculum your child follows from age 4 is the same
+                    style that is taught at Olympic level, just paced for
+                    young beginners.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    A Typical Week for a Kumeū Family
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    The dojang is at 94 Mill Road, Helensville — about 20
+                    minutes up SH16 from Kumeū and Huapai, with parking
+                    right at the door, so there is no walk from a car park
+                    with a tired kid and a school bag.
+                </p>
+                <p class="leading-relaxed mb-4">
+                    For a 4 or 5-year-old, that usually means Little
+                    Superior Legends on Monday, Tuesday and Wednesday from
+                    4:00 to 4:40pm — three short, structured sessions rather
+                    than one long one, which suits younger attention spans.
+                </p>
+                <p class="leading-relaxed mb-4">
+                    Once a child is 6 or older, Youth Superior Legends runs
+                    Monday to Thursday from 4:45 to 5:30pm, with an optional
+                    sparring class on Thursday from 4:00 to 4:45pm for kids
+                    who want an extra session. Families can see the full
+                    week, including all age groups, on the
+                    <a href="/classes/" class="text-blue-belt-end hover:underline">class timetable page</a>,
+                    which makes it easier to see how a school pick-up,
+                    dinner and homework actually line up around training.
+                </p>
+                <p class="leading-relaxed">
+                    In practice, most Kumeū and Huapai families treat it as
+                    part of the drive home rather than a separate trip —
+                    leave school, head up SH16 for around 20 minutes, train,
+                    then be home in time for a fairly normal dinner. Because
+                    the classes are short and start straight after the
+                    school day, there is less of the late-evening scramble
+                    that a longer activity further out can create on a
+                    school night.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    What It Costs
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    One class a week starts from $30, and unlimited training
+                    across the age-appropriate classes is $40 a week, both
+                    with a one-off $25 sign-up fee. Families with more than
+                    one child training get sibling pricing, and if you would
+                    rather pay by term, a 10-week term is $300 for one
+                    session a week or $400 for unlimited. A 10-session
+                    concession card is also available for $285 and is valid
+                    for five months, which suits families who want
+                    flexibility around school holidays.
+                </p>
+                <p class="leading-relaxed">
+                    A non-member can also drop in to a single casual class
+                    for $30, if you would rather try the timetable once
+                    before deciding on a term.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    How to Try It for Free
+                </h2>
+                <p class="leading-relaxed mb-4">
+                    The simplest way to find out if Taekwondo fits your
+                    family's week is to bring your child along to one class.
+                    The first class at Superior Taekwondo is free, with no
+                    obligation to sign up afterwards, so you can see the
+                    coaching, the other kids in the class, and the drive
+                    from Kumeū before committing to anything.
+                </p>
+                <p class="leading-relaxed">
+                    Superior Taekwondo also holds a 5.0 rating from 23
+                    Google reviews, largely from families across North West
+                    Auckland who went through the same first-class decision.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4">
+                    Frequently Asked Questions
+                </h2>
+                <div class="space-y-6">
+                    {
+                        faqs.map((faq) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 class="font-oswald font-bold text-white text-lg mb-2">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    {faq.answer}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section
+                class="text-center bg-white/5 border border-blue-belt-end/20 rounded-2xl p-10"
+            >
+                <h2
+                    class="text-3xl font-black font-oswald uppercase tracking-tight text-white mb-4"
+                >
+                    Book a Free Trial Class
+                </h2>
+                <p class="text-gray-300 mb-8 max-w-xl mx-auto">
+                    One dojang in Helensville, about 20 minutes from Kumeū
+                    and Huapai on SH16. Olympian-coached, from age 4.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button href="/contact/#trial" variant="primary"
+                        >Book Your Free Trial</Button
+                    >
+                    <Button href="/classes/" variant="secondary"
+                        >View Class Timetable</Button
+                    >
+                </div>
+            </section>
+        </div>
+
+        <RelatedContent
+            posts={[
+                {
+                    title: "Kids' Martial Arts in West Auckland: How to Choose a Club",
+                    slug: "kids-martial-arts-west-auckland",
+                },
+                {
+                    title: "How to Choose a Taekwondo Club",
+                    slug: "how-to-choose-a-taekwondo-club",
+                },
+                {
+                    title: "Your First Class: What to Expect",
+                    slug: "first-taekwondo-class",
+                },
+            ]}
+            actions={[
+                { label: "View Class Schedule", href: "https://superior-taekwondo.gymdesk.com/schedule" },
+                { label: "See Pricing", href: "/pricing/" },
+            ]}
+        />
+    </main>
+    <Footer />
+</Layout>

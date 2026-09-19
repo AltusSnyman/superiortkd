@@ -59,6 +59,25 @@ const ogType = /^\/blog\/.+/.test(Astro.url.pathname) ? "article" : "website";
 			gtag('js', new Date());
 			gtag('config', 'G-R20DXRB33V');
 		</script>
+
+		<!-- GA4 conversion click tracking (no library, one delegated listener). -->
+		<!-- Events: free_trial_click, gymdesk_click, phone_click -->
+		<script is:inline>
+			document.addEventListener('click', function (event) {
+				try {
+					var a = event.target && event.target.closest && event.target.closest('a');
+					if (!a || typeof gtag !== 'function') return;
+					var params = { link_url: a.href, link_text: (a.textContent || '').trim().slice(0, 100) };
+					if (a.pathname.slice(-9) === '/contact/' && a.hash === '#trial') {
+						gtag('event', 'free_trial_click', params);
+					} else if (a.hostname && a.hostname.indexOf('gymdesk.com') !== -1) {
+						gtag('event', 'gymdesk_click', params);
+					} else if (a.protocol === 'tel:') {
+						gtag('event', 'phone_click', params);
+					}
+				} catch (e) {}
+			}, true);
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
