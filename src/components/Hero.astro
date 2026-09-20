@@ -6,11 +6,23 @@ import Button from "./Button.astro";
     class="relative w-full min-h-[600px] h-svh md:h-screen overflow-hidden flex items-center justify-center bg-deep-space-black"
     id="hero"
 >
-    <!-- Poster Background (video element removed; the previous background video file does not exist in production and 404s) -->
+    <!-- Looping video background with poster fallback -->
     <div
         class="absolute inset-0 z-0 select-none pointer-events-none bg-cover bg-center bg-no-repeat opacity-60 mix-blend-screen"
         style="background-image: url('/images/hero-poster.webp');"
     >
+        <video
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="metadata"
+            poster="/images/hero-poster.webp"
+            class="w-full h-full object-cover"
+            aria-hidden="true"
+        >
+            <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
         <div
             class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"
         >
