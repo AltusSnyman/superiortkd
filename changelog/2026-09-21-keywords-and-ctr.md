@@ -11,3 +11,7 @@
 **Owner / Altus:** Google Business Profile service area and categories to cover Kumeū and Hobsonville; ask Kumeū families for reviews; two citations (Localist, Neighbourly).
 
 **Targets:** `/locations/auckland/` CTR from 0.27% toward 1%+ at the same position; the two FAQ questions appearing as PAA/snippet results. **Re-check:** 2026-10-16 (existing date) and 2026-10-21 for this entry.
+
+## Deployed 2026-09-21 (main 09cf6b1, Netlify live in ~30 s)
+
+Live checks: all six new titles serving; FAQPage on home is a single node with the two PAA questions visible; Auckland page FAQ present; 200 on all checked URLs. Indexing re-requested for /locations/auckland/ and / in Search Console. Re-check CTR on 2026-10-21 (query "taekwondo auckland", page /locations/auckland/).
