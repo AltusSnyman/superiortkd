@@ -13,51 +13,51 @@ import ScheduleGrid from "../components/ScheduleGrid.astro";
 import Button from "../components/Button.astro";
 import ClassFinder from "../components/ClassFinder.astro";
 
+// Single source of truth for the homepage FAQ: rendered visibly in the
+// "Common questions" section below AND emitted as the FAQPage schema, so the
+// two can never drift apart.
+const homepageFaqItems = [
+	{
+		question: "Where is Superior Taekwondo located?",
+		answer: "Superior Taekwondo trains at one dojang, 94 Mill Road, Helensville 0875, in North West Auckland. Families travel to us from Kumeū, Huapai, Waimauku, Kaukapakapa, Riverhead and Westgate.",
+	},
+	{
+		question: "Can I try a class before joining Superior Taekwondo?",
+		answer: "Yes. Contact us to arrange a free trial class. We welcome students of all ages and experience levels to come and experience training before committing to a membership.",
+	},
+	{
+		question: "Who is the head instructor at Superior Taekwondo?",
+		answer: "Head instructor Andrea Kilday is a 2016 Rio Olympian, Oceania Gold Medallist, and 3rd Dan Black Belt. She brings elite-level technical knowledge and real Olympic competition experience directly to every class at Superior Taekwondo.",
+	},
+	{
+		question: "What age can children start Taekwondo at Superior Taekwondo?",
+		answer: "Children can start from age 4 in our Tiny Tigers programme. This class builds confidence, coordination, and discipline through age-appropriate Taekwondo fundamentals in a fun, structured environment.",
+	},
+	{
+		question: "How long does it take to get a Black Belt in Taekwondo?",
+		answer: "The average journey to 1st Dan Black Belt at Superior Taekwondo takes 3–5 years of consistent training. Progress depends on attendance, individual development, and readiness at each grading stage. Our structured curriculum ensures every student advances at the right pace.",
+	},
+	{
+		question: "What age is best to start Taekwondo?",
+		answer: "Tiny Tigers starts from age 4, and that's the earliest age we recommend. Older kids, teens and adults are welcome to start at any age — there's no upper limit, and everyone trains in a class suited to their age group.",
+	},
+	{
+		question: "Taekwondo vs karate: what is the difference?",
+		answer: "Taekwondo is a Korean martial art known for its kicking techniques, and it's an Olympic sport with sparring and poomsae (patterns) under World Taekwondo (WT) rules. Karate began in Japan and Okinawa and uses more hand strikes. Both build discipline and fitness — Superior Taekwondo teaches WT taekwondo, and we wouldn't say one is better than the other.",
+	},
+];
+
 const homepageFaqSchema = JSON.stringify({
 	"@context": "https://schema.org",
 	"@type": "FAQPage",
-	mainEntity: [
-		{
-			"@type": "Question",
-			name: "Where is Superior Taekwondo located?",
-			acceptedAnswer: {
-				"@type": "Answer",
-				text: "Superior Taekwondo trains at one dojang, 94 Mill Road, Helensville 0875, in North West Auckland. Families travel to us from Kumeū, Huapai, Waimauku, Kaukapakapa, Riverhead and Westgate.",
-			},
+	mainEntity: homepageFaqItems.map((item) => ({
+		"@type": "Question",
+		name: item.question,
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: item.answer,
 		},
-		{
-			"@type": "Question",
-			name: "Can I try a class before joining Superior Taekwondo?",
-			acceptedAnswer: {
-				"@type": "Answer",
-				text: "Yes. Contact us to arrange a free trial class. We welcome students of all ages and experience levels to come and experience training before committing to a membership.",
-			},
-		},
-		{
-			"@type": "Question",
-			name: "Who is the head instructor at Superior Taekwondo?",
-			acceptedAnswer: {
-				"@type": "Answer",
-				text: "Head instructor Andrea Kilday is a 2016 Rio Olympian, Oceania Gold Medallist, and 3rd Dan Black Belt. She brings elite-level technical knowledge and real Olympic competition experience directly to every class at Superior Taekwondo.",
-			},
-		},
-		{
-			"@type": "Question",
-			name: "What age can children start Taekwondo at Superior Taekwondo?",
-			acceptedAnswer: {
-				"@type": "Answer",
-				text: "Children can start from age 4 in our Tiny Tigers programme. This class builds confidence, coordination, and discipline through age-appropriate Taekwondo fundamentals in a fun, structured environment.",
-			},
-		},
-		{
-			"@type": "Question",
-			name: "How long does it take to get a Black Belt in Taekwondo?",
-			acceptedAnswer: {
-				"@type": "Answer",
-				text: "The average journey to 1st Dan Black Belt at Superior Taekwondo takes 3–5 years of consistent training. Progress depends on attendance, individual development, and readiness at each grading stage. Our structured curriculum ensures every student advances at the right pace.",
-			},
-		},
-	],
+	})),
 });
 
 const websiteSchema = JSON.stringify({
@@ -128,6 +128,29 @@ const homepageHeadContent = [
 		<WallOfFame />
 		<Reviews />
 		<LatestNews />
+
+		<section class="py-24 bg-deep-space-black">
+			<div class="container mx-auto px-4">
+				<h2
+					class="text-3xl md:text-4xl font-black font-oswald uppercase text-white text-center mb-12"
+				>
+					Common questions
+				</h2>
+				<div class="max-w-3xl mx-auto space-y-6">
+					{
+						homepageFaqItems.map((item) => (
+							<div class="border-b border-white/10 pb-6">
+								<h3 class="text-lg font-bold text-white mb-2">
+									{item.question}
+								</h3>
+								<p class="text-gray-400">{item.answer}</p>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
 		<ReadyToTrain />
 		<Footer />
 	</main>

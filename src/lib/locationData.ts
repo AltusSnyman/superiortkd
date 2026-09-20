@@ -132,9 +132,9 @@ export const locationData: LocationData[] = [
     },
     {
         slug: "auckland",
-        title: "Taekwondo Classes in Auckland's North West | Superior Taekwondo",
+        title: "Taekwondo Auckland | Olympian Coach, Free Trial",
         heading: "Taekwondo in Auckland: our dojang in the north-west",
-        metaDescription: "Looking for Taekwondo in Auckland? Our dojang is in Helensville, north-west of the city up SH16. Olympian coaching for kids, teens and adults. Free trial.",
+        metaDescription: "Taekwondo in Helensville, north-west Auckland. Kids from 4, teens and adults, coached by an Olympian. Book a free trial class today.",
         heroImage: "/images/locations/auckland-hero.webp",
         introTitle: "One dojang, serving Auckland's north-west",
         introContent: [
@@ -215,6 +215,14 @@ export const locationData: LocationData[] = [
             {
                 question: "Do we have to buy a uniform before the trial?",
                 answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join."
+            },
+            {
+                question: "What age is best to start Taekwondo?",
+                answer: "Tiny Tigers starts from age 4, and that's the earliest age we recommend. Older kids, teens and adults are welcome to start at any age — there's no upper limit, and everyone trains in a class suited to their age group."
+            },
+            {
+                question: "Taekwondo vs karate: what is the difference?",
+                answer: "Taekwondo is a Korean martial art known for its kicking techniques, and it's an Olympic sport with sparring and poomsae (patterns) under World Taekwondo (WT) rules. Karate began in Japan and Okinawa and uses more hand strikes. Both build discipline and fitness — Superior Taekwondo teaches WT taekwondo, and we wouldn't say one is better than the other."
             }
         ]
     },
