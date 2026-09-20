@@ -3,7 +3,7 @@ import Button from "./Button.astro";
 ---
 
 <section
-    class="relative w-full min-h-[600px] h-svh md:h-screen overflow-hidden flex items-center justify-center bg-deep-space-black"
+    class="relative w-full min-h-[max(640px,100svh)] overflow-hidden flex items-center justify-center bg-deep-space-black py-28 md:py-32"
     id="hero"
 >
     <!-- Looping video background with poster fallback -->
@@ -40,7 +40,7 @@ import Button from "./Button.astro";
         class="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center gap-6"
     >
         <h1
-            class="text-5xl md:text-7xl lg:text-9xl font-black font-oswald tracking-tighter text-white drop-shadow-2xl uppercase leading-none opacity-0 animate-fade-in [animation-delay:200ms] [animation-fill-mode:forwards]"
+            class="text-5xl md:text-7xl lg:text-[5.5rem] font-black font-oswald tracking-tighter text-white drop-shadow-2xl uppercase leading-none opacity-0 animate-fade-in [animation-delay:200ms] [animation-fill-mode:forwards]"
         >
             Taekwondo for kids, teens and adults, coached by an Olympian
         </h1>
