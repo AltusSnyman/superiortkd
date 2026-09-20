@@ -37,3 +37,5 @@ tools/claude-seo/.venv/
 tools/claude-seo/data/
 tools/claude-seo/*.db
 ._*
+
+tools/dataforseo/outputs/
