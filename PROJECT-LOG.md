@@ -11,6 +11,7 @@ Owner facts: one dojang, 94 Mill Road, Helensville 0875 · 027 520 1613 · timet
 | 2026-09-19 | Round 2 "depth and proof" | Class finder by age; Reputation reviews widget; location pages with real photos, drive times, FAQs; three local posts with Higgsfield heroes; three.js removed (JS 1.29 MB → 396 KB, home/location pages ship no island JS); `npm run schedule:fetch` / `schedule:check`; GA4 events free_trial_click / gymdesk_click / phone_click | Live as af7464f · GEO home 68, Kumeū 64 |
 | 2026-09-18 | Search Console | sitemap-index.xml submitted (never had been) | |
 | Keywords + CTR (2026-09-21) | DataForSEO skill vendored; keyword report `tools/dataforseo/reports/2026-09-21-tkd-keywords.md`; Auckland page title/description + PAA FAQs (best age, TKD vs karate) on home and Auckland; four post titles + contact title tightened | Live as main 09cf6b1 (2026-09-21). Indexing re-requested for /locations/auckland/. Re-check 2026-10-21 |
+| 2026-09-28 | Designer credit (2026-09-28) | Footer credit "Website by System Pros AI" → systempros.ai/websites/ (in the client contract) | Branch growth/credit-link-2026-09-28, awaiting push |
 
 ## Where things are
 - Plans: `plan.md` (round 1, §2b = confirmed facts), `plan-round2.md`; client facts `.agents/product-marketing-context.md`; `changelog/` entries; reports in `tools/geo-optimizer/reports/`, `tools/claude-seo/reports/`.
