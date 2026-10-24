@@ -44,7 +44,7 @@ export const ageTiers: AgeTierRow[] = [
 	},
 	{
 		ageBand: "Adults",
-		className: "Adults Taekwondo Class",
+		className: "Adult training (12+ classes)",
 		schedule: "Any 12+ class (Tue & Thu 5:30–6:30pm) or the Family Class (Mon & Fri 4:30–5:30pm)",
 		details:
 			"Fitness, self-defence and belts at your pace. From $30 a week.",
