@@ -21,4 +21,4 @@
 
 **GSC metric:** none primary; this is an accuracy and conversion fix (trial bookings). **Re-check:** 2026-11-03 (first day of the new timetable): confirm the live pages and GymDesk agree, and that no stale times show in Google Business Profile hours or snippets.
 
-**Owner / Altus:** update Google Business Profile hours to match the schedule (Tue 9–10am removed, Mon and Fri now open 4:30pm, Sat 9:30am, Sun to 2:30pm).
+**Google Business Profile:** hours updated by Altus on 2026-10-24 to match (Tue 9–10am removed, Mon and Fri open 4:30pm, Sat 9:30am, Sun to 2:30pm). The site went live the same day (commit 4b26578).
