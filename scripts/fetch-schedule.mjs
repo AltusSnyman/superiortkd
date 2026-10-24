@@ -10,6 +10,14 @@
 //                                                     the parsed result against the current
 //                                                     src/data/schedule.ts and print any differences.
 //                                                     Always exits 0.
+//   node scripts/fetch-schedule.mjs --date YYYY-MM-DD Fetch the GymDesk week containing that date
+//                                                     (https://superior-taekwondo.gymdesk.com/schedule?date=YYYY-MM-DD)
+//                                                     instead of the current week. The generated file
+//                                                     header names the week ("GymDesk week of 2 Nov 2026",
+//                                                     using that week's Monday) and SCHEDULE_AS_OF is set
+//                                                     to that Monday. Combine with --check to preview the
+//                                                     diff for a future week. Without --date, behaviour is
+//                                                     unchanged (current week, stamped with today's date).
 //
 // Also available as npm scripts: `npm run schedule:fetch` / `npm run schedule:check`.
 //
@@ -30,7 +38,7 @@
 //   having written nothing, so the existing snapshot in src/data/schedule.ts is left exactly as it was.
 //
 // No invented data: GymDesk's raw `title`/`instructor` strings are cosmetically different from the
-// site's published display copy (ALL CAPS titles, first-name-only instructors, four separate Sunday
+// site's published display copy (ALL CAPS titles, first-name-only instructors, several separate Sunday
 // private-coaching bookings shown as one row). Rather than publish that cosmetic mismatch as a diff
 // every run, DISPLAY_MAP and INSTRUCTOR_MAP below translate each known raw GymDesk string to the
 // exact display string already used in src/data/schedule.ts -- every value in those maps was copied
@@ -83,11 +91,14 @@ const DISPLAY_MAP = {
 	// so the published age band here is 4–5 — the same band the ClassFinder table shows. The raw
 	// GymDesk string is preserved on the left of this mapping so the difference stays visible.
 	"LITTLE SUPERIOR LEGENDS AGES 2-5 YEARS": "Little Superior Legends (ages 4–5)",
+	// GymDesk renamed the class to this from the week of 2 Nov 2026; the same "never print 2" rule applies.
+	"LITTLE LEGENDS 2-5 YEARS OLD": "Little Superior Legends (ages 4–5)",
 	"YOUTH SUPERIOR LEGENDS AGES 6-11 YEARS - ALL BELTS": "Youth Superior Legends (ages 6–11)",
 	"SUPERIOR PERFORMANCE PATHWAY - Development Squad": "Superior Performance Pathway, Development Squad",
 	"ADULTS TAEKWONDO CLASS": "Adults Taekwondo Class",
 	"CADETS, JUNIORS, SENIOR SUPERIOR LEGENDS - ALL BELTS 12+": "Cadets, Juniors, Senior Superior Legends (12+)",
 	"POOMSAE CLASS": "Poomsae Class",
+	"POOMSAE CLASS/ SELF-DEFENCE": "Poomsae Class / Self-Defence",
 	// GymDesk publishes this title with two different punctuation variants (Tuesday's has an extra
 	// " - " before the parenthesis, Friday's doesn't) that both map to the same display string.
 	"SUPERIOR PSS ELECTRONIC SPARRING CLASS - (Daedo Gen 3)": "Superior PSS Electronic Sparring Class (Daedo Gen 3)",
@@ -97,10 +108,12 @@ const DISPLAY_MAP = {
 	"SUPERIOR SPARRING CLASS - 12+ ALL BELTS": "Superior Sparring Class (12+, all belts)",
 	"SUPERIOR FAMILY CLASS - ALL AGES & BELTS": "Superior Family Class (all ages and belts)",
 	"SUPERIOR POOMSAE/SPARRING CLASSES - ALL AGES": "Superior Poomsae/Sparring Classes (all ages)",
+	"SUPERIOR POOMSAE - ALL AGES": "Superior Poomsae (all ages)",
 	"SUPERIOR FITNESS CIRCUIT CLASS": "Superior Fitness Circuit Class",
 	// GymDesk's raw title for these is already close to plain English (not ALL CAPS like the rest).
-	// The merge rule (mergeConsecutiveSlots, below) turns four of these on Sunday into the single
-	// "Private Coaching Sessions (four 90-minute slots, bookable)" row src/data/schedule.ts uses;
+	// The merge rule (mergeConsecutiveSlots, below) turns the back-to-back Sunday bookings into a
+	// single "Private Coaching Sessions (<n> 90-minute slots, bookable)" row; the count word is derived
+	// from however many slots GymDesk publishes (e.g. "three" for the week of 2 Nov 2026);
 	// this entry is only the un-merged single-session fallback (e.g. if GymDesk ever publishes just
 	// one private-coaching slot on a day instead of several back to back).
 	"Private Coaching Session": "Private Coaching Session",
@@ -136,12 +149,14 @@ function titleCaseFallback(rawTitle) {
 }
 
 function parseArgs(argv) {
-	const args = { out: DEFAULT_OUT, check: false };
+	const args = { out: DEFAULT_OUT, check: false, date: null };
 	for (let i = 0; i < argv.length; i++) {
 		if (argv[i] === "--out") {
 			args.out = argv[++i];
 		} else if (argv[i] === "--check") {
 			args.check = true;
+		} else if (argv[i] === "--date") {
+			args.date = argv[++i];
 		}
 	}
 	return args;
@@ -161,11 +176,30 @@ function unescapeHtml(str) {
 		.replace(/&amp;/g, "&");
 }
 
-async function fetchScheduleHtml() {
+// Parse a strict YYYY-MM-DD string into a local-time Date at midnight, or null if it isn't a real
+// calendar date. Local time (not UTC) so humanDate()/getDate() agree with the string typed in.
+function parseIsoDate(str) {
+	const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(str ?? ""));
+	if (!m) return null;
+	const [y, mo, d] = [Number(m[1]), Number(m[2]), Number(m[3])];
+	const date = new Date(y, mo - 1, d);
+	if (date.getFullYear() !== y || date.getMonth() !== mo - 1 || date.getDate() !== d) return null;
+	return date;
+}
+
+// Monday of the (Mon-Sun) week containing `d`.
+function mondayOf(d) {
+	const out = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+	const offset = (out.getDay() + 6) % 7; // Mon=0 ... Sun=6
+	out.setDate(out.getDate() - offset);
+	return out;
+}
+
+async function fetchScheduleHtml(url) {
 	const controller = new AbortController();
 	const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
 	try {
-		const res = await fetch(SCHEDULE_URL, { signal: controller.signal });
+		const res = await fetch(url, { signal: controller.signal });
 		if (!res.ok) {
 			throw new Error(`GymDesk returned HTTP ${res.status}`);
 		}
@@ -351,7 +385,7 @@ function humanDate(d) {
 // Render the ScheduleDay[] into the exact TypeScript source shape src/data/schedule.ts uses:
 // a shared instructor constant when every class shares one instructor string, tab indentation,
 // double-quoted strings, one slot per line.
-function renderFile(schedule, generatedAt) {
+function renderFile(schedule, generatedAt, weekOf = null) {
 	const instructorSet = new Set(schedule.flatMap((d) => d.slots.map((s) => s.instructor)));
 	const useSharedConstant = instructorSet.size === 1;
 	const sharedInstructor = useSharedConstant ? [...instructorSet][0] : null;
@@ -371,10 +405,12 @@ function renderFile(schedule, generatedAt) {
 	// from `export type ClassSlot` onward should match src/data/schedule.ts exactly when GymDesk's
 	// published titles/instructors are all covered by DISPLAY_MAP/INSTRUCTOR_MAP.
 	const lines = [];
-	lines.push(`// Generated ${isoDate(generatedAt)} from GymDesk.`);
+	lines.push(`// Generated ${isoDate(generatedAt)} from GymDesk${weekOf ? ` week of ${humanDate(weekOf)}` : ""}.`);
 	lines.push(`// Superior Taekwondo weekly class timetable.`);
 	lines.push(
-		`// Source: GymDesk (${SCHEDULE_URL}), fetched ${humanDate(generatedAt)}.`
+		weekOf
+			? `// Source: GymDesk (${SCHEDULE_URL}?date=${isoDate(weekOf)}), week of ${humanDate(weekOf)}, fetched ${humanDate(generatedAt)}.`
+			: `// Source: GymDesk (${SCHEDULE_URL}), fetched ${humanDate(generatedAt)}.`
 	);
 	lines.push(
 		`// This file is generated by scripts/fetch-schedule.mjs -- do not hand-edit it. Run`
@@ -426,7 +462,7 @@ function renderFile(schedule, generatedAt) {
 	}
 	lines.push(`];`);
 	lines.push(``);
-	lines.push(`export const SCHEDULE_AS_OF = ${JSON.stringify(humanDate(generatedAt))};`);
+	lines.push(`export const SCHEDULE_AS_OF = ${JSON.stringify(humanDate(weekOf ?? generatedAt))};`);
 	lines.push(`export const GYMDESK_SCHEDULE_URL = ${JSON.stringify(SCHEDULE_URL)};`);
 	lines.push(``);
 	return lines.join("\n");
@@ -515,11 +551,24 @@ function diffRows(existingRows, generatedRows) {
 async function main() {
 	const args = parseArgs(process.argv.slice(2));
 
+	let weekOf = null;
+	let fetchUrl = SCHEDULE_URL;
+	if (args.date !== null) {
+		const parsed = parseIsoDate(args.date);
+		if (!parsed) {
+			console.error(`[fetch-schedule] --date must be a real calendar date in YYYY-MM-DD form (got ${JSON.stringify(args.date)}).`);
+			console.error(`[fetch-schedule] Leaving the existing schedule snapshot untouched.`);
+			process.exit(0);
+		}
+		weekOf = mondayOf(parsed);
+		fetchUrl = `${SCHEDULE_URL}?date=${isoDate(parsed)}`;
+	}
+
 	let html;
 	try {
-		html = await fetchScheduleHtml();
+		html = await fetchScheduleHtml(fetchUrl);
 	} catch (err) {
-		console.error(`[fetch-schedule] Could not fetch ${SCHEDULE_URL}: ${err.message}`);
+		console.error(`[fetch-schedule] Could not fetch ${fetchUrl}: ${err.message}`);
 		console.error(`[fetch-schedule] Leaving the existing schedule snapshot untouched.`);
 		process.exit(0);
 	}
@@ -567,7 +616,7 @@ async function main() {
 		process.exit(0);
 	}
 
-	const out = renderFile(schedule, new Date());
+	const out = renderFile(schedule, new Date(), weekOf);
 	writeFileSync(args.out, out, "utf8");
 	console.error(`[fetch-schedule] Wrote ${daysWithClasses(schedule)} day(s), ${totalClasses(schedule)} class(es) to ${args.out}`);
 }
