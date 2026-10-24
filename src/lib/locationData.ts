@@ -51,7 +51,7 @@ export const locationData: LocationData[] = [
         introTitle: "Taekwondo training in the middle of Helensville",
         introContent: [
             "Superior Taekwondo trains at 94 Mill Road, Helensville, just off Commercial Road in the middle of town. We're a World Taekwondo club, and we've trained here since 2016 — no branch, no franchise, just the one dojang.",
-            "Every class is led by head coach Andrea Kilday, a 3rd Dan black belt, WT Level 2 coach and 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, older kids and teens move through Youth Superior Legends and the Cadets, Juniors and Seniors classes, and adults train alongside them on Tuesday mornings and Friday evenings.",
+            "Every class is led by head coach Andrea Kilday, a 3rd Dan black belt, WT Level 2 coach and 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, older kids and teens move through Youth Superior Legends and the Cadets, Juniors and Seniors classes, and adults train alongside them in the 12+ evening classes and the Monday and Friday Family Class.",
             "If you're already in Helensville, this is the closest training on offer — no highway drive, just parking at the door. Sessions start at $30 a week for one class or $40 a week for unlimited training, with sibling tiers at $55, $70, $80 and $90 a week for families with more than one child on the mat. We're rated 5.0 from 23 Google reviews, and your first class is free."
         ],
         driveTime: "in town, a few minutes from Commercial Road",
@@ -65,8 +65,8 @@ export const locationData: LocationData[] = [
         classesForFamilies: {
             title: "Classes that suit families from Helensville",
             content: [
-                "Because you're already in town, the school run isn't the obstacle it can be for families driving in from further out. Little Superior Legends runs 4:00–4:40pm (ages 4–5) and Youth Superior Legends 4:45–5:30pm (ages 6–11), Monday to Thursday, so most primary-aged kids can go straight from school to the mat.",
-                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train Tuesday mornings, 9:00–10:00am, or join the whole family on Friday at 4:30–5:30pm for the Superior Family Class. Saturday mornings have the Fitness Circuit Class at 9:15am and the Performance Pathway squad from 10:15am to 12:45pm for students working toward competition."
+                "Because you're already in town, the school run isn't the obstacle it can be for families driving in from further out. Little Superior Legends runs 4:00–4:40pm (ages 4–5) on Tuesday and Wednesday and Youth Superior Legends 4:45–5:30pm (ages 6–11), Tuesday to Thursday, so most primary-aged kids can go straight from school to the mat.",
+                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train in the same 12+ classes, or join the whole family on Monday and Friday at 4:30–5:30pm for the Superior Family Class. Saturday mornings have the Fitness Circuit Class at 9:30am and the Performance Pathway squad from 10:15am to 12:45pm for students working toward competition."
             ]
         },
         historyTitle: "One dojang, since 2016",
@@ -153,8 +153,8 @@ export const locationData: LocationData[] = [
         classesForFamilies: {
             title: "Classes that suit families driving up from Auckland",
             content: [
-                "A 35-to-55-minute drive makes a straight-after-school dash harder, so a lot of Auckland families use the classes that don't compete with the evening commute. The Superior Family Class runs Friday 4:30–5:30pm, and Saturday morning has the Fitness Circuit Class at 9:15am and the Performance Pathway squad from 10:15am to 12:45pm — all easier to plan around than a weekday peak-hour trip.",
-                "If you can manage the drive on a weeknight, Little Superior Legends (ages 4–5) runs 4:00–4:40pm and Youth Superior Legends (ages 6–11) 4:45–5:30pm, Monday to Thursday, with the 12-and-up class on Tuesday and Thursday, 5:30–6:30pm. Adults can also train Tuesday mornings, 9:00–10:00am, outside the school-run traffic altogether."
+                "A 35-to-55-minute drive makes a straight-after-school dash harder, so a lot of Auckland families use the classes that don't compete with the evening commute. The Superior Family Class runs Monday and Friday 4:30–5:30pm, and Saturday morning has the Fitness Circuit Class at 9:30am and the Performance Pathway squad from 10:15am to 12:45pm — all easier to plan around than a weekday peak-hour trip.",
+                "If you can manage the drive on a weeknight, Little Superior Legends (ages 4–5) runs 4:00–4:40pm on Tuesday and Wednesday and Youth Superior Legends (ages 6–11) 4:45–5:30pm, Tuesday to Thursday, with the 12-and-up class on Tuesday and Thursday, 5:30–6:30pm. Adults can train in the 12-and-up class too."
             ]
         },
         historyTitle: "One club, one address",
@@ -175,7 +175,7 @@ export const locationData: LocationData[] = [
                 },
                 {
                     title: "A class for every age",
-                    content: "Little Superior Legends from age 4, Youth and 12+ classes for kids and teens, and an Adults class for parents who want to train too. Andrea Kilday holds a 3rd Dan black belt and a WT Level 2 coaching qualification."
+                    content: "Little Superior Legends from age 4, Youth and 12+ classes for kids and teens, and the Family Class for parents who want to train too. Andrea Kilday holds a 3rd Dan black belt and a WT Level 2 coaching qualification."
                 }
             ]
         },
@@ -235,7 +235,7 @@ export const locationData: LocationData[] = [
         introTitle: "Taekwondo classes for Kumeū families",
         introContent: [
             "Kumeū doesn't have its own dojang, but ours is a straightforward drive up State Highway 16 at 94 Mill Road, Helensville, with parking at the door. Kids' classes start at 4pm on weekdays, so families from Kumeū and Huapai can make it after school.",
-            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, who represented New Zealand at the Rio 2016 Olympics. Kids start in Little Superior Legends from age 4, where the focus is listening, balance, confidence and having fun in a structured class. Teens and adults train in the 12+, Family and Adults classes, and students who want to compete can move into the Performance Pathway squad.",
+            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, who represented New Zealand at the Rio 2016 Olympics. Kids start in Little Superior Legends from age 4, where the focus is listening, balance, confidence and having fun in a structured class. Teens and adults train in the 12+ and Family classes, and students who want to compete can move into the Performance Pathway squad.",
             "Sessions start at $30 a week for one class, or $40 a week for unlimited training, with sibling tiers at $55, $70, $80 and $90 a week for families with more than one child. A 10-week term is $300 for one class a week or $400 unlimited, and we're rated 5.0 from 23 Google reviews. Your first class is free: come along, meet the coaches, and see if it fits."
         ],
         driveTime: "about 20 minutes up SH16",
@@ -249,8 +249,8 @@ export const locationData: LocationData[] = [
         classesForFamilies: {
             title: "Classes that suit families from Kumeū",
             content: [
-                "Leaving Kumeū straight after school gives most families enough time to make Youth Superior Legends, 4:45–5:30pm, or the earlier Little Superior Legends session, 4:00–4:40pm, if you can get away a little sooner — both run Monday to Thursday.",
-                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train Tuesday mornings, 9:00–10:00am, or join the Superior Family Class on Friday, 4:30–5:30pm. Saturday mornings have the Fitness Circuit Class at 9:15am and the Performance Pathway squad from 10:15am to 12:45pm."
+                "Leaving Kumeū straight after school gives most families enough time to make Youth Superior Legends, 4:45–5:30pm, or the earlier Little Superior Legends session, 4:00–4:40pm, if you can get away a little sooner — Youth runs Tuesday to Thursday and the earlier session Tuesday and Wednesday.",
+                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train in the same 12+ classes or join the Superior Family Class on Monday and Friday, 4:30–5:30pm. Saturday mornings have the Fitness Circuit Class at 9:30am and the Performance Pathway squad from 10:15am to 12:45pm."
             ]
         },
         historyTitle: "Training the north-west since 2016",
@@ -316,7 +316,7 @@ export const locationData: LocationData[] = [
         introTitle: "Taekwondo for Kaukapakapa families",
         introContent: [
             "Kaukapakapa doesn't have its own dojang — families from the village train with us at 94 Mill Road, Helensville, a short drive down the Kaipara Coast Highway. It's become a regular part of the week for a number of local families: a structured class, a free trial, and parking at the door.",
-            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving through Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train alongside them on Tuesday mornings and at the Friday Family Class.",
+            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving through Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train alongside them in the 12+ evening classes and at the Monday and Friday Family Class.",
             "Because the drive is short, the weekday classes are realistic even after a full day at school or work — and Saturday morning is there for families who'd rather not do a weeknight trip at all. Sessions start at $30 a week for one class or $40 a week unlimited, with sibling tiers at $55, $70, $80 and $90 a week, and we're rated 5.0 from 23 Google reviews."
         ],
         driveTime: "about 15 minutes down the Kaipara Coast Highway",
@@ -330,8 +330,8 @@ export const locationData: LocationData[] = [
         classesForFamilies: {
             title: "Classes that suit families from Kaukapakapa",
             content: [
-                "A 15-minute drive down the highway still leaves room for the after-school classes: Little Superior Legends runs 4:00–4:40pm (ages 4–5) and Youth Superior Legends 4:45–5:30pm (ages 6–11), Monday to Thursday.",
-                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train Tuesday mornings, 9:00–10:00am, or join the Superior Family Class on Friday, 4:30–5:30pm. Saturday has the Fitness Circuit Class at 9:15am and the Performance Pathway squad from 10:15am to 12:45pm, both a shorter round trip on a weekend."
+                "A 15-minute drive down the highway still leaves room for the after-school classes: Little Superior Legends runs 4:00–4:40pm (ages 4–5) on Tuesday and Wednesday and Youth Superior Legends 4:45–5:30pm (ages 6–11), Tuesday to Thursday.",
+                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train in the same 12+ classes or join the Superior Family Class on Monday and Friday, 4:30–5:30pm. Saturday has the Fitness Circuit Class at 9:30am and the Performance Pathway squad from 10:15am to 12:45pm, both a shorter round trip on a weekend."
             ]
         },
         historyTitle: "Serving Kaukapakapa since 2016",
@@ -352,7 +352,7 @@ export const locationData: LocationData[] = [
                 },
                 {
                     title: "Kids from age 4",
-                    content: "Little Superior Legends is a structured, age-appropriate starting point for younger children, four days a week, with sibling discounts once more than one child joins."
+                    content: "Little Superior Legends is a structured, age-appropriate starting point for younger children, twice a week, with sibling discounts once more than one child joins."
                 }
             ]
         },
@@ -400,7 +400,7 @@ export const locationData: LocationData[] = [
         introTitle: "Taekwondo for Waimauku families",
         introContent: [
             "Waimauku doesn't have its own dojang — we train out of 94 Mill Road, Helensville, one of the shortest drives of any of our catchment areas. Families from Waimauku, School Road and out toward Muriwai make the trip up SH16 as part of a normal week.",
-            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving into Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train Tuesday mornings, and the whole family can train together on Friday afternoons.",
+            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving into Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train in the 12+ evening classes, and the whole family can train together on Monday and Friday afternoons.",
             "Sessions start at $30 a week for one class, or $40 a week unlimited, with sibling tiers at $55, $70, $80 and $90 a week for families training together. A 10-week term is $300 for one class a week or $400 unlimited, and we're rated 5.0 from 23 Google reviews. Your first class is free."
         ],
         driveTime: "about 10 minutes up SH16",
@@ -414,8 +414,8 @@ export const locationData: LocationData[] = [
         classesForFamilies: {
             title: "Classes that suit families from Waimauku",
             content: [
-                "A 10-minute run up SH16 makes the after-school classes easy: Little Superior Legends, 4:00–4:40pm (ages 4–5), and Youth Superior Legends, 4:45–5:30pm (ages 6–11), both run Monday to Thursday.",
-                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train Tuesday mornings, 9:00–10:00am, or join the Superior Family Class on Friday, 4:30–5:30pm. Saturday mornings have the Fitness Circuit Class at 9:15am and the Performance Pathway squad from 10:15am to 12:45pm."
+                "A 10-minute run up SH16 makes the after-school classes easy: Little Superior Legends, 4:00–4:40pm (ages 4–5), and Youth Superior Legends, 4:45–5:30pm (ages 6–11), run Tuesday and Wednesday and Tuesday to Thursday respectively.",
+                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train in the same 12+ classes or join the Superior Family Class on Monday and Friday, 4:30–5:30pm. Saturday mornings have the Fitness Circuit Class at 9:30am and the Performance Pathway squad from 10:15am to 12:45pm."
             ]
         },
         historyTitle: "Serving Waimauku since 2016",
@@ -436,7 +436,7 @@ export const locationData: LocationData[] = [
                 },
                 {
                     title: "Family-friendly pricing",
-                    content: "Sibling discount tiers at $55, $70, $80 and $90 a week make it more affordable for more than one child to train, and the Friday Family Class is open to parents too."
+                    content: "Sibling discount tiers at $55, $70, $80 and $90 a week make it more affordable for more than one child to train, and the Monday and Friday Family Class is open to parents too."
                 }
             ]
         },
@@ -485,7 +485,7 @@ export const locationData: LocationData[] = [
         introTitle: "Taekwondo for Huapai families",
         introContent: [
             "Huapai doesn't have its own dojang — families from the Huapai Triangle and surrounding streets train with us at 94 Mill Road, Helensville, a short drive down SH16. It's a straightforward addition to the week: one class, one trip, parking at the door.",
-            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving through Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train alongside them on Tuesday mornings and the Friday Family Class.",
+            "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving through Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train alongside them in the 12+ evening classes and the Monday and Friday Family Class.",
             "Sessions start at $30 a week for one class, or $40 a week for unlimited training, with sibling tiers at $55, $70, $80 and $90 a week for families with more than one child. A 10-week term is $300 for one class a week or $400 unlimited, and we're rated 5.0 from 23 Google reviews. Your first class is free."
         ],
         driveTime: "about 20 minutes up SH16",
@@ -499,8 +499,8 @@ export const locationData: LocationData[] = [
         classesForFamilies: {
             title: "Classes that suit families from Huapai",
             content: [
-                "Leaving Huapai straight after school gives most families enough time to make Youth Superior Legends, 4:45–5:30pm, or the earlier Little Superior Legends session, 4:00–4:40pm, if you can get away a little sooner — both run Monday to Thursday.",
-                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train Tuesday mornings, 9:00–10:00am, or join the Superior Family Class on Friday, 4:30–5:30pm. Saturday mornings have the Fitness Circuit Class at 9:15am and the Performance Pathway squad from 10:15am to 12:45pm."
+                "Leaving Huapai straight after school gives most families enough time to make Youth Superior Legends, 4:45–5:30pm, or the earlier Little Superior Legends session, 4:00–4:40pm, if you can get away a little sooner — Youth runs Tuesday to Thursday and the earlier session Tuesday and Wednesday.",
+                "From age 12, kids move into the Cadets, Juniors and Seniors class on Tuesday and Thursday, 5:30–6:30pm. Adults can train in the same 12+ classes or join the Superior Family Class on Monday and Friday, 4:30–5:30pm. Saturday mornings have the Fitness Circuit Class at 9:30am and the Performance Pathway squad from 10:15am to 12:45pm."
             ]
         },
         historyTitle: "Serving Huapai since 2016",
