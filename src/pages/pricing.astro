@@ -12,23 +12,47 @@ const pricingFaqSchema = {
             name: "How much do Taekwondo classes cost at Superior Taekwondo?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Weekly memberships start from $30 per week for one session. Unlimited training is $40 a week plus a $25 sign-up fee. Family sibling discounts are available. Term-based concession options are also offered. A one-time sign-up fee of $25 applies to weekly memberships.",
+                text: "Weekly memberships are $30 a week for one session a week, $40 a week for two sessions a week, or $50 a week for unlimited Taekwondo sessions. Each weekly membership has a one-off $40 sign-up fee. A 10-session concession card is $285 and is valid for 3 months, and your first week is free.",
             },
         },
         {
             "@type": "Question",
-            name: "Is there a family discount for multiple children?",
+            name: "Is there a family discount for multiple family members?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes. Superior Taekwondo offers sibling deals for families with 2, 3, or 4 children. The sibling deals cover unlimited sessions at reduced combined rates compared to individual memberships.",
+                text: "Yes. The first family member pays full price, the second gets 10% off, the third gets 15% off and the fourth gets 20% off.",
             },
         },
         {
             "@type": "Question",
-            name: "Can I pay per-term instead of weekly?",
+            name: "How does the concession card work?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes. One session a week is $300 for a 10-week term. Unlimited sessions are $400 for a 10-week term. A 10-session concession card is $285 and lasts five months.",
+                text: "The concession card is $285 for 10 sessions and is valid for 3 months. It suits students who can't commit to a weekly membership.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Is there a free trial?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Your first week is free, and you can attend on any day. Book through the form on our contact page and we'll get you started.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "How do I cancel or put my membership on hold?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Cancellations need 21 days' written notice by email, counted from the date we receive your request, and you're welcome to rejoin in a future term, subject to availability. Holds are normally a maximum of 2 to 3 weeks, with longer holds only in exceptional circumstances such as injury, medical reasons or pre-planned holidays. A hold can't cover a whole term, in which case the membership is cancelled.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "What if I miss a session?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Training is flexible. You can attend alternative classes on different days when needed, mix and match your training days, and make up a missed session by attending another suitable class that week. The same applies to public holidays and instructor absences, and if an alternative class isn't possible after an instructor absence, you can use your catch-up option the following week.",
             },
         },
         {
@@ -36,15 +60,15 @@ const pricingFaqSchema = {
             name: "How is the weekly membership collected?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Weekly memberships are collected via direct debit. Two weeks' written notice by email is required to cancel or place a membership on hold.",
+                text: "Weekly memberships are collected via direct debit.",
             },
         },
         {
             "@type": "Question",
-            name: "What does my membership cover?",
+            name: "Where do classes take place?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "All memberships cover every class on the timetable at our Helensville dojang, 94 Mill Road, six days a week.",
+                text: "All training takes place at our Helensville dojang, 94 Mill Road.",
             },
         },
     ],
@@ -52,98 +76,80 @@ const pricingFaqSchema = {
 
 const plans = [
     {
-        category: "Weekly Memberships",
+        category: "Weekly memberships",
         options: [
             {
-                title: "1 Session Per Week",
+                title: "One session per week",
                 frequency: "Ongoing",
-                description: "1 Session / week",
+                description: "1 session / week",
                 sport: "Taekwondo",
                 price: "$30.00",
                 period: "/ Week",
-                signup: "+ $25.00 Sign-up",
+                signup: "+ $40.00 Sign-up",
             },
             {
-                title: "Unlimited Sessions",
+                title: "Two sessions per week",
                 frequency: "Ongoing",
-                description: "Unlimited",
+                description: "2 sessions / week",
                 sport: "Taekwondo",
                 price: "$40.00",
                 period: "/ Week",
-                signup: "+ $25.00 Sign-up",
+                signup: "+ $40.00 Sign-up",
+            },
+            {
+                title: "Unlimited Taekwondo sessions",
+                frequency: "Ongoing",
+                description: "Unlimited sessions",
+                sport: "Taekwondo",
+                price: "$50.00",
+                period: "/ Week",
+                signup: "+ $40.00 Sign-up",
                 recommended: true,
-            },
-            {
-                title: "Sibling Deal - 1 Session Each",
-                frequency: "Ongoing",
-                description: "2 Sessions / week",
-                sport: "Taekwondo",
-                price: "$55.00",
-                period: "/ Week",
-                signup: "+ $25.00 Sign-up",
-            },
-            {
-                title: "Sibling Deal of 2 - Unlimited",
-                frequency: "Ongoing",
-                description: "Unlimited",
-                sport: "Taekwondo",
-                price: "$70.00",
-                period: "/ Week",
-                signup: "+ $25.00 Sign-up",
-            },
-            {
-                title: "Sibling Deal of 3 - Unlimited",
-                frequency: "Ongoing",
-                description: "Unlimited",
-                sport: "Taekwondo",
-                price: "$80.00",
-                period: "/ Week",
-                signup: "+ $25.00 Sign-up",
-            },
-            {
-                title: "Sibling of 4 - Unlimited",
-                frequency: "Ongoing",
-                description: "Unlimited",
-                sport: "Taekwondo",
-                price: "$90.00",
-                period: "/ Week",
-                signup: "+ $25.00 Sign-up",
             },
         ],
     },
     {
-        category: "Term & Concession",
+        category: "Other options",
         options: [
             {
-                title: "Concession Card",
-                frequency: "5 months",
-                description: "10 Sessions",
+                title: "Concession card",
+                frequency: "10 sessions",
+                description: "10 sessions · valid 3 months",
                 sport: "Taekwondo",
                 price: "$285.00",
                 period: "Total",
                 signup: "",
             },
             {
-                title: "1 Session a Week Per Term",
-                frequency: "Ongoing",
-                description: "1 Session / week",
+                title: "Free week trial",
+                frequency: "1 week",
+                description: "1 week · any day",
                 sport: "Taekwondo",
-                price: "$300.00",
-                period: "/ 10 Weeks",
-                signup: "+ $25.00 Sign-up",
-            },
-            {
-                title: "Unlimited Sessions Per Term",
-                frequency: "Ongoing",
-                description: "Unlimited",
-                sport: "Taekwondo",
-                price: "$400.00",
-                period: "/ 10 Weeks",
-                signup: "+ $25.00 Sign-up",
+                price: "FREE",
+                period: "1 week",
+                signup: "",
             },
         ],
     },
 ];
+
+const sellerRef = { "@type": "MartialArtsSchool", name: "Superior Taekwondo" };
+const offerUrl = "https://superiortkd.co.nz/pricing/";
+const weeklyOffer = (name: string, description: string, price: string) => ({
+    "@type": "Offer",
+    name,
+    description,
+    priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price,
+        priceCurrency: "NZD",
+        unitCode: "WEE",
+        unitText: "per week",
+    },
+    url: offerUrl,
+    eligibleRegion: "NZ",
+    seller: sellerRef,
+});
 
 const offersSchema = JSON.stringify({
     "@context": "https://schema.org",
@@ -157,88 +163,89 @@ const offersSchema = JSON.stringify({
         "@type": "OfferCatalog",
         name: "Taekwondo Membership Options",
         itemListElement: [
+            weeklyOffer(
+                "One session per week (weekly membership)",
+                "One Taekwondo session per week at our Helensville dojang. One-off $40 sign-up fee.",
+                "30.00",
+            ),
+            weeklyOffer(
+                "Two sessions per week (weekly membership)",
+                "Two Taekwondo sessions per week at our Helensville dojang. One-off $40 sign-up fee.",
+                "40.00",
+            ),
+            weeklyOffer(
+                "Unlimited Taekwondo sessions (weekly membership)",
+                "Unlimited Taekwondo sessions at our Helensville dojang. One-off $40 sign-up fee.",
+                "50.00",
+            ),
             {
                 "@type": "Offer",
-                name: "1 Session Per Week (Weekly Membership)",
-                description: "1 Taekwondo session per week at our Helensville dojang.",
-                priceSpecification: {
-                    "@type": "UnitPriceSpecification",
-                    price: "30.00",
-                    priceCurrency: "NZD",
-                    unitCode: "WEE",
-                    unitText: "per week",
-                },
-                url: "https://superiortkd.co.nz/pricing/",
-                eligibleRegion: "NZ",
-                seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
-            },
-            {
-                "@type": "Offer",
-                name: "Unlimited Sessions (Weekly Membership)",
-                description: "Unlimited Taekwondo sessions per week at our Helensville dojang.",
-                priceSpecification: {
-                    "@type": "UnitPriceSpecification",
-                    price: "40.00",
-                    priceCurrency: "NZD",
-                    unitCode: "WEE",
-                    unitText: "per week",
-                },
-                url: "https://superiortkd.co.nz/pricing/",
-                eligibleRegion: "NZ",
-                seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
-            },
-            {
-                "@type": "Offer",
-                name: "1 Session Per Week (Term)",
-                description: "1 Taekwondo session per week for 10-week term.",
-                priceSpecification: {
-                    "@type": "PriceSpecification",
-                    price: "300.00",
-                    priceCurrency: "NZD",
-                    description: "Per 10-week term",
-                },
-                url: "https://superiortkd.co.nz/pricing/",
-                eligibleRegion: "NZ",
-                seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
-            },
-            {
-                "@type": "Offer",
-                name: "Unlimited Sessions Per Term",
-                description: "Unlimited Taekwondo sessions for 10-week term. Best value for frequent trainers.",
-                priceSpecification: {
-                    "@type": "PriceSpecification",
-                    price: "400.00",
-                    priceCurrency: "NZD",
-                    description: "Per 10-week term",
-                },
-                url: "https://superiortkd.co.nz/pricing/",
-                eligibleRegion: "NZ",
-                seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
-            },
-            {
-                "@type": "Offer",
-                name: "Concession Card (10 Sessions)",
-                description: "10-session concession card valid for 5 months.",
+                name: "Concession card (10 sessions)",
+                description: "10-session concession card valid for 3 months.",
                 priceSpecification: {
                     "@type": "PriceSpecification",
                     price: "285.00",
                     priceCurrency: "NZD",
-                    description: "10 sessions, valid 5 months",
+                    description: "10 sessions, valid 3 months",
                 },
-                url: "https://superiortkd.co.nz/pricing/",
+                url: offerUrl,
                 eligibleRegion: "NZ",
-                seller: { "@type": "MartialArtsSchool", name: "Superior Taekwondo" },
+                seller: sellerRef,
+            },
+            {
+                "@type": "Offer",
+                name: "Free week trial",
+                description: "A free one-week trial of Taekwondo, attend on any day.",
+                priceSpecification: {
+                    "@type": "PriceSpecification",
+                    price: "0.00",
+                    priceCurrency: "NZD",
+                    description: "Free 1-week trial",
+                },
+                url: offerUrl,
+                eligibleRegion: "NZ",
+                seller: sellerRef,
             },
         ],
     },
 });
 
 const pricingHeadContent = `<script type="application/ld+json">${offersSchema}<\/script>`;
+
+const familyDiscounts = [
+    { member: "1st family member", discount: "Full price" },
+    { member: "2nd family member", discount: "10% off" },
+    { member: "3rd family member", discount: "15% off" },
+    { member: "4th family member", discount: "20% off" },
+];
+
+const policies = [
+    {
+        title: "Flexible training",
+        text: "Attend alternative classes on different days when needed, mix and match your training days, and make up a missed session by attending another suitable class that week.",
+    },
+    {
+        title: "Public holidays",
+        text: "If your usual class falls on a public holiday, attend an alternative class that week to make up the session.",
+    },
+    {
+        title: "Instructor absences",
+        text: "If an instructor is away through illness or coaching at a tournament, attend an alternative class that week. If that isn't possible, use your catch-up option the following week.",
+    },
+    {
+        title: "Holds",
+        text: "Holds are a maximum of 2 to 3 weeks. Longer holds are only considered in exceptional circumstances such as injury, medical reasons or pre-planned holidays. A hold can't cover a whole term, for availability, location and scheduling reasons, and in that case the membership is cancelled.",
+    },
+    {
+        title: "Cancellations",
+        text: "21 days' written notice by email is required, counted from the date we receive your request. You're welcome to rejoin in a future term, subject to availability.",
+    },
+];
 ---
 
 <Layout
     title="Pricing & Memberships | Superior Taekwondo"
-    	description="Transparent pricing for Taekwondo in North West Auckland: weekly memberships, family sibling discounts and flexible term-based options."
+    	description="Taekwondo pricing in North West Auckland: weekly memberships from $30, a free week trial, and family discounts of 10 to 20% off."
     headContent={pricingHeadContent}
 >
     <script type="application/ld+json">
@@ -296,39 +303,83 @@ const pricingHeadContent = `<script type="application/ld+json">${offersSchema}<\
         <!-- React Pricing Component (Handles header and content internally now) -->
         <PricingSection client:load plans={plans} />
 
-        <!-- Terms & Conditions (Outside React component to keep it simple or moved in?) 
-         Actually, the previous PricingGrid had it inside the main container. 
-         PricingSection now has a container inside. I will place Terms below it.
-    -->
-        <div class="container mx-auto px-4 pb-24">
+        <!-- Family discounts -->
+        <div class="container mx-auto px-4 pb-12">
+            <div class="max-w-4xl mx-auto relative z-10">
+                <h2
+                    class="text-white font-oswald font-bold uppercase tracking-wide text-2xl mb-2 text-center"
+                >
+                    Family discounts
+                </h2>
+                <p class="text-gray-400 font-body text-center mb-6">
+                    Training together? Each extra family member gets a bigger discount.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {
+                        familyDiscounts.map((tier) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-blue-belt-end/50 transition-colors">
+                                <p class="text-gray-400 font-body text-sm uppercase tracking-wider mb-2">
+                                    {tier.member}
+                                </p>
+                                <p class="text-white font-oswald font-black text-2xl uppercase">
+                                    {tier.discount}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Membership policies -->
+        <div class="container mx-auto px-4 pb-12">
             <div
                 class="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-xl p-8 text-gray-400 font-body text-sm leading-relaxed relative z-10"
             >
-                <h3
+                <h2
                     class="text-white font-oswald font-bold uppercase tracking-wide text-lg mb-4"
                 >
-                    Important Information
-                </h3>
+                    Membership policies
+                </h2>
                 <ul class="list-disc pl-5 space-y-2">
+                    {
+                        policies.map((policy) => (
+                            <li>
+                                <strong class="text-gray-200">{policy.title}.</strong>{" "}
+                                {policy.text}
+                            </li>
+                        ))
+                    }
                     <li>
-                        Memberships are collected weekly by the way of direct
-                        debit.
+                        Weekly memberships are collected via direct debit.
                     </li>
-                    <li>
-                        If you attended once a week and the particular day falls
-                        on a public holiday or facilities are closed you are
-                        encouraged to come to any other class as a make up
-                        session.
-                    </li>
-                    <li>
-                        2 week notice by email for cancelling membership or
-                        putting on hold.
-                    </li>
-                    <li>
-                        Every class on the timetable included, at our
-                        Helensville dojang.
-                    </li>
+                    <li>All training is at our Helensville dojang, 94 Mill Road.</li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- Pricing FAQ (mirrors the FAQPage JSON-LD above) -->
+        <div class="container mx-auto px-4 pb-24">
+            <div class="max-w-4xl mx-auto relative z-10">
+                <h2
+                    class="text-white font-oswald font-bold uppercase tracking-wide text-2xl mb-6 text-center"
+                >
+                    Pricing questions
+                </h2>
+                <div class="space-y-4">
+                    {
+                        pricingFaqSchema.mainEntity.map((item) => (
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 class="text-white font-oswald font-bold tracking-wide text-lg mb-2">
+                                    {item.name}
+                                </h3>
+                                <p class="text-gray-400 font-body text-sm leading-relaxed">
+                                    {item.acceptedAnswer.text}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
         </div>
     </main>

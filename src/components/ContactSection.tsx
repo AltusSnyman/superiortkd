@@ -35,7 +35,7 @@ export default function ContactSection() {
 
             <article className="text-center mb-16 relative z-50 px-4">
                 <h1 className="text-4xl md:text-5xl font-black font-oswald uppercase tracking-tighter text-white mb-4 drop-shadow-lg">
-                    Book a free trial class
+                    Book a free trial week
                 </h1>
 
                 <TimelineContent
@@ -45,7 +45,7 @@ export default function ContactSection() {
                     customVariants={revealVariants}
                     className="text-gray-300 font-body text-xl max-w-2xl mx-auto"
                 >
-                    Tell us who the class is for and when suits, and we'll be in touch to book your free first session.
+                    Tell us who the class is for and when suits, and we'll be in touch to book your free first week.
                 </TimelineContent>
             </article>
 

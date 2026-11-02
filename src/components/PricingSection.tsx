@@ -63,7 +63,7 @@ const PricingSwitch = ({ onSwitch, selected }: { onSwitch: (value: string) => vo
                             transition={{ type: "spring", stiffness: 500, damping: 30 }}
                         />
                     )}
-                    <span className="relative z-20">Term & Concession</span>
+                    <span className="relative z-20">Other Options</span>
                 </button>
             </div>
         </div>
@@ -146,8 +146,9 @@ export default function PricingSection({ plans }: PricingSectionProps) {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                     {currentPlans.map((plan, index) => {
                         // Parse price string to number for NumberFlow (removing $ and text)
-                        // Example: "$27.00" -> 27
+                        // Example: "$27.00" -> 27. Non-numeric prices such as "FREE" are shown as plain text.
                         const numericPrice = parseFloat(plan.price.replace(/[^0-9.]/g, ''));
+                        const isNumericPrice = Number.isFinite(numericPrice);
 
                         return (
                             <TimelineContent
@@ -177,12 +178,18 @@ export default function PricingSection({ plans }: PricingSectionProps) {
 
                                         <div className="flex items-baseline mb-1">
                                             <span className="text-4xl md:text-5xl font-black font-oswald text-white">
-                                                $
-                                                <NumberFlow
-                                                    value={numericPrice}
-                                                    format={{ minimumFractionDigits: 0 }}
-                                                    className="inline-block"
-                                                />
+                                                {isNumericPrice ? (
+                                                    <>
+                                                        $
+                                                        <NumberFlow
+                                                            value={numericPrice}
+                                                            format={{ minimumFractionDigits: 0 }}
+                                                            className="inline-block"
+                                                        />
+                                                    </>
+                                                ) : (
+                                                    plan.price
+                                                )}
                                             </span>
                                             <span className="text-lg text-gray-400 font-body ml-2">{plan.period}</span>
                                         </div>
@@ -225,7 +232,7 @@ export default function PricingSection({ plans }: PricingSectionProps) {
                                                     : "bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:border-blue-belt-end/50 hover:text-blue-belt-end"
                                                     }`}
                                             >
-                                                Book a free trial first
+                                                {isNumericPrice ? "Book a free trial first" : "Book your free week"}
                                             </a>
                                             <a
                                                 href="https://superior-taekwondo.gymdesk.com/signup"

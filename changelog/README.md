@@ -4,6 +4,7 @@ One entry per change set. Newest first.
 
 | Date | Entry | Target |
 |---|---|---|
+| 2026-11-02 | [Pricing and policy sync to GymDesk](2026-11-02-pricing-sync.md) | Trial and sign-up conversions (`free_trial_click`, `gymdesk_click`); /pricing/ CTR. Re-check 2026-11-16. |
 | 2026-10-24 | [Timetable sync to GymDesk week of 2 Nov](2026-10-24-timetable-sync.md) | Accuracy and trial conversion; no primary GSC metric. Re-check 2026-11-03. |
 | 2026-09-28 | [Footer designer credit link](2026-09-28-credit-link.md) | Contractual requirement |
 | 2026-09-19 | [Round 2: depth and proof](2026-09-19-round-2-depth-and-proof.md) | class finder, real location pages, local posts, reviews widget, performance |

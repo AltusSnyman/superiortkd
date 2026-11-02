@@ -33,14 +33,14 @@ export const ageTiers: AgeTierRow[] = [
 		className: "Youth Superior Legends (all belts)",
 		schedule: "Tue–Thu 4:45–5:30pm; sparring Thu 4:00–4:45pm",
 		details:
-			"Technique, fitness and confidence. From $30 a week, unlimited $40.",
+			"Technique, fitness and confidence. From $30 a week, unlimited $50.",
 	},
 	{
 		ageBand: "12 years and up",
 		className: "Cadets, Juniors and Seniors (all belts)",
 		schedule: "Tue and Thu 5:30–6:30pm; sparring Thu 6:30–8:00pm",
 		details:
-			"Teens train together on the full WT syllabus. Unlimited $40 a week.",
+			"Teens train together on the full WT syllabus. Unlimited $50 a week.",
 	},
 	{
 		ageBand: "Adults",

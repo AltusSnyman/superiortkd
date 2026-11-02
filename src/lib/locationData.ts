@@ -46,13 +46,13 @@ export const locationData: LocationData[] = [
     {
         slug: "helensville",
         title: "Taekwondo Classes in Helensville | Superior Taekwondo",
-        metaDescription: "Taekwondo training in Helensville at 94 Mill Road. Kids from age 4, teens and adults, coached by a 2016 Olympian. Your first class is free.",
+        metaDescription: "Taekwondo training in Helensville at 94 Mill Road. Kids from age 4, teens and adults, coached by a 2016 Olympian. Your first week is free.",
         heroImage: "/images/locations/helensville-hero.webp",
         introTitle: "Taekwondo training in the middle of Helensville",
         introContent: [
             "Superior Taekwondo trains at 94 Mill Road, Helensville, just off Commercial Road in the middle of town. We're a World Taekwondo club, and we've trained here since 2016 — no branch, no franchise, just the one dojang.",
             "Every class is led by head coach Andrea Kilday, a 3rd Dan black belt, WT Level 2 coach and 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, older kids and teens move through Youth Superior Legends and the Cadets, Juniors and Seniors classes, and adults train alongside them in the 12+ evening classes and the Monday and Friday Family Class.",
-            "If you're already in Helensville, this is the closest training on offer — no highway drive, just parking at the door. Sessions start at $30 a week for one class or $40 a week for unlimited training, with sibling tiers at $55, $70, $80 and $90 a week for families with more than one child on the mat. We're rated 5.0 from 23 Google reviews, and your first class is free."
+            "If you're already in Helensville, this is the closest training on offer — no highway drive, just parking at the door. Sessions start at $30 a week for one class, $40 for two, or $50 a week for unlimited training, with family discounts of 10 to 20% off for families with more than one member on the mat. We're rated 5.0 from 23 Google reviews, and your first week is free."
         ],
         driveTime: "in town, a few minutes from Commercial Road",
         gettingHere: {
@@ -87,7 +87,7 @@ export const locationData: LocationData[] = [
                 },
                 {
                     title: "One dojang, not a franchise",
-                    content: "One site, one coaching team, and a clear belt path from your first class through to black belt. A 10-week term is $300 for one class a week, or $400 for unlimited training."
+                    content: "One site, one coaching team, and a clear belt path from your first class through to black belt. Weekly memberships start at $30 for one class a week, or $50 for unlimited training."
                 }
             ]
         },
@@ -122,7 +122,7 @@ export const locationData: LocationData[] = [
             },
             {
                 question: "Which class should my child start in?",
-                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first class is free, so come and try."
+                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first week is free, so come and try."
             },
             {
                 question: "Do we have to buy a uniform before the trial?",
@@ -134,13 +134,13 @@ export const locationData: LocationData[] = [
         slug: "auckland",
         title: "Taekwondo Auckland | Olympian Coach, Free Trial",
         heading: "Taekwondo in Auckland: our dojang in the north-west",
-        metaDescription: "Taekwondo in Helensville, north-west Auckland. Kids from 4, teens and adults, coached by an Olympian. Book a free trial class today.",
+        metaDescription: "Taekwondo in Helensville, north-west Auckland. Kids from 4, teens and adults, coached by an Olympian. Book a free trial week today.",
         heroImage: "/images/locations/auckland-hero.webp",
         introTitle: "One dojang, serving Auckland's north-west",
         introContent: [
-            "We're not in the central city. Superior Taekwondo trains at one dojang at 94 Mill Road, Helensville, up State Highway 16 from Auckland. Families come from Kumeū, Huapai, Waimauku, Kaukapakapa, Riverhead, Westgate and the Kaipara coast. Classes run for kids from age 4, teens and adults, six days a week, and every student is coached by a team led by 2016 Olympian Andrea Kilday. Your first class is free.",
+            "We're not in the central city. Superior Taekwondo trains at one dojang at 94 Mill Road, Helensville, up State Highway 16 from Auckland. Families come from Kumeū, Huapai, Waimauku, Kaukapakapa, Riverhead, Westgate and the Kaipara coast. Classes run for kids from age 4, teens and adults, six days a week, and every student is coached by a team led by 2016 Olympian Andrea Kilday. Your first week is free.",
             "Getting to us means a drive up SH16, but families tell us it's worth it. Classes are practical: real technique, real fitness, and a clear belt path from white belt through to black. There's no franchise script here — just one dojang, one coaching team, and a training standard that meets World Taekwondo requirements.",
-            "Auckland is spread out and a Helensville address isn't for everyone. But if you're prepared to make the drive, you'll find a small, focused club rather than a big-city chain: kids' classes starting at 4pm on weekdays, a Saturday morning slot, and coaches who know every student by name. Sessions start at $30 a week for one class or $40 a week unlimited, with sibling tiers at $55, $70, $80 and $90 a week, and we're rated 5.0 from 23 Google reviews."
+            "Auckland is spread out and a Helensville address isn't for everyone. But if you're prepared to make the drive, you'll find a small, focused club rather than a big-city chain: kids' classes starting at 4pm on weekdays, a Saturday morning slot, and coaches who know every student by name. Sessions start at $30 a week for one class, $40 for two or $50 a week unlimited, with family discounts of 10 to 20% off, and we're rated 5.0 from 23 Google reviews."
         ],
         driveTime: "35 to 55 minutes north-west of the city on SH16, depending on where you start",
         gettingHere: {
@@ -171,7 +171,7 @@ export const locationData: LocationData[] = [
                 },
                 {
                     title: "One dojang, no franchise gimmicks",
-                    content: "Everyone trains at 94 Mill Road, Helensville — not a chain of branches. What you see is the club you join. A 10-week term is $300 for one class a week, or $400 for unlimited training."
+                    content: "Everyone trains at 94 Mill Road, Helensville — not a chain of branches. What you see is the club you join. Weekly memberships start at $30 for one class a week, or $50 for unlimited training."
                 },
                 {
                     title: "A class for every age",
@@ -210,7 +210,7 @@ export const locationData: LocationData[] = [
             },
             {
                 question: "Which class should my child start in?",
-                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first class is free, so come and try."
+                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first week is free, so come and try."
             },
             {
                 question: "Do we have to buy a uniform before the trial?",
@@ -230,13 +230,13 @@ export const locationData: LocationData[] = [
         slug: "kumeu",
         title: "Taekwondo Classes near Kumeū | Superior Taekwondo",
         heading: "Taekwondo classes for Kumeū families",
-        metaDescription: "Taekwondo for Kumeū and Huapai families: kids from age 4, teens and adults. Our Helensville dojang is up SH16, Olympian-led. Free trial class.",
+        metaDescription: "Taekwondo for Kumeū and Huapai families: kids from age 4, teens and adults. Our Helensville dojang is up SH16, Olympian-led. Free trial week.",
         heroImage: "/images/hero-poster.webp",
         introTitle: "Taekwondo classes for Kumeū families",
         introContent: [
             "Kumeū doesn't have its own dojang, but ours is a straightforward drive up State Highway 16 at 94 Mill Road, Helensville, with parking at the door. Kids' classes start at 4pm on weekdays, so families from Kumeū and Huapai can make it after school.",
             "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, who represented New Zealand at the Rio 2016 Olympics. Kids start in Little Superior Legends from age 4, where the focus is listening, balance, confidence and having fun in a structured class. Teens and adults train in the 12+ and Family classes, and students who want to compete can move into the Performance Pathway squad.",
-            "Sessions start at $30 a week for one class, or $40 a week for unlimited training, with sibling tiers at $55, $70, $80 and $90 a week for families with more than one child. A 10-week term is $300 for one class a week or $400 unlimited, and we're rated 5.0 from 23 Google reviews. Your first class is free: come along, meet the coaches, and see if it fits."
+            "Sessions start at $30 a week for one class, $40 for two, or $50 a week for unlimited training, with family discounts of 10 to 20% off for families with more than one member. A 10-session concession card is $285 if weekly doesn't suit, and we're rated 5.0 from 23 Google reviews. Your first week is free: come along, meet the coaches, and see if it fits."
         ],
         driveTime: "about 20 minutes up SH16",
         gettingHere: {
@@ -263,7 +263,7 @@ export const locationData: LocationData[] = [
             items: [
                 {
                     title: "A short run up SH16",
-                    content: "94 Mill Road, Helensville is about 20 minutes up State Highway 16, with parking at the door. A 10-week term is $300 for one class a week, or $400 for unlimited training."
+                    content: "94 Mill Road, Helensville is about 20 minutes up State Highway 16, with parking at the door. Weekly memberships start at $30 for one class a week, or $50 for unlimited training."
                 },
                 {
                     title: "Olympian-led team",
@@ -271,13 +271,13 @@ export const locationData: LocationData[] = [
                 },
                 {
                     title: "Classes for the whole family",
-                    content: "Little Superior Legends from age 4, classes for teens and adults, and sibling discounts for families training together. We're rated 5.0 from 23 Google reviews."
+                    content: "Little Superior Legends from age 4, classes for teens and adults, and family discounts for families training together. We're rated 5.0 from 23 Google reviews."
                 }
             ]
         },
         serviceArea: {
             title: "Serving Kumeū and Huapai",
-            description: "We don't have a dojang in Kumeū — everyone trains at 94 Mill Road, Helensville, up SH16. Here's what that drive looks like from around Kumeū and Huapai, and the class times and pricing are the same for both townships. If a weekly class doesn't suit, a 10-session concession card is $285 and can be used at any class on the timetable.",
+            description: "We don't have a dojang in Kumeū — everyone trains at 94 Mill Road, Helensville, up SH16. Here's what that drive looks like from around Kumeū and Huapai, and the class times and pricing are the same for both townships. If a weekly class doesn't suit, a 10-session concession card is $285, valid for 3 months, and can be used at any class on the timetable.",
             landmarks: [
                 "Kumeu Showgrounds",
                 "Kumeū Village",
@@ -300,7 +300,7 @@ export const locationData: LocationData[] = [
             },
             {
                 question: "Which class should my child start in?",
-                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first class is free, so come and try."
+                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first week is free, so come and try."
             },
             {
                 question: "Do we have to buy a uniform before the trial?",
@@ -311,13 +311,13 @@ export const locationData: LocationData[] = [
     {
         slug: "kaukapakapa",
         title: "Taekwondo Classes for Kaukapakapa | Superior Taekwondo",
-        metaDescription: "Taekwondo for Kaukapakapa families: about 15 minutes down the Kaipara Coast Highway to 94 Mill Road, Helensville. Kids from age 4. Free trial class.",
+        metaDescription: "Taekwondo for Kaukapakapa families: about 15 minutes down the Kaipara Coast Highway to 94 Mill Road, Helensville. Kids from age 4. Free trial week.",
         heroImage: "/images/locations/kaukapakapa-hero.webp",
         introTitle: "Taekwondo for Kaukapakapa families",
         introContent: [
-            "Kaukapakapa doesn't have its own dojang — families from the village train with us at 94 Mill Road, Helensville, a short drive down the Kaipara Coast Highway. It's become a regular part of the week for a number of local families: a structured class, a free trial, and parking at the door.",
+            "Kaukapakapa doesn't have its own dojang — families from the village train with us at 94 Mill Road, Helensville, a short drive down the Kaipara Coast Highway. It's become a regular part of the week for a number of local families: a structured class, a free trial week, and parking at the door.",
             "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving through Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train alongside them in the 12+ evening classes and at the Monday and Friday Family Class.",
-            "Because the drive is short, the weekday classes are realistic even after a full day at school or work — and Saturday morning is there for families who'd rather not do a weeknight trip at all. Sessions start at $30 a week for one class or $40 a week unlimited, with sibling tiers at $55, $70, $80 and $90 a week, and we're rated 5.0 from 23 Google reviews."
+            "Because the drive is short, the weekday classes are realistic even after a full day at school or work — and Saturday morning is there for families who'd rather not do a weeknight trip at all. Sessions start at $30 a week for one class, $40 for two or $50 a week unlimited, with family discounts of 10 to 20% off, and we're rated 5.0 from 23 Google reviews."
         ],
         driveTime: "about 15 minutes down the Kaipara Coast Highway",
         gettingHere: {
@@ -344,7 +344,7 @@ export const locationData: LocationData[] = [
             items: [
                 {
                     title: "A short drive down the highway",
-                    content: "94 Mill Road, Helensville is about 15 minutes down the Kaipara Coast Highway — the closest dojang for local families. A 10-week term is $300 for one class a week, or $400 for unlimited training."
+                    content: "94 Mill Road, Helensville is about 15 minutes down the Kaipara Coast Highway — the closest dojang for local families. Weekly memberships start at $30 for one class a week, or $50 for unlimited training."
                 },
                 {
                     title: "Olympian-led coaching",
@@ -352,13 +352,13 @@ export const locationData: LocationData[] = [
                 },
                 {
                     title: "Kids from age 4",
-                    content: "Little Superior Legends is a structured, age-appropriate starting point for younger children, twice a week, with sibling discounts once more than one child joins."
+                    content: "Little Superior Legends is a structured, age-appropriate starting point for younger children, twice a week, with family discounts once more than one family member joins."
                 }
             ]
         },
         serviceArea: {
             title: "Serving Kaukapakapa and surrounds",
-            description: "We don't have a dojang in Kaukapakapa — the village and surrounding lifestyle blocks train with us at 94 Mill Road, Helensville, down the Kaipara Coast Highway. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $285 and can be used at any class on the timetable.",
+            description: "We don't have a dojang in Kaukapakapa — the village and surrounding lifestyle blocks train with us at 94 Mill Road, Helensville, down the Kaipara Coast Highway. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $285, valid for 3 months, and can be used at any class on the timetable.",
             landmarks: [
                 "Omeru Scenic Reserve",
                 "Kaipara Coast Sculpture Gardens",
@@ -384,7 +384,7 @@ export const locationData: LocationData[] = [
             },
             {
                 question: "Which class should my child start in?",
-                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first class is free, so come and try."
+                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first week is free, so come and try."
             },
             {
                 question: "Do we have to buy a uniform before the trial?",
@@ -395,13 +395,13 @@ export const locationData: LocationData[] = [
     {
         slug: "waimauku",
         title: "Waimauku Taekwondo Classes | Superior Taekwondo",
-        metaDescription: "Taekwondo for Waimauku families: about 10 minutes up SH16 to 94 Mill Road, Helensville. Kids from age 4, Olympian-led coaching. Free trial class.",
+        metaDescription: "Taekwondo for Waimauku families: about 10 minutes up SH16 to 94 Mill Road, Helensville. Kids from age 4, Olympian-led coaching. Free trial week.",
         heroImage: "/images/locations/waimauku-hero.webp",
         introTitle: "Taekwondo for Waimauku families",
         introContent: [
             "Waimauku doesn't have its own dojang — we train out of 94 Mill Road, Helensville, one of the shortest drives of any of our catchment areas. Families from Waimauku, School Road and out toward Muriwai make the trip up SH16 as part of a normal week.",
             "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving into Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train in the 12+ evening classes, and the whole family can train together on Monday and Friday afternoons.",
-            "Sessions start at $30 a week for one class, or $40 a week unlimited, with sibling tiers at $55, $70, $80 and $90 a week for families training together. A 10-week term is $300 for one class a week or $400 unlimited, and we're rated 5.0 from 23 Google reviews. Your first class is free."
+            "Sessions start at $30 a week for one class, $40 for two, or $50 a week unlimited, with family discounts of 10 to 20% off for families training together. A 10-session concession card is $285 if weekly doesn't suit, and we're rated 5.0 from 23 Google reviews. Your first week is free."
         ],
         driveTime: "about 10 minutes up SH16",
         gettingHere: {
@@ -428,7 +428,7 @@ export const locationData: LocationData[] = [
             items: [
                 {
                     title: "One of the shorter drives",
-                    content: "94 Mill Road, Helensville is about 10 minutes up SH16 from Waimauku, with parking right at the door. A 10-week term is $300 for one class a week, or $400 for unlimited training."
+                    content: "94 Mill Road, Helensville is about 10 minutes up SH16 from Waimauku, with parking right at the door. Weekly memberships start at $30 for one class a week, or $50 for unlimited training."
                 },
                 {
                     title: "Olympian-led coaching",
@@ -436,13 +436,13 @@ export const locationData: LocationData[] = [
                 },
                 {
                     title: "Family-friendly pricing",
-                    content: "Sibling discount tiers at $55, $70, $80 and $90 a week make it more affordable for more than one child to train, and the Monday and Friday Family Class is open to parents too."
+                    content: "Family discounts of 10%, 15% and 20% off for the second, third and fourth family members make it more affordable for more than one child to train, and the Monday and Friday Family Class is open to parents too."
                 }
             ]
         },
         serviceArea: {
             title: "Serving Waimauku and Muriwai",
-            description: "We don't have a dojang in Waimauku — the village and the surrounding countryside train with us at 94 Mill Road, Helensville, a short drive up SH16. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $285 and can be used at any class on the timetable.",
+            description: "We don't have a dojang in Waimauku — the village and the surrounding countryside train with us at 94 Mill Road, Helensville, a short drive up SH16. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $285, valid for 3 months, and can be used at any class on the timetable.",
             landmarks: [
                 "Waimauku School",
                 "Muriwai Beach",
@@ -469,7 +469,7 @@ export const locationData: LocationData[] = [
             },
             {
                 question: "Which class should my child start in?",
-                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first class is free, so come and try."
+                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first week is free, so come and try."
             },
             {
                 question: "Do we have to buy a uniform before the trial?",
@@ -480,13 +480,13 @@ export const locationData: LocationData[] = [
     {
         slug: "huapai",
         title: "Huapai Taekwondo Classes | Superior Taekwondo",
-        metaDescription: "Taekwondo for Huapai families: about 20 minutes up SH16 to 94 Mill Road, Helensville. Kids from age 4, Olympian-led coaching. Free trial class.",
+        metaDescription: "Taekwondo for Huapai families: about 20 minutes up SH16 to 94 Mill Road, Helensville. Kids from age 4, Olympian-led coaching. Free trial week.",
         heroImage: "/images/locations/huapai-hero.webp",
         introTitle: "Taekwondo for Huapai families",
         introContent: [
             "Huapai doesn't have its own dojang — families from the Huapai Triangle and surrounding streets train with us at 94 Mill Road, Helensville, a short drive down SH16. It's a straightforward addition to the week: one class, one trip, parking at the door.",
             "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving through Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train alongside them in the 12+ evening classes and the Monday and Friday Family Class.",
-            "Sessions start at $30 a week for one class, or $40 a week for unlimited training, with sibling tiers at $55, $70, $80 and $90 a week for families with more than one child. A 10-week term is $300 for one class a week or $400 unlimited, and we're rated 5.0 from 23 Google reviews. Your first class is free."
+            "Sessions start at $30 a week for one class, $40 for two, or $50 a week for unlimited training, with family discounts of 10 to 20% off for families with more than one member. A 10-session concession card is $285 if weekly doesn't suit, and we're rated 5.0 from 23 Google reviews. Your first week is free."
         ],
         driveTime: "about 20 minutes up SH16",
         gettingHere: {
@@ -513,7 +513,7 @@ export const locationData: LocationData[] = [
             items: [
                 {
                     title: "A short run up SH16",
-                    content: "94 Mill Road, Helensville is about 20 minutes up State Highway 16, with parking right at the door. A 10-week term is $300 for one class a week, or $400 for unlimited training."
+                    content: "94 Mill Road, Helensville is about 20 minutes up State Highway 16, with parking right at the door. Weekly memberships start at $30 for one class a week, or $50 for unlimited training."
                 },
                 {
                     title: "Olympian-led coaching",
@@ -527,7 +527,7 @@ export const locationData: LocationData[] = [
         },
         serviceArea: {
             title: "Serving Huapai families from Helensville",
-            description: "We don't have a dojang in Huapai — the Huapai Triangle and surrounding growth areas train with us at 94 Mill Road, Helensville, a short drive up SH16. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $285 and can be used at any class on the timetable.",
+            description: "We don't have a dojang in Huapai — the Huapai Triangle and surrounding growth areas train with us at 94 Mill Road, Helensville, a short drive up SH16. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $285, valid for 3 months, and can be used at any class on the timetable.",
             landmarks: [
                 "Huapai District School",
                 "Huapai Domain",
@@ -554,7 +554,7 @@ export const locationData: LocationData[] = [
             },
             {
                 question: "Which class should my child start in?",
-                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first class is free, so come and try."
+                answer: "Ages 4 to 5 start in Little Superior Legends, 6 to 11 in Youth Superior Legends, and 12 and up train with the Cadets, Juniors and Seniors. The first week is free, so come and try."
             },
             {
                 question: "Do we have to buy a uniform before the trial?",
