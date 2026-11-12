@@ -126,7 +126,7 @@ export const locationData: LocationData[] = [
             },
             {
                 question: "Do we have to buy a uniform before the trial?",
-                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join."
+                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join, through the club shop (a standard uniform is $80)."
             }
         ]
     },
@@ -214,7 +214,7 @@ export const locationData: LocationData[] = [
             },
             {
                 question: "Do we have to buy a uniform before the trial?",
-                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join."
+                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join, through the club shop (a standard uniform is $80)."
             },
             {
                 question: "What age is best to start Taekwondo?",
@@ -236,7 +236,7 @@ export const locationData: LocationData[] = [
         introContent: [
             "Kumeū doesn't have its own dojang, but ours is a straightforward drive up State Highway 16 at 94 Mill Road, Helensville, with parking at the door. Kids' classes start at 4pm on weekdays, so families from Kumeū and Huapai can make it after school.",
             "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, who represented New Zealand at the Rio 2016 Olympics. Kids start in Little Superior Legends from age 4, where the focus is listening, balance, confidence and having fun in a structured class. Teens and adults train in the 12+ and Family classes, and students who want to compete can move into the Performance Pathway squad.",
-            "Sessions start at $30 a week for one class, $40 for two, or $50 a week for unlimited training, with family discounts of 10 to 20% off for families with more than one member. A 10-session concession card is $285 if weekly doesn't suit, and we're rated 5.0 from 23 Google reviews. Your first week is free: come along, meet the coaches, and see if it fits."
+            "Sessions start at $30 a week for one class, $40 for two, or $50 a week for unlimited training, with family discounts of 10 to 20% off for families with more than one member. A 10-session concession card is $300 if weekly doesn't suit, and we're rated 5.0 from 23 Google reviews. Your first week is free: come along, meet the coaches, and see if it fits."
         ],
         driveTime: "about 20 minutes up SH16",
         gettingHere: {
@@ -277,7 +277,7 @@ export const locationData: LocationData[] = [
         },
         serviceArea: {
             title: "Serving Kumeū and Huapai",
-            description: "We don't have a dojang in Kumeū — everyone trains at 94 Mill Road, Helensville, up SH16. Here's what that drive looks like from around Kumeū and Huapai, and the class times and pricing are the same for both townships. If a weekly class doesn't suit, a 10-session concession card is $285, valid for 3 months, and can be used at any class on the timetable.",
+            description: "We don't have a dojang in Kumeū — everyone trains at 94 Mill Road, Helensville, up SH16. Here's what that drive looks like from around Kumeū and Huapai, and the class times and pricing are the same for both townships. If a weekly class doesn't suit, a 10-session concession card is $300, valid for 3 months, and can be used at any class on the timetable.",
             landmarks: [
                 "Kumeu Showgrounds",
                 "Kumeū Village",
@@ -304,7 +304,7 @@ export const locationData: LocationData[] = [
             },
             {
                 question: "Do we have to buy a uniform before the trial?",
-                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join."
+                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join, through the club shop (a standard uniform is $80)."
             }
         ]
     },
@@ -358,7 +358,7 @@ export const locationData: LocationData[] = [
         },
         serviceArea: {
             title: "Serving Kaukapakapa and surrounds",
-            description: "We don't have a dojang in Kaukapakapa — the village and surrounding lifestyle blocks train with us at 94 Mill Road, Helensville, down the Kaipara Coast Highway. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $285, valid for 3 months, and can be used at any class on the timetable.",
+            description: "We don't have a dojang in Kaukapakapa — the village and surrounding lifestyle blocks train with us at 94 Mill Road, Helensville, down the Kaipara Coast Highway. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $300, valid for 3 months, and can be used at any class on the timetable.",
             landmarks: [
                 "Omeru Scenic Reserve",
                 "Kaipara Coast Sculpture Gardens",
@@ -388,7 +388,7 @@ export const locationData: LocationData[] = [
             },
             {
                 question: "Do we have to buy a uniform before the trial?",
-                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join."
+                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join, through the club shop (a standard uniform is $80)."
             }
         ]
     },
@@ -401,7 +401,7 @@ export const locationData: LocationData[] = [
         introContent: [
             "Waimauku doesn't have its own dojang — we train out of 94 Mill Road, Helensville, one of the shortest drives of any of our catchment areas. Families from Waimauku, School Road and out toward Muriwai make the trip up SH16 as part of a normal week.",
             "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving into Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train in the 12+ evening classes, and the whole family can train together on Monday and Friday afternoons.",
-            "Sessions start at $30 a week for one class, $40 for two, or $50 a week unlimited, with family discounts of 10 to 20% off for families training together. A 10-session concession card is $285 if weekly doesn't suit, and we're rated 5.0 from 23 Google reviews. Your first week is free."
+            "Sessions start at $30 a week for one class, $40 for two, or $50 a week unlimited, with family discounts of 10 to 20% off for families training together. A 10-session concession card is $300 if weekly doesn't suit, and we're rated 5.0 from 23 Google reviews. Your first week is free."
         ],
         driveTime: "about 10 minutes up SH16",
         gettingHere: {
@@ -442,7 +442,7 @@ export const locationData: LocationData[] = [
         },
         serviceArea: {
             title: "Serving Waimauku and Muriwai",
-            description: "We don't have a dojang in Waimauku — the village and the surrounding countryside train with us at 94 Mill Road, Helensville, a short drive up SH16. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $285, valid for 3 months, and can be used at any class on the timetable.",
+            description: "We don't have a dojang in Waimauku — the village and the surrounding countryside train with us at 94 Mill Road, Helensville, a short drive up SH16. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $300, valid for 3 months, and can be used at any class on the timetable.",
             landmarks: [
                 "Waimauku School",
                 "Muriwai Beach",
@@ -473,7 +473,7 @@ export const locationData: LocationData[] = [
             },
             {
                 question: "Do we have to buy a uniform before the trial?",
-                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join."
+                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join, through the club shop (a standard uniform is $80)."
             }
         ]
     },
@@ -486,7 +486,7 @@ export const locationData: LocationData[] = [
         introContent: [
             "Huapai doesn't have its own dojang — families from the Huapai Triangle and surrounding streets train with us at 94 Mill Road, Helensville, a short drive down SH16. It's a straightforward addition to the week: one class, one trip, parking at the door.",
             "Superior Taekwondo is a World Taekwondo club led by Andrea Kilday, a 2016 Rio Olympian. Kids start in Little Superior Legends from age 4, moving through Youth Superior Legends and, from age 12, the Cadets, Juniors and Seniors class. Adults train alongside them in the 12+ evening classes and the Monday and Friday Family Class.",
-            "Sessions start at $30 a week for one class, $40 for two, or $50 a week for unlimited training, with family discounts of 10 to 20% off for families with more than one member. A 10-session concession card is $285 if weekly doesn't suit, and we're rated 5.0 from 23 Google reviews. Your first week is free."
+            "Sessions start at $30 a week for one class, $40 for two, or $50 a week for unlimited training, with family discounts of 10 to 20% off for families with more than one member. A 10-session concession card is $300 if weekly doesn't suit, and we're rated 5.0 from 23 Google reviews. Your first week is free."
         ],
         driveTime: "about 20 minutes up SH16",
         gettingHere: {
@@ -527,7 +527,7 @@ export const locationData: LocationData[] = [
         },
         serviceArea: {
             title: "Serving Huapai families from Helensville",
-            description: "We don't have a dojang in Huapai — the Huapai Triangle and surrounding growth areas train with us at 94 Mill Road, Helensville, a short drive up SH16. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $285, valid for 3 months, and can be used at any class on the timetable.",
+            description: "We don't have a dojang in Huapai — the Huapai Triangle and surrounding growth areas train with us at 94 Mill Road, Helensville, a short drive up SH16. The class times and pricing are the same as for our Helensville-based families. If a weekly class doesn't suit, a 10-session concession card is $300, valid for 3 months, and can be used at any class on the timetable.",
             landmarks: [
                 "Huapai District School",
                 "Huapai Domain",
@@ -558,7 +558,7 @@ export const locationData: LocationData[] = [
             },
             {
                 question: "Do we have to buy a uniform before the trial?",
-                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join."
+                answer: "No. Comfortable sports clothes and a water bottle are all you need for the first class. Uniforms are arranged after you join, through the club shop (a standard uniform is $80)."
             }
         ]
     }

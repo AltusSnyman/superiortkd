@@ -31,8 +31,8 @@ export default function PoomsaeSection() {
 
                             <div className="inline-block bg-black/40 px-8 py-4 rounded-lg border border-white/10">
                                 <p className="text-gray-400 text-sm uppercase tracking-wider mb-1">Additional Cost</p>
-                                <p className="text-3xl font-black text-white">$10 <span className="text-base font-normal text-gray-400">/ session</span></p>
-                                <p className="text-xs text-gray-500 mt-2">(If not on unlimited membership)</p>
+                                <p className="text-3xl font-black text-white">$20 <span className="text-base font-normal text-gray-400">/ session</span></p>
+                                <p className="text-xs text-gray-500 mt-2">(Per student, if not on an unlimited membership. Pay via the app or EFTPOS before the class.)</p>
                             </div>
                         </div>
                     </TimelineContent>

@@ -12,7 +12,15 @@ const pricingFaqSchema = {
             name: "How much do Taekwondo classes cost at Superior Taekwondo?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Weekly memberships are $30 a week for one session a week, $40 a week for two sessions a week, or $50 a week for unlimited Taekwondo sessions. Each weekly membership has a one-off $40 sign-up fee. A 10-session concession card is $285 and is valid for 3 months, and your first week is free.",
+                text: "Weekly memberships are $30 a week for one session a week, $40 a week for two sessions a week, or $50 a week for unlimited Taekwondo sessions. Each weekly membership has a one-off $40 sign-up fee and a 26-week minimum term. A 10-session concession card is $300 and is valid for 3 months, and your first week is free.",
+            },
+        },
+        {
+            "@type": "Question",
+            name: "Is there a minimum term?",
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Weekly memberships have a minimum term of 26 weeks, and weekly payments continue during that time whether or not you attend every class. After 26 weeks, your membership continues week to week until you cancel. The concession card and the free week trial have no minimum term.",
             },
         },
         {
@@ -28,7 +36,7 @@ const pricingFaqSchema = {
             name: "How does the concession card work?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "The concession card is $285 for 10 sessions and is valid for 3 months. It suits students who can't commit to a weekly membership.",
+                text: "The concession card is $300 for 10 sessions and is valid for 3 months. It suits students who can't commit to a weekly membership.",
             },
         },
         {
@@ -44,7 +52,7 @@ const pricingFaqSchema = {
             name: "How do I cancel or put my membership on hold?",
             acceptedAnswer: {
                 "@type": "Answer",
-                text: "Cancellations need 21 days' written notice by email, counted from the date we receive your request, and you're welcome to rejoin in a future term, subject to availability. Holds are normally a maximum of 2 to 3 weeks, with longer holds only in exceptional circumstances such as injury, medical reasons or pre-planned holidays. A hold can't cover a whole term, in which case the membership is cancelled.",
+                text: "Email your request to superiorfitnessnz@gmail.com. Cancelling needs two weeks' written notice. If you cancel during the 26-week minimum term, a $250 early-cancellation fee applies, or the remaining fees for the minimum term if that's less. After the minimum term, two weeks' written notice is all you need. Holds are 3 to 8 weeks, once in each 12-month period from your start date. Payments pause during a hold, and the minimum term is extended by the length of the hold.",
             },
         },
         {
@@ -80,7 +88,7 @@ const plans = [
         options: [
             {
                 title: "One session per week",
-                frequency: "Ongoing",
+                frequency: "26-week minimum",
                 description: "1 session / week",
                 sport: "Taekwondo",
                 price: "$30.00",
@@ -89,7 +97,7 @@ const plans = [
             },
             {
                 title: "Two sessions per week",
-                frequency: "Ongoing",
+                frequency: "26-week minimum",
                 description: "2 sessions / week",
                 sport: "Taekwondo",
                 price: "$40.00",
@@ -98,7 +106,7 @@ const plans = [
             },
             {
                 title: "Unlimited Taekwondo sessions",
-                frequency: "Ongoing",
+                frequency: "26-week minimum",
                 description: "Unlimited sessions",
                 sport: "Taekwondo",
                 price: "$50.00",
@@ -116,7 +124,7 @@ const plans = [
                 frequency: "10 sessions",
                 description: "10 sessions · valid 3 months",
                 sport: "Taekwondo",
-                price: "$285.00",
+                price: "$300.00",
                 period: "Total",
                 signup: "",
             },
@@ -165,17 +173,17 @@ const offersSchema = JSON.stringify({
         itemListElement: [
             weeklyOffer(
                 "One session per week (weekly membership)",
-                "One Taekwondo session per week at our Helensville dojang. One-off $40 sign-up fee.",
+                "One Taekwondo session per week at our Helensville dojang. One-off $40 sign-up fee, 26-week minimum term.",
                 "30.00",
             ),
             weeklyOffer(
                 "Two sessions per week (weekly membership)",
-                "Two Taekwondo sessions per week at our Helensville dojang. One-off $40 sign-up fee.",
+                "Two Taekwondo sessions per week at our Helensville dojang. One-off $40 sign-up fee, 26-week minimum term.",
                 "40.00",
             ),
             weeklyOffer(
                 "Unlimited Taekwondo sessions (weekly membership)",
-                "Unlimited Taekwondo sessions at our Helensville dojang. One-off $40 sign-up fee.",
+                "Unlimited Taekwondo sessions at our Helensville dojang. One-off $40 sign-up fee, 26-week minimum term.",
                 "50.00",
             ),
             {
@@ -184,7 +192,7 @@ const offersSchema = JSON.stringify({
                 description: "10-session concession card valid for 3 months.",
                 priceSpecification: {
                     "@type": "PriceSpecification",
-                    price: "285.00",
+                    price: "300.00",
                     priceCurrency: "NZD",
                     description: "10 sessions, valid 3 months",
                 },
@@ -212,6 +220,17 @@ const offersSchema = JSON.stringify({
 
 const pricingHeadContent = `<script type="application/ld+json">${offersSchema}<\/script>`;
 
+// Club shop prices from GymDesk (superior-taekwondo.gymdesk.com/shop), checked 2026-11-13.
+const shopItems = [
+    { name: "Taekwondo standard uniform", price: "$80" },
+    { name: "Standard black/red neck uniform", price: "$80" },
+    { name: "Club summer uniform", price: "$40" },
+    { name: "Club compression top", price: "$40" },
+    { name: "Club mesh T-shirt", price: "$30" },
+    { name: "Club tracksuit", price: "$139" },
+    { name: "KPNP Blue Label competition dobok", price: "$330" },
+];
+
 const familyDiscounts = [
     { member: "1st family member", discount: "Full price" },
     { member: "2nd family member", discount: "10% off" },
@@ -233,12 +252,16 @@ const policies = [
         text: "If an instructor is away through illness or coaching at a tournament, attend an alternative class that week. If that isn't possible, use your catch-up option the following week.",
     },
     {
-        title: "Holds",
-        text: "Holds are a maximum of 2 to 3 weeks. Longer holds are only considered in exceptional circumstances such as injury, medical reasons or pre-planned holidays. A hold can't cover a whole term, for availability, location and scheduling reasons, and in that case the membership is cancelled.",
+        title: "Minimum term",
+        text: "Weekly memberships have a 26-week minimum term. Weekly payments continue during that time whether or not you attend every class, and after 26 weeks your membership continues week to week until you cancel.",
     },
     {
         title: "Cancellations",
-        text: "21 days' written notice by email is required, counted from the date we receive your request. You're welcome to rejoin in a future term, subject to availability.",
+        text: "Email superiorfitnessnz@gmail.com with two weeks' written notice. If you cancel during the 26-week minimum term, a $250 early-cancellation fee applies, or the remaining fees for the minimum term if that's less. Any outstanding fees remain payable.",
+    },
+    {
+        title: "Holds",
+        text: "Email superiorfitnessnz@gmail.com. A hold is 3 to 8 weeks and is available once in each 12-month period from your start date. Payments pause during the hold, and your minimum term is extended by the length of the hold.",
     },
 ];
 ---
@@ -328,6 +351,38 @@ const policies = [
                         ))
                     }
                 </div>
+            </div>
+        </div>
+
+        <!-- Uniforms and club gear (GymDesk shop) -->
+        <div class="container mx-auto px-4 pb-12">
+            <div class="max-w-4xl mx-auto relative z-10">
+                <h2
+                    class="text-white font-oswald font-bold uppercase tracking-wide text-2xl mb-2 text-center"
+                >
+                    Uniforms and club gear
+                </h2>
+                <p class="text-gray-400 font-body text-center mb-6">
+                    You don't need a uniform for your free week. Once you join, gear is available through the club shop.
+                </p>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {
+                        shopItems.map((item) => (
+                            <li class="bg-white/5 border border-white/10 rounded-xl px-5 py-4 flex items-center justify-between gap-4">
+                                <span class="text-gray-200 font-body">{item.name}</span>
+                                <span class="text-white font-oswald font-bold text-lg">{item.price}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <p class="text-center mt-6">
+                    <a
+                        href="https://superior-taekwondo.gymdesk.com/shop"
+                        class="text-blue-belt-end font-body hover:underline"
+                        rel="noopener"
+                        >Visit the club shop</a
+                    >
+                </p>
             </div>
         </div>
 
